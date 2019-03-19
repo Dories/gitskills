@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷37 补充告知问卷（投保人）
+	 -->
+     <DisclosureItem disclosure_ver="F_26_" disclosure_id="problempieces_37" flag="questionName" text="补充告知问卷（投保人）">
+     </DisclosureItem>
+
+     <DisclosureItem disclosure_ver="F_26_" no_yesno="true" disclosure_id="F_26_1_" flag="common">
+        <Description text="注意事项：此问卷仅针对豁免险的人填写"/>        
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="true" disclosure_id="F_26_1_" flag="common">
+        <Description text="健康告知栏（1-13）"/>        
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="true" disclosure_id="F_26_1_" flag="common">
+        <Description text="1.投保人身高"/>  
+        <Input input_type="number" input_key="F_26_1_theight" length="3"  /> 
+        <Description text="厘米，体重"/> 
+        <Input input_type="number" input_key="F_26_1_tweight" length="3"  /> 
+        <Description text="公斤" />     
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_2_yes2"  custom_no="F_26_2_no2" flag="common">
+        <Description text="2.您是否有吸烟习惯？若“是”，请详述："/>
+        <Input input_type="br" />
+        <Expendable>
+            <Description text="投保人每天"/>
+            <Input input_type="number" input_key="F_26_2_01" length="3"  /> 
+            <Description text="支， 已吸烟" /> 
+            <Input input_type="number" input_key="F_26_2_02" length="3"  /> 
+            <Description text="年" /> 
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_3_yes2"  custom_no="F_26_3_no2" flag="common">
+        <Description text="3.您目前是否饮酒或曾经饮酒？"/>
+        <Expendable>
+            <Description text="若“是”，请告知饮酒"/>
+            <Input input_type="number" input_key="F_26_3_01" length="3"  /> 
+            <Description text="年， 酒的种类为：①啤酒" />            
+            <Input input_type="number" input_key="F_26_3_02" length="3"  />
+            <Description text="（瓶/天）, ②红酒" />            
+            <Input input_type="number" input_key="F_26_3_03" length="3"  />
+            <Description text="两/天）, ③白酒" />            
+            <Input input_type="number" input_key="F_26_3_04" length="3"  />
+            <Description text="（两/天）, ④其他" />            
+            <Input input_type="number" input_key="F_26_3_05" length="3"  />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_4_yes2"  custom_no="F_26_4_no2" flag="common">
+        <Description text="4.您目前或过去一年内是否曾有过下列症状？如：反复头痛、眩晕、胸痛、咯血、
+                            气喘、腹痛、便血、包块或肿物、原因不明的发热、皮肤和粘膜及齿龈出血、体重下降超过5公斤，原因不明的肌肉萎缩，身体的其他感觉异常或活动障碍。"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_5_yes2"  custom_no="F_26_5_no2" flag="common">
+        <Description text="5.您过去一年内是否接受过医师的诊查、治疗、用药、住院或手术建议？"/> 
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_6_yes2"  custom_no="F_26_6_no2" flag="common">
+        <Description text=" 6.您过去三年内是否曾有过医学检查结果异常（包括健康体检）？若“是”，请注明检查时间与结果。"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_7_yes2"  custom_no="F_26_7_no2" flag="common">
+        <Description text="7.您过去十年内是否住院诊疗？若“是”，请写明住院的原因、时间、治疗结果及医院名称。"/>        
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_8_yes2"  custom_no="F_26_8_no2" flag="common">
+        <Description text="8.您是否有智能障碍、失明、聋哑及言语、咀嚼或身体其他部位残缺、残疾或功能障碍？
+                            若“是”，请说明智能障碍等级和残疾等级。"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="true" disclosure_id="F_26_9_" flag="common">
+        <Description text="9.您是否曾经患有或被怀疑患有以下疾病？若“是”，请注明就诊医院、疾病名称、治疗时间和结果："/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_9_a_yes2"  custom_no="F_26_9_a_no2" flag="common">
+        <Description text=" A.神经系统及精神方面疾病，例如：癫痫、肢体瘫痪、脊髓疾病、多发性硬化、重症肌无力、
+                             帕金森氏综合症、脑中风、阿尔茨海默病、脑动/静脉血管瘤及畸形、精神病、抑郁症、神经官能症、脑部手术史等；"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_9_b_yes2"  custom_no="F_26_9_b_no2" flag="common">
+        <Description text=" B.呼吸系统疾病，例如：慢性支气管炎、肺气肿、肺心病、哮喘、肺结核、肺栓塞、支气管扩张、尘肺、间质性肺病、肺纤维化等；"/>
+    </DisclosureItem>
+
+    <DisclosureItem no_yesno="customAll" custom_yes="F_26_9_c_yes2"  custom_no="F_26_9_c_no2" disclosure_ver="F_26_" flag="common">
+        <Description text="C.循环系统疾病，例如：高血压 、冠心病、心绞痛、心律失常、心肌梗塞、先天性心脏病、心脏瓣膜病、风湿性心脏病、
+                            心肌病、主动脉疾病、川崎病、心包炎、心导管等心血管介入治疗等；" />
+    </DisclosureItem>  
+    
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_9_d_yes2"  custom_no="F_26_9_d_no2" flag="common">
+        <Description text=" D.消化系统疾病，例如：肝炎（请注明类型）、乙肝或丙肝病毒携带、多囊肝、胆结石、肝硬化、
+                            胰腺疾病、胃和/或十二指肠溃疡、慢性或溃疡性结肠炎、克隆病、腹部手术史等；"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_9_e_yes2"  custom_no="F_26_9_e_no2" flag="common">
+        <Description text=" E.泌尿系统及生殖系统疾病，例如：血尿、肾炎、肾病综合症、多囊肾、肾脏功能不全、
+                            尿毒症、肾结核、肾积水、泌尿系统结石、泌尿系统手术史、生殖器官疾病等；"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_9_f_yes2"  custom_no="F_26_9_f_no2" flag="common">
+        <Description text=" F.内分泌及肌肉骨骼、结缔组织疾病，例如：糖尿病、甲状腺或甲状旁腺疾病、
+                            肾上腺疾病、脑垂体异常、类风湿性关节炎、风湿病、痛风、强直性脊柱炎、肌肉骨骼关节疾病、
+                            系统性红斑狼疮、艾滋病等；"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_9_g_yes2"  custom_no="F_26_9_g_no2" flag="common">
+        <Description text=" G.血液系统疾病，例如：贫血、血小板减少、紫癜症、白血病、血友病、再生障碍性贫血、淋巴瘤等；"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_9_h_yes2"  custom_no="F_26_9_h_no2" flag="common">
+        <Description text=" H.五官科疾病，例如：视网膜出血或剥离、白内障、青光眼、高度近视（800度以上）、听力减退、五官手术史等；"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_9_i_yes2"  custom_no="F_26_9_i_no2" flag="common">
+        <Description text=" I.癌症、肿瘤（恶性、良性或尚未证实为良性或恶性的）、肿块、息肉、囊肿、赘生物等；"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_9_j_yes2"  custom_no="F_26_9_j_no2" flag="common">
+        <Description text=" J.先天性疾病、遗传性疾病、脑外伤后遗症，急/慢性中毒、职业病等；"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_9_k_yes2"  custom_no="F_26_9_k_no2" flag="common">
+        <Description text=" k.以上未提及的其他疾病或症状。"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_10_yes2"  custom_no="F_26_10_no2" flag="common">
+        <Description text="10.您是否使用过任何成瘾药物，如镇静安眠剂、迷幻药、吸食有机溶剂或毒品？若“是”，请说明。"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="true" disclosure_id="F_26_11_" flag="common">
+        <Description text=" 11. 女性补充告知栏【14周岁（含14周岁）以上请填写】:"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_11_a_yes2"  custom_no="F_26_11_a_no2"  flag="common">
+        <Description text=" A.您是否正在怀孕？"/>
+        <Expendable>
+            <Description text="若“是”，孕期"/>
+                <Input input_type="number" input_key="F_26_11_01" length="3"  />
+            <Description text="周；"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_11_b_yes2"  custom_no="F_26_11_b_no2" flag="common">
+        <Description text=" B.您是否曾有子宫肌瘤、畸胎瘤、葡萄胎、阴道异常出血、乳腺包块或其他任何乳房、
+                            子宫、卵巢的疾病及妊娠并发症？"/>
+    </DisclosureItem>
+
+<!--     <DisclosureItem disclosure_ver="F_26_" no_yesno="true" disclosure_id="F_26_12_" flag="common">
+        <Description text=" 12.婴幼儿补充告知栏【2周岁（含2周岁）以下请填写】："/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_12_a_yes2"  custom_no="F_26_12_a_no2"  flag="common">
+        <Description text=" A.出生时"/>
+        <Expendable>
+            <Description text="身高"/>
+                <Input input_type="number" input_key="F_26_12_01" length="3"  />
+            <Description text="厘米 体重"/>
+            <Input input_type="number" input_key="F_26_12_02" length="3"  />
+            <Description text="公斤；"/>
+        </Expendable>
+    </DisclosureItem> -->
+
+  <!--   <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_12_b_yes2"  custom_no="F_26_12_b_no2" flag="common">
+        <Description text=" B.是否为早产、难产？出生时是否曾有产伤、窒息等异常情况？是否有畸形、发育迟缓、惊厥、脑瘫？"/>
+    </DisclosureItem> -->
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_13_a_yes2"  custom_no="F_26_13_a_no2" flag="common">
+        <Description text=" 13."/>
+        <Input input_type="br"/>
+        <Description text="A.您的父母、子女、兄弟姐妹是否患有恶性肿瘤/癌症、心脏病、脑中风、
+                            肝豆状核变性、血友病、糖尿病、精神疾病、多囊肝、多囊肾、肠息肉以及其他遗传性或传染性疾病？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_13_b_yes2"  custom_no="F_26_13_b_no2" flag="common">
+        <Description text=" B.您的直系亲属中是否有60岁以前去世的？若“是”，请说明亲属关系、确诊疾病名称和确诊时的年龄。"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="true"  flag="common">
+        <Description text="其他告知栏（14-19）"/>        
+    </DisclosureItem>
+
+     <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_14_yes2"  custom_no="F_26_14_no2" flag="common">
+        <Description text=" 14. 您目前是否有本公司或其他保险公司的人身保险？若“是”，请注明投保险种、保险金额、承保公司。"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_15_yes2"  custom_no="F_26_15_no2" flag="common">
+        <Description text=" 15.您过去是否被保险公司解除合同或投保、复效时被拒保、延期、附加条件承保？若“是”，请详述。"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_16_yes2"  custom_no="F_26_16_no2" flag="common">
+        <Description text=" 16.  您是否有过任何形式的人身保险理赔？若“是”，请详述。"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_17_yes2"  custom_no="F_26_17_no2" flag="common">
+        <Description text=" 17.   您是否参加飞行、潜水、攀岩、蹦极、跳伞、武术、拳击、赛车、特技活动等危险运动或是否有上述爱好？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_18_a_yes2"  custom_no="F_26_18_a_no2" flag="common">
+        <Description text=" 18.   A.您是否驾驶车型为小客车以外的车型？若“是”，请告知驾照类型、所驾车型。"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_18_b_yes2"  custom_no="F_26_18_b_no2" flag="common">
+        <Description text="B.您是否曾违章驾车并发生交通事故，若“是”，请告知次数、时间、违章类型。"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="customAll" custom_yes="F_26_19_yes2"  custom_no="F_26_19_no2" flag="common">
+        <Description text=" 19.您近期是否正准备出国？若“是”，请告知国家名称、出国原因及停留时间。"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_26_" no_yesno="true" disclosure_id="F_26_20_" flag="BlankRemarkTable">
+        <Description text="告知说明及备注栏（以上健康、其他告知栏中4-19项询问如回答“是”，请在本栏中标明问题序号并详细说明）"/> 
+        <Expendable>      
+            <BlankRemarkTable input_key="F_26_20_content" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+</Disclosure>

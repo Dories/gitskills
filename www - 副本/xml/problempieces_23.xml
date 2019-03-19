@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷23 胸痛问卷部分
+	 -->
+    <DisclosureItem disclosure_ver="A_23_" disclosure_id="problempieces_23" flag="questionName" text="胸痛问卷">
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_23_" no_yesno="true" disclosure_id="A_23_1_" flag="common">
+        <Description text="1. 请详细说明有关胸痛的如下情况：" />
+        <Input input_type="br"/>
+        <Description text="1.1首次发生胸痛的时间：" />
+        <Input hint="" 
+            input_key="A_23_1_year"
+            length="3" 
+            input_type="number"/>
+        <Description text="年" />
+        <Input
+            hint=""
+            input_key="A_23_1_month"
+            length="3"
+            input_type="number" />
+        <Description text="月" /> 
+        <Input input_type="br"/>
+        <Description text="最近一次胸痛的时间：" />
+        <Input hint="" 
+            input_key="A_23_1_years"
+            length="3" 
+            input_type="number"/>
+        <Description text="年" />
+        <Input
+            hint=""
+            input_key="A_23_1_months"
+            length="3"
+            input_type="number" />
+        <Description text="月" />
+        <Input
+            hint=""
+            input_key="A_23_1_day"
+            length="3"
+            input_type="number" />
+        <Description text="日" />
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_23_" no_yesno="true" disclosure_id="A_23_1_" flag="common">    
+        <Description text="1.2胸痛部位：" />
+        <Radio input_type="checkbox" options="左胸" radio_key="A_23_1_1_a" />
+        <Radio input_type="checkbox" options="右胸" radio_key="A_23_1_1_b" />
+        <Radio input_type="checkbox" options="前胸" radio_key="A_23_1_1_c" />
+        <Radio input_type="checkbox" options="后背" radio_key="A_23_1_1_d" />
+        <Radio input_type="checkbox" options="其他" radio_key="A_23_1_1_e" />
+        <Input input_type="text" input_key="A_23_1_2_01" length="10"  />
+    </DisclosureItem>
+
+    <DisclosureItem no_yesno="donotCheckYes" disclosure_id="A_23_1_2_" flag="common">    
+        <Description text="1.3疼痛是否放射到胸外:" />
+        <!-- <Radio input_type="radio" options="是（若是，请说明具体部位）" radio_key="A_23_1_2_yes" />
+        <Radio input_type="radio" options="否" radio_key="A_23_1_2_no" /> -->
+        <!-- 需要隐藏以下radio -->
+        <Expendable>
+            <Radio input_type="checkbox" options="肩部" radio_key="A_23_1_2_03" />
+            <Radio input_type="checkbox" options="颈部" radio_key="A_23_1_2_04" />
+            <Radio input_type="checkbox" options="背部" radio_key="A_23_1_2_05" />
+            <Radio input_type="checkbox" options="手臂" radio_key="A_23_1_2_06" />
+            <Radio input_type="checkbox" options="上腹部" radio_key="A_23_1_2_07" />
+            <Radio input_type="checkbox" options="其他" radio_key="A_23_1_2_08" />
+            <Input input_type="text" input_key="A_23_1_3_01" length="10"  />
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_23_" no_yesno="true" disclosure_id="A_23_1_3_" flag="common">
+        <Description text="1.4胸痛的性质：" />
+        <Radio input_type="radio" options="剧烈疼痛" radio_key="A_23_1_3_a" />
+        <Radio input_type="radio" options="针扎样痛" radio_key="A_23_1_3_b" />
+        <Radio input_type="radio" options="隐痛" radio_key="A_23_1_3_c" />
+        <Radio input_type="radio" options="挤压痛" radio_key="A_23_1_3_d" />
+        <Radio input_type="radio" options="放射样痛" radio_key="A_23_1_3_e" />
+        <Radio input_type="radio" options="其他" radio_key="A_23_1_3_f" />
+        <Input input_type="text" input_key="A_23_1_4_01" length="10"  />
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_23_" no_yesno="true" disclosure_id="A_23_1_4_" flag="common">
+        <Description text="1.5胸痛的严重程度：" />
+        <Radio input_type="radio" options="轻" radio_key="A_23_1_4_a" />
+        <Radio input_type="radio" options="中" radio_key="A_23_1_4_b" />
+        <Radio input_type="radio" options="重" radio_key="A_23_1_4_c" />
+        <Radio input_type="radio" options="剧烈" radio_key="A_23_1_4_d" />
+   </DisclosureItem>
+   <DisclosureItem disclosure_ver="A_23_" no_yesno="true" disclosure_id="A_23_1_5_" flag="common">
+        <Description text="1.6胸痛的引发因素：" />
+        <Radio input_type="checkbox" options="无诱因" radio_key="A_23_1_5_a" />
+        <Radio input_type="checkbox" options="劳累" radio_key="A_23_1_5_b" />
+        <Radio input_type="checkbox" options="情绪波动" radio_key="A_23_1_5_c" />
+        <Radio input_type="checkbox" options="咳嗽" radio_key="A_23_1_5_d" />
+        <Radio input_type="checkbox" options="深呼吸" radio_key="A_23_1_5_e" />
+        <Radio input_type="checkbox" options="胸壁受压" radio_key="A_23_1_5_f" />
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_23_" no_yesno="true" disclosure_id="A_23_1_6_" flag="common">
+        <Description text="1.7胸痛持续的时间：" />
+        <Radio input_type="radio" options="少于10分钟" radio_key="A_23_1_6_a" />
+        <Radio input_type="radio" options="10-20分钟" radio_key="A_23_1_6_b" />
+        <Radio input_type="radio" options="半小时" radio_key="A_23_1_6_c" />
+        <Radio input_type="radio" options="1小时" radio_key="A_23_1_6_d" />
+        <Radio input_type="radio" options="数小时" radio_key="A_23_1_6_e" />
+        <Radio input_type="radio" options="1天" radio_key="A_23_1_6_f" />
+        <Radio input_type="radio" options="数天" radio_key="A_23_1_6_g" />
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_23_" no_yesno="true" disclosure_id="A_23_1_7_" flag="common">
+        <Description text="1.8胸痛的缓解办法：" />
+        <Radio input_type="checkbox" options="休息" radio_key="A_23_1_7_a" />
+        <Radio input_type="checkbox" options="适量进食" radio_key="A_23_1_7_b" />
+        <Radio input_type="checkbox" options="抗酸药（胃药）" radio_key="A_23_1_7_c" />
+        <Radio input_type="checkbox" options="心脏病用药" radio_key="A_23_1_7_d" />
+        <Radio input_type="checkbox" options="止疼药" radio_key="A_23_1_7_e" />
+        <Radio input_type="checkbox" options="其他方法" radio_key="A_23_1_7_f" />
+        <Input input_type="text" input_key="A_23_1_7_03" length="10"  />
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="A_23_"  disclosure_id="A_23_2_" flag="common">
+        <Description text="2. 是否因胸痛去医院就诊？" />
+        <Expendable>
+            <Description text="医院名称:" />
+                <Input input_key="A_23_2_01" length="10" input_type="text" />
+            <Description text="诊断:" />
+                <Input input_key="A_23_2_02" length="10" input_type="text" />
+        </Expendable>
+    </DisclosureItem>
+
+     <DisclosureItem disclosure_ver="A_23_"  disclosure_id="A_23_3_" flag="common">
+        <Description text="3. 是否做过心电图、超声心动图、胸部X片、心肌酶学、冠脉造影、心肌核素扫描等检查？" />       
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_23_" disclosure_id="A_23_4_" no_yesno="false" flag="common"> 
+        <Description text="4. 是否因胸痛曾经或正在接受药物治疗？"/>
+        <Expendable>
+            <Description text="药物名称:" />
+                <Input input_key="A_23_4_01" length="10" input_type="text" />
+            <Description text="用量和用法:" />
+                <Input input_key="A_23_4_02" length="10" input_type="text" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_23_" disclosure_id="A_23_5_" flag="common"> 
+        <Description text="5. 是否因胸痛曾经进行或被医生建议接受手术治疗？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_23_" no_yesno="donotCheckYes" disclosure_id="A_23_6_"> 
+        <Description text="6. 是否因胸痛而无法工作？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_23_" no_yesno="true" disclosure_id="A_23_check_result" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果）"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_23_check_result" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_23_" no_yesno="false" disclosure_id="A_23_7_" flag="BlankRemarkTable">
+        <Description text="7. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_23_7_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

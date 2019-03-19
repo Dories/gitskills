@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >	
+	<!--问题卷13 视力问卷-->
+ <DisclosureItem disclosure_ver="A_13_" disclosure_id="problempieces_13" flag="questionName" text="视力问卷"/>
+
+    <DisclosureItem disclosure_ver="A_13_" no_yesno="true" disclosure_id="A_13_1_" flag="common">
+        <Description text="1.  请您描述目前的视力情况"/>
+        <Input input_type="br"/>
+        <Description text="左眼"/>
+        <Radio input_type="checkbox" and_others="false" options="完全失明，毫无光感" radio_key="A_13_1_a" is_checked="false"/>
+        <Radio input_type="checkbox" and_others="false" options="仅有光感" radio_key="A_13_1_b" is_checked="false"/>
+        <Radio input_type="checkbox" and_others="false" options="仅能辨别眼前手动" radio_key="A_13_1_c" is_checked="false"/>
+        <Radio input_type="checkbox" and_others="false" options="仅能辨别眼前指数" radio_key="A_13_1_d" is_checked="false"/>
+        <Input input_type="br"/>
+        <Description text="裸眼视力"/>
+        <Input input_key="A_13_1_01" length="3" input_type="text" is_checked="false"/>
+        <Description text="矫正视力"/>
+        <Input input_key="A_13_1_02" length="3" input_type="text" is_checked="false"/>
+        <Input input_type="br"/>
+        <Description text="配镜度数"/>
+        <Input input_key="A_13_1_03" length="3" input_type="text" is_checked="false"/>
+        <Input input_type="br"/>
+        <Description text="右眼"/>
+        <Radio input_type="checkbox" and_others="false" options="完全失明，毫无光感" radio_key="A_13_1_e" is_checked="false"/>
+        <Radio input_type="checkbox" and_others="false" options="仅有光感" radio_key="A_13_1_f" is_checked="false"/>
+        <Radio input_type="checkbox" and_others="false" options="仅能辨别眼前手动" radio_key="A_13_1_g" is_checked="false"/>
+        <Radio input_type="checkbox" and_others="false" options="仅能辨别眼前指数" radio_key="A_13_1_h" is_checked="false"/>
+        <Input input_type="br"/>
+        <Description text="裸眼视力"/>
+        <Input input_key="A_13_1_04" length="3" input_type="text" is_checked="false"/>
+        <Description text="矫正视力"/>
+        <Input input_key="A_13_1_05" length="3" input_type="text" is_checked="false"/>
+        <Input input_type="br"/>
+        <Description text="配镜度数"/>
+        <Input input_key="A_13_1_06" length="3" input_type="text"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_13_" no_yesno="true" disclosure_id="A_13_2_" flag="common">
+        <Description text="2.  造成您视力受损的原因："/>
+        <Expendable>
+            <Radio input_type="radio" and_others="false" options="先天性" radio_key="A_13_2_a"/>
+            <Radio input_type="radio" and_others="false" options="后天性" radio_key="A_13_2_b"/>
+            <Input input_type="br"/>
+	        <Description text="起始时间："/>
+	        <Input input_key="A_13_2_year" length="3" input_type="number" is_checked="false"/>
+	        <Description text="年"/>
+	        <Input input_key="A_13_2_month" length="3" input_type="number" is_checked="false"/>
+	        <Description text="月"/>
+	        <Radio input_type="checkbox" and_others="false" options="外伤" radio_key="A_13_2_04"/>
+            <Radio input_type="checkbox" and_others="false" options="疾病" radio_key="A_13_2_05"/>
+            <Radio input_type="checkbox" and_others="false" options="药物" radio_key="A_13_2_06"/>
+            <Radio input_type="checkbox" and_others="false" options="其他 如强光环境等" radio_key="A_13_2_07"/>
+            <Input input_type="br"/>
+            <Description text="诊断结果："/>
+            <Input input_key="A_13_2_01" length="3" input_type="text" is_checked="false"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_13_" no_yesno="true" disclosure_id="A_13_3_" flag="BlankRemarkTable">
+        <Description text="3.  您曾行何种检查？结果如何？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_13_3_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_13_" no_yesno="donotCheckYes" disclosure_id="A_13_4_" flag="common">
+        <Description text="4.  您是否接受治疗？"/>
+        <Expendable>
+            <Description text="治疗方法"/>
+            <Input input_key="A_13_4_01" length="5" input_type="text"/>
+            <Description text="效果"/>
+            <Input input_key="A_13_4_02" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_13_" no_yesno="false" disclosure_id="A_13_5_" flag="common">
+        <Description text="5.  您目前是否仍在治疗？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_13_" no_yesno="false" disclosure_id="A_13_6_" flag="common">
+        <Description text="6.  您是否去医院随访及复查？"/>
+        <Expendable>
+            <Description text="最近一次随访及复查的时间"/>
+            <Input input_key="A_13_6_01" length="5" input_type="text"/>
+            <Input input_type="br"/>
+            <Description text="结果"/>
+            <Input input_key="A_13_6_02" length="5" input_type="text"/>
+            <Description text="检查与治疗"/>
+            <Input input_key="A_13_6_03" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_13_" no_yesno="false" disclosure_id="A_13_7_" flag="common">
+        <Description text="7.  您是否曾因意外伤害向保险公司申请理赔？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_13_" no_yesno="true" disclosure_id="A_13_check_result" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料(门诊病历、住院记录及化验检查结果)"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_13_check_result" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_13_" no_yesno="false" disclosure_id="A_13_8_" flag="BlankRemarkTable">
+        <Description text="8.  是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_13_8_01" lines="3" placeholder="如是，请说明："/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

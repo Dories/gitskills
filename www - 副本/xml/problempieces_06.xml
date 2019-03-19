@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >	
+	<!--问题卷6 甲状腺疾病问卷-->
+ <DisclosureItem disclosure_ver="A_6_" disclosure_id="problempieces_06" flag="questionName" text="甲状腺疾病问卷"/>
+
+    <DisclosureItem disclosure_ver="A_6_" no_yesno="true" disclosure_id="A_6_1_" flag="common">
+        <Description text="1.  您首次得知患病时间："/>
+        <Input input_type="br"/>
+            <Input input_key="A_6_1_startyear" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_key="A_6_1_startmonth" length="3" input_type="number"/>
+            <Description text="月"/>
+            <Input input_type="br"/>
+            <Description text="首次诊断："/>
+            <Input input_key="A_6_1_text1" length="5" input_type="text"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_6_" no_yesno="true" disclosure_id="A_6_2_" flag="common">
+        <Description text="2.  发现方式："/>
+            <Radio input_type="radio" and_others="false" options="正常体检" radio_key="A_6_2_a"/>
+            <Radio input_type="radio" and_others="false" options="自觉有症状后检查发现" radio_key="A_6_2_b"/>
+            <Radio input_type="radio" and_others="false" options="本次体检发现" radio_key="A_6_2_c"/>
+            <Radio input_type="radio" and_others="false" options="因其他原因就诊时发现" radio_key="A_6_2_d"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_6_" no_yesno="donotCheckYes" disclosure_id="A_6_3_" flag="common">
+        <Description text="3.  最近是否出现下列症状? "/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="心慌" radio_key="A_6_3_001"/>
+            <Radio input_type="checkbox" and_others="false" options="怕热" radio_key="A_6_3_002"/>
+            <Radio input_type="checkbox" and_others="false" options="多汗" radio_key="A_6_3_003"/>
+            <Radio input_type="checkbox" and_others="false" options="乏力" radio_key="A_6_3_004"/>
+            <Radio input_type="checkbox" and_others="false" options="食欲亢进" radio_key="A_6_3_005"/>
+            <Radio input_type="checkbox" and_others="false" options="体重下降" radio_key="A_6_3_006"/>
+            <Radio input_type="checkbox" and_others="false" options="情绪易激动" radio_key="A_6_3_007"/>
+            <Radio input_type="checkbox" and_others="false" options="突眼" radio_key="A_6_3_008"/>
+            <Radio input_type="checkbox" and_others="false" options="怕冷" radio_key="A_6_3_009"/>
+            <Radio input_type="checkbox" and_others="false" options="少汗" radio_key="A_6_3_010"/>
+            <Radio input_type="checkbox" and_others="false" options="浮肿" radio_key="A_6_3_011"/>
+            <Radio input_type="checkbox" and_others="false" options="食欲下降" radio_key="A_6_3_012"/>
+            <Radio input_type="checkbox" and_others="false" options="体重增加" radio_key="A_6_3_013"/>
+            <Radio input_type="checkbox" and_others="false" options="情绪低落" radio_key="A_6_3_014"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_6_" no_yesno="donotCheckYes" disclosure_id="A_6_4_" flag="common">
+        <Description text="4.  您颈部是否有肿块？"/>
+        <Expendable>
+            <Description text="大小"/>
+            <Radio input_type="checkbox" and_others="false" options="黄豆大" radio_key="A_6_4_001"/>
+            <Radio input_type="checkbox" and_others="false" options="蚕豆大" radio_key="A_6_4_002"/>
+            <Radio input_type="checkbox" and_others="false" options="鸡蛋大" radio_key="A_6_4_003"/>
+            <Input input_type="br"/>
+            <Description text="数量"/>
+            <Radio input_type="checkbox" and_others="false" options="一个" radio_key="A_6_4_004"/>
+            <Radio input_type="checkbox" and_others="false" options="数个" radio_key="A_6_4_005"/>
+            <Input input_type="br"/>
+            <Description text="分布"/>
+            <Radio input_type="checkbox" and_others="false" options="单侧" radio_key="A_6_4_006"/>
+            <Radio input_type="checkbox" and_others="false" options="双侧" radio_key="A_6_4_007"/>
+            <Input input_type="br"/>
+            <Description text="触痛"/>
+            <Radio input_type="checkbox" and_others="false" options="有触痛" radio_key="A_6_4_008"/>
+            <Radio input_type="checkbox" and_others="false" options="无触痛" radio_key="A_6_4_009"/>
+            <Input input_type="br"/>
+            <Description text="活动度"/>
+            <Radio input_type="checkbox" and_others="false" options="可活动" radio_key="A_6_4_010"/>
+            <Radio input_type="checkbox" and_others="false" options="不可活动" radio_key="A_6_4_011"/>
+            <Input input_type="br"/>
+            <Description text="质地"/>
+            <Radio input_type="checkbox" and_others="false" options="较软" radio_key="A_6_4_012"/>
+            <Radio input_type="checkbox" and_others="false" options="中等" radio_key="A_6_4_013"/>
+            <Radio input_type="checkbox" and_others="false" options="较硬" radio_key="A_6_4_014"/>
+            <Radio input_type="checkbox" and_others="false" options="很硬" radio_key="A_6_4_015"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_6_" no_yesno="false" disclosure_id="A_6_5_" flag="common">
+        <Description text="5.  是否因甲状腺疾病住院诊治？"/>
+        <Expendable>
+            <Description text="医院名称"/>
+            <Input input_key="A_6_5_01" length="5" input_type="text"/>
+            <Description text="诊断"/>
+            <Input input_key="A_6_5_02" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_6_" no_yesno="donotCheckYes" disclosure_id="A_6_6_" flag="common">
+        <Description text="6.  是否因此病服药治疗？"/>
+        <Expendable>
+            <Description text="药物名称"/>
+            <Input input_key="A_6_6_01" length="5" input_type="text"/>
+            <Description text="用法及用量"/>
+            <Input input_key="A_6_6_02" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_6_" no_yesno="donotCheckYes" disclosure_id="A_6_7_" flag="common">
+        <Description text="7.  目前是否服药治疗？"/>
+        <Expendable>
+            <Description text="如否，请注明治疗中断原因及停药时间"/>
+            <Input input_key="A_6_7_01" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_6_" no_yesno="false" disclosure_id="A_6_8_" flag="common">
+        <Description text="8.  是否接受过同位素治疗？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_6_" no_yesno="false" disclosure_id="A_6_9_" flag="common">
+        <Description text="9.  是否进行手术治疗？"/>
+        <Expendable>
+            <Description text="手术名称"/>
+            <Input input_key="A_6_9_01" length="5" input_type="text"/>
+            <Description text="时间"/>
+            <Input input_key="A_6_9_02" length="3" input_type="number"/>
+            <Input input_type="br"/>
+            <Description text="病理诊断"/>
+            <Input input_key="A_6_9_03" length="10" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_6_" no_yesno="false" disclosure_id="A_6_10_" flag="common">
+        <Description text="10. 治疗后是否复发？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_6_" no_yesno="false" disclosure_id="A_6_11_" flag="common">
+        <Description text="11. 是否有甲状腺功能低下、心脏病、贫血、肝功能异常等并发症？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_6_" no_yesno="false" disclosure_id="A_6_12_" flag="common">
+        <Description text="12. 是否做过T3、T4、甲状腺B超、甲状腺核素扫描等检查？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_6_" no_yesno="true" disclosure_id="A_6_12_01" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_6_12_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_6_" no_yesno="false" disclosure_id="A_6_13_" flag="BlankRemarkTable">
+        <Description text="13. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_6_13_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

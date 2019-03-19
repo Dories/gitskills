@@ -1,0 +1,280 @@
+<ion-content class="has-header" ng-show="!ShowSignature"><!-- style="margin-top: 44px" -->	
+	<div class="hebaojia" ng-show="hebaoFlag">    	
+		<div class="space">
+			<div class="problemtext">
+				<p class="nth-child">问题件内容：</p>
+				<p>{{questionList.issuecont}}</p>
+			</div>
+			<h2 class="alignCenter">核保通知书({{questionList.ifprintflag}})</h2>
+			<div class="top-text">
+				<p>尊敬的<b>{{questionList.appntname}}</b>:</p>
+				<p class="index_2">
+					您好！非常感谢您对民生人寿保险股份有限公司的支持和信赖。
+				</p>
+				<p class="index_2">您的<b>{{questionList.prtno}}</b>号投保申请我们已经进行初步审核，您为被保险人<b>{{questionList.insuredname}}</b>投保的保险计划主要信息如下：</p>
+			</div>
+			<div class="mytable">
+				<table class="tableStyle mystyle">
+					<thead>
+						<tr>
+							<th>投保险种</th>
+							<th>保险金额（元）</th>
+							<th>交费年期</th>
+							<th>交费方式</th>
+							<th>已到账保险费（元）</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="insurInfo in questionList.mainrow">
+							<td>{{insurInfo.maincol1}}</td>
+							<td>{{insurInfo.maincol2}}</td>
+							<td>{{insurInfo.maincol3}}</td>
+							<td>{{insurInfo.maincol4}}</td>
+							<td>{{insurInfo.maincol5}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="baowen">
+					<p class="nth-child">
+						请您就投保申请的以下内容予以重新确认或补充相关资料：
+					</p>
+					<p ng-repeat="supply1 in questionList.questionrow">
+						{{supply1.questioncol1}}
+					</p>
+				</div>
+				<div class="baowen">
+					<p class="nth-child">对您的本次投保申请，需做如下特别约定：</p>
+					<p ng-repeat="supply2 in questionList.specinforow">
+						{{supply2.specinfocol1}}
+					</p>
+				</div>
+				<div class="baowen"> 
+					<p class="nth-child">对本次保险计划需做以下调整：</p>
+					<p ng-repeat="supply3 in questionList.changerow">
+						{{supply3.changecol1}}
+					</p>
+				</div>
+			</div>
+			<!-- <div ng-show="hasPlan"> -->
+				<div class="margin_top10">
+					<p class="nth-child">调整后的保险计划如下：</p>
+				</div>
+				<table class="tableStyle textalgin" style="margin-bottom: 10px" ng-repeat=
+				 "adjustInfo in questionList.changepolrow">
+						<tr class="ownstyle">
+							<td colspan="2">投保险种：{{adjustInfo.changepolcol1}}</td>
+						</tr>
+						<tr>
+							<td>
+								<i class="color-gray">保险金额(元)：</i>{{adjustInfo.changepolcol2}}
+							</td>
+							<td>
+								<i class="color-gray">交费年期：</i>{{adjustInfo.changepolcol3}}
+							</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">交费方式：</i>{{adjustInfo.changepolcol4}}</td><td><i class="color-gray">标准保费(元)：</i>{{adjustInfo.changepolcol5}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">职业加费(元)：</i>{{adjustInfo.changepolcol6}}</td><td><i class="color-gray">健康保费(元)：</i>{{adjustInfo.changepolcol7}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">其它加费(元)：</i>{{adjustInfo.changepolcol8}}</td><td><i class="color-gray">保险费合计(元)：</i>{{adjustInfo.changepolcol9}}</td>
+						</tr>
+				</table>
+				<table class="tableStyle mystyle">
+					<thead>
+						<tr>
+							<th>&nbsp;</th>
+							<th>保险金额</th>
+							<th>标准保费</th>
+							<th>职业加费</th>
+							<th>健康加费</th>
+							<th>其它加费</th>
+							<th>保险费合计</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>合计</td>
+							<td></td>
+							<td>{{questionList.sumprem}}</td>
+							<td>{{questionList.sumjobaddfee}}</td>
+							<td>{{questionList.sumhealthaddfee}}</td>
+							<td>{{questionList.sumliveaddfee}}</td>
+							<td>{{questionList.avgprem}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>本保险计划保险费合计为:<b>{{questionList.avgprem}}</b>元。</p>
+			<!-- </div> -->
+			<div class="notice-footer f14 margin_top10">
+				<p class="index_2 line-h">本通知书保险合同的组成部分，如您同意接受上述内容，请在确认函上亲笔签名确认。为了便于我们尽快完成核保，请您于<b>{{questionList.replyyear}}</b>年<b>{{questionList.replymon}}</b>月<b>{{questionList.replyday}}</b>日前给予回复，如逾期未接到您的回复，本通知书所对应的投保申请将做撤销处理，谢谢您的合作。</p>
+				<p class="index_2">如有疑问或其它不明事项，请与我公司联系。</p>
+				<p class="index_2">祝您生活愉快，身体健康！</p>
+			</div>
+			<div class="bottom-table">
+				<table>
+					<tr><td>业务员姓名：</td><td>{{questionList.agentname}}</td></tr>
+					<tr><td>营业机构：</td><td>{{questionList.managecom}}</td></tr>
+					<tr><td>打印流水号：</td><td>{{questionList.prtseq}}</td></tr>
+					<tr><td>业务员号：</td><td>{{questionList.agentcode}}</td></tr >
+				   <tr><td>核保员：</td><td>{{questionList.uwcode}}</td></tr>
+					<tr><td>客户服务专线：</td><td>95596</td></tr>
+				</table>
+			</div>
+			<div class="botter">
+				<p class="alignRight">民生人寿保险股份有限公司</p>
+				<p class="alignRight f-14">{{questionList.sysdate}}</p>
+			</div>
+			<h2 class="alignCenter f18">确认函</h2>
+			<p class="agree f13 index_2">
+			本人同意接受贵公司核保通知书所提议的内容，上述填报及提供的一切资料均为真实，如原投保单与本通知有不一致之保通知书所提议的内容，以本通知书为准，本并声明本人及投保申请中其他被保险人健康状况自投保申请之日起迄今无变化。
+			</p>
+			<div>
+				<p>问题件回复：</p>
+				<textarea placeholder="输入内容" id="replyJia" class="reply"></textarea>
+			</div>
+		</div>			
+	</div> 	
+	<div class="hebaoyi" ng-show="!hebaoFlag">
+		<div class="space">
+			<div class="problemtext">
+				<p class="nth-child">问题件内容：</p>
+				<p>{{questionList.issuecont}}</p>
+			</div>
+			<h2 style="text-align: center;">核保通知书({{questionList.ifprintflag}})</h2>
+			<div class="top-text">
+				<p>尊敬的<b>{{questionList.appntname}}</b>:</p>
+				<p class="index_2">您好！非常感谢您对民生人寿保险股份有限公司的支持和信赖。</p>
+				<p class="index_2">您的<b>{{questionList.prtno}}</b>号投保申请我们已经进行初步审核，您为被保险人<b>{{questionList.insuredname}}</b>投保的保险计划主要信息如下：</p>
+			</div>
+			<div class="mytable tableStyle margin-both">
+				<table class="mystyle" style="width: 100%">
+					<thead>
+						<tr><th>投保险种</th><th>保险金额（元）</th><th>交费年期</th><th>交费方式</th><th>已到账保险费（元）</th></tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="insurInfo in questionList.mainrow">
+							<td>{{insurInfo.maincol1}}</td><td>{{insurInfo.maincol2}}</td><td>{{insurInfo.maincol3}}</td><td>{{insurInfo.maincol4}}</td>
+							<td>{{insurInfo.maincol5}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="notice-footer f14 margin_top10">
+				<p class="index_2 line-h">本通知书保险合同的组成部分，如您同意接受上述内容，请在确认函上亲笔签名确认。为了便于我们尽快完成核保，请您于<b>{{questionList.replyyear}}</b>年<b>{{questionList.replymon}}</b>月<b>{{questionList.replyday}}</b>日前给予回复，如逾期未接到您的回复，本通知书所对应的投保申请将做撤销处理，谢谢您的合作。</p>
+				<p class="index_2">如有疑问或其它不明事项，请与我公司联系。</p>
+				<p class="index_2">祝您生活愉快，身体健康！</p>
+			</div>
+			<div class="bottom-table">
+				<table>
+					<tr><td>业务员姓名：</td><td>{{questionList.agentname}}</td></tr>
+					<tr><td>营业机构：</td><td>{{questionList.managecom}}</td></tr>
+					<tr><td>打印流水号：</td><td>{{questionList.prtseq}}</td></tr>
+					<tr><td>业务员号：</td><td>{{questionList.agentcode}}</td></tr >
+				   <tr><td>核保员：</td><td>{{questionList.uwcode}}</td></tr>
+					<tr><td>客户服务专线：</td><td>95596</td></tr>
+				</table>
+			</div>
+			<div class="botter">
+				<p class="alignRight">民生人寿保险股份有限公司</p>
+				<p class="alignRight f-14">{{questionList.sysdate}}</p>
+			</div>
+			<h2 class="alignCenter f18">确认函</h2>
+			<p class="agree f13 index_2">
+			本人同意接受贵公司核保通知书所提议的内容，上述填报及提供的一切资料均为真实，如原投保单与本通知有不一致之保通知书所提议的内容，以本通知书为准，本并声明本人及投保申请中其他被保险人健康状况自投保申请之日起迄今无变化。
+			</p>	
+			<div class="buttonyi">
+				<button ng-click="goQuestionWrite()">问卷填写</button>
+				<button ng-click="goAction($event,'patient_data')">病例资料拍摄
+				</button>
+				<button ng-click="goAction($event,'otherpatient_data')">其它资料拍摄</button>
+			</div>
+			<div>
+				<div style="border:1px solid #ccc;">
+					<h4 style="padding:10px;">病例资料</h4>
+					<ul class="camaras" id="Patient"></ul>
+				</div>
+				<div style="border:1px solid #ccc;margin-top:10px;">
+					<h4 style="padding:10px;">其他资料</h4>
+					<ul class="camaras" id="OtherPatient"></ul>
+				</div>
+			</div> 
+			<div class="questionReply">
+				<p>问题件回复：</p>
+				<textarea placeholder="输入内容" id="replyYi" class="reply"></textarea>
+			</div>
+		</div>
+	</div>
+</ion-content> 
+<ion-content class="padding has-header middle-list" style="margin-top:42px;" id="content_signature" ng-show="ShowSignature">
+	<table class="tableStyle verification">
+		<tr>
+			<td width="20%">
+				<i>投保人手机号码:</i>
+			</td>
+			<td width="40%">
+				<input type="text" id="mobile"  readonly="readonly" />
+			</td>
+			<td>
+				<input type="button" value="获取验证码" ng-click="sendMobile()"
+					id="getSms_input"></input>
+			</td>
+		</tr>
+		<tr>
+			<td width="15%">
+				<i>请输入验证码:</i>
+			</td>
+			<td width="40%">
+				<input type="text" id="smsCode" value=""/>
+			</td>
+			<td>
+				<input type="button" value="倒计时三分钟" id="hourRecord_input"></input>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="4">
+				<div>
+					<i class="color-gray leftMargin20">温馨提示：</i>
+				</div>
+				<div>
+					<i class="color-gray leftMargin20">1：点击"获取验证码"系统将通过短信向您发送验证码。</i>
+				</div>
+				<div>
+					<i class="color-gray leftMargin20">2：如果您在三分钟内没有收到验证码短信，请点击重新发送。</i>
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<div class="alignCenter">
+		<h3>投保人与被保人签名处</h3>
+	</div>
+
+	<div style="overflow:scroll;padding:10px; border:1px solid #ccc;background:#FDFBF9;">
+		<div style="float:left;">
+			<p>投保人签名：</p>
+			<input type="button" id="tow_sign_button" class="push-button"
+				value="点击签名" style="margin:0 3px;display: block;"
+				ng-click="signMarkFn(2,4,24)" />									
+			<img src="" id="two_people_photo" style="display: none;width:100px;height:100px;" ng-click="signMarkFn(2,4,24)"/>
+			<img src="" id="two_sign_photo" style="display: none;width:100px;height:100px;" ng-click="signMarkFn(2,4,24)"/>			
+		</div>
+		<div style="float:right;">
+			<p>被保人签名：</p>
+			<input type="button" class="push-button" id="regin_button" value="点击签名"
+			 style="margin:3px;display: block;" ng-click="signMarkFn(3,4,25)" />		
+			<img src="" id="two_recgin_photo" style="display: none;width:100px;height:100px;" ng-click="signMarkFn(3,4,25)"/>
+			<img src="" id="two_resign_photo" style="display: none;width:100px;height:100px;" ng-click="signMarkFn(3,4,25)"/>
+		</div>
+	</div>
+
+	<div id="two_sign_photo_bak" style="display: block;height: 50px;">&nbsp;</div>
+	<div style="height:250px;"></div>
+</ion-content>
+<div class="bar bar-footer footer-btn-bar" ng-show="ShowSignature">
+	<div class="footer-btns f-13">
+		<button class="button button-light-red footer-btn pull-left" ng-click="submit_signature()">提交</button>
+	</div>
+</div>

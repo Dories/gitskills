@@ -1,0 +1,18 @@
+<ion-content class="has-header middle-list" style="margin-top:10px;"><!-- 没注掉搜索框时top=44 -->
+	<div ng-show="!insuranceList.length" class="searchEmpty">暂无保单</div>
+    <ion-list class="sign_list">
+		<ion-item ng-repeat="item in insuranceList"  ng-click="clickQuestion($index,item.prtNo,item.code,item.prtSeq,item.manageCom,item.appntTel,item.insuredName)" ng-class="{'checked':$index == selectedRow}">
+	    	<div class="items_box">
+	    		<!-- <p>{{ $index }}</p> -->
+		    	<p>投保单号：{{item.prtNo}}</p>
+		    	<p>投保人：{{item.appntName}}</p>
+		    	<p>被保人：{{item.insuredName}}</p>
+		    	<p>主险名称：{{item.mainriskName}}</p>
+		    	<p>投保申请日期：{{item.polapplyDate | date:"yyyy-MM-dd HH:mm:ss" }}</p>
+		    	<p>提交时间：{{item.makeDate | date:"yyyy-MM-dd HH:mm:ss"}}</p>
+				<p>通知书名称：{{item.codeName }}</p>
+		    </div>
+		    <!-- <hr/> -->
+		</ion-item>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript">
+	function show() {
+		try {
+			//for(var i=0;i<100000000;i++){
+			
+			//}
+			var jsonobjs = eval("(" + window.agentinfo.loadJson() + ")");
+			/*
+			var jsonobjs=eval({"agentImpartList":[{"customerType":"2","impartCode":"A0151","impartContent":"哈哈","impartFlag":"1","impartVersion":"A03"},{"customerType":"2","impartCode":"A0152","impartContent":"","impartFlag":"1","impartVersion":"A03"},{"customerType":"2","impartCode":"A0153","impartContent":"不可能吧","impartFlag":"1","impartVersion":"A03"},{"customerType":"2","impartCode":"A0154","impartContent":"","impartFlag":"0","impartVersion":"A03"},{"customerType":"2","impartCode":"A0155","impartContent":"业务员推销 ","impartFlag":"2","impartVersion":"A03"},{"customerType":"2","impartCode":"A0156","impartContent":"家庭经济保障","impartFlag":"2","impartVersion":"A03"},{"customerType":"2","impartCode":"A0157","impartContent":"10","impartFlag":"2","impartVersion":"A03"},{"customerType":"2","impartCode":"A0158","impartContent":"18310011111","impartFlag":"2","impartVersion":"A03"}]});
+			alert(jsonobjs);
+			*/
+			$('#test').val('222');
+		} catch (e) {
+			$('#test').val('exception');
+		}
+		try {
+			var agentImpartList = jsonobjs.agentImpartList;
+			for ( var i = 0; i < agentImpartList.length; i++) {
+				var importVo = agentImpartList[i];
+				
+		if (importVo.impartCode == 'A0151') {
+
+						if (importVo.impartFlag == '1') {
+							document.getElementById("agent_05").checked = true;
+
+							if (importVo.impartContent == '本人') {
+								document.getElementById("agent_00").checked = true;
+							} else if (importVo.impartContent == '父母') {
+								document.getElementById("agent_01").checked = true;
+							} else if (importVo.impartContent == '配偶') {
+								document.getElementById("agent_02").checked = true;
+							} else if (importVo.impartContent == '子女') {
+								document.getElementById("agent_03").checked = true;
+							} else {
+								document.getElementById("agent_04").checked = true;
+								document.getElementById("agent_044").value = importVo.impartContent;
+							}
+						}
+
+						else {
+							document.getElementById("agent_06").checked = true;
+						}
+					} else if (importVo.impartCode == 'A0152') {
+						if (importVo.impartFlag == '1') {
+							document.getElementById("agent_07").checked = true;
+						} else if (importVo.impartFlag == '0') {
+							document.getElementById("agent_08").checked = true;
+						}
+					} else if (importVo.impartCode == 'A0153') {
+						if (importVo.impartFlag == '1') {
+							document.getElementById("agent_09").checked = true;
+							// document.getElementById("agent_11").innerHTML=importVo.impartContent;
+							document.getElementById("agent_11").value = importVo.impartContent;
+						} else if (importVo.impartFlag == '0') {
+							document.getElementById("agent_10").checked = true;
+							//document.getElementById("agent_11").value="2222";
+
+						}
+
+					} else if (importVo.impartCode == 'A0154') {
+						if (importVo.impartFlag == '1') {
+							document.getElementById("agent_12").checked = true;
+							document.getElementById("agent_14").value = importVo.impartContent;
+						} else if (importVo.impartFlag == '0') {
+							document.getElementById("agent_13").checked = true;
+						}
+
+					} else if (importVo.impartCode == 'A0155') {
+						if (importVo.impartContent == '业务员推销 ') {
+							document.getElementById("agent_15").checked = true;
+						} else if (importVo.impartContent == '投保人主动提出投保计划') {
+							document.getElementById("agent_16").checked = true;
+						} else if (importVo.impartContent == '同事朋友推荐') {
+							document.getElementById("agent_17").checked = true;
+						} else {
+							document.getElementById("agent_18").checked = true;
+							document.getElementById("agent_188").value = importVo.impartContent;
+						}
+
+					} else if (importVo.impartCode == 'A0156') {
+						if (importVo.impartContent == '家庭经济保障') {
+							document.getElementById("agent_19").checked = true;
+						} else if (importVo.impartContent == '储蓄、投资') {
+							document.getElementById("agent_20").checked = true;
+						} else if (importVo.impartContent == '贷款偿还') {
+							document.getElementById("agent_21").checked = true;
+						} else {
+							document.getElementById("agent_22").checked = true;
+							document.getElementById("agent_222").value = importVo.impartContent;
+						}
+
+					}
+
+					else if (importVo.impartCode == 'A0157') {
+						document.getElementById("agent_23").value = importVo.impartContent;
+					} else if (importVo.impartCode == 'A0158') {
+						document.getElementById("agent_24").value = importVo.impartContent;
+					}
+				}
+			} catch (e) {
+
+			}
+		}
+	</script>
+<style>
+img {
+	display: none;
+}
+</style>
+</head>
+<body onload="show()">
+	<div class="toubao">
+		<div class="toubao-content">
+			<h1>业务员报告书</h1>
+			<h2>1.被保险人有关资料</h2>
+			<table class="toubao-info">
+				<tr>
+					<td>（1）您是被保险人本人或被保险人的亲属吗？若是，请勾选 <input type="checkbox"
+						id="agent_00" disabled /> 本人 <input type="checkbox" id="agent_01"
+						disabled /> 父母 <input type="checkbox" id="agent_02" disabled />
+						配偶 <input type="checkbox" id="agent_03" disabled /> 子女 <input
+						type="checkbox" id="agent_04" disabled /> 其他 <input type="text"
+						id="agent_044" disabled />
+					</td>
+					<td><input type="checkbox" id="agent_05" disabled /> 是 <input
+						type="checkbox" id="agent_06" disabled /> 否</td>
+				</tr>
+				<tr>
+					<td>（2）您见过被保险本人吗？</td>
+					<td><input type="checkbox" id="agent_07" disabled /> 是 <input
+						type="checkbox" id="agent_08" disabled /> 否</td>
+				</tr>
+				<tr>
+					<td>（3）从您所了解到情况看，被保险人是否有身体缺陷、智力障碍或其他疾病？若是，请说明 <input
+						type="text" id="agent_11" disabled /></td>
+					<td><input type="checkbox" id="agent_09" disabled /> 是 <input
+						type="checkbox" id="agent_10" disabled /> 否</td>
+				</tr>
+				<tr>
+					<td>（4）据您所知，被保险人是否有危险运动爱好或从事危险运动？若是，请说明 <input type="text"
+						id="agent_14" disabled /></td>
+					<td><input type="checkbox" id="agent_12" disabled /> 是 <input
+						type="checkbox" id="agent_13" disabled /> 否</td>
+				</tr>
+			</table>
+			<h2>2.投保人有关资料</h2>
+			<table class="toubao-info">
+				<tr>
+					<td>（1）投保经过：<input type="checkbox" id="agent_15" disabled />业务员推销
+						<input type="checkbox" id="agent_16" disabled />投保人主动提出投保计划 <input
+						type="checkbox" id="agent_17" disabled />同事朋友推荐 <input
+						type="checkbox" id="agent_18" disabled />其他，请说明 <input
+						type="text" id="agent_188" disabled /></td>
+				</tr>
+				<tr>
+					<td>（2）投保目的：<input type="checkbox" id="agent_19" disabled />家庭经济保障
+						<input type="checkbox" id="agent_20" disabled />储蓄、投资 <input
+						type="checkbox" id="agent_21" disabled />贷款偿还 <input
+						type="checkbox" id="agent_22" disabled />其他，请说明 <input
+						type="text" id="agent_222" disabled /></td>
+				</tr>
+				<tr>
+					<td>（3）您估计投保人的家庭总资产约 <input type="number" id="agent_23" disabled />万元
+					</td>
+				</tr>
+				<tr>
+					<td>（4）业务员电话 <input type="tel" id="agent_24" disabled /></td>
+				</tr>
+			</table>
+
+			<br />
+
+			<table class="toubao-info">
+				<tr>
+					<td width=110px valign=top><b>业务员声明：</b></td>
+					<td>
+						对投保人所投保险种的条款内容特别是保险责任、责任免除、免赔额、比例赔付或者给付、投保单各栏及询问事项确经本人据实向投保人进行了明确说明，投保单、人身保险投保单提示均由投保人、被保险人/法定监护人亲笔签名。如有不实陈述，本人愿承担法律责任。
+					</td>
+				</tr>
+			</table>
+			<br />
+
+			
+				业务员签名： 
+					 alt=""
+					id="56" onclick="photoClick(56,'')" /> <input id="123"
+					class="signature" type="button" onclick="AgentSignture(23)"
+					value="点击签名" />  alt="" id="23"
+					onclick="photoClick(23,'')" />
+				<div>
+					投保申请日期： <span class="today"></span>
+				</div>
+			</div>
+			<span id="content"></span>
+		</div>
+	</div>
+	
+	
+</body>
+</html>

@@ -1,0 +1,37 @@
+<ion-view class="unsubmit-data">
+	<header class="bar bar-header" >
+       <button class="button button-icon" ng-click="closeData();">关闭</button>
+       <div class="h1 title">保单概要</div>
+       <button class="button button-icon delete_icon" style="left:91%;" ng-click="deleteData();"></button>
+       <!--button class="button button-icon edit_icon" ng-click="editData();"></button-->
+    </header>
+    <ion-content class="has-header bottom-scroll-content">
+		<div class="area">
+			<span class="area-title">客户信息</span>
+			<ul>
+                <li><span>投保人姓名：</span><span>{{applicant.applicantName}}</span></li>
+				<li><span>性别：</span><span>{{applicant.applicantSex}}</span></li>
+                <li><span>出生日期：</span><span>{{applicant.applicantBirthday}}</span></li>
+				<li><span>职业：</span><span>{{applicant.applicantOccupationCode}}</span></li>
+			</ul>
+			<ul>
+                <li><span>被保人姓名：</span><span>{{applicant.recognizeeName}}</span></li>
+				<li><span>性别：</span><span>{{applicant.recognizeeSex}}</span></li>
+                <li><span>出生日期：</span>{{applicant.recognizeeBirthday}}<span></span></li>
+				<li><span>职业：</span><span>{{applicant.recognizeeOccupationCode}}</span></li>
+			</ul>
+		</div>
+		<div class="area">
+			<span class="area-title">险种设计</span>
+			<div class="row" ng-repeat="p in productsData">
+			  <div class="col" ng-click="showInsuranceInfo($index);"><p>{{proType(p, $index)}}：</p><p>[{{p[0]}}]{{p[1]}}</p><i></i></div>
+			</div>
+		</div>
+	</ion-content>
+	<div class="bar bar-footer footer-btn-bar">
+	  <!--button class="button button-clear" style="position:absolute;left: 35%;" ng-click="editData();">提交保单</button-->
+	  <label class="mar_auto" ng-show="!history">
+  			<input type="button" class="button button-clear" style="position:absolute;left: 33%;" ng-click="editData()" value="提交保单" />
+	  </label>
+	</div>
+</ion-view>

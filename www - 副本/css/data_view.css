@@ -1,0 +1,232 @@
+/***********************loading add by genglan 2015-1-24 ***************/
+.bar .button.closebtn {
+	border: none;
+	background: none;
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+}
+p.date{
+	height: 44px;
+	line-height: 44px;
+	text-align: left;
+	padding-left: 20px;
+	font-size: 15px;
+	background: #fafafa;
+	margin-bottom: 0;
+}
+.data_list ion-item.item{
+	margin-top: -1px;
+	text-align: left;
+}
+.data_list ion-item.item a.items_box {
+	padding-top: 22px;
+}
+.data_list ion-item.item a.items_box .detials p:nth-child(2) {
+	margin-top: 8px;
+	color: #000;
+	font-size: 15px;
+}
+.button.delete_icon {
+	display: inline-block;
+	background: url(../img/delete.png) no-repeat;
+	background-size: 14px 18px;
+	left: 80%;
+	margin-top: 8px;
+}
+.button.button-icon.edit_icon {
+    background: url(../img/editor.png) no-repeat;
+    background-size: 17px 18px;
+    left: 95%;
+    margin-top: 8px;
+}
+.area{
+	margin: 10px 10px 10px 10px;
+	background: #fff;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	overflow: hidden;
+	font-size: 14px;
+}
+.area .col p {
+	height: 100%;
+	/*line-height: 2;*/
+}
+.area .area-title{
+	display: block;
+	color: #D13F14;
+	font-weight: 500;
+	padding: 10px 15px;
+	font-size: 16px;
+	background: #f7f7f7;
+	height: 40px;
+}
+.row .col{
+	height: 40px;
+	line-height: 40px;
+}
+.area .row .col p:nth-child(2){
+	width: 500px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.row .col p{
+	float: left;
+}
+.area .row .col p:nth-child(1),.area ul li span:nth-child(1){
+	color: #acacac;
+}
+.area ul li span:nth-child(1){
+	display: inline-block;
+	width: 90px;
+}
+.row:nth-child(2n+1){
+	background: #fBfBfB;
+}
+.area ul{
+	width: 50%;
+	float: left;
+}
+.area ul li{
+	padding-left: 15px;
+	font-size: 14px;
+	height: 40px;
+	line-height: 40px;
+}
+.data_view_i{
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin: 10px 15px 0 0;
+	float: right;
+	background: url(../img/arrow.png) no-repeat;
+	background-size: 10px 16px;
+}
+.unsubmit-data i{
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin: 10px 15px 0 0;
+	float: right;
+	background: url(../img/arrow.png) no-repeat;
+	background-size: 10px 16px;
+}
+.unsubmit-data .button-clear.button-clear {
+	width: 120px;
+	color:#d13f14;
+	font-size: 14px;
+	border: 1px solid #d13f14;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+.insurance-modal{
+	overflow: hidden;
+	width: 60%;
+	height: 400px;
+	background: #fff;
+}
+.other-modal div{
+	margin: 20px auto;
+	width: 80%;
+	overflow: hidden;
+	border: 1px solid #ccc;
+	height: 35px;
+	line-height: 35px;
+	border-radius: 5px;
+}
+.other-modal div:last-child{
+	border:none;
+	color: #acacac;
+	font-size: 13px;
+	text-align: center;
+}
+.other-modal div:last-child i{
+	display: inline-block;
+	background: url(../img/unchecked.png) no-repeat;
+	background-position: 0px;
+	padding-left: 30px;
+	background-size: 20px 20px;
+}
+.other-modal div:last-child i.activted{
+	background: url(../img/checked.png) no-repeat;
+	background-position: 0px;
+	background-size: 20px 20px;
+}
+.other-modal div select{
+	background: none;
+	height: 34px;
+	border: none;
+	width: 104%;
+	padding-left: 6px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.other-modal div input{
+	padding-left: 6px;
+}
+.insurance-modal .bar .title + .buttons{
+	left: 5px;
+}
+.button.button-positive.button-clear{
+	color:#fff;
+}
+.insurance-modal .row,.insurance-modal .scroll-content{
+	background: #fff;
+}
+.insurance-modal .row .col p:nth-child(1){
+	color:#d13f14;
+	width: 88px;
+}
+.modal .bar.bar-footer .button.button-clear{
+	background: #d13f14;
+	color:#fff;
+	border-radius: 5px;
+	width: 150px;
+	margin:0 auto;
+}
+.submit-data .area .row .col p:nth-child(2){
+	width: 200px;
+}
+.question_title{
+	color: #D13F14;
+	font-weight: 500;
+	padding: 10px 15px;
+	font-size: 16px;
+	background: #f7f7f7;
+	height: 40px;
+}
+@media only screen and (max-width: 640px){
+	.area ul{
+		width: 100%;
+	}
+	.area .row .col p:nth-child(2){
+        width: 160px;
+    }
+    .unsubmit-data i{
+    	margin: 6px 0 0 0;
+    }
+    .data_view_i {
+    	margin: 6px 0 0 0;
+    }
+    .button.delete_icon{
+        left: 60%;
+    }
+    .button.button-icon.edit_icon{
+        left:90%;
+    }
+    .insurance-modal{
+    	width: 100%;
+    	height: 100%;
+    }
+    .insurance-modal .row .col p:nth-child(2){
+		width: 200px;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+    }
+    .submit-data .area .row .col p:nth-child(2) {
+		width: 155px;
+	}
+}

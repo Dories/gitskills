@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷35 航空部分
+	 -->
+     <DisclosureItem disclosure_ver="C_7_" disclosure_id="problempieces_35" flag="questionName" text="航空问卷">
+     </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_7_" no_yesno="true" disclosure_id="C_7_1_" flag="common">
+        <Description text="1. 请列明您飞行的性质："/>
+        <Radio input_type="radio" options="教导性质" radio_key="C_7_1_a" />
+        <Radio input_type="radio" options="专业的" radio_key="C_7_1_b" />
+        <Radio input_type="radio" options="民航客机" radio_key="C_7_1_c" />
+        <Radio input_type="radio" options="非民航客机" radio_key="C_7_1_d" />
+        <Radio input_type="radio" options="海、陆、空军部队" radio_key="C_7_1_e" />
+        <Radio input_type="radio" options="私人性质" radio_key="C_7_1_f" />
+        <Radio input_type="radio" options="货运" radio_key="C_7_1_g" />
+        <Radio input_type="radio" options="其他" radio_key="C_7_1_h" />
+        <Input input_type="text" input_key="C_7_1_01" length="10"  />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_7_" no_yesno="true" disclosure_id="C_7_2_" flag="common">
+        <Description text="2. 请详述您在飞行时的主要工作(例如：机长、副机长、见习机长、空中服务员)。"/>
+        <Input input_type="br" />
+        <Description text="主要工作："/>
+        <Input input_type="text"  input_key="C_7_2_mainjob" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_7_" no_yesno="true" disclosure_id="C_7_3_" flag="common">
+        <Description text="3. 请详述最近十二个月内有无从事飞行活动，最近一次飞行的时间及日期。"/>
+        <Input input_type="textarea" input_key="C_7_3_content" lines="4" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_7_" disclosure_id="C_7_4_" no_yesno="true" flag="common">
+        <Description text="4. 您驾驶哪一种飞行工具？"/>
+        <Radio input_type="radio" options="单引擎" radio_key="C_7_4_a" />
+        <Radio input_type="radio" options="多引擎" radio_key="C_7_4_b" />
+        <Radio input_type="radio" options="喷射机" radio_key="C_7_4_c" />
+        <Radio input_type="radio" options="直升机" radio_key="C_7_4_d" />
+        <Radio input_type="radio" options="螺旋桨推进器" radio_key="C_7_4_e" />
+        <Radio input_type="radio" options="其他" radio_key="C_7_4_f" />
+        <Input input_type="text" input_key="C_7_4_01" length="10"  />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_7_" disclosure_id="C_7_5_" no_yesno="false" flag="BlankRemarkTable">
+        <Description text="5. 请问您曾否因违反飞行守则而发生意外，被下令停飞，罚款或谴责？"/> 
+        <Expendable>
+            <BlankRemarkTable  input_key="C_7_5_01" lines="4" />
+        </Expendable>      
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_7_" no_yesno="true" disclosure_id="C_7_6_" flag="common">
+        <Description text=" 6. 您经常在何地飞行？"/>
+        <Input input_type="text" input_key="C_7_6_content" length="10"  />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_7_" no_yesno="true" disclosure_id="C_7_7_" flag="common">
+        <Description text="7. 平均每年飞行次数、每次飞行时间及总飞行时间。"/>
+        <Input input_type="br" />
+        <Description text="每年飞行次数:"/>        
+        <Input input_type="text" input_key="C_7_7_yeartimes" length="3"  />
+        <Description text="次数 每次飞行时间:"/>
+        <Input input_type="text" input_key="C_7_7_timeofonetime" length="3"  />
+        <Description text="小时 总飞行时间:"/>
+        <Input input_type="text" input_key="C_7_7_wholetime" length="3"  />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_7_" no_yesno="false" disclosure_id="C_7_8_" flag="BlankRemarkTable">
+        <Description text="8. 是否参加表演活动或尝试危险性的表演？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="C_7_8_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_7_" no_yesno="haveNone" disclosure_id="C_7_9_" flag="BlankRemarkTable">
+        <Description text="9. 除上述内容外，您认为还有哪些信息有助于我们处理您的投保申请？"/>
+        <Expendable>          
+            <BlankRemarkTable input_key="C_7_9_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

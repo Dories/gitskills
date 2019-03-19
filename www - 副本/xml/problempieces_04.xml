@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--问题卷4 高血压问卷-->
+    <DisclosureItem disclosure_ver="A_4_" disclosure_id="problempieces_04" flag="questionName" text="高血压问卷"/>
+
+    <DisclosureItem disclosure_ver="A_4_" no_yesno="true" disclosure_id="A_4_1_" flag="common">
+        <Description text="1.  首次发现血压升高的时间："/>
+        <Input input_type="br"/>
+            <Input input_key="A_4_1_year" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_key="A_4_1_month" length="3" input_type="number"/>
+            <Description text="月"/>
+            <Input input_type="br"/>
+            <Description text="当时的血压值是："/>
+        <Input input_type="br"/>
+            <Input input_key="A_4_1_now1" length="3" input_type="number"/>
+            <Description text="/"/>
+            <Input input_key="A_4_1_now2" length="3" input_type="number"/>
+            <Description text="mmHg"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_4_" no_yesno="true" disclosure_id="A_4_2_" flag="common">
+        <Description text="2.  您最近两年内测到的血压最高值是："/>
+        <Input input_type="br"/>
+            <Input input_key="A_4_2_near1" length="3" input_type="number"/>
+        <Description text="/"/>
+            <Input input_key="A_4_2_near2" length="3" input_type="number"/>
+        <Description text="mmHg"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_4_" no_yesno="true" disclosure_id="A_4_3_" flag="common">
+        <Description text="3. 您最后一次测量血压是："/>
+        <Input input_type="br"/>
+            <Input input_key="A_4_3_year" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_key="A_4_3_month" length="3" input_type="number"/>
+            <Description text="月"/>
+            <Input input_key="A_4_3_day" length="3" input_type="number"/>
+            <Description text="日"/>
+            <Input input_type="br"/>
+            <Description text="血压值是："/>
+            <Input input_key="A_4_3_blood1" length="3" input_type="number"/>
+            <Description text="/"/>
+            <Input input_key="A_4_3_blood2" length="3" input_type="number"/>
+            <Description text="mmHg"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_4_" no_yesno="true" disclosure_id="A_4_4_" flag="common">
+        <Description text="4.  高血压是如何发现的：" />
+        <Radio input_type="checkbox" and_others="false" options="正常体检" radio_key="A_4_4_a" />
+        <Radio input_type="checkbox" and_others="false" options="自觉有头晕等症状后检查发现" radio_key="A_4_4_b" />
+        <Radio input_type="checkbox" and_others="false" options="本次体检发现" radio_key="A_4_4_c" />
+        <Radio input_type="checkbox" and_others="false" options="因其他原因就诊时发现" radio_key="A_4_4_d" />
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_4_" no_yesno="true" disclosure_id="A_4_5_" flag="common">
+        <Description text="5.  采取的治疗措施是：" />
+        <Radio input_type="checkbox" and_others="false" options="住院治疗" radio_key="A_4_5_a" />
+        <Radio input_type="checkbox" and_others="false" options="服药治疗" radio_key="A_4_5_b" />
+        <Radio input_type="checkbox" and_others="false" options="中医药、饮食治疗" radio_key="A_4_5_c" />
+        <Radio input_type="checkbox" and_others="false" options="未治疗" radio_key="A_4_5_d" />
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_4_" no_yesno="donotCheckYes" disclosure_id="A_4_6_" flag="common">
+        <Description text="6.  您是否监测血压值？" />
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="一天一次" radio_key="A_4_6_01" />
+            <Radio input_type="checkbox" and_others="false" options="一周一次" radio_key="A_4_6_02" />
+            <Radio input_type="checkbox" and_others="false" options="一月一次" radio_key="A_4_6_03" />
+            <Radio input_type="checkbox" and_others="false" options="经常不定期" radio_key="A_4_6_04" />
+            <Radio input_type="checkbox" and_others="false" options="偶尔不定期" radio_key="A_4_6_05" />
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_4_" no_yesno="donotCheckYes" disclosure_id="A_4_7_" flag="common">
+        <Description text="7.  是否接受药物治疗？" />
+        <Expendable>
+            <Description text="常用药物名称" />
+            <Input input_key="A_4_7_01" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_4_" no_yesno="donotCheckYes" disclosure_id="A_4_8_" flag="common">
+        <Description text="8.  目前是否仍在接受降压治疗？" />
+        <Expendable>
+        	<Description text="如否，请注明治疗中断原因" />
+            <Input input_key="A_4_8_01" length="5" input_type="text" placeholder="如否，请注明治疗中断原因："/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_4_" no_yesno="false" disclosure_id="A_4_9_" flag="common">
+        <Description text="9.  是否患冠心病、脑血管疾病、糖尿病、肾病、眼底出血等疾病？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_4_" no_yesno="false" disclosure_id="A_4_10_" flag="common">
+        <Description text="10.  是否做过眼底、心电图、胸片、血糖、尿常规、心脏超声、头颅CT等检查？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_4_" no_yesno="donotCheckYes" disclosure_id="A_4_11_" flag="common">
+        <Description text="11.   高血压是否继发于以下疾病？"/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="肾脏疾病" radio_key="A_4_11_02" />
+            <Radio input_type="checkbox" and_others="false" options="肾上腺疾病" radio_key="A_4_11_03" />
+            <Radio input_type="checkbox" and_others="false" options="妊娠" radio_key="A_4_11_04" />
+            <Radio input_type="checkbox" and_others="false" options="其他" radio_key="A_4_11_05" />
+            <Input input_key="A_4_11_01" length="5" input_type="text" is_checked="false"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_4_" no_yesno="donotCheckYes" disclosure_id="A_4_12_" flag="common">
+        <Description text="12. 是否吸烟？"/>
+        <Expendable>
+            <Description text="吸烟量："/>
+            <Input input_key="A_4_12_01" length="3" input_type="number"/>
+            <Description text="支/日"/>
+            <Input input_key="A_4_12_02" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_type="br"/>
+            <Description text="已戒烟:"/>
+            <Input input_key="A_4_12_03" length="3" is_checked="false" input_type="number" />
+            <Description text="年"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_4_" no_yesno="donotCheckYes" disclosure_id="A_4_13_" flag="common">
+        <Description text="13.  是否饮酒？"/>
+        <Expendable>
+            <Description text="饮酒量："/>
+            <Input input_key="A_4_13_01" length="3" input_type="number"/>
+            <Description text="两/日"/>
+            <Input input_key="A_4_13_02" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_type="br"/>
+            <Description text="已戒酒:"/>
+            <Input input_key="A_4_13_03" length="3" is_checked="false" input_type="number"/>
+            <Description text="年"/>
+            <Radio input_type="checkbox" and_others="false" options="偶尔应酬性饮酒" radio_key="A_4_13_04" />
+            <Radio input_type="checkbox" and_others="false" options="经常应酬性饮酒" radio_key="A_4_13_05" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_4_" no_yesno="true" disclosure_id="A_4_13_06" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果）"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_4_13_06" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_4_" no_yesno="false" disclosure_id="A_4_14_" flag="BlankRemarkTable">
+        <Description text="14. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_4_14_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

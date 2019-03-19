@@ -1,0 +1,17 @@
+<div class="modal insurance-modal">
+	<ion-header-bar>
+		<h1 class="title">投保险种详情</h1>
+		<div class="buttons">
+			<button class="button button-clear button-positive" ng-click="closeModal()">关闭</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<div>
+			<div class="row" ng-repeat="title in productInfoitem"  >
+				<div class="col">
+					<p>{{title.NAME}}</p><p>{{title.ITEM}}</p>
+				</div>
+			</div> 
+		</div>
+	</ion-content>
+</div>

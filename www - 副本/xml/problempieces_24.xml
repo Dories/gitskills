@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷24 婴幼儿健康状况问卷部分
+	 -->
+     <DisclosureItem disclosure_ver="A_24_" disclosure_id="problempieces_24" flag="questionName" text="婴幼儿健康状况问卷（1周岁之内适用）">
+     </DisclosureItem>
+
+      <DisclosureItem disclosure_ver="A_24_" no_yesno="true" disclosure_id="A_24_1_" flag="common">
+        <Description text="1. 母亲病史及孕、产、分娩史" />岁
+        <Input input_type="br"/>
+        <Description text="（1）分娩被保险人时的年龄：" /> 
+        <Input input_type="text" input_key="A_24_1_1_year" length="3"  /> 
+        <Description text="岁" /> 
+        <Input input_type="br"/>
+        <Description text="（2）分娩方式：" /> 
+        <Radio input_type="radio" options="自然分娩" radio_key="A_24_1_2_no" />
+        <Radio input_type="radio" options="非自然分娩：" radio_key="A_24_1_2_yes" />
+        <!-- 需要隐藏以下radio -->
+            <Radio input_type="checkbox" options="剖腹产" radio_key="A_24_1_2_01" />
+            <Radio input_type="checkbox" options="胎头吸引" radio_key="A_24_1_2_02" />
+            <Radio input_type="checkbox" options="产钳助产" radio_key="A_24_1_2_03" />
+        <Input input_type="br"/>
+        <!-- 注意（2）和(3) 有联动关系，（3）js要单独处理 -->
+        <Description text="（3）非自然分娩者，请告知原因:" />
+            <Radio input_type="checkbox" options="宫内窒息" radio_key="A_24_1_3_a" />
+            <Radio input_type="checkbox" options="头盆不称" radio_key="A_24_1_3_b" />
+            <Radio input_type="checkbox" options="胎位不正" radio_key="A_24_1_3_c" />
+            <Radio input_type="checkbox" options="双胞胎或多胞胎" radio_key="A_24_1_3_d" />
+            <Radio input_type="checkbox" options="孕母患病" radio_key="A_24_1_3_e" />
+            <Radio input_type="checkbox" options="自己要求" radio_key="A_24_1_3_f" />         
+    </DisclosureItem>
+    <DisclosureItem no_yesno="custom" custom_yesno="A_24_1_4_" disclosure_ver="A_24_" flag="common">
+        <Description text="（4）被保险人是否为双胞胎或多胞胎？" />
+    </DisclosureItem>
+    <DisclosureItem no_yesno="custom" custom_yesno="A_24_1_5_" disclosure_ver="A_24_" flag="common">
+        <Description text="（5）母亲是否有：心脏病、高血压、脑血管疾病、慢性阻塞性肺疾病、类风湿性关节炎、肾炎、肝炎、结核、肿瘤、吸烟、吸毒？" />
+    </DisclosureItem>
+    <DisclosureItem no_yesno="custom" custom_yesno="A_24_1_6_" disclosure_ver="A_24_" flag="common">
+        <Description text="（6）本次及既往怀孕时是否曾患病、服药或住院治疗？" />
+    </DisclosureItem>
+    <DisclosureItem no_yesno="custom" custom_yesno="A_24_1_7_" disclosure_ver="A_24_" flag="common">
+        <Description text="（7）怀孕时是否有妊娠合并症？如：妊高症、前置胎盘、糖尿病等。" />
+    </DisclosureItem>
+    <DisclosureItem no_yesno="custom" custom_yesno="A_24_1_8_" disclosure_ver="A_24_" flag="common">
+        <Description text="（8）既往是否有流产或死产情况？" />
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_24_" no_yesno="true"  flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请说明："/>
+            <Expendable>
+                <BlankRemarkTable input_key="A_24_1_check_result" lines="4"/>
+            </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_24_" no_yesno="true" disclosure_id="A_24_2_" flag="common">
+        <Description text="2. 被保险人生长发育" />
+        <Input input_type="br"/>
+        <Description text="（1）出生时身长" />
+        <Input input_type="number" input_key="A_24_2_1_long" length="3" />
+        <Description text="厘米，体重" />
+        <Input input_type="number" input_key="A_24_2_1_weight" length="3" />
+        <Description text="公斤，出生孕周" />
+        <Input input_type="number" input_key="A_24_2_1_week" length="3" />
+        <Description text="周，出生医院：" />
+        <Input input_type="text" input_key="A_24_2_1_01" length="10" />
+    </DisclosureItem>
+    <DisclosureItem no_yesno="custom" custom_yesno="A_24_2_2_" disclosure_ver="A_24_" flag="common">
+        <Description text="（2）出生时是否有抢救史？是否有新生儿病史？" />
+    </DisclosureItem>
+    <DisclosureItem no_yesno="custom" custom_yesno="A_24_2_3_" disclosure_ver="A_24_" flag="common">
+        <Description text="（3）出生后是否出现新生儿窒息、抽搐、颅内出血、头颅血肿、锁骨骨折、新生儿呼吸窘迫综合症、病理性黄疸、惊厥、发育畸形、癫痫等情况？" />
+    </DisclosureItem>
+    <DisclosureItem no_yesno="custom" custom_yesno="A_24_2_4_" disclosure_ver="A_24_" flag="common">
+        <Description text="（4）是否被诊断有家族性、先天性或遗传性疾病？" />
+    </DisclosureItem>
+    <DisclosureItem no_yesno="custom" custom_yesno="A_24_2_5_" disclosure_ver="A_24_" flag="common">
+        <Description text="（5）出生后是否曾因病住院治疗？" />
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_24_" no_yesno="true"  flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请说明："/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_24_2_check_result" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+
+    <DisclosureItem no_yesno="custom" custom_yesno="A_24_2_6_" disclosure_ver="A_24_" flag="common">
+        <Description text="（6）是否按照要求接受预防接种？是否定期进行婴幼儿健康体检？" />
+    </DisclosureItem>
+    <DisclosureItem no_yesno="custom" custom_yesno="A_24_2_7_" disclosure_ver="A_24_" flag="common">
+        <Description text="（7）在常规健康体检中，医生是否发现被保险人生长发育方面的异常情况？" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_24_" no_yesno="false" disclosure_id="A_24_3_" flag="common">
+        <Description text="3. 被保险人是否有兄弟姐妹？" />
+        <Expendable>
+            <Description text="如是，（含被保险人）共" />
+            <Input input_key="A_24_3_01" length="3" input_type="number" />
+           <Description text="人" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_24_" no_yesno="false" disclosure_id="A_24_4_"  flag="BlankRemarkTable">
+        <Description text="4. 被保险人的兄弟姐妹中是否有人患先天性或遗传性疾病？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_24_4_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_24_" no_yesno="false" disclosure_id="A_24_5_" flag="BlankRemarkTable">
+        <Description text="5. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_24_5_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+</Disclosure>
+    

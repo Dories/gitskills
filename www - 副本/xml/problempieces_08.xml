@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >	
+	<!--问题卷8 泌尿系统结石问卷部分-->
+ <DisclosureItem disclosure_ver="A_8_" disclosure_id="problempieces_08" flag="questionName" text="泌尿系统结石问卷部分"/>
+
+    <DisclosureItem disclosure_ver="A_8_" no_yesno="true" disclosure_id="A_8_1_" flag="common">
+        <Description text="1.  发现患有泌尿系统结石的时间："/>
+            <Input input_type="br"/>
+            <Input input_key="A_8_1_year" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_key="A_8_1_month" length="3" input_type="number"/>
+            <Description text="月"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_8_" no_yesno="true" disclosure_id="A_8_2_" flag="common">
+        <Description text="2.  结石的部位是："/>
+            <Radio input_type="checkbox" and_others="false" options="左肾" radio_key="A_8_2_a"/>
+            <Radio input_type="checkbox" and_others="false" options="右肾" radio_key="A_8_2_b"/>
+            <Radio input_type="checkbox" and_others="false" options="左输尿管" radio_key="A_8_2_c"/>
+            <Radio input_type="checkbox" and_others="false" options="右输尿管" radio_key="A_8_2_d"/>
+            <Radio input_type="checkbox" and_others="false" options="膀胱" radio_key="A_8_2_e"/>
+            <Radio input_type="checkbox" and_others="false" options="尿道" radio_key="A_8_2_f"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_8_" no_yesno="true" disclosure_id="A_8_3_" flag="common">
+        <Description text="3.  结石的数量："/>
+            <Input input_key="A_8_3_01" length="3" input_type="number"/>
+            <Description text="个，最大的约"/>
+            <Input input_key="A_8_3_02" length="3" input_type="number"/>
+            <Description text="厘米"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_8_" no_yesno="donotCheckYes" disclosure_id="A_8_4_" flag="common">
+        <Description text="4.  是否有腰腹疼痛、会阴部放射痛、尿频、尿急、尿痛、尿血、排尿不畅等？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_8_" no_yesno="false" disclosure_id="A_8_5_" flag="common">
+        <Description text="5.  是否因此病去医院就诊或住院？"/>
+        <Expendable>
+            <Description text="医院名称"/>
+            <Input input_key="A_8_5_01" length="5" input_type="text"/>
+            <Description text="诊断"/>
+            <Input input_key="A_8_5_02" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_8_" no_yesno="donotCheckYes" disclosure_id="A_8_6_" flag="common">
+        <Description text="6.  是否进行治疗？"/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="药物治疗" radio_key="A_8_6_09"/>
+            <Input input_type="br"/>
+            <Description text="药物名称"/>
+            <Input input_key="A_8_6_01" length="5" input_type="text"/>
+            <Radio input_type="checkbox" and_others="false" options="体外碎石" radio_key="A_8_6_010"/>
+            <Input input_type="br"/>
+            <Description text="医院"/>
+            <Input input_key="A_8_6_02" length="5" input_type="text"/>
+            <Description text="时间"/>
+            <Input input_key="A_8_6_03" length="5" input_type="number"/>
+            <Radio input_type="checkbox" and_others="false" options="窥镜取石" radio_key="A_8_6_011"/>
+            <Input input_type="br"/>
+            <Description text="医院"/>
+            <Input input_key="A_8_6_04" length="5" input_type="text"/>
+            <Description text="时间"/>
+            <Input input_key="A_8_6_05" length="5" input_type="number"/>
+            <Radio input_type="checkbox" and_others="false" options="手术切开取石" radio_key="A_8_6_012"/>
+            <Input input_type="br"/>
+            <Description text="医院"/>
+            <Input input_key="A_8_6_06" length="5" input_type="text"/>
+            <Description text="时间"/>
+            <Input input_key="A_8_6_07" length="5" input_type="number"/>
+            <Radio input_type="checkbox" and_others="false" options="其他治疗" radio_key="A_8_6_013"/>
+            <Input input_key="A_8_6_08" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_8_" no_yesno="false" disclosure_id="A_8_7_" flag="common">
+        <Description text="7.  是否做过腹部超声、腹部平片、肾功能、肾盂造影、肾图等检查？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_8_" no_yesno="donotCheckYes" disclosure_id="A_8_8_" flag="common">
+        <Description text="8.  是否被建议和准备接受手术治疗？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_8_" no_yesno="donotCheckYes" disclosure_id="A_8_9_" flag="common">
+        <Description text="9.  目前结石是否已经取出或排出？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_8_" no_yesno="donotCheckYes" disclosure_id="A_8_10_" flag="common">
+        <Description text="10.  是否有肾盂积水、输尿管扩张？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_8_" no_yesno="true" disclosure_id="A_8_check_result" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_8_check_result" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_8_" no_yesno="false" disclosure_id="A_8_11_" flag="BlankRemarkTable">
+        <Description text="11. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_8_11_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷27 出国人员问卷
+	 -->
+     <DisclosureItem disclosure_ver="C_9_" disclosure_id="problempieces_27" flag="questionName" text="出国人员问卷">
+     </DisclosureItem>
+
+     <DisclosureItem disclosure_ver="C_9_" no_yesno="true" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="1. 被保险人拟何时前往哪些国家？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="C_9_1_content" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="C_9_" no_yesno="true" disclosure_id="C_9_2_" flag="common">
+        <Description text="2. 被保险人出国的主要原因：" />
+        <Radio input_type="checkbox" options="求学" radio_key="C_9_2_a" />
+        <Radio input_type="checkbox" options="探亲" radio_key="C_9_2_b" />
+        <Radio input_type="checkbox" options="国外劳务" radio_key="C_9_2_c" />
+        <Radio input_type="checkbox" options="商业活动" radio_key="C_9_2_d" />
+        <Radio input_type="checkbox" options="访问交流" radio_key="C_9_2_e" />
+        <Radio input_type="checkbox" options="参加国际会议" radio_key="C_9_2_f" />
+        <Radio input_type="checkbox" options="定居" radio_key="C_9_2_g" />
+        <Radio input_type="checkbox" options="旅游度假" radio_key="C_9_2_h" />
+        <Radio input_type="checkbox" options="工作派遣" radio_key="C_9_2_i" />
+        <Radio input_type="checkbox" options="其他" radio_key="C_9_2_j" />
+        <Input input_type="text" input_key="C_9_2_01" length="10"  />
+    </DisclosureItem>
+
+     <DisclosureItem disclosure_ver="C_9_" no_yesno="true" disclosure_id="C_9_3_" flag="common">
+        <Description text="3. 被保险人如果因工作派遣或国外劳务出国，请说明从事何种职业及具体工作内容："/>
+        <Input input_type="br" />
+        <Description text="从事职业:" />
+        <Input input_type="text" input_key="C_9_3_job_title" length="10" is_checked="false" />
+        <Description text="工作内容:" />
+        <Input input_type="textarea" input_key="C_9_3_content" length="10" is_checked="false" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_9_" disclosure_id="C_9_4_" no_yesno="true" flag="common"> 
+        <Description text="4. 被保险人在上述国家计划停留的时间："/>
+            <Radio input_type="radio" options="少于10天" radio_key="C_9_4_a" />
+            <Radio input_type="radio" options="10-30天" radio_key="C_9_4_b" />
+            <Radio input_type="radio" options="1-3个月" radio_key="C_9_4_c" />
+            <Radio input_type="radio" options="3-6个月" radio_key="C_9_4_d" />
+            <Radio input_type="radio" options="6个月-1年" radio_key="C_9_4_e" />
+            <Radio input_type="radio" options="1年以上 " radio_key="C_9_4_f" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_9_" no_yesno="false" disclosure_id="C_9_5_" flag="BlankRemarkTable">
+        <Description text="5. 被保险人的配偶、子女是否一同前往？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="C_9_5_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_9_" no_yesno="false" disclosure_id="C_9_6_" flag="BlankRemarkTable">
+        <Description text="6. 被保险人出国后，是否能从投保地交纳保费？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="C_9_6_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_9_" no_yesno="haveNone" disclosure_id="C_9_7_" flag="BlankRemarkTable">
+        <Description text="7. 除上述内容外，您认为还有哪些信息有助于我们处理您的投保申请？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="C_9_7_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

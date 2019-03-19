@@ -1,0 +1,102 @@
+/***********************loading add by genglan 2015-1-24 ***************/
+.popup-head,.popup-buttons {
+  display: none;
+}
+.popup-container .popup {
+  width: 275px;
+  height: 180px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 4px;
+  text-align: center;
+}
+.popup-body {
+  height: 100%;
+  width: 100%;
+}
+.pop_up_box {
+  width: 100%;
+  line-height: 70px;
+  color: #f9f9f7;
+  font-size: 13px;
+}
+.pop_up_box span {
+  display: block;
+  width: 47px;
+  height: 47px;
+  margin: 0 auto;
+  margin-top: 42px;
+}
+/*renxiaomin 后需求添加*/
+.pop_up_box1 {
+  width: 100%;
+  line-height: 22px;
+  color: #f9f9f7;
+  font-size: 15px;
+  text-align: left;
+  margin-top: 10px;
+}
+.pop_up_box1 span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+/*******成功提示框 add by genglan *******/
+span.charging {
+  background: url(../img/chengong.png) no-repeat;
+  background-size: 100% 100%;
+}
+/*******失败提示框 add by genglan *******/
+span.loser {
+  background: url(../img/tixing.png) no-repeat;
+  background-size: 100% 100%;
+}
+/*******加载提示框 add by genglan *******/
+span.loading {
+  width: 60px;
+  height: 60px;
+  background: url(../img/loading.png) no-repeat;
+  background-size: 100% 100%;
+  -webkit-animation-name: loading;
+  -webkit-animation-duration: 1.4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes loading {
+  from { -webkit-transform: rotate(0deg) translateZ(0); }
+  to { -webkit-transform: rotate(360deg) translateZ(0); }
+}
+/* 确认框按钮 */
+.myokbutton{
+	background: #d14014;
+	border-radius: 5px !important;
+	border-color: #d14014;
+	color: #fff;
+}
+
+.pop_up_box2 {
+  min-width: 120px;
+  border-radius: 4px;
+  text-align: center;
+  color: #f9f9f7;
+  font-size: 13px;
+}
+.pop_up_box2 span {
+  display: block;
+  width: 47px;
+  height: 47px;
+  margin: 0 auto;
+}
+span.loading_box {
+  width: 60px;
+  height: 60px;
+  background: url(../img/loading.png) no-repeat;
+  background-size: 100% 100%;
+  margin-bottom: 20px;
+  -webkit-animation-name: loading;
+  -webkit-animation-duration: 1.4s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}

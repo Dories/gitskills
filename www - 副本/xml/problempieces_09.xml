@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >	
+	<!--问题卷9 尿检异常问卷部分-->
+ <DisclosureItem disclosure_ver="A_9_" disclosure_id="problempieces_09" flag="questionName" text="尿检异常问卷部分"/>
+
+    <DisclosureItem disclosure_ver="A_9_" no_yesno="true" disclosure_id="A_9_1_" flag="common">
+        <Description text="1.  首次发现尿检异常的时间："/>
+            <Input input_key="A_9_1_year" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_key="A_9_1_month" length="3" input_type="number"/>
+            <Description text="月"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_9_" no_yesno="true" disclosure_id="A_9_2_" flag="common">
+        <Description text="2.  尿检异常是如何发现的："/>
+            <Radio input_type="radio" and_others="false" options="正常体检" radio_key="A_9_2_a"/>
+            <Radio input_type="radio" and_others="false" options="自觉有症状后检查发现" radio_key="A_9_2_b"/>
+            <Radio input_type="radio" and_others="false" options="本次体检发现" radio_key="A_9_2_c"/>
+            <Radio input_type="radio" and_others="false" options="因其他原因就诊时发现" radio_key="A_9_2_d"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_9_" no_yesno="false" disclosure_id="A_9_3_" flag="common">
+        <Description text="3.  是否伴有浮肿、尿中泡沬增多、血压升高、血糖升高等？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_9_" no_yesno="false" disclosure_id="A_9_4_" flag="common">
+        <Description text="4.  是否伴有尿频、尿急、尿痛、发热、腰部酸胀等不适？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_9_" no_yesno="false" disclosure_id="A_9_5_" flag="common">
+        <Description text="5.  是否伴有腹部、腰部疼痛？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_9_" no_yesno="false" disclosure_id="A_9_6_" flag="common">
+        <Description text="6.  是否伴有潮热、盗汗、乏力、消瘦等？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_9_" no_yesno="false" disclosure_id="A_9_7_" flag="common">
+        <Description text="7.  是否伴有皮肤出血点、瘀点、瘀斑，鼻出血、牙龈出血等？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_9_" no_yesno="false" disclosure_id="A_9_8_" flag="common">
+        <Description text="8.  是否有明显的诱发因素（如剧烈运动后或服用某种药物或食物后等）？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_9_" no_yesno="false" disclosure_id="A_9_9_" flag="common">
+        <Description text="9.  是否有外伤史？（特别是腹、腰、背部）"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_9_" no_yesno="false" disclosure_id="A_9_10_" flag="common">
+        <Description text="10.  是否因尿异常去医院诊断治疗？"/>
+        <Expendable>
+            <Description text="医院"/>
+            <Input input_key="A_9_10_01" length="5" input_type="text"/>
+            <Description text="诊断"/>
+            <Input input_key="A_9_10_02" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_9_" no_yesno="false" disclosure_id="A_9_11_" flag="common">
+        <Description text="11. 是否曾有肾绞痛、腰痛、尿路结石病史？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_9_" no_yesno="false" disclosure_id="A_9_12_" flag="common">
+        <Description text="12. 如女性客户，是否有月经不调或其他妇产科疾病？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_9_" no_yesno="false" disclosure_id="A_9_13_" flag="common">
+        <Description text="13. 是否做过B超、腹部平片、肾动静脉造影、膀胱镜或腹部CT、肾脏穿刺的检查？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_9_" no_yesno="true" disclosure_id="A_9_check_result" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料(门诊病历、住院记录及化验检查结果)"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_9_check_result" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_9_" no_yesno="false" disclosure_id="A_9_14_" flag="BlankRemarkTable">
+        <Description text="14. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_9_14_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

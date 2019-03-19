@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >	
+	<!--问题卷16 特别健康问卷-->
+ <DisclosureItem disclosure_ver="A_16_" disclosure_id="problempieces_16" flag="questionName" text="特别健康问卷"/>
+
+    <DisclosureItem disclosure_ver="A_16_" no_yesno="true" disclosure_id="A_16_1_" flag="common">
+        <Description text="1.  首次出现病症的日期？"/>
+        <Input input_type="br"/>
+        <Input input_key="A_16_1_year" length="3" input_type="number"/>
+        <Description text="年"/>
+        <Input input_key="A_16_1_month" length="3" input_type="number"/>
+        <Description text="月"/>
+        <Input input_key="A_16_1_date" length="3" input_type="number"/>
+        <Description text="日"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="true" disclosure_id="A_16_2_" flag="BlankRemarkTable">
+        <Description text="2.  主要症状："/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_16_2_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="true" disclosure_id="A_16_3_" flag="BlankRemarkTable">
+        <Description text="3.  诊断结果："/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_16_3_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_16_" no_yesno="true" disclosure_id="A_16_4_" flag="common">
+        <Description text="4.  病症的详细资料:"/>
+        <Input input_type="br"/>
+        <Description text="a 每次发病持续时间？"/>
+        <Input input_key="A_16_4_01" length="10" input_type="text"/>
+        <Input input_type="br"/>
+        <Description text="b 发病频率"/>
+        <Input input_key="A_16_4_02" length="10" input_type="text"/>
+        <Input input_type="br"/>
+        <Description text="c 发病具体情况"/>
+        <Input input_key="A_16_4_03" length="10" input_type="text"/>
+        <Input input_type="br"/>
+        <Description text="d 最近一次发病日期"/>
+        <Input input_key="A_16_4_04" length="10" input_type="text"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_16_" no_yesno="true" disclosure_id="A_16_5_" flag="common">
+        <Description text="5.  请注明:"/>
+        <Input input_type="br"/>
+        <Description text="a 诊治日期及医院"/>
+        <Input input_key="A_16_5_01" length="10" input_type="text"/>
+        <Input input_type="br"/>
+        <Description text="b 检查及结果（请附上所有健康检查报告的复印件）"/>
+        <Input input_key="A_16_5_02" length="10" input_type="text"/>
+        <Input input_type="br"/>
+        <Description text="c 治疗情况（包括药物服用量）"/>
+        <Input input_key="A_16_5_03" length="10" input_type="text"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_16_" no_yesno="false" disclosure_id="A_16_6_" flag="BlankRemarkTable">
+        <Description text="6.  您现在是否仍然接受治疗？"/>
+        <Expendable>
+        	<Description text="如是，最近一次治疗是何时？"/>
+            <BlankRemarkTable input_key="A_16_6_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_16_" no_yesno="false" disclosure_id="A_16_7_" flag="common">
+        <Description text="7.  您是否计划或被建议接受手术或其他治疗？"/>         
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_16_" no_yesno="false" disclosure_id="A_16_8_" flag="BlankRemarkTable">
+        <Description text="8.  是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_16_8_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

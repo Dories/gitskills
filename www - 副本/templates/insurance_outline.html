@@ -1,0 +1,58 @@
+<ion-view class="submit-data">
+	<header class="bar bar-header" >
+       <div class="h1 title">保单概要</div>
+       <button class="button button-icon icon" ng-click="closeData();">关闭</button>
+    </header>
+	<ion-content class="has-header">
+	  	<div class="area">
+			<span class="area-title">保单概要</span>
+			<div class="row">
+			  <div class="col col-50"><p>投保人姓名：</p></div>
+			  <div class="col">{{baseInfo.applicantName}}</div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>被保人姓名：</p></div>
+			  <div class="col">{{baseInfo.insurantName}}</div>
+			</div>
+			<div class="row" ng-show="{{pcType}}">
+			  <div class="col col-50"><p>主险名称：</p></div>
+			  <div class="col">{{baseInfo.mainProductName}}</div>
+			</div>
+			<div class="row" ng-show="{{!pcType}}">
+			  <div class="col"><p>主险名称：</p></div> 
+			</div> 
+			<div class="row" ng-show="{{!pcType}}">
+			  <div class="col">{{baseInfo.mainProductName}}</div> 
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>主险保额：</p></div>
+			  <div class="col">{{baseInfo.mainProductAmount | appendDescri:"元"}}</div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>总保费：</p></div>
+			  <div class="col">{{baseInfo.sumPrem | appendDescri:"元"}}</div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>投保申请日期：</p></div>
+			  <div class="col">{{baseInfo.applyDate | date:"yyyy-MM-dd"}}</div>
+			</div>
+			<div class="row">
+			  <div class="col col-33"><p>提交时间：</p></div>
+			  <div class="col">{{baseInfo.submitTime | date:"yyyy-MM-dd HH:mm:ss"}}</div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>承保状态：</p></div>
+			  <div class="col">{{baseInfo.state | insuranceState}}</div>
+			</div>
+		</div>
+		
+	</ion-content>
+	<!-- 保单预览页面根据保单状态控制可操作按钮 -->
+	<div class="{{pcType == true ? 'operationBar' : 'operationBarOfPhone'}}">
+		<button ng-click="showCharge();" id="chargeId" ng-show="showChargeFlag">进行交费</button>
+		<button ng-click="showRevokeFun();" ng-show="showRevokeFlag">撤单</button>
+		<button ng-click="queryChargeState();" ng-show="showQueryChargeStateFlag">查询收费状态</button>
+		<button ng-click="updateInsuranceStatus();">更新状态</button>		
+		<button ng-click="insurancePreview()" ng-show="true">预览</button>
+	</div>
+</ion-view>

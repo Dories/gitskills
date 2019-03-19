@@ -1,0 +1,320 @@
+/***********************loading add by genglan 2015-1-24 ***************/
+*{
+	padding: 0;
+	margin: 0;
+}
+ion-nav-view{
+	background:#fff;
+}
+a{
+	text-decoration: none;
+}
+header.bar.bar-header.bar-stable{
+	background: #2A2F37;
+}
+.bottom-scroll-content{
+	bottom: 54px;
+}
+.go-home-page {
+	background: url(../img/home.png) no-repeat;
+	background-size: 14px 14px;
+	padding-left: 20px;
+}
+.menu .scroll-content{
+	background: #323A46;
+}
+.item-icon-top{
+	padding-top: 35px;
+	text-align: center;
+}
+.item-icon-top .icon{
+	top: -14px;
+}
+.menu-left .list .item{
+	border: none;
+	font-size: 12px;
+}
+/*问题卷左侧字体样式*/
+.question_list{
+	margin: 10px 10px 5px 10px;
+}
+.question_list .question_leftFont{
+	font-size: 13px;
+	color: white;
+}
+/*保单概要*/
+.mar_auto{
+    margin:0 auto;
+    width:100%;
+}
+.one_button{
+    display: block;
+    width: 200px;
+    background: none;
+    border: 1px solid #d14014;
+    color: #d14014;
+    border-radius: 5px;
+}
+.left_list .item{
+	border-color: #323A46;
+	background: none;
+	font-size: 12px;
+	height:70px;
+	text-align: center;
+}
+.left_list .item span{
+	font-size: 12px;
+	padding-top: 35px;
+	display: block;
+}
+/*未提交保单*/
+/*.item-icon-top.unsubmit{
+	background: url(../img/unsubmit.png) no-repeat;
+	background-size: 28px 25px;
+	background-position: 36px 9px;
+	color: #A9A9A9;
+}
+.item-icon-top.unsubmit-actived{
+	background: url(../img/unsubmit-actived.png) no-repeat;
+	background-size: 28px 25px;
+	background-position: 36px 9px;	
+	color: #fff;
+}*/
+/*已提交保单*/
+/*.item-icon-top.submit{
+	background: url(../img/submit.png) no-repeat;
+	background-size: 28px 25px;
+	background-position: 36px 9px;
+	color: #A9A9A9;
+}
+.item-icon-top.submit-actived{
+	background: url(../img/submit-actived.png) no-repeat;
+	background-size: 28px 25px;
+	background-position: 36px 9px;
+	color: #fff;	
+}*/
+/*未提交保单*/
+.left_list .item .unsubmit{
+	background: url(../img/unsubmit.png) no-repeat;
+	background-size: 28px 25px;
+	background-position: 36px 9px;
+	color: #A9A9A9;
+}
+.left_list .item .unsubmit-actived{
+	background: url(../img/unsubmit-actived.png) no-repeat;
+	background-size: 28px 25px;
+	background-position: 36px 9px;	
+	color: #fff;
+}
+/*已提交保单*/
+.left_list .item .submit{
+	background: url(../img/submit.png) no-repeat;
+	background-size: 28px 25px;
+	background-position: 36px 9px;
+	color: #A9A9A9;
+}
+.left_list .item .submit-actived{
+	background: url(../img/submit-actived.png) no-repeat;
+	background-size: 28px 25px;
+	background-position: 36px 9px;
+	color: #fff;	
+}
+/*回执*/
+.left_list .item .receipt{
+	background: url(../img/receipt2.png) no-repeat;
+	background-size: 28px 25px;
+	background-position: 36px 9px;
+	color: #A9A9A9;
+}
+.left_list .item .receipt-actived{
+	background: url(../img/receipt1.png) no-repeat;
+	background-size: 28px 25px;
+	background-position: 36px 9px;
+	color: #fff;	
+}
+/*问题件*/
+.left_list .item .question{
+	background: url(../img/question2.png) no-repeat;
+	background-size: 28px 25px;
+	background-position: 36px 9px;
+	color: #A9A9A9;
+}
+.left_list .item .question-actived{
+	background: url(../img/question1.png) no-repeat;
+	background-size: 28px 25px;
+	background-position: 36px 9px;
+	color: #fff;	
+}
+.right-content{
+	width:100%;
+	height:100%;
+}
+.bar.bar-header {
+	background:#d14014;
+}
+.bar .title {
+	color: #fff;
+}
+.button-icon.icon:before {
+	color: #fff;
+}
+.bar .title a {
+	color: #fff;
+	font-size: 13px;
+}
+.right-data{
+	position: absolute;
+	left: 31.25%;
+	width:68.75%;
+	height:100%;
+}
+.middle-menu {
+	position: absolute;
+	z-index:999;
+	left: 0;
+	width: 31.25%;
+	height: 100%;
+	border-right: 1px #ccc solid;
+}
+.data-view.img-none{
+	width: 100%;
+	height: 100%;
+	background: #f7f7f7;
+	text-align: center;
+}
+.data-view.img-none img{
+	width: 247px;
+	height: 52px;
+	margin: 42% auto;
+	margin-bottom: 58px;
+}
+.img-none p {
+	color: #979797;
+	text-align: center;
+	margin: 30px auto;
+	font-size: 16px;
+}
+.search{
+	height: 44px;
+	padding: 7px 8px;
+	background: #e8e8ed;   
+	width: 100%;
+	margin: 64px auto 0 auto;
+	position: relative;
+}
+.ion-ios7-close-empty:before{
+	content:"";
+}
+.search input{
+	width: 100%;
+	border-radius: 5px;
+	height: 30px;
+	font-size: 14px;
+	/*background: url(../img/search.png) no-repeat;
+	background-position: 42% 64%;
+	background-size: 16px;*/
+	background-color: #fff;	
+	color: #4F4F4F;
+	margin: 0 auto;
+	padding-left: 2%;
+}
+.search i{
+	position: absolute;
+	top: 25%;
+	right: 5%;
+	font-size: 23px;
+	color: #848484;
+}
+.search span{
+	position: absolute;
+	top: 25%;
+	left: 6%;
+	color:#8e8e93;
+	font-size: 14px;
+}
+.search input[type="text"]:focus{
+	padding-left: 2%;
+}
+.del_searchico{
+	/*position: absolute;
+	top: 30%;
+	right: 10%;*/
+	background: url(../img/del.png) no-repeat;
+	background-position: 42% 100%;
+	background-size: 13px;
+	width: 15px;
+	height: 15px;
+}
+.search input[type="search"]:focus + .ion-ios7-close-empty{
+	position: absolute;
+	top: 30%;
+	right: 10%;
+	background: url(../img/del.png) no-repeat;
+	background-size: 10px;
+	width: 10px;
+	height: 10px;
+}
+
+/*手机*/
+@media only screen and (max-width: 640px){
+	.middle-menu {
+		width: 100%;
+		border-right: none;
+    }
+	.right-data{
+    	display: none;
+    }
+}
+
+.search-new{
+	height: 44px;
+	padding: 7px 8px;
+	background: #e8e8ed;
+	width: 100%;
+	margin: 64px auto 0 auto;
+	position: relative;
+	display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+	display: -moz-box; /* Firefox 17- */
+	display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+	display: -moz-flex; /* Firefox 18+ */
+	display: -ms-flexbox; /* IE 10 */
+	display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+}
+.search-new div{
+	width: 43%;
+}
+.search-new input{
+	width: 100%;
+	border-radius: 5px;
+	height: 30px;
+	font-size: 14px;
+	background-color: #fff;
+	color: #4F4F4F;
+	padding-left: 8px;
+}
+.search-new i{
+	position: absolute;
+	top: 25%;
+	right: 12px;
+	font-size: 23px;
+	color: #848484;
+}
+.search-new input[type="text"]:focus{
+	padding-left: 8px;
+}
+.search-new input[readonly]{
+	background-color: #fff;
+}
+/**
+ * 日历图标
+ */
+.my-calendar{
+	display: inline-block;
+	width: 22px;
+	height: 20px;
+	background: url(../img/calendar.png) no-repeat center center;
+	background-size: 22px 20px;
+	position: absolute !important;
+	top:4px;
+	right: 8px;
+}

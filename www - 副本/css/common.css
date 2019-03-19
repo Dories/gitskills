@@ -1,0 +1,96 @@
+/* 基本信息表格样式 */
+/*字体大小*/
+.f-11{
+	font-size: 11px;
+}
+.f-12{
+	font-size: 12px;
+}
+.f-13{
+	font-size: 13px;
+}
+.f-14{
+	font-size: 14px;
+}
+.f-16{
+	font-size: 16px;
+}
+.f-28{
+	font-size: 28px;
+}
+/* 表格相关样式 */
+.tableStyle {
+	width: 100%;
+	margin-bottom: 20px;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+.tableStyle td {
+	padding: 3px;
+	border: 1px solid #BBB;
+	color: #543E26;
+	background: #FDFBF9;
+}
+.tableStyle th {
+	padding: 3px;
+	border: 1px solid #BBB;
+	color: #888;
+	background: #FDFBF9;
+}
+.tableStyle caption{
+   text-align: left;
+	padding: 5px;
+	font-weight: bold;
+	color: #785C10;
+	border: 1px solid #BBB;
+	background: #F7EFC1;
+}
+.alignCenter{
+	text-align: center;
+}
+.alignRight{
+	text-align: right;
+}
+.width4em{
+	width: 4em;
+}
+.width2em{
+	width: 2em;
+}
+.width6em{
+	width: 6em;
+}
+.underline{
+	text-decoration: underline;
+}
+.leftMargin20{
+	margin-left:20px;
+}
+.leftMargin50{
+	margin-left:50px;
+}
+.leftMargin100{
+	margin-left:100px;
+}
+/****浮动****/
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.c-ipt{
+	-webkit-appearance: none;
+	display: inline-block !important;
+	width: 80px;
+	text-align: center;
+	border: 1px solid #e8e8e8 !important;
+	border-radius: 5px;
+	padding-left: 10px;
+	height: 32px;
+	line-height: 32px;
+}
+.chk-size{
+	width: 20px !important;
+	height: 20px !important;
+}

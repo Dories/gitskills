@@ -1,0 +1,36 @@
+<div class="right-content">
+	<div class="middle-menu">
+		<header class="bar bar-header" >
+			<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	       	<h1 class="title">未提交保单</h1>
+	       	<button class="button button-clear button-positive add-button" ng-click="addInsurance();">
+		  		<span class="new_icon"></span>
+		  	</button>
+	    </header>
+	    <form ng-submit="autocompleteFn()">
+            <div class="search" style="margin-top:{{sousuo}}px">
+                <input type="text" id="autocomplete" ng-model="InsuranceOnlineCtrlModule.keyWord" ng-blur="autocompleteFn()" />
+                <div ng-show="!InsuranceOnlineCtrlModule.keyWord.length">                    
+                    <span>搜索</span>
+                </div>
+                <i class="icon ion-search placeholder-icon" ng-click="autocompleteFn()"></i> 
+            </div>
+        </form>		  	
+	    <ion-content class="has-header middle-list" style="margin-top:44px;">   	
+	        <div ng-show="!unFinshedList.length" class="searchEmpty">暂无保单</div>
+		    <ion-list>
+				<ion-item ng-repeat="item in unFinshedList"  ng-click="clickMenu(item)" ng-class="{'checked':item.ID == selectedRow}">
+			    	<div class="items_box">
+				    	<p>投保印刷号：{{item.PRINT_NO}}</p>
+				    	<p>投保人：{{item.APPLICANT_NAME}}</p>
+				    	<p>被保人：{{item.INSURANT_NAME}}</p>
+						<!-- <p>总保费：{{item.SUM_AMOUNT | appendDescri:'元'}}</p> -->
+				    </div>
+				</ion-item>
+		    </ion-list>
+	    </ion-content>
+	</div>
+	<div class="right-data">
+		<ion-nav-view name="dataContent"></ion-nav-view>
+	</div>
+</div>

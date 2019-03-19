@@ -1,0 +1,519 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷26 财务问卷部分
+	 -->
+    <DisclosureItem disclosure_ver="B_2_" disclosure_id="problempieces_26" flag="questionName" text="财务问卷">
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" flag="common">
+        <Description text="客户须知：财务问卷各项内容是保险公司评价被保险人保险金额的重要依据，将成为保险合同的组成部分，故请您按要求如实填写以下各个项目，并须亲笔签名。如有不实告知足以影响本公司的承保决定，本公司可依据《保险法》规定解除保险合同，并对合同解除前发生的保险事故不承担保险责任。" />
+    </DisclosureItem>
+      <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_1_" flag="common">
+        <Description text="1. 投保目的：" />
+        <Radio input_type="checkbox" options="保障家庭收入" radio_key="B_2_1_a" />
+        <Radio input_type="checkbox" options="养老保障" radio_key="B_2_1_b" />
+        <Radio input_type="checkbox" options="保证子女教育费用" radio_key="B_2_1_c" />
+        <Radio input_type="checkbox" options="作为贷款抵押（请提供贷款证明）" radio_key="B_2_1_d" />
+        <Radio input_type="checkbox" options="储蓄/投资" radio_key="B_2_1_e" />
+        <Radio input_type="checkbox" options="其他　请说明" radio_key="B_2_1_f" />
+        <Input input_key="B_2_1_01" length="10" input_type="text" />
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_2_" flag="common">
+        <Description text="2. 投保经过：" />
+        <Radio input_type="checkbox" options="业务员推销" radio_key="B_2_2_a" />
+        <Radio input_type="checkbox" options="投保人自己提出" radio_key="B_2_2_b" />
+        <Radio input_type="checkbox" options="同事朋友推荐" radio_key="B_2_2_c" />
+        <Radio input_type="checkbox" options="其他　请说明" radio_key="B_2_2_d" />
+        <Input input_key="B_2_2_01" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_id="B_2_3_" no_yesno="true" disclosure_ver="B_2_"  flag="common">
+        <Description text="3. 请列出目前被保险人及其家庭成员所有的生效及正在申请的人身保险合同（含各家保险公司）" />
+    </DisclosureItem>
+    <DisclosureItem disclosure_id="B_2_3_" no_yesno="true" disclosure_ver="B_2_"  flag="common">
+        <Description text="第一版块开始" />
+        <Input input_type="br"/>
+        <Description text="被保险人" />
+        <Input input_key="B_2_3_01" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="关系" />
+        <Input input_key="B_2_3_02" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="保险公司" />
+        <Input input_key="B_2_3_03" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="险种名称" />
+        <Input input_key="B_2_3_04" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="保险金额" />
+        <Input input_key="B_2_3_05" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="生效日期" />
+        <Input input_key="B_2_3_06" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="年缴保费" />
+        <Input input_key="B_2_3_07" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="第一版块结束" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_id="B_2_3_" no_yesno="true" disclosure_ver="B_2_"  flag="common">
+        <Description text="第二版块开始" />
+        <Input input_type="br"/>
+        <Description text="被保险人" />
+        <Input input_key="B_2_3_b_01" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="关系" />
+        <Input input_key="B_2_3_b_02" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="保险公司" />
+        <Input input_key="B_2_3_b_03" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="险种名称" />
+        <Input input_key="B_2_3_b_04" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="保险金额" />
+        <Input input_key="B_2_3_b_05" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="生效日期" />
+        <Input input_key="B_2_3_b_06" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="年缴保费" />
+        <Input input_key="B_2_3_b_07" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="第二版块结束" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_id="B_2_3_" no_yesno="true" disclosure_ver="B_2_"  flag="common">
+        <Description text="第三版块开始" />
+        <Input input_type="br"/>
+        <Description text="被保险人" />
+        <Input input_key="B_2_3_c_01" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="关系" />
+        <Input input_key="B_2_3_c_02" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="保险公司" />
+        <Input input_key="B_2_3_c_03" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="险种名称" />
+        <Input input_key="B_2_3_c_04" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="保险金额" />
+        <Input input_key="B_2_3_c_05" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="生效日期" />
+        <Input input_key="B_2_3_c_06" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="年缴保费" />
+        <Input input_key="B_2_3_c_07" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="第三版块结束" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_id="B_2_3_" no_yesno="true" disclosure_ver="B_2_"  flag="common">
+        <Description text="第四版块开始" />
+        <Input input_type="br"/>
+        <Description text="被保险人" />
+        <Input input_key="B_2_3_d_01" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="关系" />
+        <Input input_key="B_2_3_d_02" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="保险公司" />
+        <Input input_key="B_2_3_d_03" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="险种名称" />
+        <Input input_key="B_2_3_d_04" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="保险金额" />
+        <Input input_key="B_2_3_d_05" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="生效日期" />
+        <Input input_key="B_2_3_d_06" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="年缴保费" />
+        <Input input_key="B_2_3_d_07" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="第四版块结束" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_id="B_2_3_" no_yesno="true" disclosure_ver="B_2_"  flag="common">
+        <Description text="第五版块开始" />
+        <Input input_type="br"/>
+        <Description text="被保险人" />
+        <Input input_key="B_2_3_e_01" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="关系" />
+        <Input input_key="B_2_3_e_02" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="保险公司" />
+        <Input input_key="B_2_3_e_03" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="险种名称" />
+        <Input input_key="B_2_3_e_04" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="保险金额" />
+        <Input input_key="B_2_3_e_05" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="生效日期" />
+        <Input input_key="B_2_3_e_06" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="年缴保费" />
+        <Input input_key="B_2_3_e_07" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="第五版块结束" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_id="B_2_3_" no_yesno="true" disclosure_ver="B_2_"  flag="common">
+        <Description text="第六版块开始" />
+        <Input input_type="br"/>
+        <Description text="被保险人" />
+        <Input input_key="B_2_3_f_01" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="关系" />
+        <Input input_key="B_2_3_f_02" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="保险公司" />
+        <Input input_key="B_2_3_f_03" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="险种名称" />
+        <Input input_key="B_2_3_f_04" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="保险金额" />
+        <Input input_key="B_2_3_f_05" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="生效日期" />
+        <Input input_key="B_2_3_f_06" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="年缴保费" />
+        <Input input_key="B_2_3_f_07" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="第六版块结束" />
+    </DisclosureItem>
+
+    <DisclosureItem no_yesno="custom" custom_yesno="B_2_3_1_" disclosure_ver="B_2_" flag="common">
+        <Description text="（1）被保险人是否曾被保险公司解除合同或者投保申请被拒保、延期、附加条件承保？" />
+    </DisclosureItem>
+
+    <DisclosureItem no_yesno="custom" custom_yesno="B_2_3_2_" disclosure_ver="B_2_" flag="common">
+        <Description text="（2）被保险人是否曾有失效的人身保险保单？" />
+    </DisclosureItem>
+
+    <DisclosureItem no_yesno="custom" custom_yesno="B_2_3_3_" disclosure_ver="B_2_" flag="common">
+        <Description text="（3）被保险人半年内是否有申请复效或者已经复效的保单？" />
+    </DisclosureItem>
+
+    <DisclosureItem no_yesno="custom" custom_yesno="B_2_3_4_" disclosure_ver="B_2_" flag="common">
+        <Description text="（4）被保险人近两年内是否曾有人身保险退保经历？" />
+    </DisclosureItem>
+
+    <DisclosureItem no_yesno="custom" custom_yesno="B_2_3_5_" disclosure_ver="B_2_" flag="common">
+        <Description text="（5）被保险人是否有过任何形式的人身保险理赔？" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true"  flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上（1）－（5）问题如果选“是”，请详细说明："/>
+            <Expendable>
+                <BlankRemarkTable input_key="B_2_3_check_result" lines="4"/>
+            </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_4_" flag="common"> 
+        <Description text="4. 被保险人工作情况"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_4_" flag="common"> 
+        <Description text="（1）工作单位："/>
+        <Input input_key="B_2_4_01" length="10" input_type="text" />
+        <Input input_type="br"/> 
+        <Description text="您在该单位的主要职务是："/>
+        <Input input_key="B_2_4_02" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_4_" flag="common"> 
+        <Description text="（2）工作单位属于:"/>
+        <Radio input_type="checkbox" options="事业单位" radio_key="B_2_4_2_a" />
+        <Radio input_type="checkbox" options="股份制企业" radio_key="B_2_4_2_b" />
+        <Radio input_type="checkbox" options="个体、私营企业" radio_key="B_2_4_2_c" />
+        <Radio input_type="checkbox" options="外资企业" radio_key="B_2_4_2_d" />
+        <Radio input_type="checkbox" options="其他　请说明" radio_key="B_2_4_2_e" />
+        <Input input_key="B_2_4_03" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_4_" flag="common"> 
+        <Description text="（3）工作单位的行业性质："/>        
+        <Input input_key="B_2_4_3_01" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_4_" flag="common"> 
+        <Description text="（4）您加入该单位的时间："/>        
+        <Input input_key="B_2_4_4_year" length="3" input_type="number" />
+        <Description text="年"/> 
+        <Input input_key="B_2_4_4_month" length="3" input_type="number" />
+        <Description text="月，从事该行业的年期："/> 
+        <Input input_key="B_2_4_4_years" length="3" input_type="number" />
+        <Description text="年"/> 
+    </DisclosureItem>
+
+     <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_4_" flag="common">
+        <Description text="（5）该单位的成立时间："/>        
+        <Input input_key="B_2_4_5_year" length="3" input_type="number" />
+        <Description text="年，注册资金："/> 
+        <Input input_key="B_2_4_5_money" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="custom" custom_yesno="B_2_4_6_" disclosure_id="B_2_4_" flag="common">
+        <Description text="（6）您是否是该单位的股东？如是，请告知您所拥有的股份："/>
+        <Expendable>        
+            <Input input_key="B_2_4_6_01" length="10" input_type="text" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="custom" custom_yesno="B_2_4_7_" disclosure_id="B_2_4_" flag="common"> 
+        <Description text="（7）您是否有其他兼职？ 如是，请说明工作性质及职务："/>
+        <Expendable>        
+            <Input input_key="B_2_4_7_01" length="10" input_type="text" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" disclosure_id="B_2_5_" no_yesno="true" flag="common"> 
+        <Description text=" 5. 被保险人收入情况　"/>
+        <Input input_type="br"/>
+        <Description text="（1）过去三年的工资收入：前年"/>
+        <Input input_key="B_2_5_1_money1" length="3" input_type="number" />
+        <Description text="万元，去年"/>
+        <Input input_key="B_2_5_1_money2" length="3" input_type="number" />
+        <Description text="万元，今年至目前"/>
+        <Input input_key="B_2_5_1_money3" length="3" input_type="number" />
+        <Description text="万元"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" disclosure_id="B_2_5_" no_yesno="true" flag="common"> 
+        <Description text="（2）过去三年较为固定的奖金和分红：前年"/>
+        <Input input_key="B_2_5_2_money1" length="3" input_type="number" />
+        <Description text="万元，去年"/>
+        <Input input_key="B_2_5_2_money2" length="3" input_type="number" />
+        <Description text="万元，今年至目前"/>
+        <Input input_key="B_2_5_2_money3" length="3" input_type="number" />
+        <Description text="万元"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" disclosure_id="B_2_5_" no_yesno="true" flag="common"> 
+        <Description text="（3）过去一年所赚取的其他收入："/>
+        <Input input_key="B_2_5_3_money1" length="3" input_type="number"  is_checked="false" />
+        <Description text="万元，来源："/>
+        <Radio input_type="checkbox" options="继承遗产" radio_key="B_2_5_3_a" is_checked="false" />
+        <Radio input_type="checkbox" options="房屋租赁收入" radio_key="B_2_5_3_b" is_checked="false" />
+        <Radio input_type="checkbox" options="股票、债券收益" radio_key="B_2_5_3_c" is_checked="false" />
+        <Radio input_type="checkbox" options="其他" radio_key="B_2_5_3_d" is_checked="false" />
+        <Input input_key="B_2_5_3_01" length="10" input_type="text"  is_checked="false"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" disclosure_id="B_2_6_" no_yesno="true" flag="common"> 
+        <Description text="6. 投保人收入情况（如投保人和被保险人是同一人，可免填本栏）"/>
+        <Input input_type="br"/>
+        <Description text="（1）过去三年的工资收入：前年"/>
+        <Input input_key="B_2_6_1_money1" length="3" input_type="number" />
+        <Description text="万元，去年"/>
+        <Input input_key="B_2_6_1_money2" length="3" input_type="number" />
+        <Description text="万元，今年至目前"/>
+        <Input input_key="B_2_6_1_money3" length="3" input_type="number" />
+        <Description text="万元"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" disclosure_id="B_2_6_" no_yesno="true" flag="common"> 
+        <Description text="（2）过去三年较为固定的奖金和分红：前年"/>
+        <Input input_key="B_2_6_2_money1" length="3" input_type="number" />
+        <Description text="万元，去年"/>
+        <Input input_key="B_2_6_2_money2" length="3" input_type="number" />
+        <Description text="万元，今年至目前"/>
+        <Input input_key="B_2_6_2_money3" length="3" input_type="number" />
+        <Description text="万元"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" disclosure_id="B_2_6_" no_yesno="true" flag="common"> 
+        <Description text="（3）过去一年所赚取的其他收入："/>
+        <Input input_key="B_2_6_3_money1" length="3" input_type="number" is_checked="false" />
+        <Description text="万元，来源："/>
+        <Radio input_type="checkbox" options="继承遗产" radio_key="B_2_6_3_a" is_checked="false" />
+        <Radio input_type="checkbox" options="房屋租赁收入" radio_key="B_2_6_3_b" is_checked="false" />
+        <Radio input_type="checkbox" options="股票、债券收益" radio_key="B_2_6_3_c" is_checked="false"/>
+        <Radio input_type="checkbox" options="其他" radio_key="B_2_6_3_d"  is_checked="false" />
+        <Input input_key="B_2_6_3_01" length="10" input_type="text" is_checked="false" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_7_" flag="common">
+        <Description text="7. 被保险人资产情况" />
+        <Input input_type="br"/>
+        <Description text="住房， 现居是：" />
+        <Radio input_type="checkbox" options="本人房产" radio_key="B_2_7_1_a" />
+        <Radio input_type="checkbox" options="单位公房" radio_key="B_2_7_1_b" />
+        <Radio input_type="checkbox" options="父母所有" radio_key="B_2_7_1_c" />
+        <Radio input_type="checkbox" options="租房" radio_key="B_2_7_1_d" />
+        <Radio input_type="checkbox" options="其他" radio_key="B_2_7_1_e" />
+        <Input input_key="B_2_7_1_01" length="10" input_type="text" is_checked="false"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_7_" flag="common">
+        <Description text="现居地址：" />
+        <Input input_key="B_2_7_1_num1" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="住房面积：" />
+        <Input input_key="B_2_7_1_num2" length="3" input_type="number" />
+        <Description text="平方米" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_7_" flag="common">
+        <Description text="本人房产请注明：购买日期" />
+        <Input input_key="B_2_7_1_num3" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="购买价格" />
+        <Input input_key="B_2_7_1_num4" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="目前价值" />
+        <Input input_key="B_2_7_1_num5" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="贷款金额" />
+        <Input input_key="B_2_7_1_num6" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="贷款期限" />
+        <Input input_key="B_2_7_1_num7" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_7_" flag="common">
+        <Description text="如是单位公房或租房，请说明每月的房租：" />
+        <Input input_key="B_2_7_1_num8" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="物业管理费用" />
+        <Input input_key="B_2_7_1_num9" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_7_" flag="common">
+        <Description text="如您还拥有其他房产，请告知地址、购买日期及目前价值：" />
+        <Input input_key="B_2_7_1_02" length="10" input_type="text" is_checked="false" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="custom" custom_yesno="B_2_7_2_" flag="common">
+        <Description text="私车，是否拥有：" />
+        <Expendable>
+            <Description text="如是，请列明数量、型号、购买价格：" />
+            <Input input_key="B_2_7_2_01" length="10" input_type="text" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_7_" flag="common">
+        <Description text="存款：" />
+        <Input input_type="br"/>
+        <Description text="银行存款金额" />
+        <Input input_key="B_2_7_3_num" length="3" input_type="number" />
+        <Description text=" 万元。" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="true" disclosure_id="B_2_7_" flag="common">
+        <Description text="其他" />
+        <Input input_key="B_2_7_4_01" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="false" disclosure_id="B_2_8_" flag="common">
+        <Description text="8. 被保险人负债情况，是否有贷款、借款、欠款？" />
+        <Expendable>
+            <Description text="若是，请注明种类、金额及偿还日期" />
+            <Input input_key="B_2_8_01" length="10" input_type="text" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" disclosure_id="B_2_9_" no_yesno="true" flag="common"> 
+        <Description text="9. 被保险人家庭情况"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" disclosure_id="B_2_9_" no_yesno="true" flag="common"> 
+        <Description text="（1）家庭人数："/> 
+        <Input input_key="B_2_9_1_num" length="3" input_type="number" /> 
+        <Description text="人，与被保险人的关系："/>
+        <Radio input_type="checkbox" options="配偶" radio_key="B_2_9_1_a" />
+        <Radio input_type="checkbox" options="子女" radio_key="B_2_9_1_b" />
+        <Radio input_type="checkbox" options="父母" radio_key="B_2_9_1_c" />
+        <Radio input_type="checkbox" options="其他" radio_key="B_2_9_1_d" />
+        <Input input_key="B_2_9_1_01" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" disclosure_id="B_2_9_" no_yesno="true" flag="common"> 
+        <Description text="（2）家庭每月总支出："/> 
+        <Input input_key="B_2_9_2_num" length="3" input_type="number" /> 
+        <Description text=" 元（包括贷款、日常生活费用、学费、赡养父母、租金等）"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="custom" custom_yesno="B_2_9_3_" flag="common"> 
+        <Description text="（3）配偶是否有固定工作？ "/> 
+        <Expendable>
+            <Description text="工作单位："/>
+            <Input input_key="B_2_9_3_01" length="10" input_type="text" />
+            <Input input_type="br"/>
+            <Description text="职业："/>
+            <Input input_key="B_2_9_3_02" length="10" input_type="text" />
+            <Input input_type="br"/>
+            <Description text="年收入："/>
+            <Input input_key="B_2_9_3_03" length="10" input_type="text" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" no_yesno="custom" custom_yesno="B_2_9_4_" flag="common"> 
+        <Description text="（4）是否雇有佣人和司机？"/> 
+        <Expendable>
+            <Description text="佣人："/>
+            <Input input_key="B_2_9_4_01" length="3" input_type="number" />
+            <Description text="人，司机："/>
+            <Input input_key="B_2_9_4_02" length="3" input_type="number" />
+            <Description text="人"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="B_2_" disclosure_id="B_2_10_1_" no_yesno="false" flag="common">
+        <Description text="10. 被保险人拥有的企业情况"/>
+        <Input input_type="br"/>
+        <Description text="被保险人是否拥有企业？"/>
+        <Expendable>
+            <Description text="企业名称:"/>
+            <Input input_key="B_2_10_2_01" length="10" input_type="text" />
+            <Input input_type="br"/>
+            <Description text="成立时间:"/>
+            <Input input_key="B_2_10_2_year" length="3" input_type="number" />
+            <Description text="年"/>
+            <Input input_key="B_2_10_2_month" length="3" input_type="number" />
+            <Description text="年"/>
+            <Input input_type="br"/>
+            <Description text="企业通讯地址:"/>
+            <Input input_key="B_2_10_3_01" length="10" input_type="text" />
+            <Input input_type="br"/>
+            <Description text="雇员人数:"/>
+            <Input input_key="B_2_10_3_num" length="3" input_type="text" />
+            <Description text="人:"/>
+            <Input input_type="br"/>
+            <Description text="拥有股份比例:"/>
+            <Input input_key="B_2_10_4_01" length="3" input_type="text" />
+            <Description text="职务:"/>
+            <Input input_key="B_2_10_4_year" length="3" input_type="text" />
+            <Input input_type="br"/>
+            <Description text="近三年企业税后平均利润： 前年:"/>
+            <Input input_key="B_2_10_5_money1" length="3" input_type="number" />
+            <Description text="万元，去年:"/>
+            <Input input_key="B_2_10_5_money2" length="3" input_type="number" />
+            <Description text="万元，今年至目前"/>
+            <Input input_key="B_2_10_5_money3" length="3" input_type="number" />
+            <Description text="万元"/>
+            <Input input_type="br"/>
+            <Description text="近三年企业税后平均营业额： 前年:"/>
+            <Input input_key="B_2_10_6_money1" length="3" input_type="number" />
+            <Description text="万元，去年:"/>
+            <Input input_key="B_2_10_6_money2" length="3" input_type="number" />
+            <Description text="万元，今年至目前"/>
+            <Input input_key="B_2_10_6_money3" length="3" input_type="number" />
+            <Description text="万元"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

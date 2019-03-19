@@ -1,0 +1,99 @@
+<div class="modal insurance-modal">
+	<ion-header-bar>
+		<h1 class="title">受益人详情</h1>
+		<div class="buttons">
+			<button class="button button-clear button-positive" ng-click="closeModalCustomer()">关闭</button>
+		</div>
+	</ion-header-bar>
+	<ion-content>
+		<div> 
+			<div class="row"><div class="col"><p>姓名：</p><p>{{customerInfo.NAME}}</p></div></div>
+			<div class="row bg-gray"><div class="col"><p>性别：</p><p>{{customerInfo.SEX | codeFormat:'sex'}}</p></div></div>
+			<div class="row"><div class="col"><p>国籍：</p><p>{{customerInfo.NATIVE_PLACE | codeFormat:'nativeplace'}}</p></div></div>
+			<div class="row bg-gray"><div class="col"><p>出生日期：</p><p>{{customerInfo.BIRTHDAY}}</p></div></div>
+			<div class="row"><div class="col"><p>证件类型：</p><p>{{customerInfo.IDNAME | codeFormat:'idtype'}}</p></div></div>
+			<div class="row bg-gray"><div class="col"><p>证件号码：</p><p>{{customerInfo.IDNO}}</p></div></div>
+			<div class="row"><div class="col"><p>证件有效期：</p><p>{{customerInfo.ID_END_DATE}}</p></div></div> 
+			<div class="row bg-gray">
+				<div class="col"><p>受益关系：</p>
+					<p>
+						<select ng-model="customerInfo.RELATION"  ng-options="relation.CODE_NAME for relation in customerInfo.relationList" id="customer_relation">
+							<option value="">=系被保人的=</option>
+						</select>
+					</p>
+				</div>
+			</div> 
+			<div class="row">
+				<div class="col"><p>受益顺序：</p>
+					<p>
+						<select name="rate" ng-model="customerInfo.BENEFIT_ORDER">
+							<option value="">=请选择=</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+					</p>
+				</div>
+			</div>  
+			<div class="row bg-gray">
+				<div class="col">
+				<p>受益比例：</p>
+					<p style="width:100px;">
+						 <input style="text-align:right;padding-right:2px;font-size:14px;" name="percent" ng-model="customerInfo.BENEFIT_RATE"  type="number"/>
+					</p>
+					<p style="font-size:18px;">%</p>					
+				</div>
+			</div>  
+
+			<div class="row">
+				<div class="col">
+					<p>手机号码：</p>
+					<p>{{customerInfo.MOBILE}}</p>
+				</div>
+			</div>
+			<div class="row bg-gray">
+				<div class="col">
+					<p>职业名称：</p>
+					<p>{{customerInfo.OCCUPATION_CODE_NAME}}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<p>职业代码：</p>
+					<p>{{customerInfo.OCCUPATION_CODE}}</p>
+				</div>
+			</div>
+			<div class="row bg-gray">
+				<div class="col">
+					<p>受益人住址：</p>
+					<p>{{customerInfo.HOME_ADDRESS}}</p>
+				</div>
+			</div> 
+			<div class="row">
+				<div class="col col-50"> 
+					<button  class="button button-stable" style="width: 70px;min-height: 35px; margin-left:25%; margin-right:35px; font-size: 14px; padding: 0; line-height: 0;"  ng-click="changeRelationFn(customerInfo)" >保存</button>  
+				</div> 
+				<div class="col col-50"> 
+					 <button  class="button button-stable" style="width: 70px;min-height: 35px; margin-left:25%; margin-right:35px; font-size: 14px; padding: 0; line-height: 0;"  ng-click="removeSyr(customerInfo.currentIndex,customerInfo)" >删除</button>  
+				</div>
+			</div>
+
+		</div>	
+	</ion-content>
+	<!-- 手机端受益人详情页面alert 提示框的样式 -->
+		<div id="children_div" style="width: 100%; height: 100%;top: 0px; left: 0px; background: #333;filter: alpha(opacity=50);position: fixed; z-index: 5000; opacity: 0.6;display:none;"></div>
+	 
+			 <div id="children_div_text" style="position: absolute; top: 45%; left: 45%;z-index: 5000;display:none;">
+				 <img src="img/loading_icon.gif" />
+			 </div>
+		 
+		 <div id="children_div_alert" style="position:absolute; top: 40%; left: 40%;z-index: 5000;display:none;border:1px solid #ffffff;background:#ffffff;padding:10px;border-radius: 5px;width:240px;text-align:center;">
+			 <table style="width:100%;">
+			 	<tr><td style="text-align: center;height: 30px;">提示</td></tr>
+			 	<tr><td><hr width="100%" size="1px"/></td></tr>
+			 	<tr><td id="children_messageContainer" style="padding-top: 10px;padding-bottom: 20px;text-align: left;"></td></tr>
+			 	<tr><td style="height:50px;text-align: center;"><button onclick="children_closeMyAlert();" style="width:100%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;"> 确   定 </button></td></tr>
+			 </table>
+		 </div>
+</div>

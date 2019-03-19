@@ -1,0 +1,42 @@
+<div class="modal insurance-modal">
+  <ion-header-bar>
+    <h1 class="title">收费</h1>
+    <div class="buttons">
+      <button class="button button-clear button-positive" ng-click="closeChargeModal()">关闭</button>
+    </div>
+  </ion-header-bar>
+  <ion-content class="bottom-scroll-content" overflow-scroll="true">
+    <div style="display: inline-block;">
+      <div class="row"><div class="col"><p>保单号：</p><p ng-bind="baseInfo.applyNo"></p></div></div>
+      <div class="row"><div class="col"><p>保单状态：</p><p>{{state | insuranceState}}</p></div></div>
+      <div class="row"><div class="col"><p>开户银行：</p><p>{{baseInfo.bankCode | bankCodeToName}}</p></div></div>
+      <div class="row"><div class="col"><p>户名：</p><p ng-bind="baseInfo.applicantName"></p></div></div>
+      <div class="row"><div class="col"><p ng-if="baseInfo.bankSubType!=1">银行卡号：</p><p ng-if="baseInfo.bankSubType==1">存折账号：</p><p ng-bind="baseInfo.bankAccNo"></p></div></div>
+      <div class="row"><div class="col"><p>收费金额：</p><p>{{baseInfo.sumPrem | appendDescri:'元'}}</p></div></div>
+    </div>
+    <div style="display: inline-block;margin-left: 50px;" ng-show = 'isrelationPc'>
+      <div class="row"><div class="col"><p>关联保单号：</p><p ng-bind="baseInfo.rel_applyNo"></p></div></div>
+      <div class="row"><div class="col"><p>保单状态：</p><p>{{baseInfo.rel_state | insuranceState}}</p></div></div>
+      <div class="row"><div class="col"><p>开户银行：</p><p>{{baseInfo.rel_bankCode | bankCodeToName}}</p></div></div>
+      <div class="row"><div class="col"><p>户名：</p><p ng-bind="baseInfo.applicantName"></p></div></div>
+      <div class="row"><div class="col"><p ng-if="baseInfo.bankSubType!=1">银行卡号：</p><p ng-if="baseInfo.bankSubType==1">存折账号：</p><p ng-bind="baseInfo.rel_bankAccNo"></p></div></div>
+      <div class="row"><div class="col"><p>收费金额：</p><p>{{baseInfo.rel_sumPrem | appendDescri:'元'}}</p></div></div>
+    </div>
+    <div ng-show = 'isrelationPh'>
+      <div class="row"><div class="col"><p>关联保单号：</p><p ng-bind="baseInfo.rel_applyNo"></p></div></div>
+      <div class="row"><div class="col"><p>保单状态：</p><p>{{baseInfo.rel_state | insuranceState}}</p></div></div>
+      <div class="row"><div class="col"><p>开户银行：</p><p>{{baseInfo.rel_bankCode | bankCodeToName}}</p></div></div>
+      <div class="row"><div class="col"><p>户名：</p><p ng-bind="baseInfo.applicantName"></p></div></div>
+      <div class="row"><div class="col"><p ng-if="baseInfo.bankSubType!=1">银行卡号：</p><p ng-if="baseInfo.bankSubType==1">存折账号：</p><p ng-bind="baseInfo.rel_bankAccNo"></p></div></div>
+      <div class="row"><div class="col"><p>收费金额：</p><p>{{baseInfo.rel_sumPrem | appendDescri:'元'}}</p></div></div>
+    </div>
+  </ion-content>
+
+  <div class="bar bar-footer">
+  <div class="operationBar">
+    <button class="generalButton"  ng-click="chargeFun(baseInfo,'');">立即收费</button>
+    <button class="generalButton"   ng-click="showOtherWayCharge()">其他银行卡交费</button> 
+    <!-- insurancePreview(); -->
+  </div>  
+  </div> 
+</div>

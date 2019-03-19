@@ -1,0 +1,511 @@
+<ion-view class="submit-data">
+	<header class="bar bar-header" >
+       <div class="h1 title">保单预览</div>
+       <input type="hidden" id="formID" name="formID" value=""><!--保单applyID-->
+       <button class="button button-icon icon" ng-click="closeDatas();">关闭</button>       
+    </header>
+	<ion-content class="has-header padding" style="bottom:35px;">
+				<table class="tableStyle">
+					<thead>
+						<caption>投保人信息</caption>
+					</thead>
+					<tbody ng-show="{{pcFlag}}">
+						<tr>
+							<td width="33%"><i class="color-gray">姓名：</i>{{applicant.NAME}}
+							<i class="color-gray leftMargin100">性别：</i>{{applicant.SEX | codeFormat:'sex'}}</td>
+							<td width="33%"><i class="color-gray">出生日期：</i>{{applicant.BIRTHDAY}}</td>
+							<td width="34%"><i class="color-gray">系被保人：</i>{{applicant.RELATION | codeFormat:'relation'}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">证件名称：</i>{{applicant.IDNAME | codeFormat:'idtype'}}</td>
+							<td><i class="color-gray">证件号码：</i>{{applicant.IDNO}}</td>
+							<td><i class="color-gray">有效期至：</i>{{applicant.ID_END_DATE}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">国籍：</i>{{applicant.NATIVE_PLACE | codeFormat:'nativeplace'}}</td>
+							<!--<td><i class="color-gray">户籍地：</i>{{applicant.RGT_ADDRESS | codeFormat:'nativeplacebak'}}</td>-->
+							<td><i class="color-gray">户籍所在地：</i>{{applicant.RGT_ADDRESS}}</td>
+							<td><i class="color-gray">婚姻状况：</i>{{applicant.MARRIY | codeFormat:'marriage'}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">年收入：</i>{{applicant.INCOME}}万元</td>
+							<td><i class="color-gray">主要收入来源：</i>{{applicant.INCOME_WAY | codeFormat:'incomeway'}}</td>
+							<td><i class="color-gray">工作单位名称：</i>{{applicant.WORK_UNIT}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">职业：</i>{{applicant.OCCUPATION}}</td>
+							<td><i class="color-gray">职业代码：</i>{{applicant.OCCUPATION_CODE}}</td>
+							<td><i class="color-gray">兼职：</i>{{applicant.PLURALITY_OCCUPATION_CODE_NAME}}</td>							
+						</tr>
+						<tr>
+							<td><i class="color-gray">手机：</i>{{applicant.PHONE}}</td>
+							<td><i class="color-gray">固定电话：</i>{{applicant.COMPANY_PHONE}}</td>
+							<td><i class="color-gray">电子邮箱：</i>{{applicant.EMAIL}}</td>
+						</tr>
+						<tr>
+							<td colspan="2"><i class="color-gray">通信地址：</i>{{applicant.MAILING_ADDRESS}}</td>
+							<td><i class="color-gray">邮编：</i>{{applicant.MAILING_ZIP_CODE}}</td>
+						</tr>
+						<tr>
+							<td colspan="2"><i class="color-gray">家庭地址：</i>{{applicant.HOME_ADDRESS}}</td>
+							<td><i class="color-gray">邮编：</i>{{applicant.HOME_ZIP_CODE}}</td>
+						</tr>
+					</tbody>
+					<tbody ng-show="{{!pcFlag}}">
+						<tr>
+							<td width="50%"><i class="color-gray">姓名：</i>{{applicant.NAME}}</td>
+							<td width="50%"><i class="color-gray">性别：</i>{{applicant.SEX | codeFormat:'sex'}}</td>  
+						</tr>
+						<tr>
+							<td width="50%"><i class="color-gray">出生日期：</i>{{applicant.BIRTHDAY}}</td>
+							<td width="50%"><i class="color-gray">系被保人：</i>{{applicant.RELATION | codeFormat:'relation'}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">证件名称：</i>{{applicant.IDNAME | codeFormat:'idtype'}}</td>
+							<td class="word_break"><i class="color-gray">证件号码：</i>{{applicant.IDNO}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">有效期至：</i>{{applicant.ID_END_DATE}}</td>
+							<td><i class="color-gray">国籍：</i>{{applicant.NATIVE_PLACE | codeFormat:'nativeplace'}}</td>
+						</tr> 
+						<tr>
+							<!--<td><i class="color-gray">户籍地：</i>{{applicant.RGT_ADDRESS | codeFormat:'nativeplacebak'}}</td>-->
+							<td class="word_break"><i class="color-gray">户籍所在地：</i>{{applicant.RGT_ADDRESS}}</td>
+							<td><i class="color-gray">婚姻状况：</i>{{applicant.MARRIY | codeFormat:'marriage'}}</td>
+						</tr>
+						<tr> 
+								<td><i class="color-gray">年收入：</i>{{applicant.INCOME}}万元</td>
+								<td><i class="color-gray">主要收入来源：</i>{{applicant.INCOME_WAY | codeFormat:'incomeway'}}</td> 
+						</tr>
+						<tr> 
+								<td><i class="color-gray">工作单位名称：</i>{{applicant.WORK_UNIT}}</td>
+								<td><i class="color-gray">职业：</i>{{applicant.OCCUPATION}}</td>
+						</tr>
+						<tr>	
+								<td><i class="color-gray">职业代码：</i>{{applicant.OCCUPATION_CODE}}</td> 
+								<td><i class="color-gray">兼职：</i>{{applicant.PLURALITY_OCCUPATION_CODE_NAME}}</td>								
+						</tr>
+						<tr>
+								<td><i class="color-gray">手机：</i>{{applicant.PHONE}}</td>
+								<td><i class="color-gray">固定电话：</i>{{applicant.COMPANY_PHONE}}</td> 
+						</tr>
+						<tr>
+							
+							<td class="word_break"><i class="color-gray">电子邮箱：</i>{{applicant.EMAIL}}</td>
+							<td><i class="color-gray">邮编：</i>{{applicant.MAILING_ZIP_CODE}}</td>
+						</tr>
+						<tr>
+							<td colspan="2"><i class="color-gray">通信地址：</i>{{applicant.MAILING_ADDRESS}}</td>
+						</tr>
+						<tr>
+							<td colspan="2"><i class="color-gray">家庭地址：</i>{{applicant.HOME_ADDRESS}}</td>
+						</tr>  
+					</tbody>
+				</table>
+				<table class="tableStyle">
+					<thead>
+						<caption>被保人信息</caption>
+					</thead>
+					<tbody  ng-show="{{pcFlag}}">
+						<tr>
+							<td width="33%"><i class="color-gray">姓名：</i>{{recognizee.NAME}}</td>
+							<td width="33%"><i class="color-gray">性别：</i>{{recognizee.SEX | codeFormat:'sex'}}</td>
+							<td width="34%"><i class="color-gray">出生日期：</i>{{recognizee.BIRTHDAY}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">证件名称：</i>{{recognizee.IDNAME | codeFormat:'idtype'}}</td>
+							<td><i class="color-gray">证件号码：</i>{{recognizee.IDNO}}</td>
+							<td><i class="color-gray">有效期至：</i>{{recognizee.ID_END_DATE}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">国籍：</i>{{recognizee.NATIVE_PLACE | codeFormat:'nativeplace'}}</td>
+						<!--<td><i class="color-gray">户籍地：</i>{{recognizee.RGT_ADDRESS | codeFormat:'nativeplacebak'}}</td>-->
+							<td><i class="color-gray">户籍所在地：</i>{{recognizee.RGT_ADDRESS}}</td>
+							<td><i class="color-gray">婚姻状况：</i>{{recognizee.MARRIY | codeFormat:'marriage'}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">年收入：</i>{{recognizee.INCOME}}万元</td>
+							<td><i class="color-gray">主要收入来源：</i>{{recognizee.INCOME_WAY | codeFormat:'incomeway'}}</td>
+							<td><i class="color-gray">工作单位名称：</i>{{recognizee.WORK_UNIT}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">职业：</i>{{recognizee.OCCUPATION}}</td>	
+							<td><i class="color-gray">职业代码：</i>{{recognizee.OCCUPATION_CODE}}</td>
+							<td><i class="color-gray">兼职：</i>{{recognizee.PLURALITY_OCCUPATION_CODE_NAME}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">手机：</i>{{recognizee.PHONE}}</td>
+							<td><i class="color-gray">固定电话：</i>{{recognizee.COMPANY_PHONE}}</td>
+							<td><i class="color-gray">电子邮件：</i>{{recognizee.EMAIL}}</td>
+						</tr>
+						<tr>
+							<td colspan="2"><i class="color-gray">家庭地址：</i>{{recognizee.HOME_ADDRESS}}</td>
+							<td><i class="color-gray">邮编：</i>{{recognizee.HOME_ZIP_CODE}}</td>
+						</tr>
+						<tr>
+							<td colspan="2"><i class="color-gray">通讯地址：</i>{{recognizee.MAILING_ADDRESS}}</td>
+							<td><i class="color-gray">邮编：</i>{{recognizee.MAILING_ZIP_CODE}}</td>
+						</tr>
+					</tbody>
+					<tbody ng-show="{{!pcFlag}}">
+						<tr>
+							<td width="50%"><i class="color-gray">姓名：</i>{{recognizee.NAME}}</td>
+							<td width="50%"><i class="color-gray">性别：</i>{{recognizee.SEX | codeFormat:'sex'}}</td>
+						</tr> 
+						<tr>
+							<td><i class="color-gray">出生日期：</i>{{recognizee.BIRTHDAY}}</td>
+							<td><i class="color-gray">证件名称：</i>{{recognizee.IDNAME | codeFormat:'idtype'}}</td>
+						</tr>
+						<tr>
+							<td class="word_break"><i class="color-gray">证件号码：</i>{{recognizee.IDNO}}</td>
+							<td><i class="color-gray">有效期至：</i>{{recognizee.ID_END_DATE}}</td>
+						</tr> 
+						<tr>
+							<td><i class="color-gray">国籍：</i>{{recognizee.NATIVE_PLACE | codeFormat:'nativeplace'}}</td> 
+							<td class="word_break"><i class="color-gray">户籍所在地：</i>{{recognizee.RGT_ADDRESS}}</td>
+						</tr>
+						<tr> 
+							<td><i class="color-gray">婚姻状况：</i>{{recognizee.MARRIY | codeFormat:'marriage'}}</td>
+							<td><i class="color-gray">年收入：</i>{{recognizee.INCOME}}万元</td>
+						</tr>
+						<tr> 
+							<td><i class="color-gray">主要收入来源：</i>{{recognizee.INCOME_WAY | codeFormat:'incomeway'}}</td>
+							<td><i class="color-gray">工作单位名称：</i>{{recognizee.WORK_UNIT}}</td>
+						</tr>
+						<tr> 
+							<td><i class="color-gray">职业：</i>{{recognizee.OCCUPATION}}</td>
+							<td><i class="color-gray">职业代码：</i>{{recognizee.OCCUPATION_CODE}}</td>
+						</tr>
+						<tr>						
+							<td><i class="color-gray">兼职：</i>{{recognizee.PLURALITY_OCCUPATION_CODE_NAME}}</td>
+							<td><i class="color-gray">手机：</i>{{recognizee.PHONE}}</td>
+						</tr>
+						<tr> 
+							<td><i class="color-gray">固定电话：</i>{{recognizee.COMPANY_PHONE}}</td>
+							<td class="word_break"><i class="color-gray">电子邮件：</i>{{recognizee.EMAIL}}</td>
+						</tr>
+						<tr>  
+							<td colspan="2"><i class="color-gray">邮编：</i>{{recognizee.HOME_ZIP_CODE}}</td>
+						</tr>
+						<tr>
+							<td colspan="2"><i class="color-gray">通信地址：</i>{{applicant.MAILING_ADDRESS}}</td>
+						</tr>
+						<tr>
+							<td colspan="2"><i class="color-gray">家庭地址：</i>{{recognizee.HOME_ADDRESS}}</td> 
+						</tr>
+					</tbody>
+				</table>
+				<table class="tableStyle">
+					<thead>
+						<caption>受益人资料</caption>
+					</thead>
+					<tbody ng-repeat = "ben in benefitList"   ng-show="{{pcFlag}}">
+						<tr>
+							<th width="120px">受益人类型</th>
+							<th>姓名</th>
+							<th>性别</th>
+							<th>国籍</th>
+							<th>出生日期</th>
+							<th>证件类型</th>
+							<th>证件号码</th>
+							<th>职业</th>							
+						</tr>
+						<tr style="text-align:center;">
+							<td rowspan="3" style="text-overflow:ellipsis;white-space:nowrap;overflow:hidden;vertical-align: middle;">{{ben.BENEFIT_TYPE | benefitType}}</td>
+							<td>{{ben.NAME}}{{ben.realName}}</td>
+							<td>{{ben.SEX | codeFormat:'sex'}}</td>
+							<td>{{ben.NATIVE_PLACE | codeFormat:'nativeplace'}}</td>
+							<td>{{ben.BIRTHDAY}}</td>
+							<td>{{ben.IDNAME | codeFormat:'idtype'}}</td>
+							<td>{{ben.IDNO}}</td>
+							<td>{{ben.OCCUPATION}}</td>
+						</tr>
+						<tr>
+							<!-- <th></th> -->
+							<th>职业代码</th>
+							<th>手机</th>
+							<th>证件有效期限</th>
+							<th>系被保险人的</th>
+							<th>受益比例</th>
+							<th>受益顺序</th>
+							<th>受益人住址</th>
+						</tr>
+						<tr style="text-align: center;">
+							<!-- <td></td> -->
+							<td>{{ben.OCCUPATION_CODE}}</td>
+							<td>{{ben.MOBILE}}</td>
+							<td>{{ben.ID_END_DATE}}</td>							
+							<td>{{ben.RELATION | codeFormat:'relation'}}</td>
+							<td>{{ben.BENEFIT_RATE}}</td>
+							<td>{{ben.BENEFIT_ORDER}}</td>
+							<td>{{ben.HOME_ADDRESS}}</td>
+						</tr>
+						<!-- <tr>
+							<td>&nbsp;</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr> -->
+					</tbody>
+					<tbody ng-show="{{!pcFlag}}"> 
+						<tr ng-repeat = "ben in benefitList" style="text-align:left;width:100%;">
+								<td>
+									<table border="1" class="tableStyle">							
+										<tr>
+											<td colspan="2"><i class="color-gray">受益人类型：</i>{{ben.BENEFIT_TYPE | benefitType}}</td>		
+										</tr>
+										<tr>
+											<td width="50%"><i class="color-gray">姓名：</i>{{ben.NAME}}</td>
+											<td width="50%"><i class="color-gray">性别：</i>{{ben.SEX | codeFormat:'sex'}}</td>
+										</tr>
+										<tr>
+											<td><i class="color-gray">国籍：</i>{{ben.NATIVE_PLACE | codeFormat:'nativeplace'}}</td>
+											<td><i class="color-gray">出生日期：</i>{{ben.BIRTHDAY}}</td>
+										</tr>
+										<tr>
+											<td><i class="color-gray">证件类型：</i>{{ben.IDNAME | codeFormat:'idtype'}}</td>
+											<td><i class="color-gray">证件有效期：</i>{{ben.ID_END_DATE}}</td>
+										</tr>
+										<tr>
+											<td colspan="2"><i class="color-gray">证件号码：</i>{{ben.IDNO}}</td>				
+										</tr>
+										<tr>
+											<td><i class="color-gray">系被保险人的：</i>{{ben.RELATION | codeFormat:'relation'}}</td>
+											<td><i class="color-gray">受益比例：</i>{{ben.BENEFIT_RATE}}%</td>
+										</tr>
+										<tr>											
+											<td><i class="color-gray">受益顺序：</i>{{ben.BENEFIT_ORDER}}</td>
+											<td><i class="color-gray">手机：</i>{{ben.MOBILE}}</td>
+										</tr>
+										<tr>
+											<td><i class="color-gray">职业：</i>{{ben.OCCUPATION}}</td>
+											<td><i class="color-gray">职业代码：</i>{{ben.OCCUPATION_CODE}}</td>						
+										</tr>
+										<tr>
+											<td colspan="2"><i class="color-gray">受益人住址：</i>{{ben.HOME_ADDRESS}}</td>
+										</tr>
+									</table>
+								</td>
+						</tr> 
+					</tbody>
+				</table>
+				
+				<table class="tableStyle">
+					<thead>
+						<caption>投保事项</caption>
+					</thead>
+					<tbody>
+						<tr>
+							<th>投保险种</th>
+							<th>保险金额（元）</th>
+							<th>保险期间</th>
+							<th>交费年期</th>
+							<th>标准保险费（元）</th>
+							<th>职业加费（元）</th>
+						</tr>
+						<!-- 
+						<tr ng-repeat = "product in productList" style="text-align:center;">
+							<td>{{product.PRODUCT_CODE | productCodeToName}}</td>
+							<td>{{product.AMOUNT}}</td>
+							<td>{{product.INSU_YEARS}}</td>
+							<td>{{product.PAY_END_YEAR}}</td>
+							<td>{{product.PREM}}</td>
+							<td>{{product.INSU_YEARS}}</td>
+						</tr>
+						 -->
+						 <tr ng-repeat = "product in productArray" style="text-align:center;">
+							<td>{{product.PRODUCT_NAME}}</td>
+							<td>{{product.AMOUNT}}</td>
+							<td>{{product.INSU_YEARS}}</td>
+							<td>{{product.PAY_END_YEAR}}</td>
+							<td>{{product.PREM}}</td>
+							<td>{{product.JOB_ADD_FEE}}</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<td colspan="6"><i class="color-gray">首期保险费合计：</i>{{firstPremiumTotal}}元</td>							
+						</tr>
+					</tfoot>
+				</table>
+				
+				<table class="tableStyle">
+					<thead>
+						<caption>投保事项（续）</caption>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<i class="color-gray">交费方式：</i>
+								<input type="radio" name="PAY_WAY_ID" value="1" disabled ng-checked="payMode=='0'">一次性交清
+								<input type="radio" name="PAY_WAY_ID" value="2" disabled ng-checked="payMode=='12'">年交
+								<input type="radio" name="PAY_WAY_ID" value="3" disabled ng-checked="payMode=='6'">半年交
+								<input type="radio" name="PAY_WAY_ID" value="4" disabled ng-checked="payMode=='3'">季交
+								<input type="radio" name="PAY_WAY_ID" value="5" disabled ng-checked="payMode=='1'">月交
+							</td>
+							<td>
+								<i class="color-gray">续期缴费时，是否需要缴费提示？</i>
+								<input type="radio" name="IS_NOTICE" ng-checked="applyPayData.IS_NOTICE" value="1" disabled>是
+								<input type="radio" name="IS_NOTICE" ng-checked="!applyPayData.IS_NOTICE" value="0" disabled>否
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<i class="color-gray">首期缴费：</i>
+								<input type="radio" name="way1" value="1" disabled ng-checked="true">银行转账
+								<input type="radio" name="way1" value="2" disabled>投保人自缴
+								<input type="radio" name="way1" value="3" disabled>人工收取
+							</td>
+							<td>
+								<i class="color-gray">续期缴费：</i>
+								<input type="radio" name="way2" value="1" disabled ng-checked="true">银行转账
+								<input type="radio" name="way2" value="2" disabled>投保人自缴
+								<input type="radio" name="way2" value="3" disabled>人工收取
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<i class="color-gray">若选择银行转帐缴费，我公司将从您提供并授权的以下账户划转保险费。</i>
+							</td>
+							<td ng-if="BONUS">
+								<i class="color-gray">被保险人是否拥有公费医疗、社会医疗保险：</i>
+								<input type="radio" ng-checked="applyBonusData.BONUS_GET_MODE" name="way" value="1" disabled>是
+								<input type="radio" ng-checked="!applyBonusData.BONUS_GET_MODE"  name="way" value="0" disabled>否								
+							</td>
+							<td ng-if="!BONUS">
+								<i class="color-gray">被保险人是否拥有公费医疗、社会医疗保险：</i>
+								<input type="radio"  name="way" value="1" disabled>是
+								<input type="radio"  name="way" value="0" disabled>否								
+							</td>														
+						</tr>
+						<tr>
+							<td colspan="2">
+								<i class="color-gray">开户银行：</i>{{applyPayData.BANK_CODE | bankCodeToName}}
+								<i class="color-gray leftMargin50">开户行省：</i>{{applyPayData.bankProvince}}
+								<i class="color-gray leftMargin50">开户行市：</i>{{applyPayData.bankCity}}
+								<i class="color-gray leftMargin50">账户类型：</i>{{applyPayData.bankSubType}}
+								<i class="color-gray leftMargin50">银行预留手机号：</i>{{applyPayData.bankPhone}}								
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<i class="color-gray">户名（投保人）：</i>{{applyPayData.APPLICANT_NAME}}
+								<i class="color-gray leftMargin50">账号：</i>{{applyPayData.BANK_NO}}								
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<i class="color-gray">续期保险费超过宽限期仍未交付时，是否选择保险费自动垫交：</i>
+								<input type="radio" name="IS_PAY_FOR" ng-checked="applyPayData.IS_PAY_FOR" value="1" disabled>是
+								<input type="radio" name="IS_PAY_FOR" ng-checked="!applyPayData.IS_PAY_FOR" value="0" disabled>否
+								（仅当保险合同有现金价值且允许自动垫交时适用）
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<i class="color-gray">选择电子保单服务：</i>
+								<input type="radio" name="IS_INSURE" ng-checked="applyPayData.IS_INSURE" value="1" disabled>是
+								<input type="radio" name="IS_INSURE" ng-checked="!applyPayData.IS_INSURE" value="0" disabled>否
+								（若是，保险合同以数据电文的形式展现在我司官方网站上,不再递送纸质合同。）
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<i class="color-gray">选择电子保单+纸质保单服务：</i>
+								<input type="radio" name="IS_INSURE" ng-checked="applyPayData.IS_INSURE_PAPER" value="1" disabled>是
+								<input type="radio" name="IS_INSURE" ng-checked="!applyPayData.IS_INSURE_PAPER" value="0" disabled>否								
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<table class="tableStyle">
+					<thead>
+						<caption>年金领取</caption>
+					</thead>
+					<tbody>
+						<tr>
+							<td><i class="color-gray">开始领取年龄：{{GETYEAR}}</i>周岁</td>
+							<td><i class="color-gray">领取计算方式：</i>{{GETCOMPUTEMODE | getComputeToName}}</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray">领取期限：</i>年</td>
+							<td>
+								<i class="color-gray">领取方式：</i>
+								<input type="radio" name="way3" value="1" disabled>一次性领取
+								<input type="radio" name="way3" value="2" disabled ng-checked="getDutyKind=='2'">年领
+								<input type="radio" name="way3" value="3" disabled ng-checked="getDutyKind=='1'">月领
+								<input type="radio" name="way3" value="4" disabled>其他
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="tableStyle">
+					<thead>
+						<caption>红利领取</caption>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<i class="color-gray">领取方式：</i>
+								<input type="radio" name="way4" value="1" disabled ng-checked="bonusGetWay=='1'">累计生息
+								<input type="radio" name="way4" value="2" disabled ng-checked="bonusGetWay=='2'">现金领取
+								<input type="radio" name="way4" value="3" disabled ng-checked="bonusGetWay=='3'">抵交保险费
+								<input type="radio" name="way4" value="4" disabled ng-checked="bonusGetWay=='7'">购买增额交清保费
+							</td>
+						</tr>
+					</tbody>
+				</table>	
+				
+				<div class="has-border margin-top-15">
+					<!-- 健康告知 -->
+					<ng-include src="'templates/health_impart.html'"></ng-include>
+				</div>
+				
+				<table class="tableStyle">
+					<thead>
+						<caption>投保人与被保险人/法定监护人声明及授权</caption>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="leftMargin20">
+								 	<p><strong>1.本人确认民生人寿保险股份有限公司及贵公司代理人已向本人提供所投保产品的条款，并对条款进行了说明，尤其是对保险责任、责任免除、犹豫期和合同解除等重要内容进行了提示和明确说明。本人对所投保产品条款、《人身保险投保提示书》及《产品说明书》已认真阅读、理解并同意遵守。</strong></p>
+								 	<p>2.本投保单所告知各项内容均完整、真实、无误，如有隐瞒或告知不实，贵公司可依据《保险法》规定解除保险合同，并对合同解除前发生的保险事故不承担保险责任。</p>
+								 	<p>3.本人授权贵公司可以从任何单位、组织和个人就有关保险事宜查询、索取与本人有关的资料和证明，贵公司对个人资料承担保密义务。</p>
+								 	<p>4.本投保单中银行账户所有人为投保人，开户银行、户名和账号均真实有效，本人授权贵公司从该账户中划转本保险合同所需交纳的保险费，并保证有足够的金额支付应缴保险费，若因账户存款余额不足造成转账不成功，致使合同不能持续有效,因此引起的责任概由投保人承担。</p>
+								 	<p>5.本人同意本合同自贵公司同意承保、收取首期保险费并签发保险单开始生效。贵公司自生效日零时起开始承担保险责任。</p>
+								 	<p>6.本人已知晓：本投保单不得作为收取现金的凭证。</p>
+								 	<p>7.如投保险种中包含分红保险、万能保险、投资连结保险，按照中国保险监督管理委员会规定，请您在电子投保申请确认书抄录：“本人已阅读保险条款、产品说明书和投保提示书，了解本产品的特点和保单利益的不确定性”。</p>
+								 	<p>8.本投保单的申请日期为<span id="applicationDate2"></span>，投保单由3页组成，全部内容均是在本人完全认可后生成。</p>
+								 </div>
+							</td>
+						</tr>
+						<tr>
+							<td><i class="color-gray leftMargin20">投保申请日期：</i><span class="underline" id="applicationDate"></span></td>
+						</tr>
+						<tr>
+							<td>
+								<i class="color-gray leftMargin20">销售渠道：</i> <span class="underline" id="agent_org"></span>
+								<i class="color-gray leftMargin50">代理人姓名：</i> <span class="underline" id="agent_name"></span>
+								<i class="color-gray leftMargin20">代理人工号：</i><span class="underline" id="agent_code"></span>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</ion-content>
+</ion-view>

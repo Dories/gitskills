@@ -1,0 +1,16 @@
+<div>
+	<header class="bar bar-header" >
+		<button class="button button-icon" ng-click="returnUp()">关闭</button>
+	    <h1 class="title">问题件处理</h1>
+	</header>
+	<div class="tabs tabcolor" ng-show="!tabShow" style="top:{{tabs}}px">
+		<ul>
+			<li ng-class="{'actived':!isAlready}" ng-click="underClickTab(1)" >核保通知书({{questionList.ifprintflag}})</li>
+			<li ng-class="{'actived':isAlready}" ng-click="underClickTab(0)">
+			签名</li>
+		</ul>
+	</div>
+	<div id="mainView">			
+	    <div ng-include="signatureTab" onload="preload()"></div>
+	</div>
+</div>

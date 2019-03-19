@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--问题卷5 呼吸系统疾病问卷-->
+    <DisclosureItem disclosure_ver="A_5_" disclosure_id="problempieces_05" flag="questionName" text="呼吸系统疾病问卷"/>
+
+    <DisclosureItem disclosure_ver="A_5_" no_yesno="true" disclosure_id="A_5_1_" flag="common">
+        <Description text="1.  您首次得知患病时间："/>
+        <Input input_type="br"/>
+            <Input input_key="A_5_1_startyear" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_key="A_5_1_startmonth" length="3" input_type="number"/>
+            <Description text="月"/>
+            <Input input_type="br"/>
+        <Description text="最近一次发作的时间："/>
+        <Input input_type="br"/>
+            <Input input_key="A_5_1_endyear" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_key="A_5_1_endmonth" length="3" input_type="number"/>
+            <Description text="月"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_5_" no_yesno="true" disclosure_id="A_5_2_" flag="common">
+        <Description text="2.  最后的诊断是："/>
+        <Input input_type="br"/>
+            <Input input_key="A_5_2_text1" length="5" input_type="text"/>
+            <Input input_type="br"/>
+        <Description text="诊断医院："/>
+            <Input input_key="A_5_2_text2" length="5" input_type="text"/>
+            <Input input_type="br"/>
+        <Description text="末次复诊时间："/>
+            <Input input_type="br"/>
+            <Input input_key="A_5_2_lastyear" length="3" input_type="number"/>
+        <Description text=" 年 "/>
+            <Input input_key="A_5_2_lastmonth" length="3" input_type="number"/>
+        <Description text=" 月 "/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_5_" no_yesno="true" disclosure_id="A_5_3_" flag="common">
+        <Description text="3.  发病时的症状："/>
+        <Radio input_type="checkbox" and_others="false" options="无症状" radio_key="A_5_3_a"/>
+        <Radio input_type="checkbox" and_others="false" options="咳嗽" radio_key="A_5_3_b" />
+        <Radio input_type="checkbox" and_others="false" options="咯痰" radio_key="A_5_3_c" />
+        <Radio input_type="checkbox" and_others="false" options="气短" radio_key="A_5_3_d" />
+        <Radio input_type="checkbox" and_others="false" options="胸痛" radio_key="A_5_3_e" />
+        <Radio input_type="checkbox" and_others="false" options="咯血" radio_key="A_5_3_f" />
+        <Radio input_type="checkbox" and_others="false" options="发热" radio_key="A_5_3_g" />
+        <Radio input_type="checkbox" and_others="false" options="痰中带血" radio_key="A_5_3_h" />
+        <Radio input_type="checkbox" and_others="false" options="盗汗" radio_key="A_5_3_j" />
+        <Radio input_type="checkbox" and_others="false" options="乏力" radio_key="A_5_3_k" />
+        <Radio input_type="checkbox" and_others="false" options="心悸" radio_key="A_5_3_l" />
+        <Radio input_type="checkbox" and_others="false" options="水肿" radio_key="A_5_3_m" />
+        <Radio input_type="checkbox" and_others="false" options="唇甲紫绀" radio_key="A_5_3_n" />
+        <Radio input_type="checkbox" and_others="false" options="食欲不振" radio_key="A_5_3_p" />
+        <Radio input_type="checkbox" and_others="false" options="呼吸困难" radio_key="A_5_3_q" />
+        <Radio input_type="checkbox" and_others="false" options="不能平卧" radio_key="A_5_3_r" />
+        <Radio input_type="checkbox" and_others="false" options="其他症状" radio_key="A_5_3_s" />
+        <Input input_key="A_5_3_01" length="5" input_type="text" is_checked="false"/>  
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_5_" no_yesno="donotCheckYes" disclosure_id="A_5_4_" flag="common">
+        <Description text="4.  上述症状是否反复发作？"/>
+        <Expendable>
+            <Description text="发作频率"/>
+            <Input input_key="A_5_4_01" length="3" input_type="number"/>
+            <Description text=" 次/年"/>
+            <Input input_type="br"/>
+            <Description text="每次发作持续时间"/>
+            <Input input_key="A_5_4_02" length="3" input_type="number"/>
+            <Description text="天"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_5_" no_yesno="donotCheckYes" disclosure_id="A_5_5_" flag="common">
+        <Description text="5.  症状发作是否有季节性？"/>
+        <Expendable>
+            <Description text="多于下述哪个季节发作？"/>
+            <Radio input_type="checkbox" and_others="false" options="春季" radio_key="A_5_5_01"/>
+            <Radio input_type="checkbox" and_others="false" options="夏季" radio_key="A_5_5_02"/>
+            <Radio input_type="checkbox" and_others="false" options="秋季" radio_key="A_5_5_03"/>
+            <Radio input_type="checkbox" and_others="false" options="冬季" radio_key="A_5_5_04"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_5_" no_yesno="false" disclosure_id="A_5_6_" flag="common">
+        <Description text="6.  是否曾因呼吸系统疾病住院治疗？ "/>
+        <Expendable>
+            <Description text="医院名称"/>
+            <Input input_key="A_5_6_01" length="3" input_type="text"/>
+            <Description text="住院次数"/>
+            <Input input_key="A_5_6_02" length="3" input_type="number"/>
+            <Description text="次"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_5_" no_yesno="false" disclosure_id="A_5_7_" flag="common">
+        <Description text="7.  是否接受治疗？"/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="服药治疗" radio_key="A_5_7_05"/>
+            <Input input_type="br"/>
+            <Description text="药物名称"/>
+            <Input input_key="A_5_7_01" length="5" input_type="text"/>
+            <Radio input_type="checkbox" and_others="false" options="手术治疗" radio_key="A_5_7_07"/>
+            <Input input_type="br"/>
+            <Description text="手术名称"/>
+            <Input input_key="A_5_7_03" length="5" input_type="text"/>
+            <Description text="手术日期"/>
+            <Input input_key="A_5_7_04" length="5" input_type="number"/>
+            <Radio input_type="checkbox" and_others="false" options="其他治疗" radio_key="A_5_7_06"/>
+            <Input input_type="br"/>
+            <Input input_key="A_5_7_02" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_5_" no_yesno="false" disclosure_id="A_5_8_" flag="common">
+        <Description text="8.  是否做过胸部X线、支气管镜、肺功能检查、胸腔穿刺、心电图等检查？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_5_" no_yesno="false" disclosure_id="A_5_9_" flag="common">
+        <Description text="9.  目前是否有不适？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_5_" no_yesno="donotCheckYes" disclosure_id="A_5_10_" flag="common">
+        <Description text="10.  您是否吸烟？"/>
+        <Expendable>           
+            <Description text="吸烟量："/>
+            <Input input_key="A_5_10_01" length="3" input_type="number"/>
+            <Description text="支/日"/>
+            <Input input_key="A_5_10_02" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_type="br"/>
+            <Description text="已戒烟"/>
+            <Input input_key="A_5_10_03" length="3" is_checked="false" input_type="number"/>
+            <Description text="年"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_5_" no_yesno="false" disclosure_id="A_5_11_" flag="common">
+        <Description text="11.   您是否从事过采矿、石棉及防火纤维的加工处理、玻璃原料处理等职业？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_5_" no_yesno="true" disclosure_id="A_5_11_01" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果）"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_5_11_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_5_" no_yesno="false" disclosure_id="A_5_12_" flag="BlankRemarkTable">
+        <Description text="12. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_5_12_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷33 危险运动问卷部分
+	 -->
+     <DisclosureItem disclosure_ver="C_2_" disclosure_id="problempieces_33" flag="questionName" text="危险运动问卷">
+     </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_2_" no_yesno="true" disclosure_id="C_2_1_" flag="BlankRemarkTable">
+        <Description text="1. 请您详细列明您所从事的危险运动项目："/>
+        <Expendable>
+            <BlankRemarkTable input_key="C_2_1_content" lines="4"/>
+        </Expendable>       
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_2_" no_yesno="true" disclosure_id="C_2_2_" flag="common">
+        <Description text="2. 您参加此活动多久了？"/>        
+        <Input input_type="number" input_key="C_2_2_year" length="3"  />
+        <Description text="年" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_2_" no_yesno="true" disclosure_id="C_2_3_" flag="common">
+        <Description text="3. 您的身份是："/>
+        <Radio input_type="radio" options="业余运动员" radio_key="C_2_3_a" />
+        <Radio input_type="radio" options="专业运动员" radio_key="C_2_3_b" />
+        <Radio input_type="radio" options="教练" radio_key="C_2_3_c" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_2_" disclosure_id="C_2_4_" no_yesno="true" flag="BlankRemarkTable">
+        <Description text="4.请列明参加的专业协会或俱乐部："/>
+        <Expendable>
+            <BlankRemarkTable input_key="C_2_4_content" lines="4"/> 
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_2_" disclosure_id="C_2_5_" no_yesno="true" flag="common">
+        <Description text="5. 平均每年参与次数:"/>  
+        <Input input_type="number" input_key="C_2_5_times" length="3"  /> 
+        <Description text="次"/>        
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_2_" no_yesno="false" disclosure_id="C_2_6_" flag="BlankRemarkTable">
+        <Description text="6. 是否从事高空或地下危险活动？"/>
+        <Expendable>
+            <Description text="如是，请详细列明高度和深度："/>
+            <BlankRemarkTable input_key="C_2_6_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_2_" no_yesno="false" disclosure_id="C_2_7_" flag="BlankRemarkTable">
+        <Description text="7. 是否接受特别训练？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="C_2_7_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_2_" no_yesno="haveNone" disclosure_id="C_2_8_" flag="BlankRemarkTable">
+        <Description text="8. 您从事此活动的地点，有无安全防范措施？"/>
+        <Expendable>            
+            <BlankRemarkTable input_key="C_2_8_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_2_" no_yesno="false" disclosure_id="C_2_9_" flag="BlankRemarkTable">
+        <Description text="9. 有无参加表演并尝试打破纪录？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_2_" no_yesno="haveNone" disclosure_id="C_2_10_" flag="BlankRemarkTable">
+        <Description text="10. 除上述内容外，您认为还有哪些信息有助于我们处理您的投保申请？"/>
+        <Expendable>            
+            <BlankRemarkTable input_key="C_2_10_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

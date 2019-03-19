@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷21 心脏疾病问卷部分
+	 -->
+     <DisclosureItem disclosure_ver="A_21_" disclosure_id="problempieces_21" flag="questionName" text="心脏疾病问卷">
+     </DisclosureItem>
+
+      <DisclosureItem disclosure_ver="A_21_" no_yesno="true" disclosure_id="A_21_1_" flag="common">
+        <Description text="1. 首次出现不适的时间：" />
+        <Input hint="" 
+            input_key="A_21_1_year"
+            length="3" 
+            input_type="number"/>
+        <Description text="年" />
+        <Input
+            hint=""
+            input_key="A_21_1_month"
+            length="3"
+            input_type="number" />
+        <Description text="月" />        
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="A_21_" no_yesno="true" disclosure_id="A_21_2_" flag="common">
+        <Description text="2. 主要不适：" />
+        <Radio input_type="checkbox" options="胸痛" radio_key="A_21_2_a" />
+        <Radio input_type="checkbox" options="心慌" radio_key="A_21_2_b" />
+        <Radio input_type="checkbox" options="胸闷" radio_key="A_21_2_c" />
+        <Radio input_type="checkbox" options="气短" radio_key="A_21_2_d" />
+        <Radio input_type="checkbox" options="前心区不适" radio_key="A_21_2_e" />
+        <Radio input_type="checkbox" options="其他" radio_key="A_21_2_f" />
+        <Input input_type="text" input_key="A_21_2_01" length="10"  />
+    </DisclosureItem>
+
+     <DisclosureItem disclosure_ver="A_21_" no_yesno="true" disclosure_id="A_21_3_" flag="common">
+        <Description text="3. 上述不适发生的诱因：" />
+        <Radio input_type="checkbox" options="体力活动" radio_key="A_21_3_a" />
+        <Radio input_type="checkbox" options="情绪波动" radio_key="A_21_3_b" />
+        <Radio input_type="checkbox" options="饱食之后" radio_key="A_21_3_c" />
+        <Radio input_type="checkbox" options="无诱因" radio_key="A_21_3_d" />
+        <Input input_type="br"/>
+        <Description text="持续时间: " />
+        <Radio input_type="checkbox" options="少于3分钟" radio_key="A_21_3_e" />
+        <Radio input_type="checkbox" options="3分钟-10分钟" radio_key="A_21_3_f" />
+        <Radio input_type="checkbox" options="1小时以内" radio_key="A_21_3_g" />
+        <Radio input_type="checkbox" options="大于1小时" radio_key="A_21_3_h" />
+        <Input input_type="br"/>
+        <Description text="发作频率: " />
+        <Radio input_type="checkbox" options="1次/数天" radio_key="A_21_3_i" />
+        <Radio input_type="checkbox" options="1次/天" radio_key="A_21_3_j" />
+        <Radio input_type="checkbox" options="数次/天" radio_key="A_21_3_k" />
+        <Input input_type="br"/>
+        <Description text="缓解方式： " />
+        <Radio input_type="checkbox" options="休息" radio_key="A_21_3_l" />
+        <Radio input_type="checkbox" options="服药" radio_key="A_21_3_m" />
+        <Radio input_type="checkbox" options="其他" radio_key="A_21_3_n" />
+         <Input input_type="text" input_key="A_21_3_o" length="10"  />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_21_" disclosure_id="A_21_4_"  flag="common">
+        <Description text="4. 目前身体状况，下列情况是否出现疲乏、心悸、呼吸困难、或心绞痛、下肢浮肿等情况？"/>
+        <Expendable>
+            <Radio input_type="checkbox" options="正常活动后（步行3~4里、上三楼、上坡等）无" radio_key="A_21_4_a" />
+            <Radio input_type="checkbox" options="轻微活动后有" radio_key="A_21_4_b" />
+            <Radio input_type="checkbox" options="正常活动后（步行3~4里、上三楼、上坡等）有" radio_key="A_21_4_c" />
+            <Radio input_type="checkbox" options="不活动仍有" radio_key="A_21_4_d" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_21_" disclosure_id="A_21_5_" flag="common"> 
+        <Description text="5. 是否曾因上述不适就诊或住院治疗？"/>
+        <Expendable>
+            <Description text="医院名称:" />
+                <Input input_key="A_21_5_01" length="10" input_type="text" />
+            <Description text="诊断:" />
+                <Input input_key="A_21_5_02" length="10" input_type="text" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_21_" disclosure_id="A_21_6_"> 
+        <Description text="6. 是否做过心电图、24小时动态心电图、胸片、心脏超声、冠脉造影、心肌核素扫描等检查？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_21_" disclosure_id="A_21_7_" no_yesno="donotCheckYes">
+        <Description text="7. 是否因此病而长期（如数周）休假？" />       
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_21_" no_yesno="false" disclosure_id="A_21_8_" flag="common">
+        <Description text="8. 是否因上述不适或心脏疾病曾使用药物治疗？" />
+        <Expendable>           
+            <Description text="药物名称:" />
+            <Input input_key="A_21_8_01" length="10" input_type="text"/>            
+            <Description text="治疗效果:" />
+            <Input input_key="A_21_8_02" length="10" input_type="text"/>  
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_21_"   disclosure_id="A_21_9_" flag="common">
+        <Description text="9. 目前是否服药治疗？"/>
+        <Expendable>           
+            <Description text="药物名称:" />
+            <Input input_key="A_21_9_01" length="10" input_type="text"/>            
+            <Description text="用法及用量:" />
+            <Input input_key="A_21_9_02" length="10" input_type="text"/>  
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_21_" disclosure_id="A_21_10_" no_yesno="false"> 
+        <Description text="10. 是否曾进行手术治疗？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_21_" disclosure_id="A_21_11_" no_yesno="false" flag="common">        
+        <Description text="11. 您是否患有高血压病，糖尿病或者高脂血症等？"/>
+    </DisclosureItem>    
+
+    <DisclosureItem disclosure_ver="A_21_" no_yesno="true" disclosure_id="A_21_check_result" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果）"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_21_11_content" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_21_" no_yesno="false" disclosure_id="A_21_12_" flag="BlankRemarkTable">
+        <Description text="12. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_21_12_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

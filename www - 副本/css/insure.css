@@ -1,0 +1,1095 @@
+
+/***************************************************/
+.bg-grey{
+	background: #f7f7f7;
+}
+.steps{
+	position: absolute;
+	top:44px;
+	width: 100%;
+}
+.refund-step {
+	height: 40px;
+	padding: 50px 20px;
+	margin-top: 20px;
+}
+.input-style{
+	border: 1px solid #e8e8e8;
+	vertical-align: middle;
+}
+.refund-step-bar li, .refund-step-bar .refund-step-cur .refund-step-status, .refund-step-bar .refund-step-start-cur .refund-step-status, .refund-step-bar .refund-step-end-cur, .refund-step .refund-step-start-done .refund-step-status {
+	background: url(../img/steps.png) 0 0 no-repeat
+}
+
+.refund-step-bar {
+	height: 10px;
+	background-color: #dedede;
+	margin-left: 100px;
+}
+
+.refund-step-bar li {
+	color: #888;
+	float: left;
+	position: relative;
+	height: 30px;
+	margin-top: -10px;
+}
+
+.refund-step-bar .refund-step-start, .refund-step-bar .refund-step-start-cur, .refund-step-bar .refund-step-start-done {
+	margin-left: 0
+}
+
+.refund-step-bar .refund-step-name {
+	position: relative;
+	float: left;
+	top: -30px;
+	margin-top: -30px;
+	margin-left: -20px;
+	white-space: nowrap;
+	font-size: 16px;
+}
+
+.refund-step-bar .refund-step-no {
+	display: block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	font-size: 16px;
+	*position: relative;
+	*z-index: 2
+}
+
+.refund-step-bar .refund-step-done, .refund-step-bar .refund-step-cur {
+	background-position: 0 -30px
+}
+
+.refund-step-bar .refund-step-start {
+	background-position: 0 -60px
+}
+
+.refund-step-bar .refund-step-start-done, .refund-step-bar .refund-step-start-cur {
+	background-position: 0 -30px
+}
+.refund-step-bar .refund-step-end {
+	/*background-position: 0 0px*/
+}
+
+.refund-step-bar .refund-step-end-done, .refund-step-bar .refund-step-end-cur {
+	background-position: 0 -30px
+}
+.refund-step-bar .refund-step-done .refund-step-status, .refund-step-bar .refund-step-start-done .refund-step-status, .refund-step-bar .refund-step-end-done .refund-step-status, .refund-step-bar .refund-step-cur .refund-step-status, .refund-step-bar .refund-step-start-cur .refund-step-status, .refund-step-bar .refund-step-end-cur .refund-step-status {
+	display: block;
+	height: 10px;
+	background-color: #d23f15;
+	margin-top: -20px;
+	font-size: 0;
+	overflow: hidden
+}
+.refund-step-bar .refund-step-cur .refund-step-status, .refund-step-bar .refund-step-start-cur .refund-step-status, .refund-step-bar .refund-step-end-cur .refund-step-status, .refund-step .refund-step-start-done .refund-step-status {
+	width: 50%;
+	padding-right: 17px;
+	background-position: right -210px
+}
+.refund-step-bar .refund-step-done .refund-step-status, .refund-step-bar .refund-step-start-done .refund-step-status, .refund-step-bar .refund-step-end-done .refund-step-status {
+	width: auto;
+	padding: 0
+}
+
+.refund-step-bar .refund-step-start .refund-step-status, .refund-step-bar .refund-step-start-cur .refund-step-status, .refund-step-bar .refund-step-start-done .refund-step-status {
+	margin-left: 5px;
+	padding-right: 12px
+}
+
+.refund-step-bar .refund-step-end .refund-step-status, .refund-step-bar .refund-step-end-cur .refund-step-status, .refund-step-bar .refund-step-end-done .refund-step-status {
+	margin-right: 5px;
+	padding: 0
+}
+
+.refund-step-2 .refund-step-start .refund-step-status, .refund-step-2 .refund-step-start-cur .refund-step-status, .refund-step-2 .refund-step-start-done .refund-step-status {
+	padding: 0
+}
+
+.refund-step-5 li {
+	width: 25%;
+	margin-left: -9px
+}
+.refund-step-bar .refund-step-end, .refund-step-bar .refund-step-end-cur, .refund-step-bar .refund-step-end-done {
+	width: 30px;
+	margin-left: -30px;
+	margin-right: 0;
+	float: right
+}
+.first-left-bar{
+	height: 10px;
+	width: 120px;
+	vertical-align: baseline;
+	position: absolute;
+	top: 10px;
+	left: -119px;
+}
+.first-left-bar01,.first-left-bar02,.first-left-bar03{
+	display: inline-block;
+	float: right;
+	height: 10px;
+}
+.first-left-bar01{
+	background-color: #d23f15;
+	width: 50px;
+	margin-left: 10px;
+}
+.first-left-bar02{
+	background-color: #df886d;
+	width: 30px;
+	margin-left: 10px;
+}
+.first-left-bar03{
+	background-color: #ebbfb2;
+	width: 20px;
+}
+
+.refund-step-bar .refund-step-start-cur .refund-step-name,.refund-step-bar .refund-step-cur .refund-step-name,.refund-step-bar .refund-step-done .refund-step-name,.refund-step-bar .refund-step-start-done .refund-step-name,.refund-step-bar .refund-step-end-done .refund-step-name{
+	color:#d23f15
+}
+.refund-step-bar .refund-step-end .refund-step-status, .refund-step-bar .refund-step-end-cur .refund-step-status, .refund-step-bar .refund-step-end-done .refund-step-status {
+	_position: absolute;
+	padding-left: 5px
+}
+/**********************/
+.insure-tab-menu{
+	width: 100%;
+	height: 38px;
+	padding: 0 10px;
+}
+.has-top {
+	top:40px;
+	margin: 0 10px;
+}
+.has-border{
+	border: 1px solid #e6e6e6;
+	/*border-top: none ;*/
+	background: #fff;
+	margin-top: -1px;
+}
+.insure-tabs{
+	position: absolute;
+	top: 150px;
+	width: 100%;
+	bottom:70px;
+}
+.tab-content.tab-bordered {
+}
+.nav-tabs{
+	background: #F7F7F7;
+	border: 1px solid #e6e6e6;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	position: relative;
+	top: 0;
+	z-index: 999;
+	/*display: -webkit-box;
+	display: box;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    box-pack: justify;*/
+    display: -webkit-flex;
+    display: flex;
+  	width: 100%;
+    text-align: center;
+}
+.nav-tabs:after{
+	content: '';
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	display: block;
+}
+.nav-tabs li{
+	/*float: left;*/
+	line-height: 38px;
+	/*margin: 0 20px;*/
+	flex: 1;
+  	text-align: center;
+}
+.nav-tabs li.active a{
+	color: #d23f15;
+}
+.nav-tabs li a{
+	color: #888;
+}
+.checkbox input, .checkbox-icon {
+	position: relative;
+	width: 22px;
+	height: 22px;
+	display: block;
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+	-webkit-appearance: none;
+}
+.checkbox input:before, .checkbox .checkbox-icon:before {
+	border-color: #da340a;
+}
+.checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before {
+	background: #da340a;
+}
+.checkbox input:checked::before, .checkbox input:checked + .checkbox-icon::before{
+	background: #fff;
+}
+.checkbox input::after, .checkbox-icon::after{
+	-webkit-transition: opacity 0.05s ease-in-out;
+	-moz-transition: opacity 0.05s ease-in-out;
+	transition: opacity 0.05s ease-in-out;
+	-webkit-transform: rotate(-55deg);
+	-moz-transform: rotate(-55deg);
+	transform: rotate(-55deg);
+	position: absolute;
+	top: 30%;
+	left: 26%;
+	display: table;
+	width: 12px;
+	height: 7px;
+	border: 1px solid #d23f15;
+	border-top: 0;
+	border-right: 0;
+	content: ' ';
+	opacity: 0;
+}
+.checkbox input:checked:before, input:checked + .checkbox-icon:before {
+	border-width: 1px;
+}
+.checkbox-agree{
+	color: #da340a;
+	position: relative;
+	z-index: 2;
+	display: block;
+	padding: 16px;
+	font-size: 16px;
+	/*text-align: center;*/
+	width: 120px;
+	margin: 0 auto;
+}
+.checkbox-agree span{
+	vertical-align: 6px;
+	padding-left: 30px;
+}
+.button.button-light-red {
+	border-color: #d14014;
+	background-color: #fff;
+	color: #d14014;
+	padding: 0px 50px;
+	margin: 0 auto;
+}
+.button.button-light-grey {
+	border-color: #cfcfcf;
+	background-color: #fff;
+	color: #cfcfcf;
+	padding: 0px 50px;
+	margin: 0 auto;
+}
+/*.footer-btns{
+	width: 310px;
+	margin: 0 auto;
+	text-align: center;
+}*/
+.footer-btns{
+ 	width: 100%;
+ 	margin: 0 auto;
+ 	text-align: center;
+}
+div.bar.bar-footer.footer-btn-bar{
+	font-size: 16px;
+	padding: 8px 0;
+	height: 60px;
+	border-top:1px solid #cfcfcf ;
+	text-align:center;
+}
+.footer-btn-bar .button{
+	min-height: 40px;
+	line-height: 40px;
+}
+.footer-btn-bar .button:first-child{
+	margin-right: 10px;
+}
+/*.footer-btn-bar .button:nth-child(2){
+	margin-left: 10px;
+}*/
+.has-bottom{
+	bottom:60px;
+}
+.tab-con-inner{
+	padding: 10px 12px;
+}
+.insure-edit-icon{
+	background: url(../img/editor-black.png) no-repeat;
+	display: inline-block;
+	background-size: 100%;
+	width: 20px;
+	height: 20px;
+}
+.text-right{
+	text-align: right;
+	/*vertical-align: middle;*/
+}
+.color-red{
+	color:#da340a;
+}
+.color-gray{
+	color: #888;
+}
+.margin-top-15{
+	margin-top: 15px !important;
+}
+.margin-top-10{
+	margin-top: 10px !important;
+}
+.content-bottom{
+	padding: 25px;
+	text-align: center;
+}
+.btn-save{
+	background: #da340a;
+	border: none;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 36px;
+	padding: 0 50px;
+	color: #fff;
+}
+.ion-insure-add{
+	background: url(../img/add_red.png) no-repeat;
+	display: inline-block;
+	background-size: 100%;
+	width: 16px;
+	height: 16px;
+}
+.ion-insure-moveout{
+	background: url(../img/moveout.png) no-repeat;
+	display: inline-block;
+	background-size: 100%;
+	width: 16px;
+	height: 16px;
+}
+.insure-edit{
+	position: relative;
+	display: inline-block;
+}
+.insure-edit.item-icon-left{
+	padding-left: 16px;
+	color:#000;
+}
+.insure-edit.item-icon-left .icon{
+	top:12px;
+	left: 0;
+}
+.info-table{
+	width: 100%;
+	/*margin-top: 10px;*/
+}
+.info-table th{
+	color: #888;
+}
+.info-table th,.info-table td{
+	line-height: 32px;
+	text-align: center;
+	padding: 2px;
+}
+.info-table tr:nth-of-type(odd){
+	background: #fBfBfB;
+}
+div.row.bg-gray{
+	background: #f7f7f7;
+}
+div.row.bg-white{
+	background: #fff;
+}
+.select-group{
+	position: relative;
+	height: 28px;
+}
+i.input-arror-right {
+	position: absolute;
+	top: 0;
+	right: 16px;
+	color: #bbb;
+	margin-top: -2px;
+	/*width: 0;
+	height: 0;
+	border-top: 5px solid;
+	border-right: 5px solid rgba(0, 0, 0, 0);
+	border-left: 5px solid rgba(0, 0, 0, 0);
+	color: #999;
+	content: "";
+	pointer-events: none;*/
+}
+.select-group select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 8px 50px 8px 10px;
+	width: 100%;
+	border: 1px solid #e8e8e8;
+	background: #fff;
+	color: #333;
+	text-indent: 0.01px;
+	text-overflow: '';
+	white-space: nowrap;
+	font-size: 14px;
+	cursor: pointer;
+	direction: ltr;
+	border: 1px solid #e8e8e8;
+	border-radius: 5px;
+	padding-left: 10px;
+	height: 35px;
+	padding-bottom: 2px;
+}
+input.text-style{
+	border: 1px solid #e8e8e8;
+	border-radius: 5px;
+	padding-left: 10px;
+	height: 35px;
+	padding-bottom: 2px;
+	-webkit-appearance:none;
+}
+textarea.text-style{
+	border: 1px solid #e8e8e8;
+	border-radius: 5px;
+	min-height: 60px;
+	padding: 5px 10px;
+	-webkit-appearance:none;
+}
+.tip-check{
+	position: relative;
+	z-index: 2;
+	display: block;
+	padding: 0 12px;
+	margin-top: 10px;
+}
+.tip-check span{
+	vertical-align: 6px;
+	padding-left: 35px;
+	display: inline-block;
+}
+.bool-radio{
+	position: relative;
+	z-index: 2;
+	display: block;
+	padding: 0 12px;
+	width: 70px;
+	float: right;
+}
+.bool-radio.item-checkbox .checkbox{
+	margin-top: -18px;
+}
+.relation-radio{
+	position: relative;
+	z-index: 2;
+	display: block;
+	padding: 0 12px;
+	width: 85px;
+	float: left;
+}
+.relation-radio.item-checkbox .checkbox{
+	margin-top: -18px;
+}
+.tab-panel p{
+	line-height: 1.5;
+}
+.camara{
+	display: -webkit-box;
+	/*height: 240px;*/
+}
+.camara li{
+	-webkit-box-flex: 1;
+	background:url(../img/take_photo.png) no-repeat #fafafa center;
+	background-size: 98%;
+	border: 1px solid #d23f14;
+	text-align: center;
+	margin:10px 50px;
+	border-radius: 4px;
+	width: 100%;
+	height: 220px;
+	position: relative;
+}
+
+.camara li span{
+	display: block;
+	margin-top: 5px;
+	color: #d23f14;
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	width: 70px;
+	margin-left: -35px;
+	font-size: 14px;
+}
+.camara li img{
+	border-radius: 4px;
+	width: 100%;
+	max-height: 220px;
+}
+.insure-submit{
+	/*width: 380px;*/
+	margin: 80px auto;
+}
+.insure-submit #printNo1, .insure-submit #printNo2 {
+	width: 90%;
+	margin: 0 auto;
+	padding-left: 0;
+}
+
+/* xiyawen add，begin */
+
+/* 选择签名方式的布局样式  */
+.signatureFooter{
+	position: absolute;
+	background-color: #fff;
+	bottom:60px;
+	width:100%;
+	text-align:center;
+	line-height:50px;
+	font-size: 14px;
+	border-top:1px solid #cfcfcf ;
+	z-index:1000;
+}
+/* 保单操作按钮所在层样式  */
+.operationBar{
+	position: absolute;
+	background-color: #fff;
+	bottom:0px;
+	width:100%;
+	text-align:center;
+	vertical-align:middle;
+	line-height:50px;
+	min-height:50px;
+	font-size: 14px;
+	border-top:1px solid #cfcfcf ;
+	z-index:1000;
+}
+/* 保单操作按钮样式 */
+.operationBar button {
+	background: #da340a;
+	border: none;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 36px;
+	color: #fff;
+	padding: 0 30px;
+	margin-right: 20px;
+}
+/* 手机版保单操作按钮所在层样式  */
+.operationBarOfPhone{
+	position: absolute;
+	background-color: #fff;
+	bottom:0px;
+	width:100%;
+	text-align:center;
+	vertical-align:middle;
+	line-height:40px;
+	min-height:40px;
+	font-size: 14px;
+	border-top:1px solid #cfcfcf ;
+	z-index:1000;
+}
+/* 保单操作按钮样式 */
+.operationBarOfPhone button {
+	background: #da340a;
+	border: none;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	padding: 0 5px;
+	margin-right: 5px;
+}
+/* 普通按钮样式 */
+.generalButton{
+	background: #da340a;
+	border: none;
+	border-radius: 3px;
+	text-align: center;
+	line-height: 36px;
+	color: #fff;
+	padding: 0 30px;
+	margin-right: 20px;
+}
+/* 普通按钮置灰 */
+.generalButtonDisabled {
+	border-color: #cfcfcf;
+	background-color: #fff;
+	color: #cfcfcf;
+	padding: 0px 30px;
+	margin: 0 auto;
+}
+/* 红色小按钮 */
+.smallRedButton{
+	background: #D23F15;
+	padding:0px 5px;
+	border: none;
+	color: #fff;
+	min-width: 20px;
+	min-height: 18px;
+	line-height: 18px;
+}
+/* 手机版在线投保步骤标题样式 */
+.title_outer_div{
+	background: transparent;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	float: left;
+	margin-top: 20px;
+	vertical-align: middle;
+	font-weight: bold;
+	font-size: 16px;
+}
+.step_title_div{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+}
+.step_title_number{
+	background: url(../img/steps.png) 0 0 no-repeat;
+	background-position: 0 -30px;
+	display:inline-block;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+}
+.step_title{
+	color:#d23f15;
+	margin-left: 5px;
+}
+.slide_box_phone{
+	position: absolute;
+	top: 105px;
+	width: 100%;
+	bottom:70px;
+}
+.content_middle{
+	text-align: center;
+	vertical-align: middle;
+}
+.show_information{
+	width: 100%;
+	height: 100%;
+	margin-top: 50px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 18px;
+}
+.textcontent_p{
+	text-align: center;
+}
+.highlight_content{
+	color: red;
+	font-weight: bold;
+}
+
+/* 告知选项卡内容相关样式，begin */
+.impart_div{
+	width:100%;
+}
+.impart_sub_div{
+	display:none;
+}
+.content_padding{
+	padding:5px;
+}
+.impartTable{
+	width:100%;
+	border-right:1px solid #e6e6e6;
+	border-bottom:1px #e6e6e6 solid;
+}
+.impartColumn1{
+	width:85%;
+	border-left:1px #e6e6e6 solid;
+	border-top:1px #e6e6e6 solid;
+	line-height:300%;
+	padding:10px 10px 10px 10px;
+}
+.impartColumn2{
+	width:15%;
+	border-left:1px #e6e6e6 solid;
+	border-top:1px #e6e6e6 solid;
+	line-height:300%;
+	text-align:center;
+}
+.impartColumn1OfPhone{
+	width:77%;
+	border-left:1px #e6e6e6 solid;
+	border-top:1px #e6e6e6 solid;
+	line-height:200%;
+	padding:10px 10px 10px 10px;
+}
+.impartColumn2OfPhone{
+	width:23%;
+	border-left:1px #e6e6e6 solid;
+	border-top:1px #e6e6e6 solid;
+	line-height:200%;
+	text-align:center;
+	vertical-align: middle;
+	font-size: 16px;
+}
+.small_text_input{
+	border: 1px solid #e8e8e8;
+	border-radius: 5px;
+	padding-left: 10px;
+	height: 25px;
+	padding-bottom: 2px;
+	-webkit-appearance:none;
+}
+.columnAlign{
+	text-align:center;
+	vertical-align: middle;
+}
+.contentMarginLeft{
+	margin-left:20px;
+}
+.textStyleW50{
+	width: 50px;
+	margin-left: 2px;
+}
+.textStyleW100{
+	width:100px;
+}
+.textStyleW200{
+	width:200px;
+}
+.textStyleP40{
+	width:40%;
+}
+.textStyleP80{
+	width:80%;
+}
+.textStyleP95{
+	width:95%;
+}
+/*
+.radioStyleOfImpart{
+	margin-left:20px;
+	margin-right:5px;
+	width: 25px;
+	height: 25px;
+}
+
+.checkboxStyleOfImpart input[type="checkbox"]{
+	width: 100px;
+	height: 25px;
+}*/
+.checkboxStyleOfImpart { 
+    display: none
+	
+} 
+ 
+.checkboxStyleOfImpart + label { 
+    background:  #FFF url(../img/4-1-01.png) no-repeat; 
+    padding: 15px;     
+    display: inline-block; 
+    position: relative; 
+    margin-right: 12px; 
+	vertical-align:middle;
+} 
+.checkboxStyleOfImpart + label:active { 
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1); 
+} 
+ 
+.checkboxStyleOfImpart:checked + label { 
+    background-color: #FFF; 
+    border: 0px solid #FFF; 
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1); 
+    color: #FFF; 
+} 
+ 
+.checkboxStyleOfImpart:checked + label:after { 
+    content: url(../img/4-1-02.png); 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    color: #FFF; 
+    width: 100%; 
+    text-align: center; 
+    font-size: 1.4em; 
+    vertical-align: text-top; 
+} 
+
+#applicant_know input[type="checkbox"],
+#recognizee_know input[type="checkbox"]{
+	width: 100px;
+	height: 100px;
+	margin-right:5px;
+	
+}
+#agent_know input[type="checkbox"],
+#customer_know input[type="checkbox"]{
+	width: 25px;
+	height: 25px;
+	margin-right:5px;
+}
+
+#applicant_know input[type="radio"],
+#recognizee_know input[type="radio"],
+#agent_know input[type="radio"],
+#customer_know input[type="radio"]{
+	width: 25px;
+	height: 25px;
+	margin-left:20px;
+	margin-right:5px;
+}
+
+/* 告知选项卡样式，end */
+
+/* xiyawen add，end */
+
+/* 手机版样式 */
+
+.refund-step.refund-step-phone ol.refund-step-bar{
+	margin-left: 0;
+	background: transparent;
+}
+
+.refund-step.refund-step-phone li{
+	width: 100%;
+}
+
+.refund-step.refund-step-phone .refund-step-name{
+	margin-left: -9px;
+}
+
+.refund-step.refund-step-phone{
+	padding: 33px 20px;
+}
+
+.insure-tabs.tab-phone{
+	top: 130px;
+}
+
+.nav-tabs.clearfixphone li{
+	width: 100%;
+	text-align: center;
+	margin:0;
+	background-color: #f7f7f7;
+	
+}
+
+.table_list{
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+	padding: 10px;
+	background-color: #fff;
+	position: relative;
+}
+
+.table_list .button{
+	width: 50px;
+	min-height: 35px;
+	margin-right: 10px;
+	font-size: 14px;
+	padding: 0;
+	line-height: 0;
+}
+
+.table_list .button.button-assertive {
+	background-color: #da340a;
+}
+
+.table_list span{
+	position: absolute;
+	top: 45px;
+	right: 50px;
+	width: 30px;
+	height: 30px;
+	display: block;
+	border: 0;
+	cursor: pointer;
+	-webkit-appearance: none;
+	border: 1px solid #d23f15;
+	border-radius: 50%;
+}
+
+.table_list span:after{
+	-webkit-transition: opacity 0.05s ease-in-out;
+	-moz-transition: opacity 0.05s ease-in-out;
+	transition: opacity 0.05s ease-in-out;
+	-webkit-transform: rotate(-55deg);
+	-moz-transform: rotate(-55deg);
+	transform: rotate(-55deg);
+	position: absolute;
+	top: 30%;
+	left: 26%;
+	display: table;
+	width: 14px;
+	height: 7px;
+	border: 1px solid #d23f15;
+	border-top: 0;
+	border-right: 0;
+	content: ' ';
+}
+
+/*芒伶2015-04-18*/
+input[type="button"].push-button,
+.col button.button-stable{
+	padding: 0 8px;
+	height: 33px;
+	background: #D23F15;
+	border: none;
+	color: #fff;
+	display: block;
+	border-radius: 3px;
+}
+
+.col button.button-stable{
+	min-width: 53px;
+	min-height: 33px;
+	line-height: 33px;
+	width: auto;
+}
+
+.col button.button-stable:hover{
+	color: #fff;
+}
+
+#bank_info_div{
+	padding: 0 10px;
+}
+
+#bank_info_div table tbody tr td{
+	height: 33px;
+	float: left;
+	line-height: 33px;
+	margin-top: 20px;
+}
+
+#bank_info_div table tbody tr td input[type="radio"]{
+	width: 30px;
+	height: 30px;
+}
+
+.bar .title + .button:last-child {
+	right: 10px;
+}
+
+.new_icon {
+	width: 23px;
+	height: 26px;
+	background: url('../img/add.png') no-repeat;
+	background-size: 22px;
+	display: block;
+}
+
+.tableStyle.verification td{
+	padding: 0 7px 6px;
+}
+
+.tableStyle.verification td>i{
+	float: left;
+	margin-top: 0px;
+	display: block;
+	line-height: 34px;
+}
+
+.verification td input[type="text"]{
+	border: 1px solid #e6e6e6;
+	border-radius: 5px;
+	margin-top: 5px;
+	float: left;
+	/*padding-left: 10px;*/
+	text-align: center;
+}
+
+.verification td input[type="button"]{
+	width: 100px;
+	color: #fff;
+	border-radius: 5px;
+	background: #D14014;
+	float: left;
+	height: 34px;
+	border: 0;
+}
+
+/*新增加银行搜索功能样式    2016.8.15    987行 */
+.ww_color{
+	color:#333;
+}
+/*.ww_pos{
+	position:relative;
+	border: 1px solid #d14014;
+	border-radius: 5px;
+	background: #d14014;
+}
+.ww_pos i{
+	position:absolute;
+	right:3.5%;
+	top:0;
+	font-size:26px;
+	color:#D23F15;
+}*/
+.ww_blank{
+	border:1px solid #ccc;
+	border-radius: 5px;
+	text-align:center;
+	margin:5px 0;
+	padding: 0px 0px 8px 0px;
+	background:#F4F4F4;
+}
+.camaras{
+	text-align:center;	
+}
+.camaras li{
+	margin:10px auto;
+	width: 100%;
+}
+.camaras li img{
+	width: 96%;
+	max-height: 250px;
+	border-radius: 4px;
+	border: 1px solid #d23f14;
+	text-align: center;
+}
+.checkboxStyleOfImpart-disabled:checked + label:after { 
+    content: url(../img/4-1-03.png); 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    color: #FFF; 
+    width: 100%; 
+    text-align: center; 
+    font-size: 1.4em; 
+    vertical-align: text-top; 
+} 
+/*设置myalert方法提示框的样式*/
+span.input_style{
+	background:url(../img/4-1-01.png) no-repeat 1px 4px;
+}
+span.select_input_style{
+	background:url(../img/4-1-02.png) no-repeat 1px 4px;
+}
+td span.input_style,td span.select_input_style{
+	padding: 10px 0px;
+	display: inline-block;
+	margin: 0 5px;	
+}
+span input[type="radio"]{
+	margin: 0px 10px;
+	width: 15px;
+	height: 15px;
+	opacity: 0;
+}
+/*销售确认书样式*/
+.table-confirm{border:1px solid #ccc;}
+.table-confirm td{border:1px solid #ccc;padding: 10px 15px;}
+
+.table-confirm ul{list-style: none;}
+.table-confirm ul li{padding: 5px 0px;}
+.table-confirm label{text-decoration: underline;padding: 2px 12px;}
+
+.table-confirm .tr-content-center{}
+.table-confirm .tr-content-center td{text-align: center;}
+.tc{text-align: center;}

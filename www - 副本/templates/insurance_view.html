@@ -1,0 +1,142 @@
+<ion-view class="submit-data">
+	<header class="bar bar-header" >
+       <div class="h1 title">保单预览</div>
+       <button class="button button-icon icon" ng-click="closeData();">关闭</button>
+<!--   <button class="button button-icon icon edit_icon" ng-click="showCharge();"></button>-->
+    </header>
+	<ion-content class="has-header">
+	  	<div class="area">
+			<span class="area-title">投保人信息</span>
+			<div class="row">
+			  <div class="col col-50"><p>姓名：</p><p ng-bind="applicant.realName"></p></div>
+			  <div class="col"><p>性别：</p><p>{{applicant.sex | codeFormat:'sex'}}</p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>出生日期：</p><p ng-bind="applicant.birthday"></p></div>
+			  <div class="col"><p>系被保人：</p><p>{{applicant.relationToMainInsured | codeFormat:'relation'}}</p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>证件名称：</p><p>{{applicant.idType | codeFormat:'idtype'}}</p></div>
+			  <div class="col"><p>证件号码：</p><p ng-bind="applicant.idNo"></p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>证件有效期：</p><p ng-bind="applicant.idEndDate"></p></div>
+			  <div class="col"><p>国籍：</p><p>{{applicant.nativePlace | codeFormat:'nativeplace'}}</p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>户籍地：</p><p>{{applicant.rgtProvince | codeFormat:'nativeplacebak'}}</p></div>
+			  <div class="col"><p>婚姻状况：</p><p>{{applicant.marriage | codeFormat:'marriage'}}</p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>年收入：</p><p>{{applicant.income | appendDescri:'万'}}</p></div>
+			  <div class="col"><p>主收入来源：</p><p>{{applicant.incomeWay | codeFormat:'incomeway'}}</p></div>
+			</div>
+			<div class="row">
+			  <div class="col"><p>工作单位名称：</p><p></p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>职业：</p><p>{{applicant.occupationCode}}</p></div>
+			  <div class="col"><p>职业代码：</p><p ng-bind="applicant.occupationCode"></p></div> 
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>兼职：</p><p></p></div>
+			  <div class="col"><p>回访电话：</p><p>{{applicant.mobile}}、{{applicant.phone}}</p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>通信地址：</p><p>{{applicant.postalProvince | codeFormat:'nativeplacebak'}} {{applicant.postalCity}} {{applicant.postalAddress}}</p></div>
+			  <div class="col"><p>邮编：</p><p ng-bind="applicant.postalZipCode"></p></div>
+			</div>
+		</div>
+		<div class="area">
+			<span class="area-title">被保人信息</span>
+			<div class="row">
+			  <div class="col col-50"><p>姓名：</p><p ng-bind="insurant.realName"></p></div>
+			  <div class="col"><p>性别：</p><p>{{insurant.sex | codeFormat:'sex'}}</p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>出生日期：</p><p ng-bind="insurant.birthday"></p></div>
+			  <div class="col"><p>证件名称：</p><p>{{insurant.idType | codeFormat:'idtype'}}</p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>证件号码：</p><p ng-bind="insurant.idNo"></p></div>
+			  <div class="col"><p>有效期至：</p><p ng-bind="insurant.idEndDate"></p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>国籍：</p><p>{{insurant.nativePlace | codeFormat:'nativeplace'}}</p></div>
+			  <div class="col"><p>户籍地：</p><p>{{insurant.rgtProvince | codeFormat:'nativeplacebak'}}</p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>婚姻状况：</p><p>{{insurant.marriage | codeFormat:'marriage'}}</p></div>
+			  <div class="col"><p>年收入：</p><p>{{insurant.income | appendDescri:'万'}}</p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>主要收入来源：</p><p>{{insurant.incomeWay | codeFormat:'incomeway'}}</p></div>
+			  <div class="col"><p>工作单位名称：</p><p></p></div>
+			</div>
+			<div class="row">
+			   <div class="col col-50"><p>职业：</p><p>{{insurant.occupationCode}}</p></div>
+			   <div class="col"><p>兼职：</p><p></p></div> 
+			</div>
+			<div class="row">
+			<div class="col col-50"><p>职业代码：</p><p ng-bind="insurant.occupationCode"></p></div>
+			  <div class="col"><p>回访电话：</p><p>{{insurant.mobile}}、{{insurant.phone}}</p></div>
+			</div>
+			<div class="row">
+			  <div class="col col-50"><p>地址：</p><p>{{insurant.postalProvince | codeFormat:'nativeplacebak'}} {{insurant.postalCity}} {{insurant.postalAddress}}</p></div>
+			  <div class="col"><p>邮编：</p><p ng-bind="insurant.postalZipCode"></p></div>
+			</div>
+		</div>
+		<div class="area">
+			<span class="area-title">受益人资料</span>
+			<div class="row">
+			  <div class="col">受益人类型</div>
+			  <div class="col">姓名</div>
+			  <div class="col">证件名称</div>
+			  <div class="col">证件号码</div>
+			  <div class="col">证件有效期</div>
+			  <div class="col">系被保人的</div>
+			  <div class="col">受益比例</div>
+			  <div class="col">受益顺序</div>
+			</div>
+			<div class="row" ng-repeat="ben in beneficiaryList">
+			  <div class="col">{{ben.bnfType | codeFormat:'bnfgrade'}}</div>
+			  <div class="col">{{ben.realName}}</div>
+			  <div class="col">{{ben.idType | codeFormat:'idtype'}}</div>
+			  <div class="col">{{ben.idNo}}</div>
+			  <div class="col">{{ben.idEndDate}}</div>
+			  <div class="col">{{ben.relationToInsured | codeFormat:'relation'}}</div>
+			  <div class="col">{{ben.bnfLot}}</div>
+			  <div class="col">{{ben.bnfGrade}}</div>
+			</div>
+		</div>
+		<div class="area">
+			<span class="area-title">投保事项</span>
+			<div class="row">
+				<div class="col">投保险种</div>
+			  	<div class="col">保额（元）</div>
+			  	<div class="col">保险期间</div>
+			  	<div class="col">交费年限</div>
+			  	<div class="col">保费（元）</div>
+			  	<div class="col">职业加费（元）</div>
+			</div>
+			<div class="row" ng-repeat="insur in insuranceList">
+			  	<div class="col">{{insur.productCode | productCodeToName}}</div>
+			  	<div class="col">{{insur.amount}}</div>
+				<div class="col">{{insur.insuYears}}</div>
+				<div class="col">{{insur.payEndYear}}</div>
+				<div class="col">{{insur.prem}}</div>
+				<div class="col">0</div>
+			</div>
+		</div>
+	</ion-content>
+	<!-- 保单预览页面根据保单状态控制可操作按钮 -->
+	<div class="operationBar">
+		<button class="generalButton" ng-click="updateInsuranceStatus();">更新状态</button>
+		<button class="generalButton" ng-click="queryChargeState();" ng-show="showQueryChargeStateFlag">查询收费状态</button>
+		<button class="generalButton" ng-click="showRevokeFun();" ng-show="showRevokeFlag">撤单</button>
+		<button class="generalButton" ng-click="showCharge();" ng-show="showChargeFlag">收费</button>
+		<!-- 
+		<button class="generalButton" ng-click="">预览</button>
+		 -->
+	</div>
+</ion-view>

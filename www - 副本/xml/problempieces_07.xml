@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷7 颈腰椎疾病问卷
+	 -->
+     <DisclosureItem disclosure_ver="A_7_" disclosure_id="problempieces_07" flag="questionName" text="颈腰椎疾病问卷">
+     </DisclosureItem>
+
+      <DisclosureItem disclosure_ver="A_7_" no_yesno="true" disclosure_id="A_7_1_" flag="common">
+        <Description text="1. 您首次发生疼痛时间" />
+        <Input hint="" 
+            input_key="A_7_1_year_start"
+            length="3" 
+            input_type="number"/>
+        <Description text="年" />
+        <Input
+            hint=""
+            input_key="A_7_1_month_start"
+            length="3"
+            input_type="number" />
+        <Description text="月" />
+        <Input input_type="br"/>
+        <Description text="最近一次发作时间" />
+        <Input
+            hint=""
+            input_key="A_7_1_year_end"
+            length="3"
+            input_type="number" />
+        <Description text="年" />
+        <Input
+            hint=""
+            input_key="A_7_1_month_end"
+            length="3"
+            input_type="number" />
+        <Description text="月" />
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="A_7_" no_yesno="true" disclosure_id="A_7_2_" flag="BlankRemarkTable">
+        <Description text="2. 首次发生疼痛的原因:"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_7_2_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_7_" no_yesno="true" disclosure_id="A_7_3_" flag="common">
+        <Description text="3. 颈或腰部痛的频率:" />
+        <Input hint="" 
+            input_key="A_7_3_times"
+            length="3" 
+            input_type="text"/>
+        <Description text="次/年" />
+        <Input input_type="br"/>
+        <Description text="每次持续时间：" />
+        <Input
+            hint=""
+            input_key="A_7_3_minutes"
+            length="3"
+            input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem
+        disclosure_id="A_7_4_" no_yesno="true"
+        disclosure_ver="A_7_"  flag="common">
+        <Description text="4. 疼痛部位：" />
+        <Radio
+            input_type="checkbox"
+            and_others="false"
+            options="颈部"
+            radio_key="A_7_4_a" />
+        <Radio
+            input_type="checkbox"
+            and_others="false"
+            options="腰 "
+            radio_key="A_7_4_b" />
+            <Input input_type="br"/>
+        <Description text="活动是否受限？" />
+        <Radio
+            input_type="radio"
+            and_others="false"
+            options="是"
+            radio_key="A_7_4_01" />
+        <Radio
+            input_type="radio"
+            and_others="false"
+            options="否"
+            radio_key="A_7_4_02" />
+    </DisclosureItem>
+
+    <DisclosureItem no_yesno="donotCheckYes"
+        disclosure_id="A_7_5_"
+        disclosure_ver="A_7_" flag="checkbox_noEx">
+        <Description text="5. 疼痛是否伴有放射痛？" />
+        <Expendable>
+            <Description text="请选择" />
+            <Radio
+                options="左上肢@@右上肢@@左下肢@@右下肢"
+                radio_key="A_7_5_" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_7_" disclosure_id="A_7_6_">
+        <Description text="6. 疼痛是否与任何活动或体位有关?"/>
+    </DisclosureItem>
+
+    <DisclosureItem no_yesno="donotCheckYes" disclosure_id="A_7_7_" disclosure_ver="A_7_"  flag="common">
+        <Description text="7. 除疼痛以外，是否伴有以下不适?" />
+        <Expendable>
+            <Description text="请选择" />
+            <Radio and_others="false" options="头晕" radio_key="A_7_7_01" input_type="radio" />
+            <Radio and_others="false" options="恶心" radio_key="A_7_7_02" input_type="radio" />
+            <Radio and_others="false" options="视物不清" radio_key="A_7_7_03" input_type="radio" />
+            <Radio and_others="false" options="肌肉萎缩" radio_key="A_7_7_04" input_type="radio" />
+            <Radio and_others="false" options="间歇性跛行" radio_key="A_7_7_05" input_type="radio" />
+            <Radio and_others="true" options="其他" radio_key="A_7_7_06" input_type="radio" />
+            <Input input_key="A_7_7_07" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_7_" no_yesno="false" disclosure_id="A_7_8_" flag="common">
+        <Description text="8. 您是否曾经就以上情况而就医?" />
+        <Expendable>
+            <Description text="诊断" />
+            <Input hint="" 
+                input_key="A_7_8_01"
+                length="10" 
+                input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem
+        disclosure_id="A_7_9_" no_yesno="false"
+        disclosure_ver="A_7_"  flag="common">
+        <Description text="9. 是否接受过治疗?" />
+        <Expendable>
+            <Description text="治疗种类：" />
+            <Radio
+                input_type="checkbox"
+                and_others="false"
+                options="手术"
+                radio_key="A_7_9_01" />
+            <Radio
+                input_type="checkbox"
+                and_others="false"
+                options="物理治疗（按摩、牵引、热疗等）"
+                radio_key="A_7_9_02" />
+            <Radio
+                input_type="checkbox"
+                and_others="false"
+                options="药物"
+                radio_key="A_7_9_03" />
+                <Input input_type="br"/>
+            <Description text="治疗持续时间" />
+            <Input hint="" 
+                input_key="A_7_9_04"
+                length="10" 
+                input_type="text" is_checked="false"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem no_yesno="donotCheckYes"
+        disclosure_id="A_7_10_"
+        disclosure_ver="A_7_" flag="checkbox_noEx">
+        <Description text="10. 是否进行过以下检查？" />
+        <Expendable>
+            <Description text="请选择" />
+            <Radio
+                options="X线摄片@@CT@@核磁共振"
+                radio_key="A_7_10_" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_7_" disclosure_id="A_7_11_" no_yesno="donotCheckYes">
+        <Description text="11. 是否仍在接受治疗中?"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_7_" disclosure_id="A_7_12_" no_yesno="donotCheckYes">
+        <Description text="12. 是否被建议和准备接受手术治疗?"/>
+    </DisclosureItem>
+
+    <DisclosureItem
+        disclosure_id="A_7_13_" no_yesno="donotCheckYes"
+        disclosure_ver="A_7_"  flag="common">
+        <Description text="13. 是否因此病而长期（如数周）休假？" />
+        <Expendable>
+            <Description text="休假时间：" />
+            <Input hint="" 
+                input_key="A_7_13_01"
+                length="3" 
+                input_type="number"/>
+            <Description text="年" />
+            <Input hint="" 
+                input_key="A_7_13_02"
+                length="3" 
+                input_type="number"/>
+            <Description text="月" />
+            <Input input_type="br"/>
+            <Description text="至" />
+            <Input hint="" 
+                input_key="A_7_13_03"
+                length="3" 
+                input_type="number"/>
+            <Description text="年" />
+            <Input hint="" 
+                input_key="A_7_13_04"
+                length="3" 
+                input_type="number"/>
+            <Description text="月" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_7_" no_yesno="true" disclosure_id="A_7_check_result" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果）"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_7_check_result" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_7_" no_yesno="false" disclosure_id="A_7_14_" flag="BlankRemarkTable">
+        <Description text="14. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_7_15_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

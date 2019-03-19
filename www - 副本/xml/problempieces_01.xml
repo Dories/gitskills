@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--问题卷1 残疾问卷-->
+    <DisclosureItem disclosure_ver="A_1_" disclosure_id="problempieces_01" flag="questionName" text="残疾问卷"/>
+
+      <DisclosureItem disclosure_ver="A_1_" no_yesno="true" disclosure_id="A_1_1_" flag="common">
+        <Description text="1.  残疾发生时间：" />
+            <Input input_key="A_1_1_year" length="3" input_type="number"/>
+        <Description text="年" />
+            <Input input_key="A_1_1_month" length="3" input_type="number" />
+        <Description text="月" />
+            <Input input_key="A_1_1_day" length="3" input_type="number" />
+        <Description text="日" />
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="A_1_" no_yesno="true" disclosure_id="A_1_2_" flag="common">
+        <Description text="2.  残疾原因:"/>
+        <Radio input_type="checkbox" and_others="false" options="先天性　"
+            radio_key="A_1_2_a" />
+        <Radio input_type="checkbox" and_others="false" options="疾病,疾病名称 "
+            radio_key="A_1_2_b" />
+            <Input input_key="A_1_2_01" length="5"  input_type="text" is_checked="false"/> 
+        <Radio input_type="checkbox" and_others="false" options="意外事故"
+            radio_key="A_1_2_c" /> 
+        <Radio input_type="checkbox" and_others="false" options="遗传"
+            radio_key="A_1_2_d" />
+        <Radio input_type="checkbox" and_others="false" options="营养不良　"
+            radio_key="A_1_2_e" />
+        <Radio input_type="checkbox" and_others="false" options="心理因素"
+            radio_key="A_1_2_f" />
+        <Radio input_type="checkbox" and_others="false" options="其他"
+            radio_key="A_1_2_g" />         
+            <Input input_key="A_1_2_02" length="5" input_type="text" is_checked="false"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_1_" no_yesno="true" disclosure_id="A_1_3_" flag="common">
+        <Description text="3.  残疾部位：" />
+        <Radio input_type="checkbox" and_others="false" options="智力"
+            radio_key="A_1_3_a" />
+        <Radio input_type="checkbox" and_others="false" options="躯干"
+            radio_key="A_1_3_b" />
+        <Radio input_type="checkbox" and_others="false" options="四肢"
+            radio_key="A_1_3_c" />
+        <Radio input_type="checkbox" and_others="false" options="精神"
+            radio_key="A_1_3_d" />
+        <Radio input_type="checkbox" and_others="false" options="视力"
+            radio_key="A_1_3_e" />
+        <Radio input_type="checkbox" and_others="false" options="语言"
+            radio_key="A_1_3_f" />
+        <Radio input_type="checkbox" and_others="false" options="听力"
+            radio_key="A_1_3_g" />
+        <Radio input_type="checkbox" and_others="false" options="多重残疾"
+            radio_key="A_1_3_h" />
+            <Input input_key="A_1_3_text" length="5" input_type="text" is_checked="false"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_1_" no_yesno="false" disclosure_id="A_1_4_" flag="common">
+        <Description text="4.  是否做过残疾鉴定？"/>
+        <Expendable>
+            <Description text="鉴定单位"/>
+                <Input input_key="A_1_4_01" length="5" input_type="text"/> 
+            <Description text="鉴定时间"/>
+                <Input input_key="A_1_4_02" length="5" input_type="text"/> 
+            <Description text="鉴定结果"/>
+                <Input input_key="A_1_4_03" length="5" input_type="text"/> 
+        </Expendable>
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_var="A_1_" no_yesno="false" disclosure_id="A_1_5_" flag="common">
+        <Description text="5. 是否因残疾影响学习、工作？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_1_" no_yesno="donotCheckYes" disclosure_id="A_1_6_" flag="common">
+        <Description text="6.  日常生活是否能自理（包括穿衣、如厕、沐浴、洗漱、进食、起居步行等）？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_var="A_1_" no_yesno="false" disclosure_id="A_1_7_" flag="common">
+        <Description text="7.  最近一年是否因此残疾看过医生？"/>
+        <Expendable>
+            <Description text="医院名称"/>
+                <Input input_key="A_1_7_01" lenght="10" and_others="true" input_type="text"/>
+            <Description text="诊断"/>
+                <Input input_key="A_1_7_02" lenght="10" and_others="true" input_type="text"/>
+            <Description text="治疗"/>
+                <Input input_key="A_1_7_03" lenght="10" and_others="true" input_type="text"/>
+            <Description text="现状"/>
+                <Input input_key="A_1_7_04" lenght="10" and_others="true" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_1_" no_yesno="donotCheckYes" disclosure_id="A_1_8_" flag="common">
+        <Description text="8.  是否使用辅助工具？"/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="轮椅" radio_key="A_1_8_01" />
+            <Radio input_type="checkbox" and_others="false" options="单拐" radio_key="A_1_8_02" />
+            <Radio input_type="checkbox" and_others="false" options="双拐" radio_key="A_1_8_03" />
+            <Radio input_type="checkbox" and_others="false" options="其他" radio_key="A_1_8_04" />
+                <Input input_key="A_1_8_05" lenght="10" and_others="true" input_type="text" is_checked="false"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_1_" no_yesno="false" disclosure_id="A_1_9_" flag="common">
+        <Description text="9.  是否装义肢（假肢）？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_1_" no_yesno="false" disclosure_id="A_1_10_" flag="common">
+        <Description text="10.  家族成员中是否有残疾者？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_1_" no_yesno="true" disclosure_id="A_1_10_01" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果）"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_1_10_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_1_" no_yesno="false" disclosure_id="A_1_11_" flag="BlankRemarkTable">
+        <Description text="11. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_1_11_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

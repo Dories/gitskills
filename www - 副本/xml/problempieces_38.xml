@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷38 关节炎问卷
+	 -->
+
+     <DisclosureItem disclosure_ver="F_38_" disclosure_id="problempieces_38" flag="questionName" text="关节炎问卷">
+     </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="true" disclosure_id="F_38_1_" flag="common">
+        <Description text="1.您患的是哪种类型的关节炎？如果没有明确的诊断，请描述症状。"/>
+        <Input input_type="text" input_key="F_38_1_01" length="5"  />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="true" disclosure_id="F_38_2_" flag="common">
+        <Description text="2.您的哪个关节受到影响？"/>
+        <Input input_type="text" input_key="F_38_2_01" length="5"  />
+    </DisclosureItem>
+
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="true" disclosure_id="F_38_3_" flag="common">
+        <Description text="3.该病首次被诊断是在什么时候？"/>
+        <Input input_type="text" input_key="F_38_3_01" length="5"  />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="true" disclosure_id="F_38_4_" flag="common">
+        <Description text="4. 您目前是否还有症状？"/>
+        <Expendable>
+
+            <Radio input_type="checkbox" options="是" radio_key="F_38_4_01" />
+            <Input input_type="br"/>
+            <Description text="如果是， 症状是持续的， 变化的， 有改善的， 或渐进性恶化的？"/>
+            <Input input_type="text" length="5" is_checked="false" input_key="F_38_4_02"/>
+
+            <Radio input_type="checkbox" options="否" radio_key="F_38_4_03" />
+            <Input input_type="br"/>
+            <Description text="如果否， 您最后一次出现症状的时间？ "/>
+            <Input input_type="text" length="5" is_checked="false" input_key="F_38_4_04"/>
+
+
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="true" disclosure_id="F_38_5_" flag="common">
+        <Description text=" 5. 关于治疗"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="false" disclosure_id="F_38_5_a_"  flag="BlankRemarkTable">
+        <Description text=" A.您是否曾经为该症状做过手术， 或者正在考虑做手术？"/>
+        <Expendable>
+            <Description text="如果是，请提供手术的日期和详情，包括医院的名称，手术后休假的时间。"/>
+
+            <BlankRemarkTable input_key="F_38_5_a_01" lines="4"/>
+
+        </Expendable>
+    </DisclosureItem>
+
+
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="false" disclosure_id="F_38_5_b_" flag="BlankRemarkTable">
+        <Description text=" B.您需要或曾经服用过任何药物或止痛药吗？"/>
+        <Expendable>
+            <Description text="如果是，请告知药名，剂量和最后一次使用时间 "/>
+
+            <BlankRemarkTable input_key="F_38_5_b_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="false" disclosure_id="F_38_5_c_" flag="BlankRemarkTable">
+        <Expendable>
+        <Description text=" C.您是否接受其他的治疗，例如物理治疗？"/>
+        <BlankRemarkTable input_key="F_38_5_c_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="true" disclosure_id="F_38_6_" flag="common">
+        <Description text=" 6. 疾病程度"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="false" disclosure_id="F_38_6_a_"  flag="BlankRemarkTable">
+        <Description text=" A.您的情况有没有对您的工作造成影响或限制？"/>
+        <Expendable>
+            <Description text="如果是， 请详细告知，包括在两年内病假的日期和持续时间"/>
+
+            <BlankRemarkTable input_key="F_38_6_a_01" lines="4"/>
+
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="false" disclosure_id="F_38_6_b_" flag="BlankRemarkTable">
+        <Description text=" B.关节炎有没有改变或减少您的非工作活动例如运动，嗜好，出行方式等 如果是， 请详细告知:"/>
+        <Expendable>
+            <BlankRemarkTable input_key="F_38_6_b_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="false" disclosure_id="F_38_6_c_" flag="BlankRemarkTable">
+        <Description text=" C.您是否使用拐杖或其它形式的辅助装置？例如爬楼装置。如果是， 请详细告知："/>
+        <Expendable>
+            <BlankRemarkTable input_key="F_38_6_c_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="false" disclosure_id="F_38_6_d_" flag="BlankRemarkTable">
+        <Description text=" D.在家居的日常活动， 您需要接受任何帮助例如更衣，准备食物，家务事或洗澡？如果是， 请详细告知 "/>
+        <Expendable>
+            <BlankRemarkTable input_key="F_38_6_d_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="true" disclosure_id="F_38_7_" flag="common">
+        <Description text="7.请告知就诊的医院，最后一次就诊的时间？"/>
+        <Input input_type="text" input_key="F_38_7_01" length="5"  />
+    </DisclosureItem>
+
+
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="true" disclosure_id="F_38_8_"  flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="8.您认为还有哪些有关您的病情的信息有助于我们处理您的投保？请提供。 "/>
+        <Expendable>
+            <BlankRemarkTable input_key="F_38_8_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+
+
+    <DisclosureItem disclosure_ver="F_38_" no_yesno="true" disclosure_id="F_38_9_" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="9.对于以上的告知，您是否有相关的病历资料可以提供？请补充。"/>
+        <Expendable>
+            <BlankRemarkTable input_key="F_38_9_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+</Disclosure>

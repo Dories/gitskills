@@ -1,0 +1,167 @@
+<div class="modal insurance-modal">
+	<ion-header-bar>
+		<h1 class="title">签约信息页</h1>
+		<div class="buttons">
+			<button class="button button-clear button-positive" ng-click="closeModalSign()">关闭</button>
+		</div>
+	</ion-header-bar>
+	<ion-content class="has-header bottom-scroll-content" style="background: #f7f7f7;">
+		<div class="area">
+			<span class="area-title">签约信息</span>			
+		</div>
+		<div class="bg-white">
+			<div class="row"><div class="col"><p style="color: #333">户名：</p><p>{{applicantData.NAME}}</p></div></div>
+			
+			<div class="row"><div class="col"><p style="color: #333">证件类型：</p><p>{{applicantData.IDNAME | codeFormat:'idtype'}}</p></div></div>
+			<div class="row"><div class="col"><p style="color: #333">证件号码：</p><p>{{applicantData.IDNO}}</p></div></div>
+			<div class="row"><div class="col"><p style="color: #333">银行名称：</p><p>{{bankData_chackname.BANK_NAME}}</p></div></div>
+			<div class="row"><div class="col"><p style="color: #333">银行卡号：</p><p>{{cardNum}}</p></div></div>
+		</div>
+		<div style="background:#fff;" ng-click="showSignCustomerInfo();">
+			<div class="row">
+				<div class="col"><p style="color: #333">参数详情</p>
+				</div>
+			</div>	
+		</div>
+		<div class="bg-white showSignLimitInfoBanks" id="showSignLimitInfo" style="display:none;">				
+			<div class="row" style="padding-left: 10px;">
+				<div class="col-40" style="position: relative; top:10px;">
+					<span style="color: #333">委托代扣单笔最大金额：</span>
+				</div>
+
+				<div class="col-60">
+					<input type="tel" class="text-style ww_color" id="SingleLimit" value="5000000"
+						style="width: 100px; display: inline-block;">
+					 <i>元</i>							
+				</div>
+			</div>
+
+			<div class="row bg-gray">
+				<div class="col">
+					请输入委托代扣单笔最大限额，最大为500万
+				</div>
+			</div>
+			<div class="row" style="padding-left: 10px;">
+				<p style="color: #333; position: relative; top: 10px;">限制周期时间单位：</p>
+					<p>
+						<label class="checkbox">
+							<input id="Sign_dateday" checked class="checkbox-style" type="radio" name="timeRadio" value="1">
+						</label>
+						<span style="position: relative; top: -12px;">日</span>
+						<label class="checkbox">
+							<input id="Sign_datemonth" class="checkbox-style" type="radio" name="timeRadio" value="2">
+						</label>
+						<span style="position: relative; top: -12px;">月</span>
+						<label class="checkbox">
+							<input id="Sign_dateyear" class="checkbox-style" type="radio" name="timeRadio" value="3">
+						</label>
+						<span style="position: relative; top: -12px;">年</span>
+					</p>
+			</div>		
+
+			<div class="row bg-gray" style="padding-left: 10px;">
+				<div class="col-40" style="position: relative; top:10px;">
+					<span style="color: #333">最大代扣次数：</span>
+				</div>
+
+				<div class="col-60">
+					<input type="tel" class="text-style ww_color" id="MaxCountLimit" value="9999"
+						style="width: 100px; display: inline-block;"> <i>次</i>			
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="col">
+					请输入每个周期内最多能扣几次，最多为9999次
+				</div>
+			</div> -->
+			<div class="row" style="padding-top: 10px;padding-left: 10px;">				
+				请输入每个周期内最多能扣几次，最多为9999次				
+			</div>
+
+			<div class="row" style="padding-top: 15px; padding-left: 10px;">
+					<div class="col-40" style="position: relative; top:10px;">
+						<span style="color: #333">协议失效日期：</span>
+					</div>
+	
+					<div class="col-60">
+						<input type="date" class="text-style ww_color" id="DisableDate" style="width: 150px; display: inline-block;"> 							
+					</div>
+			</div>
+			<div class="row bg-white">
+				<div class="col">
+					请输入协议失效日期
+				</div>
+			</div>
+		</div>
+		<div class="row bg-white">
+		</div>
+		
+		
+		<div class="insure-checkbox margin-top-10">
+			
+			<label class="checkbox" style="margin-left:5px;">
+				<input id="Sign_agree" class="checkbox-style" type="checkbox" ng-checked="sign_AgreeChecked" ng-model="sign_Agree" ng-click="Sign_agree()">
+			</label>
+			
+			<span style="position: relative; top:-12px; font-size:15px;font-weight:blod;">本人已阅知并同意<a ng-click="inter_agree()">《授权条款》</a></span>			
+			
+		</div>
+		<div class="row margin-top-10" style="padding-left: 20px;">
+			<div style="margin:8px auto;width:98%;">
+				请输入<b style="color:#D14014;">{{applyObj.BANK_PHONE}}</b>收到的验证码。
+			</div>
+		</div>
+		<div class="row">
+			<div class="col col-50">
+				<input  class="text-style" type="text" id="verifyBankCode" ng-model="verifyCode" required placeholder="请输入验证码"/>
+			</div>
+			<div class="col col-34">
+				<!-- <input type="button" id="sign_info" value="获取验证码"  style="height:35px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;text-align:center; width:80px;" ng-click="applyChannel();" /> -->
+				<button id="sign_info" class="button button-stable" style="width: 90px;min-height: 35px;font-size: 14px; padding: 0; line-height: 0;"  ng-click="applyChannel()" >获取验证码</button>
+
+			</div>
+		</div>
+		<div class="row">
+			<div style="margin:8px auto;color:#989A9C;width:98%;">
+				该验证码为银行方发送。若长时间未收到验证码，请核对银行账户信息、对应的手机号码是否正确，并请客户暂时关闭短信拦截等功能。
+			</div>
+		</div>
+		<div>	
+			<div class="row">
+				<div class="col col-50"> 
+					<button  class="button button-stable" style="width: 70px;min-height: 35px; margin-left:25%; margin-right:35px; font-size: 14px; padding: 0; line-height: 0;"  ng-click="closeModalSign()" >返回</button>  
+				</div> 
+				<div class="col col-50"> 
+					 <button id="sureChannelBtn" class="button button-stable" style="width: 70px;min-height: 35px; margin-left:25%; margin-right:35px; font-size: 14px; padding: 0; line-height: 0;" disabled ng-click="sureChannel()">签约申请</button>  
+				</div>
+			</div>
+
+		</div>	
+	</ion-content>
+	<!-- model 层alert 提示框的样式 -->
+	<div id="children_div" style="width: 100%; height: 100%;top: 0px; left: 0px; background: #333;filter: alpha(opacity=50);position: fixed; z-index: 5000; opacity: 0.6;display:none;"></div>
+ 
+	 <div id="children_div_text" style="position: absolute; top: 45%; left: 45%;z-index: 5000;display:none;">
+		 <img src="img/loading_icon.gif" />
+	 </div>
+	 
+	 <div id="children_div_alert" style="position:absolute; top: 40%; left: 40%;z-index: 5000;display:none;border:1px solid #ffffff;background:#ffffff;padding:10px;border-radius: 5px;width:240px;text-align:center;">
+		 <table style="width:100%;">
+		 	<tr><td style="text-align: center;height: 30px;">提示</td></tr>
+		 	<tr><td><hr width="100%" size="1px"/></td></tr>
+		 	<tr><td id="children_messageContainer" style="padding-top: 10px;padding-bottom: 20px;text-align: left;"></td></tr>
+		 	<tr><td style="height:50px;text-align: center;"><button onclick="children_closeMyAlert();" style="width:100%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;"> 确   定 </button></td></tr>
+		 </table>
+	 </div>
+	<!-- 修改confirm弹出框样式3 -->
+     <div id="mengceng_div_confirm3" style="position:absolute; top: 40%; left: 40%;z-index: 5000;display:none;border:1px solid #ffffff;background:#ffffff;padding:10px;border-radius: 5px;width:240px;text-align:center;">
+        <table style="width:100%;">
+            <tr><td style="text-align: center;height: 30px;">提示</td></tr>
+            <tr><td><hr width="100%" size="1px"/></td></tr>
+            <tr><td id="messageContainerOfConfirm3" style="padding-top: 10px;padding-bottom: 20px;text-align: left;"></td></tr>
+            <tr><td style="height:50px;text-align: center;"><button id="confirmOkButton3" style="width:40%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;"> 确   认 </button>
+            <button id="confirmCancelButton3" style="width:40%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;"> 取   消 </button>
+            </td></tr>
+         </table>
+	 </div>	 
+</div>

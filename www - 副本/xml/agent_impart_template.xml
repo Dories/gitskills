@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--
+		&lt;	<	小于号
+		&gt;	>	大于号
+		&amp;	&	和
+		&apos;	'	单引号
+		&quot;	"	双引号
+    -->
+
+    <DisclosureItem
+        disclosure_id="A0151"
+        disclosure_ver="A03"  flag="radio_noEx">
+
+        <Description text="（1）您是被保险人本人或被保险人的亲属吗？" />
+
+        <Expendable>
+
+            <Description text="请选择" />
+
+            <Radio
+                and_others="true"
+                options="本人@@父母@@配偶@@子女"
+                radio_key="license" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem
+        disclosure_id="A0152"
+        disclosure_ver="A03" >
+
+        <Description text="（2）您亲眼见过被保险人吗？" />
+    </DisclosureItem>
+
+    <DisclosureItem
+        disclosure_id="A0153"
+        disclosure_ver="A03" flag="BlankRemarkTable">
+
+        <Description text="（3）从您所了解的情况看，被保险人是否有身体缺陷、智力障碍或其它疾病？" />
+
+        <Expendable>
+
+            <BlankRemarkTable
+                input_key="familial_disease"
+                lines="4" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem
+        disclosure_id="A0154"
+        disclosure_ver="A03" flag="BlankRemarkTable">
+
+        <Description text="（4）据您所知，被保险人是否有危险运动爱好或从事危险运动？" />
+
+        <Expendable>
+
+            <BlankRemarkTable
+                input_key="familial_disease"
+                lines="4" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem no_yesno="true"
+        disclosure_id="A0155"
+        disclosure_ver="A03" flag="radio_noEx">
+
+        <Description text="（5）投保经过" />
+
+        <Description text="请选择" />
+
+        <Radio
+            and_others="true"
+            options="业务员推销 @@投保人主动提出投保计划@@同事朋友推荐"
+            radio_key="license" />
+    </DisclosureItem>
+
+    <DisclosureItem no_yesno="true"
+        disclosure_id="A0156"
+        disclosure_ver="A03" flag="radio_noEx">
+
+        <Description text="（6）投保目的" />
+        <Description text="请选择" />
+
+        <Radio
+            and_others="true"
+            options="家庭经济保障@@储蓄、投资@@贷款偿还"
+            radio_key="license" />
+    </DisclosureItem>
+
+    <DisclosureItem
+        disclosure_id="A0157"
+        disclosure_ver="A03"
+        no_yesno="true" flag="common">
+        <Description text="（7）您估计投保人的家庭总资产约" />
+        <Input
+            hint=""
+            input_key="total_assets"
+            input_type="number"
+            length="3" />
+
+        <Description text="万元" color="red" />
+    </DisclosureItem>
+    
+    <DisclosureItem
+        disclosure_id="A0158"
+        disclosure_ver="A03"
+        no_yesno="true" flag="common">
+        <Description text="（8）业务员电话" />
+        <Input
+            hint=""
+            input_key="salesman_phone"
+            input_type="number"/>
+    </DisclosureItem>
+
+</Disclosure>

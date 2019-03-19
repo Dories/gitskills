@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >	
+	<!--问题卷11 贫血问卷-->
+ <DisclosureItem disclosure_ver="A_11_" disclosure_id="problempieces_11" flag="questionName" text="贫血问卷"/>
+
+    <DisclosureItem disclosure_ver="A_11_" no_yesno="true" disclosure_id="A_11_1_" flag="common">
+        <Description text="1.  您发现贫血的时间："/>
+        <Input input_key="A_11_1_year" length="3" input_type="number"/>
+        <Description text="年"/>
+        <Input input_key="A_11_1_month" length="3" input_type="number"/>
+        <Description text="月"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_11_" no_yesno="true" disclosure_id="A_11_2_" flag="common">
+        <Description text="2. 发现方式："/>
+            <Radio input_type="checkbox" and_others="false" options="正常体检" radio_key="A_11_2_a"/>
+            <Radio input_type="checkbox" and_others="false" options="自觉有症状后检查发现" radio_key="A_11_2_b"/>
+            <Radio input_type="checkbox" and_others="false" options="本次体检发现" radio_key="A_11_2_c"/>
+            <Radio input_type="checkbox" and_others="false" options="因其他原因就诊时发现" radio_key="A_11_2_d"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_11_" no_yesno="true" disclosure_id="A_11_3_" flag="common">
+        <Description text="3.  血色素最低是："/>
+        <Input input_key="A_11_3_01" length="3" input_type="number"/>
+        <Description text="g/L"/>
+        <Input input_type="br"/>
+        <Description text="最近一次检查结果是："/>
+        <Input input_key="A_11_3_02" length="3" input_type="number"/>
+        <Description text="g/L"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_11_" no_yesno="false" disclosure_id="A_11_4_" flag="common">
+        <Description text="4. 家族成员中是否有贫血或者其他血液病史、遗传病史？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_11_" no_yesno="false" disclosure_id="A_11_5_" flag="common">
+        <Description text="5. 是否长期服用某种药物或接触化学放射性物质？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_11_" no_yesno="false" disclosure_id="A_11_6_" flag="common">
+        <Description text="6. 是否有胃病、偏食、寄生虫病、营养不良、肾病、系统性红斑狼疮等？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_11_" no_yesno="false" disclosure_id="A_11_7_" flag="common">
+        <Description text="7. 是否经常有发热、胸痛、鼻出血、牙龈出血、皮肤瘀点瘀斑、月经过多、黑便或者便中带血等？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_11_" no_yesno="false" disclosure_id="A_11_8_" flag="common">
+        <Description text="8.  半年内是否有面色苍白、体重减轻、头晕、乏力和心慌气短等？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_11_" no_yesno="false" disclosure_id="A_11_9_" flag="common">
+        <Description text="9.  是否曾因上述原因到医院就诊？"/>
+        <Expendable>
+            <Input input_type="br"/>
+            <Description text="医院名称"/>
+            <Input input_key="A_11_9_01" length="5" input_type="text"/>
+            <Input input_type="br"/>
+            <Description text="诊断"/>
+            <Input input_key="A_11_9_02" length="5" input_type="text"/>
+            <Input input_type="br"/>
+            <Description text="治疗措施"/>
+            <Input input_key="A_11_9_03" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_11_" no_yesno="false" disclosure_id="A_11_10_" flag="common">
+        <Description text="10. 是否做过骨髓检查？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_11_" no_yesno="false" disclosure_id="A_11_11_" flag="common">
+        <Description text="11. 是否发现有肝脏、脾脏及淋巴结肿大？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_11_" no_yesno="true" disclosure_id="A_11_check_result" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料(门诊病历、住院记录及化验检查结果)"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_11_check_result" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_11_" no_yesno="false" disclosure_id="A_11_12_" flag="BlankRemarkTable">
+        <Description text="12.  是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_11_12_01" lines="3" placeholder="如是，请说明："/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

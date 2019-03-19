@@ -1,0 +1,295 @@
+﻿{
+	"dbOper":[
+		{
+			"id":"1",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"CREATE TABLE [T_QUESTION_PIECES] (   [PRT_SEQ] VARCHAR(30) NOT NULL, [ANSWER] VARCHAR(200) ,  [QUESTION_PIECE_DETAIL] VARCHAR(4000) ,  [NOTICE_DETAIL] VARCHAR(4000) );"
+		},
+		{
+			"id":"2",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_QUESTION_PIECES] add [PARIENT] VARCHAR(200) ;"
+		},
+		{
+			"id":"3",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_QUESTION_PIECES] add [OTHER_PARIENT] VARCHAR(200);"
+		},
+		{
+			"id":"4",
+			"dbName":"promodel/10005/www/db/t_code.sqlite",
+			"sql":"update t_code set code_name ='居民户口簿' where  code_name ='居民户口薄';"
+		}
+		,
+		{
+			"id":"5",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_CUSTOMER] add [BANK_FRONT] VARCHAR(500);"
+		},
+		{
+			"id":"6",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"update t_bank set com_code ='8635' where bank_code ='1725';"
+		},
+		{
+			"id":"7",
+			"dbName":"promodel/10005/www/db/t_code.sqlite",
+			"sql":"insert into [T_CODE] values('nativeplace', 'DPR', null, '朝鲜', null, null);"
+		},
+		{
+			"id":"8",
+			"dbName":"promodel/10005/www/db/t_code.sqlite",
+			"sql":"insert into [T_CODE] values('idtype', 'I', null, '外国人永久居留证', null, null);"
+		},
+		{
+			"id":"9",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"update t_bank set bank_code ='0540' where bank_code ='1740';"
+		},
+		{
+			"id":"10",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_CUSTOMER] add [COPY_FRONT] VARCHAR(500);"
+		},
+		{
+			"id":"11",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_CUSTOMER] add [COPY_REVERSE] VARCHAR(500);"
+		},
+		{
+			"id":"12",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_CUSTOMER] add [COPY_FRONT] VARCHAR(500);"
+		},
+		{
+			"id":"13",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_CUSTOMER] add [COPY_REVERSE] VARCHAR(500);"
+		},
+		{
+			"id":"14",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('1703', '河北省农村信用社', '86130084', '河北农信社');"
+		},
+		{
+			"id":"15",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"alter table [T_APP_BANK] add [BANK_CITY] VARCHAR(6,0);"
+		},
+		{
+			"id":"16",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"alter table [T_APP_BANK] add [BANK_PROVINCE] VARCHAR(6,0);"
+		},
+		{
+			"id":"17",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"update t_bank set COM_CODE ='8613' where COM_CODE ='86130084';"
+		},
+		{
+			"id":"18",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0625', '招商银行', '8635', '招商银行');"
+		},
+		{
+			"id":"19",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('1025', '交通银行', '8635', '交通银行');"
+		},
+		{
+			"id":"20",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('1925', '兴业银行', '8635', '兴业银行');"
+		},
+		{
+			"id":"21",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('2827', '广州银行', '8637', '广州银行');"
+		},
+		{
+			"id":"22",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0927', '浦发银行', '8637', '浦发银行');"
+		},
+		{
+			"id":"23",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('1927', '兴业银行', '8637', '兴业银行');"
+		},
+		{
+			"id":"24",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('1427', '广发银行', '8637', '广发银行');"
+		},
+		{
+			"id":"25",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('1127', '光大银行', '8637', '光大银行');"
+		},
+		{
+			"id":"26",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('1027', '交通银行', '8637', '交通银行');"
+		},
+		{
+			"id":"27",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0627', '招商银行', '8637', '招商银行');"
+		},
+		{
+			"id":"28",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('2427', '北京银行', '8637', '北京银行');"
+		},
+		{
+			"id":"29",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_APPLY] add [REL_APPLYNO] VARCHAR(20);"
+		},
+		{
+			"id":"30",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_APPLY] add [IS_RELEATED] VARCHAR(3);"
+		},
+		{
+			"id":"31",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"alter table [T_APP_BANK] add [bankSubType] VARCHAR(2);"
+		},
+		{
+			"id":"32",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_CUSTOMER] add [CUSTOM_REVERSE] VARCHAR(500);"
+		},
+		{
+			"id":"33",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_CUSTOMER] add [CUSTOM_FRONT] VARCHAR(500);"
+		},
+		{
+			"id":"34",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0631', '招商银行', '8641', '招商银行');"
+		},
+		{
+			"id":"35",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('060223', '招商银行', '8692', '招商银行');"
+		},		
+		{
+			"id":"36",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0603', '招商银行', '8613', '招商银行');"
+		},
+		{
+			"id":"37",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0604', '招商银行', '8614', '招商银行');"
+		},
+		{
+			"id":"38",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0605', '招商银行', '8615', '招商银行');"
+		},
+		{
+			"id":"39",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0611', '招商银行', '8621', '招商银行');"
+		},
+		{
+			"id":"40",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0613', '招商银行', '8623', '招商银行');"
+		},
+		{
+			"id":"41",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0621', '招商银行', '8631', '招商银行');"
+		},
+		{
+			"id":"42",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0622', '招商银行', '8632', '招商银行');"
+		},
+		{
+			"id":"43",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0623', '招商银行', '8633', '招商银行');"
+		},
+		{
+			"id":"44",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0624', '招商银行', '8634', '招商银行');"
+		},
+		{
+			"id":"45",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0626', '招商银行', '8636', '招商银行');"
+		},		
+		{
+			"id":"46",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0632', '招商银行', '8642', '招商银行');"
+		},
+		{
+			"id":"47",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0634', '招商银行', '8644', '招商银行');"
+		},
+		{
+			"id":"48",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0641', '招商银行', '8651', '招商银行');"
+		},
+		{
+			"id":"49",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('0651', '招商银行', '8661', '招商银行');"
+		},
+		{
+			"id":"50",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('060211', '招商银行', '8691', '招商银行');"
+		},
+		{	
+			"id":"51",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"delete from t_bank where bank_code='1725';"
+		},
+		{
+			"id":"52",
+			"dbName":"promodel/10005/www/db/t_code.sqlite",
+			"sql":"insert into [T_CODE] values('idtype', 'L', null, '港澳台居民居住证', null, null);"
+		},
+		{	
+			"id":"53",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"update t_bank set bank_code='2401' where  bank_code='0501';"
+		},
+		{	
+			"id":"54",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"delete from t_bank where bank_code='2424';"
+		},
+		{
+			"id":"55",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"alter table [T_APP_BANK] add [bankPhoneNum] VARCHAR(30);"
+		},
+		{
+			"id":"56",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_APPLY] add [IS_ANEW_INSURE] VARCHAR(3);"
+		},
+		{
+			"id":"57",
+			"dbName":"promodel/10005/www/db/insurance_online.sqlite",
+			"sql":"alter table [T_APPLY] add [IS_ANEW_INSURES] BOOLEAN;"
+		},
+		{
+			"id":"58",
+			"dbName":"promodel/10005/www/db/t_bank.sqlite",
+			"sql":"insert into [T_BANK] values('1523', '中信银行', '8633', '中信银行');"
+		}
+	]
+} 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+    <DisclosureItem disclosure_ver="A04" disclosure_id="01">
+      <Description text="1.投保人本人及家人是否有在国家机关、事业单位、国有企业、上市公司单位工作的人员？" />
+    </DisclosureItem>
+	<DisclosureItem disclosure_ver="A04" disclosure_id="02">
+        <Description text="2.投保人本人或亲友中是否有外国政要？" />
+    </DisclosureItem>
+
+	<DisclosureItem disclosure_ver="A04" disclosure_id="03">
+        <Description text="3. 据你了解，投保人是否存在犯罪、金融违规、金融欺诈等方面的历史记录？" />
+    </DisclosureItem>
+
+	<DisclosureItem disclosure_ver="A04" disclosure_id="04" flag="radio_noEx">
+        <Description text="4. 据你了解，投保人是否在当地的电视、网络及报纸等媒体上，出现过负面新闻报道评论情况？" />
+      <Expendable>
+      <Description text="5.请回答：" />
+            <Radio
+                and_others="false"
+                options="A.经济类负面报道@@B.生活类或其它负面报道"
+                radio_key="license" />
+	  </Expendable>
+
+    </DisclosureItem>
+
+   <DisclosureItem disclosure_ver="A04" disclosure_id="06">
+        <Description text="6.保费是否来源于投保人家庭关系之外的第三人？" />
+    </DisclosureItem>
+
+	<DisclosureItem disclosure_ver="A04" disclosure_id="07">
+        <Description text="7.客户是否积极配合客户身份识别及客户身份资料提供工作：" />
+    </DisclosureItem>
+</Disclosure>

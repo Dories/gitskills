@@ -1,0 +1,94 @@
+
+<div class="tab-panel">
+	<header class="bar bar-header" >
+		<input type="hidden" id="formID" name="formID" value="3"><!--保单ID-->
+       	<button class="button button-icon" ng-click="closeData();">取消</button>
+        <div class="h1 title">保险送达回执页面</div>
+    </header>
+		<ion-content class="has-top bottom-scroll-content"  id="content-2" overflow-scroll="false">	
+		<div class="area" style="padding: 10px 10px;">
+			<div style="margin-top: 10px"><img src="./img/logo.png" alt="" style="width:85%;"></div>
+			<table class="tableStyle">
+			
+			<thead>
+				<h4>保险合同送达回执</h4>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<div>
+						<p>本人于今日收到贵公司提供的保险合同一份，保险合同号为：</p>
+						<p>本人已详细阅读并理解所投保险种的条款内容，知晓本人的权利与义务及签收本保险合同次日起有10天的犹豫期（保险期间为一年及一年以内的短期除外）；投保单上所有内容均属事实，并经本人、被保险人/法定监护人亲笔签名同意。</p>
+						<p>经审核，保险单、保险条款、投保单等保险合同构成各项内容准确无误，本人予以签收。</p>
+						<p><strong>本回执与纸质保险合同中的《保险合同送达回执》具有同等效力，如重复签收，以签收日期最早的为准</strong></p>
+						</div>
+					</td>
+				</tr>
+				<!-- <tr>
+					<td id="org_statement">{{ org_statement }}</td>
+				</tr> -->
+			</tbody>
+		</table>
+		<table class="tableStyle" style="width:100%;">
+			<tr style="">
+				<!-- <td>
+					投保人签名：
+					<input type="button" class="push-button" id="regin_button"
+						value="点击签名" style="margin-left: 10px; display: inline-block"
+						ng-click="signMarkFn(3,23)"/>
+					<img src="" id="two_recgin_photo" name="imageFile" style="display: none;width:100px;height:100px;" ng-click="signMarkFn(3,23)"/>
+					<img src="" id="two_resign_photo" name="imageFile" style="display: none;width:100px;height:100px;" ng-click="signMarkFn(3,23)"/>
+				</td> -->
+				<td>
+					<div>
+						<p>投保人签名：</p>
+						<input type="button" id="regin_button" class="push-button"
+							value="点击签名" style="margin:0 3px;display: block;"
+							ng-click="signMarkFn(3,23)" />									
+						<img src="" id="two_recgin_photo" name="imageFile" style="display: none;width:100px;height:100px;" ng-click="signMarkFn(3,23)"/>
+						<img src="" id="two_resign_photo" name="imageFile"style="display: none;width:100px;height:100px;" ng-click="signMarkFn(3,23)"/>	
+					</div>
+				</td>
+			</tr>
+			<tr style="height:50px;line-height:50px">
+				<td>签收日期：{{ sign_data }}</td>
+			</tr>
+			<tr ng-show="out_data" style="height:150px;">
+				<td>
+				<div class="insure-checkbox">
+					<p>请填写延迟原因：</p>
+					<div class="tip-check item-checkbox">
+						<label class="checkbox">
+							<input class="checkbox-style" name="applyObjName" type="radio" ng-click="reasonCode(1)">
+						</label>
+						<span>客户不在本地</span>
+					</div>
+					<div class="tip-check item-checkbox">
+						<label class="checkbox">
+							<input class="checkbox-style" name="applyObjName" type="radio" ng-click="reasonCode(2)">
+						</label>
+						<span>未联系到客户</span>
+					</div>
+					<div class="tip-check item-checkbox">
+						<label class="checkbox">
+							<input class="checkbox-style" name="applyObjName" type="radio" ng-click="reasonCode(3)">
+						</label>
+						<span>其他</span>
+					</div>
+				 </div>
+				</td>
+			</tr>
+		</table>
+		</div>
+		<div style="height:100px;"></div>
+		</ion-content>
+		<!-- <div class="bar bar-footer footer-btn-bar" style="position:fixed;height:50px;">
+  				<input type="button" class="button button-icon" id="receiptBtn" style="position:fixed;bottom:5px;left:35%;background: #da340a;border: none;border-radius: 3px;text-align: center;line-height: 36px;color: #fff;padding: 0 30px;margin-right: 20px;" ng-click="sign_submit()" value="提交" />
+		</div> -->
+		
+</div>
+<div class="bar bar-footer footer-btn-bar">
+	<div class="footer-btns f-13">
+		<button class="button button-light-red footer-btn pull-left" ng-click="sign_submit()">提交</button>
+	</div>
+</div>

@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >	
+	<!--问题卷18 痛风及血尿酸值异常问卷-->
+ <DisclosureItem disclosure_ver="A_18_" disclosure_id="problempieces_18" flag="questionName" text="痛风及血尿酸值异常问卷"/>
+
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="donotCheckYes" disclosure_id="A_18_1_" flag="common">
+        <Description text="1.  是否有过关节剧痛，如跖趾(脚掌)关节、踝、跟、膝、腕、指、肘关节等"/>
+        <Expendable>    
+            <Description text="痛风累及的关节或部位："/>
+            <Radio input_type="checkbox" and_others="false" options="跖趾(脚掌)关节" radio_key="A_18_1_a"/>
+            <Radio input_type="checkbox" and_others="false" options="踝关节" radio_key="A_18_1_b"/>
+            <Radio input_type="checkbox" and_others="false" options="足跟" radio_key="A_18_1_c"/>
+            <Radio input_type="checkbox" and_others="false" options="膝关节" radio_key="A_18_1_d"/>
+            <Radio input_type="checkbox" and_others="false" options="腕关节" radio_key="A_18_1_e"/>
+            <Radio input_type="checkbox" and_others="false" options="指关节" radio_key="A_18_1_f"/>
+            <Radio input_type="checkbox" and_others="false" options="肘关节" radio_key="A_18_1_g"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="true" disclosure_id="A_18_3_" flag="common">
+        <Description text="2.  首次症状发作时间："/>
+        <Input input_type="br"/>
+        <Input input_key="A_18_3_year" length="3" input_type="number"/>
+        <Description text="年"/>
+        <Input input_key="A_18_3_month" length="3" input_type="number"/>
+        <Description text="月"/>
+        <Input input_type="br"/>
+        <Description text="最后一次发作时间："/>
+        <Input input_type="br"/>
+        <Input input_key="A_18_3_years" length="3" input_type="number"/>
+        <Description text="年"/>
+        <Input input_key="A_18_3_months" length="3" input_type="number"/>
+        <Description text="月"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="true" disclosure_id="A_18_4_" flag="common">
+        <Description text="3.  近两年来发作次数约："/>
+        <Input input_key="A_18_4_day" length="3" input_type="number"/>
+        <Description text="次/年"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="false" disclosure_id="A_18_5_" flag="common">
+        <Description text="4.  是否有关节变形？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="donotCheckYes" disclosure_id="A_18_6_" flag="common">
+        <Description text="5.  是否有痛风石形成？"/>
+        <Expendable>
+            <Description text="部位"/>
+            <Input input_key="A_18_6_01" length="5" input_type="text"/>
+            <Description text="大小"/>
+            <Input input_key="A_18_6_02" length="3" input_type="text"/>
+            <Description text="数量"/>
+            <Input input_key="A_18_6_03" length="3" input_type="number"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="false" disclosure_id="A_18_7_" flag="common">
+        <Description text="6.  是否有蛋白尿、血尿、泌尿系统结石或者感染等？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="false" disclosure_id="A_18_8_" flag="common">
+        <Description text="7.  是否曾因上述原因到医院诊治？"/>
+        <Expendable>
+            <Description text="医院名称"/>
+            <Input input_key="A_18_8_01" length="5" input_type="text"/>
+            <Description text="诊断"/>
+            <Input input_key="A_18_8_02" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="donotCheckYes" disclosure_id="A_18_9_" flag="common">
+        <Description text="8.  既往是否有血尿酸升高？"/>
+        <Expendable>
+            <Description text="如是，请告知血尿酸检测的最高值"/>
+            <Input input_key="A_18_9_01" length="3" input_type="number"/>
+            <Description text="μmol/L"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="false" disclosure_id="A_18_10_" flag="common">
+        <Description text="9.  目前是否接受治疗？"/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="口服治疗" radio_key="A_18_10_05"/>
+            <Input input_type="br"/>
+            <Description text="药物名称"/>
+            <Input input_key="A_18_10_01" length="5" input_type="text" is_checked="false"/>
+            <Radio input_type="checkbox" and_others="false" options="手术治疗" radio_key="A_18_10_06"/>
+            <Input input_type="br"/>
+            <Description text="手术名称"/>
+            <Input input_key="A_18_10_02" length="5" input_type="text" is_checked="false"/>
+            <Description text="手术日期"/>
+            <Input input_key="A_18_10_03" length="5" input_type="text" is_checked="false"/>
+            <Radio input_type="checkbox" and_others="false" options="其他治疗" radio_key="A_18_10_07"/>
+            <Input input_key="A_18_10_04" length="5" input_type="text" is_checked="false"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="false" disclosure_id="A_18_11_" flag="common">
+        <Description text="10.   是否患有高血压、高脂血症、糖尿病等疾病？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="donotCheckYes" disclosure_id="A_18_12_" flag="common">
+        <Description text="11.   是否饮酒？"/>
+        <Expendable>
+            <Description text="饮酒量"/>
+            <Input input_key="A_18_12_01" length="3" input_type="number"/>
+            <Description text="两/日"/>
+            <Input input_key="A_18_12_02" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_type="br"/>
+            <Description text="已戒酒："/>
+            <Input input_key="A_18_12_03" length="3" is_checked="false" input_type="number"/>
+            <Description text="年"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="donotCheckYes" disclosure_id="A_18_13_" flag="common">
+        <Description text="12.   是否吸烟？"/>
+        <Expendable>
+            <Description text="吸烟量"/>
+            <Input input_key="A_18_13_01" length="3" input_type="number"/>
+            <Description text="支/日"/>
+            <Input input_key="A_18_13_02" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_type="br"/>
+            <Description text="已戒烟："/>
+            <Input input_key="A_18_13_03" length="3" is_checked="false" input_type="number"/>
+            <Description text="年"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="false" disclosure_id="A_18_14_" flag="common">
+        <Description text="13.   是否做过关节X片、关节镜、骨密度检查？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="false" disclosure_id="A_18_15_" flag="common">
+        <Description text="14.   家族成员中是否有痛风病史？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="true" disclosure_id="A_18_17_content" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果）"/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_18_17_content" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_18_" no_yesno="false" disclosure_id="A_18_16_" flag="BlankRemarkTable">
+        <Description text="15. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_18_16_01" lines="3" placeholder="如是，请说明："/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷28 机动车驾驶执照持有者问卷部分
+	 -->
+     <DisclosureItem disclosure_ver="C_6_" disclosure_id="problempieces_28" flag="questionName" text="机动车驾驶执照持有者问卷">
+     </DisclosureItem>
+
+     <DisclosureItem disclosure_ver="C_6_" no_yesno="true" flag="common" disclosure_id="C_6_1_">
+        <Description text="1.被保险人持有的驾驶执照的类型： "/>
+         <Expendable>
+             <Radio input_type="checkbox" options="C1/C2" radio_key="C_6_1_01" />
+             <Radio input_type="checkbox" options="B1" radio_key="C_6_1_02" />
+             <Radio input_type="checkbox" options="B2" radio_key="C_6_1_03" />
+             <Radio input_type="checkbox" options="A1" radio_key="C_6_1_04" />
+             <Radio input_type="checkbox" options="A2" radio_key="C_6_1_05" />
+             <Radio input_type="checkbox" options="A3" radio_key="C_6_1_06" />
+             <Radio input_type="checkbox" options="其他，请说明" radio_key="C_6_1_07" />
+             <Input input_type="text" length="10" is_checked="false" input_key="C_6_1_08"/>
+         </Expendable>
+
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="C_6_" no_yesno="true" disclosure_id="C_6_2_" flag="common">
+        <Description text="2.被保险人驾驶的车辆性质：" />
+        <Expendable>
+            <Description text=" 若是，请在符合的情况上划√: " />
+            <Radio input_type="checkbox" options="自有" radio_key="C_6_2_01" />
+            <Radio input_type="checkbox" options="单位" radio_key="C_6_2_02" />
+            <Radio input_type="checkbox" options="租借" radio_key="C_6_2_03" />
+            <Radio input_type="checkbox" options="其他，请说明" radio_key="C_6_2_04" />
+            <Input input_type="text" length="5" is_checked="false" input_key="C_6_2_05"/>
+        </Expendable>
+    </DisclosureItem>
+
+
+
+    <DisclosureItem disclosure_ver="C_6_" no_yesno="true" disclosure_id="C_6_3_" flag="common">
+        <Description text="3.被保险人驾驶车辆的类型：" />
+        <Expendable>
+            <Radio input_type="checkbox" options="乘用车，不含短头乘用车（面包车） " radio_key="C_6_3_01" />
+            <Radio input_type="checkbox" options="短头乘用车（面包车）" radio_key="C_6_3_02" />
+            <Radio input_type="checkbox" options="中型载客汽车（含核载10人以上、19人以下的城市公共汽车）" radio_key="C_6_3_03" />
+            <Radio input_type="checkbox" options="大型载客汽车" radio_key="C_6_3_04" />
+            <Radio input_type="checkbox" options="微型载货汽车（车长小于等于3.5米，载质量小于等于750千克）" radio_key="C_6_3_05" />
+            <Radio input_type="checkbox" options="轻型载货汽车（车长小于6米，总质量小于4500千克）" radio_key="C_6_3_06" />
+            <Radio input_type="checkbox" options="中型载货汽车（车长大于等于6m，总质量大于等于4500kg且小于12000kg）" radio_key="C_6_3_07" />
+            <Radio input_type="checkbox" options="重型载货汽车（车长大于等于6m，总质量大于等于12000kg）" radio_key="C_6_3_08" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_6_" no_yesno="true" disclosure_id="C_6_4_" flag="common">
+        <Description text="4. 被保险人驾车的频率？" />
+        <Expendable>
+            <Radio input_type="checkbox" options="不开车" radio_key="C_6_4_01" />
+            <Radio input_type="checkbox" options="每月 固定" radio_key="C_6_4_02" />
+            <Input input_type="text" length="3" is_checked="false" input_key="C_6_4_03"/>
+            <Description text="次以上" />
+            <Radio input_type="checkbox" options="每周 固定" radio_key="C_6_4_04" />
+            <Input input_type="text" length="3" is_checked="false" input_key="C_6_4_05"/>
+            <Description text="次以上" />
+
+            <Radio input_type="checkbox" options="不确定，请说明" radio_key="C_6_4_06" />
+            <Input input_type="text" length="5" is_checked="false" input_key="C_6_4_07"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_6_" no_yesno="true" disclosure_id="C_6_5_" flag="common">
+        <Description text="5. 以下关于被保险人驾车的目的，请在符合的情况上打√"/>
+        <Expendable>
+            <Radio input_type="checkbox" options="代步" radio_key="C_6_5_01" />
+            <Radio input_type="checkbox" options="自用" radio_key="C_6_5_02" />
+
+            <Radio input_type="checkbox" options="为自营店铺配送商品" radio_key="C_6_5_03" />
+            <Radio input_type="checkbox" options="其他，请说明" radio_key="C_6_5_04" />
+            <Input input_type="text" length="5" is_checked="false" input_key="C_6_5_05"/>
+
+            <Radio input_type="checkbox" options="专职司机，请说明具体工作性质及内容" radio_key="C_6_5_06" />
+            <Input input_type="text" length="5" is_checked="false" input_key="C_6_5_07"/>
+
+            <Radio input_type="checkbox" options="兼职司机，请说明驾驶车辆原因" radio_key="C_6_5_08" />
+            <Input input_type="text" length="5" is_checked="false" input_key="C_6_5_09"/>
+
+
+
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_6_" no_yesno="haveNone" disclosure_id="C_6_6_" flag="BlankRemarkTable">
+        <Description text="6.被保险人以往是否发生过交通事故？"/>
+        <Expendable>
+            <Description text="如是，请详细说明时间、地点、原因及判定结果、所负责任等："/>
+             <BlankRemarkTable input_key="C_6_6_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="C_6_" no_yesno="haveNone" disclosure_id="C_6_7_" flag="BlankRemarkTable">
+        <Description text="7.被保险人是否在其他保险公司正在投保或承保含有意外身故责任的保险？"/>
+        <Expendable>
+            <Description text="如有，请说明投保的保险公司，险种及保额："/>
+            <BlankRemarkTable input_key="C_6_7_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="C_6_" no_yesno="haveNone" disclosure_id="C_6_8_" flag="BlankRemarkTable">
+        <Description text="8.除上述内容外，您认为还有哪些信息有助于我们处理您的投保申请？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="C_6_8_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

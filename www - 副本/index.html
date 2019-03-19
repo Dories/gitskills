@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="format-detection" content="telephone=no"/>
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="src/css/DatePicker.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="js/jquery.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/onlineRule.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/common.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+	  <script src="js/problemValidate.js"></script>
+    <script src="js/insuranceValidate.js"></script>
+    <script src="js/subaction.js"></script>
+    <script src="src/js/area.js"></script>
+    <script src="src/js/iscroll.js"></script>
+    <script src="src/js/DatePicker.js"></script>
+  </head>
+  <body ng-app="starter">
+    <ion-nav-view>
+    
+    </ion-nav-view>
+	<input type="hidden" id="pctype" />
+	
+	<div id="mengceng_div" style="width: 100%; height: 100%;top: 0px; left: 0px; background: #333;filter: alpha(opacity=30);position: fixed; z-index: 5000; opacity: 0.5;display:none;"></div>
+	 
+	 <div id="mengceng_div_text" style="position: absolute; top: 45%; left: 45%;z-index: 5000;display:none;">
+		 <img src="img/loading_icon.gif" />
+	 </div>
+	 <!-- myalert提示框 -->
+	 <div id="mengceng_div_alert" style="position:absolute; top: 40%; left: 40%;z-index: 5000;display:none;border:1px solid #ffffff;background:#ffffff;padding:10px;border-radius: 5px;width:240px;text-align:center;">
+		 <table style="width:100%;">
+		 	<tr><td style="text-align: center;height: 30px;">提示</td></tr>
+		 	<tr><td><hr width="100%" size="1px"/></td></tr>
+		 	<tr><td id="messageContainer" style="padding-top: 10px;padding-bottom: 20px;text-align: left;"></td></tr>
+		 	<tr><td style="height:50px;text-align: center;"><button onclick="closeMyAlert();" style="width:100%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;"> 确   定 </button></td></tr>
+		 </table>
+	 </div>
+     <!-- 客户合并Myalert方法 -->
+     <div id="shade_Myalert" style="position:absolute; top: 20%; left: 40%;z-index: 5000;display:none;border:1px solid #ffffff;background:#ffffff;padding:10px;border-radius: 5px;width:260px;text-align:center;">
+         <table style="width:100%;">
+            <tr><td style="text-align: center;height: 30px;font-size:18px;color:#d14014;">提示</td></tr>
+            <tr><td><hr width="100%" size="1px"/></td></tr>
+        </table>
+        <table style="width:100%;" id="customer_div">
+            
+        </table> 
+        <table style="width:100%;">      
+            <tr><td><hr width="100%" size="1px"/></td></tr>
+            <tr><td style="height:50px;text-align: center;padding-top:10px;"><button id="myAlertOkFun" style="width:60%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;"> 确   定 </button></td></tr>
+        </table>
+     </div>
+     <!-- Myalert方法 -->
+     <div id="Pay_Myalert" style="position:absolute; top: 40%; left: 40%;z-index: 5000;display:none;border:1px solid #ffffff;background:#ffffff;padding:10px;border-radius: 5px;width:260px;text-align:center;">
+        <table style="width:100%;">
+          <tr><td style="text-align: center;height: 30px;">自主垫交确认</td></tr>
+          <tr><td><hr width="100%" size="1px"/></td></tr>
+          <tr><td id="Pay_messageContainer" style="padding-top: 10px;padding-bottom: 20px;text-align: left;"></td></tr>
+          <tr>
+              <td>
+                  <span class="input_style">
+                     <input type="radio" name="choice_PAY_FOR" id="yes_PAY_FOR" onclick="bind_radio(this.id);" value ="1" />是
+                  </span>
+                  <span class="input_style">
+                      <input type="radio" name="choice_PAY_FOR" id="no_PAY_FOR" onclick="bind_radio(this.id);" value ="0" />否
+                  </span>
+              </td>
+            </tr> 
+          <tr><td style="height:50px;text-align: center;padding-top:10px;"><button id="Pay_myAlertOkBut" style="width:80%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;"> 确   定 </button></td></tr>
+        </table>
+     </div>
+<!-- 修改confirm弹出框样式 -->
+    <div id="mengceng_div_confirm" style="position:absolute; top: 40%; left: 40%;z-index: 5000;display:none;border:1px solid #ffffff;background:#ffffff;padding:10px;border-radius: 5px;width:240px;text-align:center;">
+        <table style="width:100%;">
+            <tr><td style="text-align: center;height: 30px;">提示</td></tr>
+            <tr><td><hr width="100%" size="1px"/></td></tr>
+            <tr><td id="messageContainerOfConfirm" style="padding-top: 10px;padding-bottom: 20px;text-align: left;"></td></tr>
+            <tr><td style="height:50px;text-align: center;"><button id="confirmOkButton" style="width:40%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;"> 确   认 </button>
+            <button id="confirmCancelButton" style="width:40%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;"> 取   消 </button>
+            </td></tr>
+         </table>
+     </div>
+     <!-- 修改confirm弹出框样式2 -->
+     <div id="mengceng_div_confirm2" style="position:absolute; top: 40%; left: 40%;z-index: 5000;display:none;border:1px solid #ffffff;background:#ffffff;padding:10px;border-radius: 5px;width:240px;text-align:center;">
+        <table style="width:100%;">
+            <tr><td style="text-align: center;height: 30px;">提示</td></tr>
+            <tr><td><hr width="100%" size="1px"/></td></tr>
+            <tr><td id="messageContainerOfConfirm2" style="padding-top: 10px;padding-bottom: 20px;text-align: left;"></td></tr>
+            <tr><td style="height:50px;text-align: center;"><button id="confirmOkButton2" style="width:40%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;"> 确   认 </button>
+            <button id="confirmCancelButton2" style="width:40%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;"> 取   消 </button>
+            </td></tr>
+         </table>
+     </div>
+     <!-- 邮储直连提示框  2016.9.29 wuwei -->
+    <div id="mengceng_PO_confirm_PO" style="position:absolute; top: 40%; left: 40%;z-index: 5000;display:none;border:1px solid #ffffff;background:#ffffff;padding:10px;border-radius: 5px;width:240px;text-align:center;">
+        <table style="width:100%;">
+            <tr><td style="text-align: center;height: 30px;">邮储收费温馨提示：</td></tr>
+            <tr><td><hr width="100%" size="1px"/></td></tr>
+            <tr><td id="messageContainerOfConfirm_PO" style="padding-top: 10px;padding-bottom: 20px;text-align: left;"></td></tr>
+            <tr><td style="height:50px;text-align: center;"><button id="confirmOkButton_PO" style="width:80%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;">我要用邮储账户交费</button>
+            </td></tr>
+            <tr>
+                <td style="height:50px;text-align: center;"><button id="confirmCancelButton_PO" style="width:80%;height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;">我要更换其他银行账户</button></td>
+            </tr>
+         </table>
+     </div>
+
+     <!--<script src="http://10.8.66.213:1337/vorlon.js"></script>-->
+
+  </body>
+</html>

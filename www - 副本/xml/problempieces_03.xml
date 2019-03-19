@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--问题卷3 肝脏疾病或乙肝病毒携带问卷-->
+    <DisclosureItem disclosure_ver="A_3_" disclosure_id="problempieces_03" flag="questionName" text="肝脏疾病或乙肝病毒携带问卷"/>
+
+    <DisclosureItem disclosure_ver="A_3_" no_yesno="true" disclosure_id="A_3_1_" flag="common">
+        <Description text="1.  是否曾患有或被怀疑患有：" />
+        <Radio input_type="checkbox" and_others="false" options="肝炎" radio_key="A_3_1_a" />
+        <Radio input_type="checkbox" and_others="false" options="肝硬化" radio_key="A_3_1_b" />
+        <Radio input_type="checkbox" and_others="false" options="脂肪肝" radio_key="A_3_1_c" />
+        <Radio input_type="checkbox" and_others="false" options="肝脏肿瘤" radio_key="A_3_1_d" />
+        <Radio input_type="checkbox" and_others="false" options="其他肝脏疾病" radio_key="A_3_1_e" />
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_3_" no_yesno="true" disclosure_id="A_3_2_" flag="common">
+        <Description text="2.  如选择肝炎，请注明：" />
+        <Radio input_type="checkbox" and_others="false" options="甲肝" radio_key="A_3_2_a" is_checked="false" />
+        <Radio input_type="checkbox" and_others="false" options="乙肝" radio_key="A_3_2_b" is_checked="false" />
+        <Radio input_type="checkbox" and_others="false" options="丙肝" radio_key="A_3_2_c" is_checked="false" />
+        <Radio input_type="checkbox" and_others="false" options="酒精性肝炎" radio_key="A_3_2_d" is_checked="false" />
+        <Radio input_type="checkbox" and_others="false" options="药物性肝炎" radio_key="A_3_2_f" is_checked="false" />
+        <Radio input_type="checkbox" and_others="false" options="其他" radio_key="A_3_2_g" is_checked="false" />
+        <Input input_key="A_3_2_01" length="5" input_type="text" is_checked="false"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_3_" no_yesno="true" disclosure_id="A_3_3_" flag="common">
+        <Description text="3.  如选择乙肝，请注明：" />
+        <Radio input_type="checkbox" and_others="false" options="病毒携带者" radio_key="A_3_3_a" is_checked="false" />
+        <Radio input_type="checkbox" and_others="false" options="大三阳" radio_key="A_3_3_b" is_checked="false" />
+        <Radio input_type="checkbox" and_others="false" options="小三阳" radio_key="A_3_3_c" is_checked="false" />
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_3_" no_yesno="true" disclosure_id="A_3_4_" flag="common">
+        <Description text="4.  肝脏疾病是如何发现的：" />
+        <Radio input_type="checkbox" and_others="false" options="正常体检" radio_key="A_3_4_a" />
+        <Radio input_type="checkbox" and_others="false" options="自觉有症状后检查发现" radio_key="A_3_4_b" />
+        <Radio input_type="checkbox" and_others="false" options="本次体检发现" radio_key="A_3_4_c" />
+        <Radio input_type="checkbox" and_others="false" options="因其他原因就诊时发现" radio_key="A_3_4_d" />
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_3_" no_yesno="true" disclosure_id="A_3_5_" flag="common">
+        <Description text="5.  您首次得知患病时间："/>
+        <Input input_key="A_3_5_year" length="3" input_type="number"/>
+        <Description text="年"/>
+        <Input input_key="A_3_5_month" length="3" input_type="number"/>
+        <Description text="月"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_3_" no_yesno="donotCheckYes" disclosure_id="A_3_6_" flag="common">
+        <Description text="6.  目前是否有以下症状？"/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="恶心" radio_key="A_3_6_001" />
+            <Radio input_type="checkbox" and_others="false" options="厌油" radio_key="A_3_6_002" />
+            <Radio input_type="checkbox" and_others="false" options="右上腹不适" radio_key="A_3_6_003" />
+            <Radio input_type="checkbox" and_others="false" options="食欲不振" radio_key="A_3_6_004" />
+            <Radio input_type="checkbox" and_others="false" options="全身乏力" radio_key="A_3_6_005" />
+            <Radio input_type="checkbox" and_others="false" options="易疲劳" radio_key="A_3_6_006" />
+            <Radio input_type="checkbox" and_others="false" options="皮肤黄染" radio_key="A_3_6_007" />
+            <Radio input_type="checkbox" and_others="false" options="巩膜黄染" radio_key="A_3_6_008" />
+            <Radio input_type="checkbox" and_others="false" options="小便黄" radio_key="A_3_6_009" />
+            <Radio input_type="checkbox" and_others="false" options="其他" radio_key="A_3_6_010" />
+                <Input input_key="A_3_6_01" length="5" input_type="text" is_checked="false"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_3_" no_yesno="false" disclosure_id="A_3_7_" flag="common">
+        <Description text="7.  是否接受过以下检查？"/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="肝功能" radio_key="A_3_7_02" />
+            <Radio input_type="checkbox" and_others="false" options="乙肝五项" radio_key="A_3_7_03" />
+            <Radio input_type="checkbox" and_others="false" options="丙肝抗体" radio_key="A_3_7_04" />
+            <Radio input_type="checkbox" and_others="false" options="腹部B超或CT" radio_key="A_3_7_05" />
+            <Radio input_type="checkbox" and_others="false" options="甲胎蛋白（AFP）" radio_key="A_3_7_06" />
+            <Radio input_type="checkbox" and_others="false" options="肝脏活检" radio_key="A_3_7_07" />
+            <Radio input_type="checkbox" and_others="false" options="其他" radio_key="A_3_7_08" />
+                <Input input_key="A_3_7_01" length="5" input_type="text" is_checked="false"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_3_" no_yesno="false" disclosure_id="A_3_8_" flag="common">
+        <Description text="8.  是否因肝脏疾病或者肝功能异常住院治疗？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_3_" no_yesno="false" disclosure_id="A_3_9_" flag="common">
+        <Description text="9.  是否有肝功能反复异常？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_3_" no_yesno="false" disclosure_id="A_3_10_" flag="common">
+        <Description text="10.  最近半年是否做过检查？"/>
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="A_3_" no_yesno="false" disclosure_id="A_3_11_" flag="common">
+        <Description text="11.   是否服药治疗或进行其他治疗？"/>
+        <Expendable>
+            <Description text="药物名称"/>
+            <Input input_key="A_3_11_01" length="5" input_type="text"/>
+            <Description text="其他治疗"/>
+            <Input input_key="A_3_11_02" length="5" input_type="text"/>
+            <Description text="治疗时间"/>
+            <Input input_key="A_3_11_03" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_3_" no_yesno="donotCheckYes" disclosure_id="A_3_12_" flag="common">
+        <Description text="12.   目前是否饮酒？"/>
+        <Expendable>
+            <Description text="饮酒量："/>
+            <Input input_key="A_3_12_01" length="3" input_type="number"/>
+            <Description text="两/日"/>
+            <Input input_type="br"/>
+            <Description text="饮酒种类："/>
+            <Radio input_type="checkbox" and_others="false" options="白酒" radio_key="A_3_12_03" />
+            <Radio input_type="checkbox" and_others="false" options="黄酒" radio_key="A_3_12_04" />
+            <Radio input_type="checkbox" and_others="false" options="啤酒" radio_key="A_3_12_05" />
+            <Input input_type="br"/>
+            <Description text="饮酒"/>
+            <Input input_key="A_3_12_07" length="3" input_type="number"/>   
+            <Description text="年"/>    
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_3_" no_yesno="false" disclosure_id="A_3_13_" flag="common">
+        <Description text="13.   家庭成员中是否有肝脏疾病患者？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_3_" no_yesno="false" disclosure_id="A_3_14_" flag="common">
+        <Description text="14.   是否因此病而长期（如数周）休假？"/>
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="A_3_" no_yesno="true" disclosure_id="A_3_14_01" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果）"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_3_14_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_3_" no_yesno="false" disclosure_id="A_3_15_" flag="BlankRemarkTable">
+        <Description text="15. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_3_15_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

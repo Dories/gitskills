@@ -1,0 +1,9 @@
+@import 'framework.css'; 
+@import 'menu_list.css'; /*左侧列表*/
+@import 'data_view.css'; /*右侧详情*/
+@import 'loading.css'; /*loading*/
+@import 'insure.css'; /*在线投保*/
+@import 'common.css'; /*在线投保*/
+@import 'sin_style.css'; /*在线投保*/
+@import 'question.css'; /*问题件*/
+

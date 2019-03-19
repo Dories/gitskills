@@ -1,0 +1,27 @@
+<ion-side-menus>
+  <ion-pane ion-side-menu-content>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+
+  <ion-side-menu side="left" width="100" is-enabled="enableSlide1">
+    <header class="bar bar-header bar-stable" ng-click="gohomeFun();" >
+      <h1 class="title"><a href="javascript:;" class="go-home-page">回到首页</a></h1>
+    </header>
+    <ion-content class="has-header">
+      <ion-list class="left_list">
+      	<ion-item ng-click="clickMenu('N');">
+      		<span ng-class="{'unsubmit':(isSubmit == 'Y' || isSubmit == 'H' || isSubmit == 'Q'),'unsubmit-actived':isSubmit == 'N'}">未提交保单</span>
+      	</ion-item>
+      	<ion-item ng-click="clickMenu('Y');">
+      		<span ng-class="{'submit':(isSubmit == 'N' || isSubmit == 'H' || isSubmit == 'Q'),'submit-actived':isSubmit == 'Y'}">已提交保单</span>
+      	</ion-item>
+
+          <!-- <ion-item ng-click="clickMenu('Q');">
+              <span ng-class="{'question':(isSubmit == 'N' || isSubmit == 'Y' || isSubmit == 'H'),'question-actived':isSubmit == 'Q'}">问题件</span>
+          </ion-item> -->
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+  <!--透明遮罩层-->
+  <div class="question-hide width-300-px" ng-show="QustionHide"></div>
+</ion-side-menus>

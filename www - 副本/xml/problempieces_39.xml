@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷39 肾脏和泌尿系统疾病调查问卷
+	 -->
+     <DisclosureItem disclosure_ver="F_39_" disclosure_id="problempieces_39" flag="questionName" text="肾脏和泌尿系统疾病调查问卷">
+     </DisclosureItem>
+
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="true" disclosure_id="F_39_1_" flag="common">
+        <Description text="1.发现患有泌尿系统疾病的时间"/>
+        <Input input_type="text" input_key="F_39_1_01" length="2"  />
+        <Description text="年"/>
+        <Input input_type="text" input_key="F_39_1_02" length="2"  />
+        <Description text="月，医生对该疾病的诊断："/>
+        <Input input_type="text" input_key="F_39_1_03" length="5"  />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="true" disclosure_id="F_39_2_" flag="common">
+        <Description text=" 2.关于症状（如乏力、腰酸等）："/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="true" disclosure_id="F_39_2_a_"  flag="common">
+        <Description text=" A.这些症状首次出现是在什么时候？"/>
+        <Input input_type="br"/>
+        <Input input_type="text" input_key="F_39_2_01" length="2"  />
+        <Description text="年"/>
+        <Input input_type="text" input_key="F_39_2_02" length="2"  />
+        <Description text="月"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="true" disclosure_id="F_39_2_b_"  flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text=" B.这些症状发生的频率如何？在过去2年内发生的频率？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="F_39_2_b_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="true" disclosure_id="F_39_2_c_" flag="common">
+        <Description text="C. 现在症状是否已经消失？"/>
+        <Expendable>
+
+            <Radio input_type="checkbox" options="是" radio_key="F_39_2_c_01" />
+            <Input input_type="br"/>
+            <Description text="如果是，最后出现症状是在什么时候？"/>
+            <Input input_type="text" length="5" is_checked="false" input_key="F_39_2_c_02"/>
+
+            <Radio input_type="checkbox" options="否" radio_key="F_39_2_c_03" />
+            <Input input_type="br"/>
+            <Description text="如果否，现在仍有哪些症状？ "/>
+            <Input input_type="text" length="5" is_checked="false" input_key="F_39_2_c_04"/>
+
+
+        </Expendable>
+    </DisclosureItem>
+
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="true" disclosure_id="F_39_3_" flag="common">
+        <Description text=" 3.关于疾病的治疗："/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="true" disclosure_id="F_39_3_a_"  flag="common">
+        <Description text=" A.您就医的频率如何，最后一次就医是在什么时候？"/>
+        <Input input_type="text" input_key="F_39_3_a_01" length="5"  />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="false" disclosure_id="F_39_3_b_"  flag="BlankRemarkTable">
+        <Description text=" B.您是否已就该疾病进行检查？"/>
+        <Expendable>
+            <Description text="如果是，请详细说明检查的性质，日期和结果。"/>
+
+            <BlankRemarkTable input_key="F_39_3_b_01" lines="4"/>
+
+        </Expendable>
+    </DisclosureItem>
+
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="false" disclosure_id="F_39_3_c_"  flag="BlankRemarkTable">
+        <Description text=" C.您是否曾经或现在因此疾病而服用药物？"/>
+        <Expendable>
+            <Description text="如果是，请提供包括药物名称、剂量和用药时间在内的详细情况。"/>
+
+            <BlankRemarkTable input_key="F_39_3_c_01" lines="4"/>
+
+        </Expendable>
+    </DisclosureItem>
+
+
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="true" disclosure_id="F_39_4_"  flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="4.如果知道，请提供过去两年中所有血压检查的读数，并说明检查的时间？ "/>
+        <Expendable>
+            <BlankRemarkTable input_key="F_39_4_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="false" disclosure_id="F_39_5_" flag="BlankRemarkTable">
+        <Description text="5.此病是否在过去两年中导致超过一周无法工作？"/>
+        <Expendable>
+            <Description text="如果是，请提供包括无法工作的日期和持续时间在内的详细情况。"/>
+            <BlankRemarkTable input_key="F_39_5_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="true" disclosure_id="F_39_6_"  flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="6.您认为还有哪些有关您的病情的信息有助于我们审核您的投保？请告知。 "/>
+        <Expendable>
+            <BlankRemarkTable input_key="F_39_6_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+
+
+    <DisclosureItem disclosure_ver="F_39_" no_yesno="true" disclosure_id="F_39_7_" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="7.关于以上1-6项的告知内容，您是否能提供相关的病历资料和检查报告？请提供。"/>
+        <Expendable>
+            <BlankRemarkTable input_key="F_39_7_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+</Disclosure>

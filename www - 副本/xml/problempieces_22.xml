@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷22 心脏结构疾病问卷
+	 -->
+     <DisclosureItem disclosure_ver="A_22_" disclosure_id="problempieces_22" flag="questionName" text="心脏结构疾病问卷">
+     </DisclosureItem>
+
+      <DisclosureItem disclosure_ver="A_22_" no_yesno="false" disclosure_id="A_22_1_" flag="common">
+        <Description text="1. 是否曾经到医院就诊过？" />
+        <Expendable>
+            <Description text="医院名称：" />
+            <Input input_key="A_22_1_01" length="10" input_type="text"/>
+            <Description text="诊断：" />            
+            <Input input_key="A_22_1_02" length="10" input_type="text" />
+            <Description text="时间：" /> 
+            <Input input_key="A_22_1_03" length="10" input_type="number" />
+        </Expendable>       
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="A_22_"  disclosure_id="A_22_2_" flag="common">
+        <Description text="2.  是否曾经做过胸部X光及心电图、心脏超声、冠状动脉造影、心肌酶学、心肌核素扫描等有关检查？" />
+    </DisclosureItem>
+
+     <DisclosureItem disclosure_ver="A_22_" disclosure_id="A_22_3_" flag="common">
+        <Description text="3.  是否已经进行或计划进行手术或介入治疗？" />
+        <Expendable>
+            <Radio input_type="checkbox" options="动脉导管封堵术或结扎术或修补术" radio_key="A_22_3_02" />
+            <Radio input_type="checkbox" options="房间隔缺损修补术" radio_key="A_22_3_03" />
+            <Radio input_type="checkbox" options="室间隔缺损修补术" radio_key="A_22_3_04" />
+             <Radio input_type="checkbox" options="心脏瓣膜置换术或成形术" radio_key="A_22_3_05" />
+            <Radio input_type="checkbox" options="冠状动脉支架术" radio_key="A_22_3_06" />
+            <Radio input_type="checkbox" options="冠状动脉搭桥术" radio_key="A_22_3_07" />
+            <Radio input_type="checkbox" options="左室壁瘤切除术" radio_key="A_22_3_08" />
+            <Radio input_type="checkbox" options="其他" radio_key="A_22_3_09" /> 
+            <Input input_key="A_22_3_01" length="10" input_type="text" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_22_" disclosure_id="A_22_4_" no_yesno="false" flag="common"> 
+        <Description text="4.  目前身体状况，下列情况是否出现疲乏、心悸、呼吸困难、或心绞痛、下肢浮肿等情况？"/>
+        <Expendable>
+            <Radio input_type="checkbox" options="正常活动后（步行3~4里、上三楼、上坡等）无" radio_key="A_22_4_a" />
+            <Radio input_type="checkbox" options="轻微活动后有" radio_key="A_22_4_b" />
+            <Radio input_type="checkbox" options="正常活动后（步行3~4里、上三楼、上坡等）有" radio_key="A_22_4_c" />
+            <Radio input_type="checkbox" options="不活动仍有" radio_key="A_22_4_d" />
+            <Radio input_type="checkbox" options="情绪波动时有" radio_key="A_22_4_e" />
+            <Radio input_type="checkbox" options="饱食后有" radio_key="A_22_4_f" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_22_" disclosure_id="A_22_5_" flag="common"> 
+        <Description text="5.  是否曾经或正在服用药物"/>
+        <Expendable>
+            <Description text="药物名称:" />
+                <Input input_key="A_22_5_01" length="10" input_type="text" />
+            <Description text="用法和用量:" />
+                <Input input_key="A_22_5_02" length="10" input_type="text" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_22_" disclosure_id="A_22_6_" no_yesno="false" flag="common">
+        <Description text="6．请告知最近一次复诊时间:　"/>
+
+        <Expendable>
+            <Input input_key="A_22_6_year" length="10" input_type="text" />
+            <Description text="年"/>
+            <Input input_key="A_22_6_month" length="10" input_type="text" />
+            <Description text="月，并提供检查资料（如超声心动图等）"/>
+        </Expendable>
+
+
+    </DisclosureItem>       
+
+    <DisclosureItem disclosure_ver="A_22_" no_yesno="true" disclosure_id="A_22_check_result" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果）"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_22_check_result" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_22_" no_yesno="false" disclosure_id="A_22_7_" flag="BlankRemarkTable">
+        <Description text="7. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_22_7_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >	
+	<!--问题卷12 乳腺疾病问卷-->
+ <DisclosureItem disclosure_ver="A_12_" disclosure_id="problempieces_12" flag="questionName" text="乳腺疾病问卷"/>
+
+    <DisclosureItem disclosure_ver="A_12_" no_yesno="true" disclosure_id="A_12_1_" flag="common">
+        <Description text="1.  您首次得知患乳腺疾病的时间："/>
+        <Input input_type="br"/>
+        <Input input_key="A_12_1_year" length="3" input_type="number"/>
+        <Description text="年"/>
+        <Input input_key="A_12_1_month" length="3" input_type="number"/>
+        <Description text="月"/>
+        <Input input_type="br"/>
+        <Description text="诊断："/>
+        <Input input_key="A_12_1_01" length="5" input_type="text"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_12_" no_yesno="true" disclosure_id="A_12_2_" flag="common">
+        <Description text="2.  发现方式："/>
+        <Radio input_type="checkbox" and_others="false" options="正常体检" radio_key="A_12_2_a"/>
+        <Radio input_type="checkbox" and_others="false" options="自觉有症状后检查发现" radio_key="A_12_2_b"/>
+        <Radio input_type="checkbox" and_others="false" options="无意中发现" radio_key="A_12_2_c"/>
+        <Radio input_type="checkbox" and_others="false" options="本次体检发现" radio_key="A_12_2_d"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_12_" no_yesno="donotCheckYes" disclosure_id="A_12_3_" flag="common">
+        <Description text="3.  是否有乳腺疼痛？"/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="周期性" radio_key="A_12_3_01"/>
+            <Radio input_type="checkbox" and_others="false" options="持续性" radio_key="A_12_3_02"/>
+            <Radio input_type="checkbox" and_others="false" options="与月经周期有关" radio_key="A_12_3_03"/>
+            <Radio input_type="checkbox" and_others="false" options="与哺乳有关" radio_key="A_12_3_04"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_12_" no_yesno="donotCheckYes" disclosure_id="A_12_4_" flag="common">
+        <Description text="4.  是否能触及包块？"/>
+        <Expendable>
+            <Description text="部位："/>
+            <Radio input_type="checkbox" and_others="false" options="左侧" radio_key="A_12_4_03"/>
+            <Radio input_type="checkbox" and_others="false" options="右侧" radio_key="A_12_4_04"/>
+            <Radio input_type="checkbox" and_others="false" options="双侧" radio_key="A_12_4_05"/>
+            <Input input_type="br"/>
+            <Description text="数量"/>
+            <Input input_key="A_12_4_01" length="3" input_type="number"/>
+            <Description text="个"/>
+            <Input input_type="br"/>
+            <Description text="大小"/>
+            <Input input_key="A_12_4_02" length="3" input_type="number"/>
+            <Description text="厘米"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_12_" no_yesno="donotCheckYes" disclosure_id="A_12_5_" flag="common">
+        <Description text="5.  是否与皮肤及周围组织粘连（是否活动）？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_12_" no_yesno="donotCheckYes" disclosure_id="A_12_6_" flag="common">
+        <Description text="6.  是否有乳头溢液？"/>
+        <Expendable>
+            <Description text="部位："/>
+            <Radio input_type="checkbox" and_others="false" options="乳汁样" radio_key="A_12_6_02"/>
+            <Radio input_type="checkbox" and_others="false" options="血样" radio_key="A_12_6_03"/>
+            <Radio input_type="checkbox" and_others="false" options="清水样" radio_key="A_12_6_04"/>
+            <Radio input_type="checkbox" and_others="false" options="其他" radio_key="A_12_6_05"/>
+            <Input input_key="A_12_6_01" length="5" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_12_" no_yesno="false" disclosure_id="A_12_7_" flag="common">
+        <Description text="7.  是否做过乳腺触诊检查、钼靶照相、红外线检查、超声检查、病理检查等？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_12_" no_yesno="false" disclosure_id="A_12_8_" flag="common">
+        <Description text="8.  是否进行过治疗？"/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="服药治疗" radio_key="A_12_8_06"/>
+            <Input input_type="br"/>
+            <Description text="药物名称"/>
+            <Input input_key="A_12_8_01" length="10" input_type="text"/>
+            <Description text="用药时间"/>
+            <Input input_key="A_12_8_02" length="10" input_type="text"/>
+            <Radio input_type="checkbox" and_others="false" options="手术治疗" radio_key="A_12_8_07"/>
+            <Input input_type="br"/>
+            <Description text="手术名称"/>
+            <Input input_key="A_12_8_03" length="10" input_type="text"/>
+            <Description text="手术时间"/>
+            <Input input_key="A_12_8_04" length="10" input_type="text"/>
+            <Radio input_type="checkbox" and_others="false" options="其他治疗" radio_key="A_12_8_08"/>
+            <Input input_type="br"/>
+            <Input input_key="A_12_8_05" length="10" input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_12_" no_yesno="false" disclosure_id="A_12_9_" flag="common">
+        <Description text="9. 目前是否仍在治疗？是否被建议或者计划手术治疗？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_12_" no_yesno="donotCheckYes" disclosure_id="A_12_10_" flag="common">
+        <Description text="10. 是否有隆胸手术史？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_12_" no_yesno="false" disclosure_id="A_12_11_" flag="common">
+        <Description text="11. 家族成员中是否有乳腺癌患者？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_12_" no_yesno="true" disclosure_id="A_12_check_result" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料(门诊病历、住院记录及化验检查结果)"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_12_check_result" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_12_" no_yesno="false" disclosure_id="A_12_12_" flag="BlankRemarkTable">
+        <Description text="12.  是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_12_12_01" lines="3" placeholder="如是，请说明："/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

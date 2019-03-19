@@ -1,0 +1,305 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!-- 
+		&lt;	<	小于号
+		&gt;	>	大于号
+		&amp;	&	和
+		&apos;	'	单引号
+			"	双引号
+		
+		||(currentIsuresID==121516)||(currentIsuresID==122203)||(currentIsuresID==121515)||(currentIsuresID==121712)||(currentIsuresID==121306)||(currentIsuresID==122203)||(currentIsuresID==121515)||(currentIsuresID==121712)||(currentIsuresID==121306)
+		((currentIsuresID==111602)||(currentIsuresID==121511)||(currentIsuresID==121801)||(currentIsuresID==121705)||(currentIsuresID==121704)||(currentIsuresID==111802)||(currentIsuresID==112216)||(currentIsuresID==121510)||(currentIsuresID==121509)||(currentIsuresID==111505)||(currentIsuresID==112213)||(currentIsuresID==111504)||(currentIsuresID==112203)||(currentIsuresID==111301)||(currentIsuresID==111601)||(currentIsuresID==112221)||(currentIsuresID==121305)||(currentIsuresID==121505)||(currentIsuresID==121506))
+		(currentIsuresID==111602)||(currentIsuresID==121511)||(currentIsuresID==121801)||(currentIsuresID==121705)||(currentIsuresID==121704)||(currentIsuresID==111802)||(currentIsuresID==112216)||(currentIsuresID==121510)||(currentIsuresID==121509)||(currentIsuresID==111505)||(currentIsuresID==112213)||(currentIsuresID==111504)||(currentIsuresID==112203)||(currentIsuresID==111301)||(currentIsuresID==111601)||
+	 -->
+	<!--
+	   投保人告知模板中，需要分模板一和模板二的告知有：A0502、A0503、A0527、A0530、A0531、A0532
+	 -->
+      <DisclosureItem disclosure_ver="A05" no_yesno="true" disclosure_id="MA0501" flag="common">
+        <Description text="投保人身高" />
+        <Input hint="" 
+            input_key="insured_height"
+            length="3" 
+            input_type="number"/>
+        <Description text="（厘米）" color="red" />
+        <Description text="（请注意单位）  投保人体重" />
+        <Input
+            hint=""
+            input_key="insured_weight"
+            length="3"
+            input_type="number" />
+        <Description text="（公斤）" color="red" />
+        <Description text="（请注意单位）" />
+    </DisclosureItem> 
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0502" flag="ifcommon" if="appantAge>=18 &amp;&amp;(('currentIsuresID'.indexOf('121308')>-1) ||('currentIsuresID'.indexOf('121532')>-1)
+)">
+        <Description text="投保人是否有吸烟习惯？" />
+        <Expendable>
+            <Description text="请详述：每天" />
+            <Input
+                hint=""
+                input_key="smoking_count_day"
+                length="3"
+                input_type="number" />
+            <Description text="支，已吸烟" />
+            <Input
+                hint=""
+                input_key="smoking_years"
+                length="3" 
+                input_type="number"/>
+            <Description text="年" />
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0503" flag="ifcommon" if="appantAge>=18 &amp;&amp; (('currentIsuresID'.indexOf('121308')>-1) ||('currentIsuresID'.indexOf('121532')>-1)
+)">
+        <Description text="投保人是否目前饮酒或曾经饮酒？" />
+        <Expendable>
+            <Description text="请告知饮酒" />
+            <Input
+                hint=""
+                input_key="drinking_years"
+                length="3" 
+                input_type="number"/>
+            <Description text="年；"/>
+            <Line/>
+            <Description text="请告知饮何种酒？酒的种类为：①啤酒" />
+            <Input
+                hint=""
+                input_key="beer"
+                length="3" 
+                input_type="number"/>
+            <Description text="（瓶/天） ②红酒" />
+            <Input
+                hint=""
+                input_key="wine"
+                length="3" 
+                input_type="number"/>
+            <Description text="（两/天）"/>
+            <Line/>
+            <Description text=" ③白酒" />
+            <Input
+                hint=""
+                input_key="spirits"
+                length="3"
+                input_type="number" />
+            <Description text="（两/天） ④黄酒、米酒等" />
+            <Input
+                hint=""
+                input_key="rice_wine"
+                length="3"
+                input_type="number" />
+            <Description text="（两/天）" />
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0504" flag="HealthRemarkTable">
+		<Description text="投保人是否目前或过去一年内曾有过下列症状？
+如：反复头痛、眩晕、胸痛、咯血、气喘、腹痛、便血、包块或肿物、原因不明的发热、皮肤和粘膜及齿龈出血、体重下降超过5公斤，原因不明的肌肉萎缩，身体的其他感觉异常或活动障碍。"/>
+    	<Expendable>
+            <HealthRemarkTable healthtable_key="symptom"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0505" flag="HealthRemarkTable">
+        <Description text="投保人过去一年内是否接受过医师的诊查、治疗、用药、住院或手术建议？（自然分娩和剖腹产除外）"/>
+        <Expendable>
+            <HealthRemarkTable healthtable_key="hospitalization"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0506" flag="HealthRemarkTable">
+        <Description text="投保人过去三年内是否曾有过医学检查结果异常（包括健康体检）？"/>
+         <Expendable>
+             <Description text="请注明检查时间与结果"/>
+            <HealthRemarkTable healthtable_key="examination"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0507" flag="HealthRemarkTable">
+         <Description text="投保人过去十年内是否住院诊疗？"/>
+         <Expendable>
+             <Description text="请写明住院的原因、时间、治疗结果及医院名称。"/>
+            <HealthRemarkTable />
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0508" flag="HealthRemarkTable">
+        <Description text="投保人是否有智能障碍？是否失明、聋哑及言语、咀嚼或身体其他部位残缺、残疾或功能障碍？"/>
+        <Expendable>
+            <Description text="若“是”，请说明智能障碍等级和残疾等级。"/> 
+            <HealthRemarkTable  healthtable_key="nerve_diseases"/>        
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0509" flag="HealthRemarkTable">
+        <Description text="投保人是否有神经系统及精神方面疾病，例如：癫痫、肢体瘫痪、脊髓疾病、多发性硬化、重症肌无力、帕金森氏综合症、脑中风、阿尔茨海默病、脑动/静脉血管瘤及畸形、精神病、抑郁症、神经官能症、脑部手术史等；"/>
+    	 <Expendable>
+            <HealthRemarkTable  healthtable_key="nerve_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0510" flag="HealthRemarkTable">
+        <Description text="投保人是否有呼吸系统疾病，例如：慢性支气管炎、肺气肿、肺心病、哮喘、肺结核、肺栓塞、支气管扩张、尘肺、间质性肺病、肺纤维化等；"/>
+		 <Expendable>
+            <HealthRemarkTable  healthtable_key="respiratory_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0511" flag="HealthRemarkTable">
+        <Description text="投保人是否有循环系统疾病，例如：高血压 、冠心病、心绞痛、心律失常、心肌梗塞、先天性心脏病、心脏瓣膜病、风湿性心脏病、心肌病、主动脉疾病、川崎病、心包炎、心导管等心血管介入治疗等；"/>
+		 <Expendable>
+            <HealthRemarkTable  healthtable_key="circulation_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0512" flag="HealthRemarkTable">
+        <Description text="投保人是否有消化系统疾病，例如：肝炎（请注明类型）、乙肝或丙肝病毒携带、多囊肝、胆结石、肝硬化、胰腺疾病、胃和/或十二指肠溃疡、慢性或溃疡性结肠炎、克隆病、腹部手术史等；"/>
+		 <Expendable>
+            <HealthRemarkTable  healthtable_key="digestive_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0513" flag="HealthRemarkTable">
+        <Description text="投保人是否有泌尿系统及生殖系统疾病，例如：血尿、肾炎、肾病综合症、多囊肾、肾脏功能不全、尿毒症、肾结核、肾积水、泌尿系统结石、泌尿系统手术史、生殖器官疾病等；"/>
+		 <Expendable>
+            <HealthRemarkTable  healthtable_key="urology_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0514" flag="HealthRemarkTable">
+        <Description text="投保人是否有内分泌及骨骼、肌肉、结缔组织疾病，例如：糖尿病、甲状腺或甲状旁腺疾病、肾上腺疾病、脑垂体异常、类风湿性关节炎、风湿病、痛风、强直性脊柱炎、肌肉骨骼关节疾病、系统性红斑狼疮、艾滋病等；"/>
+		 <Expendable>
+            <HealthRemarkTable  healthtable_key="endocrine_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0515" flag="HealthRemarkTable">
+        <Description text="投保人是否有血液系统疾病，例如：贫血、血小板减少、紫癜症、白血病、血友病、再生障碍性贫血、淋巴瘤等；"/>
+		 <Expendable>
+            <HealthRemarkTable  healthtable_key="blood_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0516" flag="HealthRemarkTable">
+        <Description text="投保人是否有五官科疾病，例如：视网膜出血或剥离、白内障、青光眼、高度近视（800度以上）、听力减退、五官手术史等；"/>
+		 <Expendable>
+            <HealthRemarkTable  healthtable_key="face_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0517" flag="HealthRemarkTable">
+        <Description text="投保人是否有癌症、肿瘤（恶性、良性或尚未证实为良性或恶性的）、肿块、息肉、囊肿、赘生物等；"/>
+		 <Expendable>
+            <HealthRemarkTable  healthtable_key="cancer_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0518" flag="HealthRemarkTable">
+        <Description text="投保人是否有先天性疾病、遗传性疾病、脑外伤后遗症；急/慢性中毒、职业病等；"/>
+		 <Expendable>
+            <HealthRemarkTable  healthtable_key="genetic_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0519" flag="HealthRemarkTable">
+        <Description text="投保人是否有以上未提及的其它疾病或症状。"/>
+		 <Expendable>
+            <HealthRemarkTable  healthtable_key="undeclaration_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0520" if="appantAge>13" flag="BlankRemarkTable">
+        <Description text="投保人是否使用过任何成瘾药物，如镇静安眠剂、迷幻药、吸食有机溶剂或毒品？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="familial_disease" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" customer_filter="childbearing"  flag="ifcommon"  disclosure_id="MA0521" if="appantAge>=14 &amp;&amp; 1==appantSex">
+         <Description text="投保人是否正在怀孕？"/>
+         <Expendable>
+              <Description text="孕期"/>
+             <Input hint="" input_key="amentia_level" length="3" 
+                 input_type="number"/>
+              <Description text="周"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem customer_filter="childbearing" flag="HealthRemarkTableIf" disclosure_ver="A05" disclosure_id="MA0522" if="appantAge>=14 &amp;&amp; 1==appantSex">
+        <Description text="投保人是否曾有子宫肌瘤、畸胎瘤、葡萄胎、阴道异常出血、乳腺包块或其他任何乳房、子宫、卵巢的疾病及妊娠并发症？"/>
+         <Expendable>
+               <HealthRemarkTable  healthtable_key="pregancy_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem  disclosure_ver="A05" customer_filter="infant" flag="if" no_yesno="true" disclosure_id="MA0523" if="3>=appantAge">
+        <Description text="投保人出生时身高"/>
+        <Input hint="" input_key="birth_height" length="3"
+            input_type="number" />
+        <Description text="厘米" color="red"/>
+        <Description text="（请注意单位），投保人出生时体重"/>
+        <Input hint="" input_key="birth_weight" length="3"  input_type="number"/>
+        <Description text="公斤" color="red"/>
+        <Description text="（请注意单位）；"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" customer_filter="infant" flag="HealthRemarkTableIf" disclosure_id="MA0524" if="3>=appantAge">
+        <Description text="投保人是否为早产、难产？出生时是否曾有产伤、窒息等异常情况？是否有畸形、发育迟缓、惊厥、脑瘫？"/>
+        <Expendable>
+               <HealthRemarkTable  healthtable_key="pregancy_diseases"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0525" flag="BlankRemarkTable">
+         <Description text="投保人的父母、子女、兄弟姐妹是否有患有恶性肿瘤/癌症、心脏病、脑中风、肝豆状核变性、血友病、糖尿病、精神疾病、多囊肝、多囊肾、肠息肉以及其他遗传性或传染性疾病？"/>
+  			<Expendable>
+              <BlankRemarkTable input_key="familial_disease" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A05" disclosure_id="MA0526" flag="BlankRemarkTable">
+         <Description text="投保人的直系亲属中是否有60岁以前去世的？"/>
+         <Expendable>
+             <Description text="请说明亲属关系、确诊疾病名称和确诊时的年龄。"/>
+              <BlankRemarkTable input_key="early_death" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A06" disclosure_id="MA0527"  flag="BlankRemarkTableIf" if="(('currentIsuresID'.indexOf('121308')>-1)
+)">
+         <Description text="投保人目前是否有本公司或其他保险公司的人身保险？"/>
+         <Expendable>
+             <Description text="请注明被保险种、保险金额、承保公司。"/>
+              <BlankRemarkTable input_key="early_death" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A06" disclosure_id="MA0528" flag="BlankRemarkTable">
+         <Description text="投保人过去是否被保险公司解除合同或投保、复效时被拒保、延期、附加条件承保？"/>
+         <Expendable>
+             <Description text="请详述。"/>
+              <BlankRemarkTable input_key="declinature" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A06" disclosure_id="MA0529" flag="BlankRemarkTable">
+        <Description text="投保人是否有过任何形式的人身保险理赔？"/>
+        <Expendable>
+             <Description text="请详述。"/>
+              <BlankRemarkTable input_key="violation" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A06" disclosure_id="MA0530" flag="BlankRemarkTableIf" if="appantAge>13 
+        &amp;&amp; (('currentIsuresID'.indexOf('121308')>-1)||('currentIsuresID'.indexOf('121532')>-1)
+)">
+        <Description text="投保人是否有参加飞行、潜水、攀岩、蹦极、跳伞、武术、拳击、赛车或特技活动等危险运动或爱好？"/>
+        <Expendable>
+              <BlankRemarkTable input_key="extremesports" lines="4"/>
+        </Expendable>
+    </DisclosureItem> 
+    
+  <DisclosureItem disclosure_ver="A06" flag="radio" disclosure_id="MA0531" if="appantAge>=18 &amp;&amp; (('currentIsuresID'.indexOf('121308')>-1) ||('currentIsuresID'.indexOf('121532')>-1)
+)">
+        <Description text="投保人是否有驾驶执照？"/>
+         <Expendable>
+             <Description text="请选择"/>
+             <Radio radio_key="license" options="A照" is_checkbox="true"/><Description text=""/>
+             <Radio radio_key="license" options="B照" is_checkbox="true"/><Description text=""/>
+             <Radio radio_key="license" options="C照" is_checkbox="true"/><Description text=""/>
+             <Radio radio_key="license" options="D照" is_checkbox="true"/><Description text=""/>
+             <Radio radio_key="license" options="E照" is_checkbox="true"/><Description text=""/>
+             <Radio radio_key="license" options="" and_others="true" is_checkbox="true"/>
+        </Expendable>
+    </DisclosureItem>
+    
+     <DisclosureItem disclosure_ver="A06"  flag="BlankRemarkTableIf" disclosure_id="MA0532" if="appantAge>=18 
+    &amp;&amp; (('currentIsuresID'.indexOf('121308')>-1) ||('currentIsuresID'.indexOf('121532')>-1)
+)">
+        <Description text="投保人是否曾违章驾车并发生交通事故"/>
+         <Expendable>
+             <Description text="请告知次数、时间、违章类型。"/>
+              <BlankRemarkTable input_key="violation" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A06" disclosure_id="MA0533"  flag="BlankRemarkTable">
+        <Description text="投保人近期是否正准备出国？"/>
+         <Expendable>
+             <Description text="请告知国家名称、出国原因及停留时间。"/>
+              <BlankRemarkTable input_key="goabroad" lines="5"/>
+        </Expendable>
+    </DisclosureItem>  
+</Disclosure>

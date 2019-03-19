@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/style.css" />
+
+<style>
+img {
+	display: none;
+}
+</style>
+</head>
+<body>
+
+	<div class="toubao">
+		<h1>投保人与被保险人/法定监护人声明及授权</h1>
+		<div class="toubao-content">
+			<ol>
+				<li><strong>本人确认民生人寿保险股份有限公司及贵公司代理人已向本人提供所投保产品的条款，并对条款进行了说明，尤其是对保险责任、责任免除、犹豫期和合同解除等重要内容进行了提示和明确说明。本人对所投保产品条款、《人身保险投保提示书》及《产品说明书》已认真阅读、理解并同意遵守。
+				</strong></li>
+				<li>本投保单所告知各项内容均完整、真实、无误，如有隐瞒或告知不实，贵公司可依据《保险法》规定解除保险合同，并对合同解除前发生的保险事故不承担保险责任。</li>
+				<li>本人授权贵公司可以从任何单位、组织和个人就有关保险事宜查询、索取与本人有关的资料和证明，贵公司对个人资料承担保密义务。</li>
+				<li>本人所提供的全部个人资料，仅限于贵公司及其认为业务所必须委托的第三方为本人提供客户服务及推荐产品之用。贵公司及所委托的第三方对本人的个人信息负有保密义务。</li>
+				<li>【转账授权声明】本投保单中银行账户所有人为投保人，开户银行、户名和账号均真实有效，本人授权贵公司从该账户中划转本保险合同所需交纳的保险费，并保证有足够的金额支付应缴保险费，若因账户存款余额不足造成转账不成功，致使合同不能持续有效,因此引起的责任概由投保人承担。</li>
+				<li>本人同意本合同自贵公司同意承保、收取首期保险费并签发保险单开始生效,贵公司自生效日零时起开始承担保险责任,具体生效时间以保险合同载明的时间为准。</li>
+				<li>本人已知晓：本投保单不得作为收取现金的凭证。</li>
+				<li>本投保单的申请日期为<span id="applicationDate2"></span>，投保单由4页组成，全部内容均是在本人完全认可后生成。
+				</li>
+				<li>【分红、万能、投资连结保险声明】如投保险种中包含分红保险、万能保险、投资连结保险，按照中国保险监督管理委员会规定，请投保人在电子投保申请确认书或投保单中抄录："本人已阅读保险条款、产品说明书和投保提示书，了解本产品的特点和保单利益的不确定性。"
+				</li>
+			</ol>
+			<p class="declaration">本人已阅读保险条款、产品说明书和投保提示书，了解本产品的特点和保单利益的不确定性。</p>
+			<div class="dec-img">
+				<input class="declaration-btn" type="button" value="点击抄录声明" id="130" />
+			</div>
+
+			<div class="right">
+				被保人/法定监护人签名：<input id="122" type="button" onclick="Signture(22)"
+					value="点击签名" class="signatureInsurance" />
+			</div>
+			投保人签名： <input id="121" type="button" class="signatureInsurance"
+				onclick="Signture(21)" value="点击签名" />
+			<div class="text-right">
+				投保申请日期： <span class="today"></span>
+			</div>
+			<div class="serious">以上应由本人亲自签名，否则本投保申请无效。</div>
+		</div>
+	</div>
+</body>
+</html>

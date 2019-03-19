@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷32 爬山问卷部分
+	 -->
+     <DisclosureItem disclosure_ver="C_5_" disclosure_id="problempieces_32" flag="questionName" text="登山问卷">
+     </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_5_" no_yesno="true" disclosure_id="C_5_1_" flag="common">
+        <Description text="1. 您经常攀爬的地方(请注明地点、地区、攀爬时间及次数) "/>
+        <Input input_type="br" />
+        <Description text="A.中国境内"/>
+        <Input input_type="br" />
+        <Description text="地点:" />
+        <Input input_type="text" input_key="C_5_1_china_place" length="10" is_checked="false" />
+        <Input input_type="br" />
+        <Description text="地区:" />
+        <Input input_type="text" input_key="C_5_1_china_zone" length="10" is_checked="false" />
+        <Input input_type="br" />
+        <Description text="攀爬时间：" />
+        <Input input_type="number" input_key="C_5_1_china_time" length="3" is_checked="false" />
+        <Description text="小时 " />
+        <Description text="次数:" />
+        <Input input_type="number" input_key="C_5_1_china_times" length="3" is_checked="false" />
+        <Description text="次" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_5_" no_yesno="true" disclosure_id="C_5_1_" flag="common">
+        <Description text="B.海外"/>
+        <Input input_type="br" />
+        <Description text="地点:" />
+        <Input input_type="text" input_key="C_5_1_overseas_place" length="10" is_checked="false" />
+        <Input input_type="br" />
+        <Description text="地区:" />
+        <Input input_type="text" input_key="C_5_1_overseas_zone" length="10" is_checked="false" />
+        <Input input_type="br" />
+        <Description text="攀爬时间：" />
+        <Input input_type="number" input_key="C_5_1_overseas_time" length="3" is_checked="false" />
+        <Description text="小时 " />
+        <Description text="次数:" />
+        <Input input_type="number" input_key="C_5_1_overseas_times" length="3" is_checked="false" />
+        <Description text="次" />
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="C_5_" no_yesno="true" disclosure_id="C_5_2_" flag="common">
+        <Description text="2. 过去一年内您累计攀爬的次数，以及海拔高度。" />
+            <Input input_type="br" />
+            <Description text="攀爬次数:" />        
+            <Input input_type="number" input_key="C_5_2_lastyear_times" length="3"  />
+            <Description text="次 海拔高度:" />       
+            <Input input_type="number" input_key="C_5_2_lastyear_hight" length="3"  />
+            <Description text="米" />    
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_5_" no_yesno="true" disclosure_id="C_5_3_" flag="common">
+        <Description text="3. 您定期攀爬已有多久？"/>
+        <Input input_type="number" input_key="C_5_3_regular_year" length="3"  />
+        <Description text="年" />       
+        <Input input_type="number" input_key="C_5_3_regular_month" length="3"  />
+        <Description text="月" /> 
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_5_" disclosure_id="C_5_4_" no_yesno="false" flag="common">
+        <Description text="4. 您是否已为任何一家认可的攀爬学会的成员？"/>
+        <Input input_type="br" />
+        <Expendable>
+            <Description text="如是，请注明学会名称及入会时间：  入会时间:" />
+            <Input input_type="number" input_key="C_5_4_01" length="3"  />
+            <Description text="年" />           
+            <Input input_type="number" input_key="C_5_4_02" length="3"  />
+            <Description text="月" />
+            <Input input_type="br" />
+            <Description text="学会名称:" />
+            <Input input_type="text" input_key="C_5_4_03" length="10"  />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_5_" disclosure_id="C_5_5_" no_yesno="false" flag="BlankRemarkTable">    
+        <Description text="5. 您是否单独一个或结队去爬山？"/>
+        <Expendable>             
+            <BlankRemarkTable input_key="C_5_5_01" lines="4"/>
+        </Expendable>        
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_5_" no_yesno="false" disclosure_id="C_5_6_" flag="BlankRemarkTable">
+        <Description text="6. 登山期间您曾否遭遇过任何意外或受伤？"/>
+        <Expendable>
+            <Description text="如是，请说明意外及受伤的时间、原因、治疗经过、治疗结果及诊治医院："/>
+            <BlankRemarkTable input_key="C_5_6_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_5_" no_yesno="false" disclosure_id="C_5_7_" flag="BlankRemarkTable">
+        <Description text="7. 在今后十二个月内是否打算去海外攀爬？"/>
+        <Expendable>
+            <Description text="如是，请列明地点及时间："/>
+            <BlankRemarkTable input_key="C_5_7_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_5_" no_yesno="haveNone" disclosure_id="C_5_8_" flag="BlankRemarkTable">
+        <Description text="8. 除上述内容外，您认为还有哪些信息有助于我们处理您的投保申请？"/>
+        <Expendable>            
+            <BlankRemarkTable input_key="C_5_8_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

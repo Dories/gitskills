@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷25 肿瘤问卷部分
+	 -->
+     <DisclosureItem disclosure_ver="A_25_" disclosure_id="problempieces_25" flag="questionName" text="肿瘤问卷">
+     </DisclosureItem>
+
+      <DisclosureItem disclosure_ver="A_25_" no_yesno="true" disclosure_id="A_25_1_" flag="common">
+        <Description text="1. 您首次得知患病的时间：" />
+        <Input input_key="A_25_1_year1" length="3" input_type="number"/>
+        <Description text="年" />
+        <Input input_key="A_25_1_month1" length="3" input_type="number" />
+        <Description text="月" />
+        <Input input_type="br"/>
+        <Description text="最近一次治疗时间：" />
+        <Input input_key="A_25_1_year2" length="3" input_type="number" />
+        <Description text="年" />
+        <Input input_key="A_25_1_month2" length="3" input_type="number" />
+        <Description text="月" />
+        <Input input_type="br"/>
+
+          <Description text="末次就诊时间：" />
+          <Input input_key="A_25_1_year3" length="3" input_type="number" />
+          <Description text="年" />
+          <Input input_key="A_25_1_month3" length="3" input_type="number" />
+          <Description text="月" />
+          <Input input_type="br"/>
+
+
+          <Description text="最近一次复查时间：" />
+          <Input input_key="A_25_1_year4" length="3" input_type="number" />
+          <Description text="年" />
+          <Input input_key="A_25_1_month4" length="3" input_type="number" />
+          <Description text="月" />
+          <Input input_type="br"/>
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="A_25_" no_yesno="true" disclosure_id="A_25_2_" flag="common">
+        <Description text="2. 患病部位和器官：" />
+        <Input input_key="A_25_2_01" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_id="A_25_3_" no_yesno="true" disclosure_ver="A_25_"  flag="common">
+        <Description text="3. 发现方式：" />
+        <Radio input_type="radio" options="正常体检" radio_key="A_25_3_a" />
+        <Radio input_type="radio" options="自觉不适后就诊" radio_key="A_25_3_b" />
+        <Radio input_type="radio" options="因其他原因就诊时发现" radio_key="A_25_3_c" />
+        <Radio input_type="radio" options="本次体检发现" radio_key="A_25_3_d" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_25_" no_yesno="true" disclosure_id="A_25_4_" flag="common"> 
+        <Description text="4. 主要不适："/>
+            <Input input_key="A_25_4_01" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_25_" disclosure_id="A_25_5_" no_yesno="true" flag="common">
+        <Description text=" 5. 曾去哪家医院就诊？"/>
+        <Input input_type="br"/>
+        <Description text="医院名称："/>
+        <Input input_key="A_25_5_01" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="诊断："/>
+        <Input input_key="A_25_5_02" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_25_" disclosure_id="A_25_6_"  flag="common">
+        <Description text="6. 您是否曾住院治疗？"/>
+        <Expendable>
+        <Input input_type="br"/>
+        <Description text="医院名称："/>
+        <Input input_key="A_25_6_01" length="10" input_type="text" />
+        <Input input_type="br"/>
+        <Description text="住院时间："/>
+        <Input input_key="A_25_6_02" length="3" input_type="number" />
+        <Description text="年"/>
+        <Input input_key="A_25_6_03" length="3" input_type="number" />
+        <Description text="月"/>
+        <Description text="， 累计住院天数:"/>
+        <Input input_key="A_25_6_04" length="3" input_type="number" />
+        <Description text="天"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_25_" disclosure_id="A_25_7_" no_yesno="true" flag="common">
+        <Description text="7. 做过哪些化验与检查："/>
+        <Input input_key="A_25_7_01" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_25_" disclosure_id="A_25_8_" no_yesno="true" flag="common">
+        <Description text="8. 最终的诊断是"/>
+        <Input input_key="A_25_8_01" length="10" input_type="text" />
+        <Description text="是通过何种检查而做出诊断的"/>
+        <Input input_key="A_25_8_02" length="10" input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_25_" disclosure_id="A_25_9_" no_yesno="true" flag="common">
+        <Description text="9. 目前治疗是？"/>
+        <Radio input_type="radio" options="已经停止" radio_key="A_25_9_a" />
+        <Radio input_type="radio" options="仍在继续" radio_key="A_25_9_b" />
+        <Radio input_type="radio" options="随诊观察治疗" radio_key="A_25_9_c" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_25_" disclosure_id="A_25_10_" no_yesno="false">
+        <Description text="10.  是否做过病理检查？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_25_" disclosure_id="A_25_11_" no_yesno="false">
+        <Description text="11.  确诊后是否接受化疗、放疗或其他疗法？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_25_" disclosure_id="A_25_12_" no_yesno="false">
+        <Description text="12.  是否曾进行手术治疗？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_25_" disclosure_id="A_25_13_" no_yesno="false">
+        <Description text="13.  是否有复发或其他器官转移？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_25_" no_yesno="true" disclosure_id="A_25_14_content" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及辅助检查报告如：病理报告、肿瘤酶标及肿瘤影像学检查、诊断证明等）"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_25_13_content" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_25_" no_yesno="false" disclosure_id="A_25_14_" flag="BlankRemarkTable">
+        <Description text="14. 是否有以上未提及的其他疾病或不适？如是，请说明"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_25_14_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

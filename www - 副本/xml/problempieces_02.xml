@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--问题卷2 癫痫问卷-->
+    <DisclosureItem disclosure_ver="A_2_" disclosure_id="problempieces_02" flag="questionName" text="癫痫问卷"/>
+
+    <DisclosureItem disclosure_ver="A_2_" no_yesno="true" disclosure_id="A_2_1_" flag="common">
+        <Description text="1. 首次症状发作时间：" />
+            <Input input_key="A_2_1_year_start" length="3" input_type="number"/>
+        <Description text="年" />
+            <Input input_key="A_2_1_month_start" length="3" input_type="number" />
+        <Description text="月" />
+        <Input input_type="br"/>
+        <Description text="最后一次发作时间：" />
+            <Input input_key="A_2_1_year_end" length="3" input_type="number"/>
+        <Description text="年" />
+            <Input input_key="A_2_1_month_end" length="3" input_type="number" />
+        <Description text="月" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_2_" no_yesno="true" disclosure_id="A_2_2_" flag="common">
+        <Description text="2.  每年发作次数约：" />
+            <Input input_key="A_2_2_times" length="3" input_type="number"/>
+        <Description text="次" />
+        <Input input_type="br"/>
+        <Description text="通常每次发作持续时间为：" />
+            <Input input_key="A_2_2_minutes" length="3" input_type="number"/>
+        <Description text="分钟" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_var="A_2_" no_yesno="false" disclosure_id="A_2_3_" flag="common">
+        <Description text="3.  是否曾患脑外伤、产伤、脑炎、脑瘤、脑血管疾病及其后遗症？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_2_" no_yesno="false" disclosure_id="A_2_4_" flag="common">
+        <Description text="4.  每次发作时是否有明显的诱因？（如情绪激动、疲劳、便秘、饮酒等）"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_2_" no_yesno="false" disclosure_id="A_2_5_" flag="common">
+        <Description text="5.  发作时是否有意识丧失的情况（如晕倒或大小便失禁等）？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_2_" no_yesno="false" disclosure_id="A_2_6_" flag="common">
+        <Description text="6.  是否曾因癫痫到医院就诊或治疗？"/>
+        <Expendable>
+            <Description text="医院名称"/>
+            <Input input_key="A_2_6_01" length="5"  input_type="text"/> 
+            <Description text="诊断"/>
+            <Input input_key="A_2_6_02" length="5"  input_type="text"/> 
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_2_" no_yesno="false" disclosure_id="A_2_7_" flag="common">
+        <Description text="7.  是否曾接受药物治疗？"/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="长期服药治疗"
+            radio_key="A_2_7_001" />
+            <Input input_type="br"/>
+            <Description text="药名"/>
+            <Input input_key="A_2_7_01" length="5"  input_type="text" is_checked="false"/> 
+            <Description text="用法及用量"/>
+            <Input input_key="A_2_7_02" length="5"  input_type="text" is_checked="false"/>
+            <Description text="停药时间"/>
+            <Input input_key="A_2_7_03" length="5"  input_type="text"/>
+            <Radio input_type="checkbox" and_others="false" options="间歇服药治疗"
+            radio_key="A_2_7_002" />
+            <Input input_type="br"/>
+            <Description text="药名"/>
+            <Input input_key="A_2_7_04" length="5"  input_type="text" is_checked="false"/> 
+            <Description text="用法及用量"/>
+            <Input input_key="A_2_7_05" length="5"  input_type="text" is_checked="false"/> 
+            <Description text="停药时间"/>
+            <Input input_key="A_2_7_06" length="5"  input_type="text"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_2_" no_yesno="false" disclosure_id="A_2_8_" flag="common">
+        <Description text="8.  目前是否正在接受药物治疗？"/>
+        <Expendable>
+            <Input input_type="br"/>
+            <Description text="药名"/>
+            <Input input_key="A_2_8_01" length="5"  input_type="text"/> 
+            <Description text="用法及用量"/>
+            <Input input_key="A_2_8_02" length="5"  input_type="text"/> 
+        </Expendable>
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_var="A_2_" no_yesno="false" disclosure_id="A_2_9_" flag="common">
+        <Description text="9.  是否做过脑电图、头颅CT、核磁共振等检查？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_2_" no_yesno="false" disclosure_id="A_2_10_" flag="common">
+        <Description text="10.   现在是否有精神健康问题或其他并发症？"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_var="A_2_" no_yesno="false" disclosure_id="A_2_11_" flag="common">
+        <Description text="11.   家族成员中是否有癫痫病史？"/>
+    </DisclosureItem>
+
+    
+    <DisclosureItem disclosure_ver="A_2_" no_yesno="true" disclosure_id="A_2_12_01" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果）"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_2_12_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_2_" no_yesno="false" disclosure_id="A_2_13_" flag="BlankRemarkTable">
+        <Description text="12. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_2_13_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

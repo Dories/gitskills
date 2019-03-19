@@ -1,0 +1,74 @@
+<div class="modal insurance-modal">
+  <ion-header-bar>
+    <h1 class="title">收费</h1>
+    <div class="buttons">
+    	<button class="button button-clear button-positive" ng-click="closeOtherModal()">关闭</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+      <div class="charge-modal other-modal"> 
+        <div>
+            <select id="selectbank" ng-model="bankInfo.bankCode" ng-change="newbankname_apply()" ng-options="p.BANK_CODE as p.BANK_NAME for p in bankList">
+              <option value="">--请选择开户银行--</option>
+            </select>
+        </div>
+        <div >
+          <select ng-model="otherbankAddress.data.BANK_PROVINCE" ng-options="item for item in otherbankAddress.adress.chargeAfress.province">
+            <option value="">--请选择开户行省--</option>
+          </select>
+          <!-- <i class="input-arror-right ion-chevron-right"></i> -->
+        </div>
+        <div >
+            <select ng-model="otherbankAddress.data.BANK_CITY" ng-options="item for item in otherbankAddress.adress.chargeAfress.city">
+              <option value="">--请选择开户行市--</option>
+            </select>
+            <!-- <i class="input-arror-right ion-chevron-right"></i> -->
+        </div>
+
+        <div  id="otherBankSubType">
+            <!-- <select  ng-model="otherbankAddress.data.bankSubType" ng-change="selectType()">
+                <option value="">--请选择账号类型--</option>
+                <option value="1">存折</option>
+                <option value="2">银行卡</option>
+            </select> -->
+            <select>                
+                <option value="2" selected>银行卡</option>
+            </select>
+              <!-- <i class="input-arror-right ion-chevron-right"></i> -->
+        </div>
+
+        <div>
+			<input class="text-style" type="text" disabled ng-model="baseInfo.applicantName"/>
+        </div>
+        <div style="position: relative;">
+            <input id="bankAccnumber" type="text" ng-model="bankInfo.bankAccNo" placeholder="请输入银行卡号(可点击右侧图标识别)">
+            <i class="icon ion-camera" ng-click="openOcrOther()" style="position: absolute;top:2px;right: 10px;color: #d14014;font-size: 28px;"></i>
+        </div>
+        <div>
+            <input id="bankPhone" type="text" ng-model="bankInfo.BANK_PHONE" placeholder="银行预留手机号">
+        </div>
+        <div>
+          <i ng-class="{'activted':activted}" ng-click="checkedRadio();">续期缴费时，是否使用本银行卡？</i>
+        </div> 
+      </div>
+
+      <!-- 邮储直连提示框  2016.9.29 wuwei -->
+    <div ng-if='isYC' id="insurance_div" class="insuance_alert" style="margin-top: 50px;clear:both;border: 1px solid #ddd;padding: 10px 10px 30px 10px;background-color: #e8e8e8;width: 80%;margin: 0 auto">
+          <p style="text-align: center;">邮储收费温馨提示</p>
+          <div style="width: 100%;border-bottom: 1px solid #ddd;"></div>
+          <p style="padding: 15px">
+              (1)使用邮政储蓄银行卡扣费，保费金额低于5万元（含）在00:00-20:00期间可进行实时扣费。
+              (2)使用邮政储蓄银行卡扣费，保费金额高于5万元（不含）在9：30-17:00期间可进行准实时扣费。
+              (3)使用邮政储蓄银行存折扣费，在9：30-17:00期间可进行准实时扣费。
+          </p>
+          <div style="text-align: center;">
+              <button style="height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;padding: 0 16px;" ng-click="insurance_yes()">我要用邮储账户交费</button>
+              <button style="height:40px;background: #d14014;border-radius: 5px;border-color: #d14014;color: #fff;padding: 0 10px;margin-top: 5px;" ng-click="insurance_no()">我要更换其他银行账户</button>
+          </div>
+    </div>
+
+  </ion-content>
+  <div class="bar bar-footer">
+      <button class="button button-clear button-block" ng-click="otherWayCharge();">立即收费</button>
+  </div>
+</div>

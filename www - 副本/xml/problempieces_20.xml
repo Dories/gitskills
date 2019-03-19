@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷20 哮喘问卷
+	 -->
+     <DisclosureItem disclosure_ver="A_20_" disclosure_id="problempieces_20" flag="questionName" text="哮喘问卷">
+     </DisclosureItem>
+
+      <DisclosureItem disclosure_ver="A_20_" no_yesno="true" disclosure_id="A_20_1_" flag="common">
+        <Description text="1. 首次不适发生时间：" />
+        <Input hint="" 
+            input_key="A_20_1_year"
+            length="3" 
+            input_type="number"/>
+        <Description text="年" />
+        <Input
+            hint=""
+            input_key="A_20_1_month"
+            length="3"
+            input_type="number" />
+        <Description text="月，最后一次发作的时间：" />
+        <Input
+            hint=""
+            input_key="A_20_1_years"
+            length="3"
+            input_type="number" />
+        <Description text="年" />
+        <Input
+            hint=""
+            input_key="A_20_1_months"
+            length="3"
+            input_type="number" />
+        <Description text="月" />
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="A_20_" no_yesno="true" disclosure_id="A_20_2_" flag="common">
+        <Description text="2. 近两年来发作次数约" />
+        <Input hint="" 
+            input_key="A_20_2_next"
+            length="3" 
+            input_type="number"/>
+        <Description text="次,通常每次发作持续时间为：" />
+        <Input
+            hint=""
+            input_key="A_20_2_time"
+            length="3"
+            input_type="text" />
+        <Description text="小时" />
+    </DisclosureItem>
+
+    <DisclosureItem
+        disclosure_id="A_20_3_" no_yesno="true"
+        disclosure_ver="A_20_"  flag="common">
+        <Description text="3. 什么情况下可缓解：" />
+        <Radio
+            input_type="checkbox"
+            and_others="false"
+            options="自行缓解"
+            radio_key="A_20_3_a" />
+        <Radio
+            input_type="checkbox"
+            and_others="false"
+            options="药物缓解,药名是 "
+            radio_key="A_20_3_b" />
+        <Input
+            hint=""
+            input_key="A_20_3_01"
+            length="10"
+            input_type="text" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_20_" disclosure_id="A_20_4_" no_yesno="false"> 
+        <Description text="4. 首次哮喘发作时是否有明显的诱因？（如受凉、吸入特殊气味或花粉等）"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_20_" disclosure_id="A_20_5_" no_yesno="donotCheckYes"> 
+        <Description text="5. 是否有夜间发作的情况？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_20_" disclosure_id="A_20_6_" no_yesno="donotCheckYes"> 
+        <Description text="6. 在哮喘缓解期是否有喘息、咳嗽、胸闷等不适？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_20_" no_yesno="false" disclosure_id="A_20_7_" flag="common">
+        <Description text="7. 是否曾因哮喘住院治疗？" />
+        <Expendable>
+            <Description text="医院名称：" />
+            <Input hint="" 
+                input_key="A_20_7_01"
+                length="10" 
+                input_type="text"/>
+            <Description text="住院次数：" />
+            <Input hint="" 
+                input_key="A_20_7_02"
+                length="3" 
+                input_type="text"/>
+            <Description text="次" />
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_20_" no_yesno="donotCheckYes" disclosure_id="A_20_8_" flag="common">
+        <Description text="8. 是否接受药物治疗？" />
+        <Expendable>
+            <Radio
+                 input_type="checkbox"
+                 and_others="false"
+                 options="长期服药治疗"
+                 radio_key="A_20_8_03" />
+            <Description text="，药名" />
+            <Input hint="" 
+                input_key="A_20_8_01"
+                length="10" 
+                input_type="text"/>
+            <Radio
+                 input_type="checkbox"
+                 and_others="false"
+                 options="发作时服药治疗"
+                 radio_key="A_20_8_04" />
+            <Description text="，药名" />
+            <Input hint="" 
+                input_key="A_20_8_02"
+                length="10" 
+                input_type="text"/>  
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_20_" disclosure_id="A_20_9_" no_yesno="false"> 
+        <Description text="9. 是否做过胸部X线、致敏物检查、肺功能检查？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_20_" disclosure_id="A_20_10_" no_yesno="false"> 
+        <Description text="10. 是否患有心脏病或其它呼吸系统疾病（如支气管炎）？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_20_" disclosure_id="A_20_11_" no_yesno="donotCheckYes" flag="common">        
+        <Description text="11.  您是否吸烟？"/>
+        <Expendable>
+            <Description text="吸烟量："/>
+            <Input hint="" input_key="A_20_11_01" length="3" input_type="text" />
+            <Description text="支/日"/>
+            <Input hint="" input_key="A_20_11_02" length="3" input_type="text" />
+            <Description text="年， 已戒烟："/>
+            <Input hint="" input_key="A_20_11_03" length="3" input_type="text" />
+            <Description text="年"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_20_" disclosure_id="A_20_12_" no_yesno="donotCheckYes">
+        <Description text="12.  是否因哮喘发作而暂停工作？"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_20_" no_yesno="true" disclosure_id="A_20_check_result" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果）"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_20_check_result" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_20_" no_yesno="false" disclosure_id="A_20_13_" flag="BlankRemarkTable">
+        <Description text="13. 是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_20_13_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

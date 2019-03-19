@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷29 赛车问卷部分
+	 -->
+     <DisclosureItem disclosure_ver="C_4_" disclosure_id="problempieces_29" flag="questionName" text="赛车问卷部分">
+     </DisclosureItem>
+
+     <DisclosureItem disclosure_ver="C_4_" no_yesno="true" flag="common" disclosure_id="C_4_1_">
+        <Description text="1.  请说明所用车辆的种类及赛车或机动车的类别。"/>
+        <Input input_type="br" />
+        <Description text="车辆种类："/>
+        <Input input_type="text" input_key="C_4_1_a_type" length="10"  />
+        <Input input_type="br" />
+        <Description text="赛车种类："/>
+        <Input input_type="text" input_key="C_4_1_b_type" length="10"  />
+        <Input input_type="br" />
+        <Description text="机动车种类："/>
+        <Input input_type="text" input_key="C_4_1_c_type" length="10"  />
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="C_4_" no_yesno="true" disclosure_id="C_4_2_" flag="common">
+        <Description text="2. 请问您每隔多久会参与此类活动？" />
+        <Radio input_type="radio" options="每周多次" radio_key="C_4_2_01" />
+        <Radio input_type="radio" options="每周一次" radio_key="C_4_2_02" />
+        <Radio input_type="radio" options="每月一次" radio_key="C_4_2_03" />
+        <Radio input_type="radio" options="数月一次" radio_key="C_4_2_04" />
+        <Radio input_type="radio" options="每年一次" radio_key="C_4_2_05" />
+        <Radio input_type="radio" options="极少参与" radio_key="C_4_2_06" />
+    </DisclosureItem>
+
+
+    <DisclosureItem disclosure_ver="C_4_" no_yesno="true" disclosure_id="C_4_3_" flag="common">
+        <Description text="3. 请说明赛车目的:"/>
+        <Radio input_type="radio" options="兴趣" radio_key="C_4_3_a" />
+        <Radio input_type="radio" options="专业" radio_key="C_4_3_b" />
+        <Radio input_type="radio" options="其他" radio_key="C_4_3_c" />
+        <Input input_type="text" input_key="C_4_3_01" length="10"  />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_4_" disclosure_id="C_4_4_" no_yesno="false" flag="common"> 
+        <Description text="4. 您是否持有竞赛执照？"/>
+            <Expendable>
+                <Description text="如是，请说明取得竞赛执照的时间："/>
+                <Input input_type="number" input_key="C_4_4_01" length="3"  />
+                <Description text="年" /> 
+                <Input input_type="number" input_key="C_4_4_02" length="3"  />
+                <Description text="月" /> 
+            </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_4_" disclosure_id="C_4_5_" no_yesno="true" flag="common"> 
+        <Description text="5. 请说明车辆的马力和引擎的容量。"/>
+                <Description text="马力："/>
+                <Input input_type="number" input_key="C_4_5_horsepower" length="3"  />
+                <Description text="马 容量:" /> 
+                <Input input_type="number" input_key="C_4_5_capacity" length="3"  />
+                <Description text="升" /> 
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_4_" no_yesno="false" disclosure_id="C_4_6_" flag="BlankRemarkTable">
+        <Description text="6. 您是否曾经或预计参与任何特技赛车及参加的地区。"/>
+        <Expendable>
+             <BlankRemarkTable input_key="C_4_6_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_4_" no_yesno="false" disclosure_id="C_4_7_" flag="BlankRemarkTable">
+        <Description text="7. 您是否曾在赛车事故中受伤或对第三方造成伤害？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="C_4_7_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_4_" no_yesno="haveNone" disclosure_id="C_4_8_" flag="BlankRemarkTable">
+        <Description text="8. 除上述内容外，您认为还有哪些信息有助于我们处理您的投保申请？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="C_4_8_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

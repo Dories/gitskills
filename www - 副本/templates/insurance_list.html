@@ -1,0 +1,16 @@
+<ion-content class="has-header middle-list" style="margin-top:88px;">
+	<div ng-show="!insuranceList.length" class="searchEmpty">暂无保单</div>
+	<ion-refresher pulling-text="下拉刷新..." on-refresh="doRefresh()"></ion-refresher>
+    <ion-list>
+		<ion-item ng-repeat="item in insuranceList"  ng-click="clickInsurance($index)" ng-class="{'checked':$index == selectedRow}" style="height: auto;margin: 0;">
+	    	<div class="items_box" style="height: auto;padding: 10px 15px;margin-left: 0;">
+		    	<p>保单号：{{item.applyNo}}</p>
+		    	<p>投保人：{{item.applicantName}}</p>
+		    	<p>总保费：{{item.sumPrem | appendDescri:"元"}}</p>
+				<p>申请日期：{{item.applyDate | date:"yyyy-MM-dd"}}</p>
+		    	<p>承保状态：{{item.state | insuranceState}}</p>
+		    </div>
+		</ion-item>
+    </ion-list>
+    <ion-infinite-scroll on-infinite="loadMore()" ng-if="!noMore" distance="1%"></ion-infinite-scroll>
+</ion-content>

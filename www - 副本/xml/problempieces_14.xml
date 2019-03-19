@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >	
+	<!--问题卷14 受伤问卷-->
+ <DisclosureItem disclosure_ver="A_14_" disclosure_id="problempieces_14" flag="questionName" text="受伤问卷"/>
+
+    <DisclosureItem disclosure_ver="A_14_" no_yesno="true" disclosure_id="A_14_1_" flag="common">
+        <Description text="1.  发生意外的时间："/>
+        <Input input_key="A_14_1_year" length="3" input_type="number"/>
+        <Description text="年"/>
+        <Input input_key="A_14_1_month" length="3" input_type="number"/>
+        <Description text="月"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_14_" no_yesno="true" disclosure_id="A_14_2_" flag="BlankRemarkTable">
+        <Description text="2.  发生何种意外？(如属交通意外，请注明出事时您是司机、乘客还是行人？)"/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_14_2_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_14_" no_yesno="false" disclosure_id="A_14_3_" flag="BlankRemarkTable">
+        <Description text="3.  过去您是否有类似的意外发生？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_14_3_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_14_" no_yesno="false" disclosure_id="A_14_4_" flag="BlankRemarkTable">
+        <Description text="4.  您当时是否失去知觉？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_14_4_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_14_" no_yesno="true" disclosure_id="A_14_5_" flag="common">
+        <Description text="5.  发生意外后的治疗情况："/>
+            <Radio input_type="checkbox" and_others="false" options="住院" radio_key="A_14_5_a"/>
+            <Input input_type="br"/>
+            <Description text="住院天数"/>
+            <Input input_key="A_14_5_01" length="3" input_type="number" is_checked="false"/>
+            <Description text="天"/>
+            <Radio input_type="checkbox" and_others="false" options="门诊" radio_key="A_14_5_b"/>
+            <Radio input_type="checkbox" and_others="false" options="无需治疗" radio_key="A_14_5_c"/>
+            <Input input_type="br"/>
+            <Description text="手术情况"/>
+            <Radio input_type="checkbox" and_others="false" options="是" radio_key="A_14_5_d"/>
+            <Input input_type="br"/>
+            <Description text="手术名称"/>
+            <Input input_key="A_14_5_02" length="10" input_type="text" is_checked="false"/>
+            <Input input_type="br"/>
+            <Description text="手术日期"/>
+            <Input input_key="A_14_5_year" length="3" input_type="number" is_checked="false"/>
+            <Description text="年"/>
+            <Input input_key="A_14_5_month" length="3" input_type="number" is_checked="false"/>
+            <Description text="月"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_14_" no_yesno="true" disclosure_id="A_14_6_" flag="common">
+        <Description text="6.  因此次意外使您无法工作了多久？"/>
+        <Input input_key="A_14_6_01" length="10" input_type="text"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_14_" no_yesno="true" disclosure_id="A_14_7_" flag="BlankRemarkTable">
+        <Description text="7.  请说明您受伤的情况(如皮外伤、骨折、内出血、头颅外伤等)及治疗经过、治疗结果"/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_14_7_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_14_" no_yesno="true" disclosure_id="A_14_8_" flag="BlankRemarkTable">
+        <Description text="8.  请填写您就诊的医院。(请将所有住院/门诊病历、检查报告、复查资料的复印件或影像一并提交)"/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_14_8_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_14_" no_yesno="false" disclosure_id="A_14_9_" flag="BlankRemarkTable">
+        <Description text="9.  此次意外后您是否出现头痛，头晕，暂时失去知觉或其他后遗症？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_14_9_01" lines="3" placeholder="如是，请详细说明，包括出现的次数和严重程度"/>
+        </Expendable>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_14_" no_yesno="false" disclosure_id="A_14_10_" flag="BlankRemarkTable">
+        <Description text="10.  医生是否建议定期返诊，接受检查或再次手术（如内固定取出术等）治疗？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_14_10_01" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_14_" no_yesno="false" disclosure_id="A_14_11_" flag="BlankRemarkTable">
+        <Description text="11.  是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_14_11_01" lines="3" placeholder="如是，请说明："/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

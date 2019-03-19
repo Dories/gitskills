@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SysConifg>
+	<item id="commitInsurance"><!--保单提交请求超时时间-->
+			<second>300</second> 
+	</item>
+	<item id="queryStatus"><!--查询保单状态请求超时时间-->
+			<second>300</second> 
+	</item>
+</SysConifg> 
+

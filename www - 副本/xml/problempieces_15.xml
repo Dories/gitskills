@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >	
+	<!--问题卷15 糖尿病问卷-->
+ <DisclosureItem disclosure_ver="A_15_" disclosure_id="problempieces_15" flag="questionName" text="糖尿病问卷"/>
+
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="true" disclosure_id="A_15_1_" flag="common">
+        <Description text="1.  首次得知血糖异常的时间："/>
+        <Input input_key="A_15_1_year" length="3" input_type="number"/>
+        <Description text="年"/>
+        <Input input_key="A_15_1_month" length="3" input_type="number"/>
+        <Description text="月  糖尿病的类型是："/>
+        <Radio input_type="checkbox" and_others="false" is_checked="false" options="1型" radio_key="A_15_1_a"/>
+        <Radio input_type="checkbox" and_others="false" is_checked="false" options="2型" radio_key="A_15_1_b"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="true" disclosure_id="A_15_2_" flag="common">
+        <Description text="2.  发现方式："/>
+        <Radio input_type="checkbox" and_others="false" options="正常体检" radio_key="A_15_2_a"/>
+        <Radio input_type="checkbox" and_others="false" options="自觉有症状后检查发现" radio_key="A_15_2_b"/>
+        <Radio input_type="checkbox" and_others="false" options="因其他原因就诊时发现" radio_key="A_15_2_c"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="true" disclosure_id="A_15_3_" flag="common">
+        <Description text="3.  最近两年内测到的空腹血糖最高值是："/>
+        <Input input_key="A_15_3_01" length="3" input_type="text"/>
+        <Description text="最近一次就诊时间："/>
+        <Input input_key="A_15_3_02" length="3" input_type="number"/>
+        <Description text="年"/>
+        <Input input_key="A_15_3_03" length="3" input_type="number"/>
+        <Description text="月"/>
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="false" disclosure_id="A_15_4_" flag="common">
+        <Description text="4.  是否有多饮、多食、多尿、体重下降、乏力等不适？"/>          
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="false" disclosure_id="A_15_5_" flag="common">
+        <Description text="5.  是否因糖尿病住院治疗过？"/>
+        <Expendable>
+            <Description text="住院时间"/>
+            <Input input_key="A_15_5_01" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_key="A_15_5_02" length="3" input_type="number"/>
+            <Description text="月"/>
+            <Input input_type="br"/>
+            <Description text="医院"/>
+            <Input input_key="A_15_5_03" length="10" input_type="text"/>
+        </Expendable>          
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="donotCheckYes" disclosure_id="A_15_6_" flag="common">
+        <Description text="6.  是否服用降糖药物治疗？"/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="持续服药" radio_key="A_15_6_05"/>
+            <Input input_type="br"/>
+            <Description text="药名"/>
+            <Input input_key="A_15_6_01" length="5" input_type="text" is_checked="false"/>
+            <Description text="用法及用量"/>
+            <Input input_key="A_15_6_02" length="10" input_type="text" is_checked="false"/>
+            <Radio input_type="checkbox" and_others="false" options="间断服药" radio_key="A_15_6_06"/>
+            <Input input_type="br"/>
+            <Description text="药名"/>
+            <Input input_key="A_15_6_03" length="5" input_type="text" is_checked="false"/>
+            <Description text="用法及用量"/>
+            <Input input_key="A_15_6_04" length="10" input_type="text" is_checked="false"/>
+        </Expendable>          
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="donotCheckYes" disclosure_id="A_15_7_" flag="common">
+        <Description text="7.  是否使用胰岛素治疗？"/>
+        <Expendable>
+            <Radio input_type="checkbox" and_others="false" options="持续治疗" radio_key="A_15_7_07"/>
+            <Input input_type="br"/>
+            <Description text="每日用量"/>
+            <Input input_key="A_15_7_01" length="3" input_type="text" is_checked="false"/>
+            <Input input_type="br"/>
+            <Description text="使用方法"/>
+            <Input input_key="A_15_7_02" length="10" input_type="text" is_checked="false"/>
+            <Radio input_type="checkbox" and_others="false" options="间断治疗" radio_key="A_15_7_08"/>
+            <Input input_type="br"/>
+            <Description text="使用时间从"/>
+            <Input input_type="br"/>
+            <Input input_key="A_15_7_03" length="3" input_type="number" is_checked="false"/>
+            <Description text="年"/>
+            <Input input_key="A_15_7_04" length="3" input_type="number" is_checked="false"/>
+            <Description text="月"/>
+            <Input input_type="br"/>
+            <Description text="到"/>
+            <Input input_key="A_15_7_05" length="3" input_type="number" is_checked="false"/>
+            <Description text="年"/>
+            <Input input_key="A_15_7_06" length="3" input_type="number" is_checked="false"/>
+            <Description text="月"/>
+        </Expendable>          
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="donotCheckYes" disclosure_id="A_15_8_" flag="common">
+        <Description text="8.  是否进行饮食控制？"/>         
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="false" disclosure_id="A_15_9_" flag="common">
+        <Description text="9.  是否对尿糖及血糖、糖化血红蛋白进行监测？"/>         
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="false" disclosure_id="A_15_10_" flag="common">
+        <Description text="10.  是否患高脂血症、高血压、肾脏疾病、冠心病、脑血管疾病？"/>         
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="donotCheckYes" disclosure_id="A_15_11_" flag="common">
+        <Description text="11.   是否饮酒？"/>
+        <Expendable>
+            <Description text="饮酒量："/>
+            <Input input_key="A_15_11_01" length="3" input_type="number"/>
+            <Description text="两/日"/>
+            <Input input_key="A_15_11_02" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_type="br"/>
+            <Description text="已戒酒"/>
+            <Input input_key="A_15_11_03" length="3" is_checked="false" input_type="number"/>
+            <Description text="年"/>
+        </Expendable>          
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="donotCheckYes" disclosure_id="A_15_12_" flag="common">
+        <Description text="12.   是否吸烟？"/>
+        <Expendable>
+            <Description text="吸烟量："/>
+            <Input input_key="A_15_12_01" length="3" input_type="number"/>
+            <Description text="支/日"/>
+            <Input input_key="A_15_12_02" length="3" input_type="number"/>
+            <Description text="年"/>
+            <Input input_type="br"/>
+            <Description text="已戒烟"/>
+            <Input input_key="A_15_12_03" length="3" is_checked="false" input_type="number"/>
+            <Description text="年"/>
+        </Expendable>          
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="false" disclosure_id="A_15_13_" flag="common">
+        <Description text="13.   您的父母、子女、兄弟姐妹中是否有糖尿病患者？"/>         
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="donotCheckYes" disclosure_id="A_15_14_" flag="common">
+        <Description text="14.   是否曾分娩体重超过4公斤的新生儿？"/>         
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="false" disclosure_id="A_15_15_" flag="common">
+        <Description text="15.   是否出现过昏迷？"/>         
+    </DisclosureItem>
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="donotCheckYes" disclosure_id="A_15_16_" flag="common">
+        <Description text="16.   是否出现下列状况："/>
+            <Radio input_type="checkbox" and_others="false" options="未明原因的蛋白尿" radio_key="A_15_16_01"/>
+            <Radio input_type="checkbox" and_others="false" options="白内障及眼底病变" radio_key="A_15_16_02"/>
+            <Radio input_type="checkbox" and_others="false" options="下肢及足部不易愈合的溃疡" radio_key="A_15_16_03"/>
+            <Radio input_type="checkbox" and_others="false" options="四肢感觉异常（如麻木、虫爬）" radio_key="A_15_16_04"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="true" disclosure_id="A_15_check_result" flag="BlankRemarkTable" isCheck_yes="false">
+        <Description text="以上问题如果选“是”，请详细说明并提供相关的病历资料（门诊病历、住院记录及化验检查结果）"/>
+        <Expendable>
+            <BlankRemarkTable input_key="A_15_check_result" lines="3"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="A_15_" no_yesno="false" disclosure_id="A_15_17_" flag="BlankRemarkTable">
+        <Description text="17.   是否有以上未提及的其他疾病或不适？"/>
+        <Expendable>
+             <BlankRemarkTable input_key="A_15_17_01" lines="3" placeholder="如是，请说明："/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

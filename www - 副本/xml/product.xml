@@ -1,0 +1,2105 @@
+<?xml version="1.0" encoding="gbk"?>
+<insurList>
+  <!--利益计算利率 -->
+  <interestRate>0.035</interestRate>
+  <bonusInterestRate>0.03</bonusInterestRate>
+  <type id="11" name="寿险" selected="true">
+    <insur id="112221" />
+    <!--<insur id="112224" />-->
+    <insur id="111301" />
+    <insur id="112213" />
+    <insur id="112216" />
+	<insur id="112203" />
+	<insur id="111307" />
+	<insur id="112225" />
+	<insur id="112226" />
+    <insur id="112227" />
+    <insur id="112228" />
+	<!--<insur id="112102" />-->
+	<insur id="111201" />
+  </type>
+  <type id="12" name="重疾" selected="true">
+    <insur id="111505" />
+    <insur id="111504" />
+    <insur id="111506" />
+    <!--<insur id="111507" />-->
+  </type>
+  <type id="13" name="意外" selected="true">
+  	<!--<insur id="111601" />-->
+  	<insur id="111605" />
+	<insur id="111602"/>
+  </type>
+  <type id="14" name="年金" selected="true">
+    <!--<insur id="112220" />-->
+    <insur id="112222" />
+    <!--<insur id="112401" />-->
+    <!--<insur id="112402" />-->
+    <!--<insur id="112403" />-->
+    <insur id="112206" />
+    <insur id="112219" />
+	<insur id="112223" />
+	<insur id="112405" />
+    <!--<insur id="112404" />-->
+    
+    <insur id="111401" />
+    <insur id="111402"/>
+	<insur id="114401" />
+  </type>
+  <type id="15" name="医疗" selected="true">
+      <insur id="111802" />
+  </type>
+  <insurs>
+	<insur id="114401" name="民生永乐年金保险（万能型）" kind="main" hasProductSpec="false">
+	
+	</insur>
+	<insur id="112405" name="民生富贵鑫盈年金保险（分红型）" kind="main" hasProductSpec="true">
+	
+	</insur>
+	<insur id="112406" name="民生鑫满堂（成人版）年金保险（分红型）" kind="main" hasProductSpec="true">
+	
+	</insur>
+	<insur id="112407" name="民生鑫满堂（少儿版）年金保险（分红型）" kind="main" hasProductSpec="true"></insur>
+	<insur id="112226" name="民生如意相伴两全保险2017（分红型）" kind="main" hasProductSpec="true"></insur>
+	<insur id="112227" name="民生如意相伴两全保险B款2017（分红型）" kind="main" hasProductSpec="true"></insur>
+	<insur id="112228" name="民生金榜题名2017少儿两全保险（分红型）" kind="main" hasProductSpec="true">
+	</insur>
+	   <insur id="121532" name="民生附加投保人豁免保费重大疾病保险2018 " kind="add" liability="121532" hasProductSpec="false"  hasAppntImpart="true">
+	   	</insur>
+	   	<insur id="121308" name="民生附加投保人豁免保费重大疾病保险2018 " kind="add" liability="121308" hasProductSpec="false"  hasAppntImpart="true">
+	   	</insur>
+	  <!-- add xiaohuiyang -->
+   <insur id="124402" name="民生附加富贵赢家至尊版年金保险（万能型）" kind="add" hasProductSpec="false" beginDate="2015-01-01">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-70周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 70]]></test>
+        </if>
+      </rule>
+       <rule id="checkBasePrem">
+        <if id="if" msg="一次交清保费应为100元的整数倍">
+          <test><![CDATA[oIsuranc.prem % 100 != 0]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于1000元">
+          <test><![CDATA[oIsuranc.prem !=0 && oIsuranc.prem < 1000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxPrem">
+        <if id="if" msg="本附加险的保费须小于主险累计保费">
+          <test><![CDATA[oIsuranc.prem > computeSumPrem()]]></test>
+        </if>
+      </rule>
+	  <rule id="checkdealTypeGetYear"  >
+        <if id="if" msg="本附加险的年金起领年龄" >
+          <test><![CDATA[ oIsuranc.dealTypeGetYear==0?false:oIsuranc.dealTypeGetYear==''?false:(oIsuranc.dealTypeGetYear - compute_thisYearAge(oIsuranc.getAge)) < 3 || computeAccountValue_Fun(oIsuranc.dealTypeGetYear,"124402") < 2000 ]]></test>
+        </if>
+      </rule>
+  </insur>
+  
+  <!-- add liu start 8.28 -->
+		<insur id="121522" name="民生附加康裕豁免保费重大疾病保险" kind="add" liability="121522" mustProposal="false" hasProductSpec="false">
+		<rule id="checkInsurantAge">
+		<if id="if" msg="投保年龄: 出生满28天-60周岁">
+		<test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+		</if>
+		</rule>
+		
+		<rule id="checkParentPayIntv">
+		<if id="if" msg="主险缴费方式为一次交清时，不得附加本险种">
+		<test><![CDATA[oIsuranc.parentInPayIntv == "0" ]]></test>
+		</if>
+		</rule>
+		     <rule id="checkParentPayEndYear">
+		<if id="if" msg="主险缴费年期为一次交清时，不得附加本险种">
+		<test><![CDATA[oIsuranc.parentNPayEndYear ==1000 ]]></test>
+		</if>
+		</rule>
+		     <rule id="checkParentPayEndYear">
+		<if id="if" msg="如果被保人年龄大于50岁，且交费年期为20年，则不能搭配此附加险">
+		<test><![CDATA[oIsuranc.parentNPayEndYear ==20 && oIsuranc.getAge >50]]></test>
+		</if>
+		        <if id="if" msg="如果被保人年龄大于55岁，且交费年期为15年，则不能搭配此附加险">
+		<test><![CDATA[oIsuranc.parentNPayEndYear ==15 && oIsuranc.getAge >55]]></test>
+		</if>
+		<!--add by yangjialin 2014-07-24 -->
+		<if id="if" msg="主险的交费年期应为3/5/10/15/20,否则不能搭配此附加险">
+		<test><![CDATA[oIsuranc.parentNPayEndYear !=3 && oIsuranc.parentNPayEndYear !=5 && oIsuranc.parentNPayEndYear !=10 && oIsuranc.parentNPayEndYear !=15 && oIsuranc.parentNPayEndYear !=20 ]]></test>
+		</if>
+		</rule>
+		    
+		</insur>
+		   
+	<insur id="121521" name="民生附加康裕额外给付重大疾病保险" kind="add" hasProductSpec="false" liability="121521" >
+			<rule id="checkInsurantAge">
+				<if id="if" msg="投保年龄:28天-60周岁；">
+				<test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+				</if>
+			</rule>
+		
+		  	<rule id="checkBasePrem">
+				<if id="if" msg="保额应为1000元的整数倍">
+					<test><![CDATA[oIsuranc.nAmount % 1000 != 0]]></test>
+				</if>
+			</rule>
+		    
+		     <rule id="checkMaxAmount">
+				<!--annotate by yuhongbin 2016-06-03-->
+				<!--<if id="if" msg="保险金额不得超过其对应年金主险保险金额的10倍">
+					<test><![CDATA[("14" == (oIsuranc.parentProductType)) && (oIsuranc.nAmount > oIsuranc.parentNAmount * 10)]]></test>
+				</if>
+		        <if id="if" msg="保险金额不得超过其对应主险保险金额的5倍">
+					<test><![CDATA[("14" != (oIsuranc.parentProductType)) && (oIsuranc.nAmount > oIsuranc.parentNAmount * 5)]]></test>
+				</if>-->
+		    	<if id="if" msg="0-9周岁累计重大疾病风险保额不能超过50万元">
+					<test><![CDATA[oIsuranc.getAge < 10 && oIsuranc.nAmount*1.2>500000]]></test>
+				</if>
+		        <if id="if" msg="10-17周岁累计重大疾病风险保额不能超过100万元">
+					<test><![CDATA[oIsuranc.getAge >= 10 && oIsuranc.getAge <=17 && oIsuranc.nAmount*1.2>1000000]]></test>
+				</if>
+		</rule>
+		<!--需求号为3082  搭配除鑫裕外的其他附加险  by lishuang 2015-8-31-->
+	  <rule id="checkParentInsuYears">
+		<if id="if" msg="主险保障期间不为80/88/105终身时，不得投保本险种">
+          <test><![CDATA[oIsuranc.parentNInsuYears !=105 &&  oIsuranc.parentNInsuYears !=80 && oIsuranc.parentNInsuYears !=88]]></test>
+        </if>
+		<!--<if id="if" msg="主险的保险期间为80岁、88岁并且交费年期为一次交清的话，不能附加改险种">
+          <test><![CDATA[ (${parentNInsuYears} ==80 || ${parentNInsuYears} ==88 ) && ${parentNPayEndYear} == 1000 && ${parentInPayIntv}("0") ]]></test>
+        </if>-->
+      </rule>
+	  <rule id="checkParentPayEndYear">
+	   <if id="if" msg="如果被保人年龄大于50岁，且交费年期为20年，则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear==20 && oIsuranc.getAge >50]]></test>
+        </if>
+		<if id="if" msg="如果被保人年龄大于55岁，且交费年期为15年，则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear == 15 && oIsuranc.getAge >55]]></test>
+        </if>
+        <if id="if" msg="本附加险的交费年期和交费方式须与对应主险一致,否则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear !=3 && oIsuranc.parentNPayEndYear !=5 && oIsuranc.parentNPayEndYear !=10 && oIsuranc.parentNPayEndYear !=15 && oIsuranc.parentNPayEndYear !=20 && oIsuranc.parentNPayEndYear !=1000]]></test>
+        </if>
+      </rule>
+		
+		
+	</insur>
+	
+	  <!--添加康裕豁免险 by liudan 2015-8-28
+		<rule id="computeAmountByProductCode">
+		<if id="if" msg="计算险种121522的保额不正确">
+		<test><![CDATA[!(computeAmountByProductCode("121522") && computePremByProductCode("121522"))]]></test>
+		</if>
+		</rule>
+		<rule id="computeAmountWithJobByProductCode">
+		<if id="if" msg="计算险种121522的保额不正确">
+		<test><![CDATA[!( computeAmountWithJobByProductCode("121522") && computePremWithJobByProductCode("121522"))]]></test>
+		</if>
+		</rule>
+	-->
+	
+	
+	<insur id="111401" name="民生富贵鑫裕年金保险" kind="main" hasProductSpec="false" >
+		<rule id="checkInsurantAge">
+		<if id="if" msg="投保年龄:28天-70周岁；">
+		<test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 70]]></test>
+		</if>
+		</rule>
+		<rule id="checkMinPremForOnce">
+		<if id="if" msg="一次交清保费不得低于100000元">
+		<test><![CDATA[oIsuranc.inPayIntv == "0" && oIsuranc.nPrem < 100000]]></test>
+		</if>
+		</rule>
+		<rule id="checkMinPremForYear">
+		<if id="if" msg="年交保费不得低于500元">
+		<test><![CDATA[oIsuranc.inPayIntv != "0" && oIsuranc.nPrem < 500]]></test>
+		</if>
+		</rule>
+	</insur>
+	
+	<insur id="111402" name="民生卓悦英才少儿年金保险 " kind="main" hasProductSpec="false" >
+	<rule id="checkInsurantAge">
+		<if id="if" msg="投保年龄:28天-70周岁；">
+		<test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 17]]></test>
+		</if>
+	</rule>
+	<!--  <rule id="checkInsurantAge">
+		<if id="if" msg="投保年龄:28天-17周岁；">
+		<test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 17]]></test>
+		</if>
+	</rule>-->
+     <rule id="checkBasePrem">
+        <if id="if" msg="保额应为1000元的整数倍">
+          <test><![CDATA[oIsuranc.nAmount % 1000 != 0 ]]></test>
+        </if>
+     </rule>
+     <rule id="checkMinPremForOnce">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.nPrem < 2000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPremForYear">
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nPrem < 500]]></test>
+        </if>
+      </rule>
+	</insur>
+	
+	<insur id="121523" name="民生附加卓悦英才少儿重大疾病保险" kind="add" hasProductSpec="false" >
+		<rule id="checkInsurantAge">
+			<if id="if" msg="投保年龄:28天-17周岁；">
+			<test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 17]]></test>
+			</if>
+		</rule>
+      <rule id="checkBasePrem">
+		<if id="if" msg="保额应为1000元的整数倍">
+		  <test><![CDATA[oIsuranc.nAmount % 1000 != 0]]></test>
+		</if>
+      </rule>
+	  
+	  <rule id="checkMaxAmount">
+		<!--annotate by yuhongbin 2016-06-03-->
+		<!--<if id="if" msg="保险金额不得超过其对应年金主险保险金额的10倍">
+		  <test><![CDATA[("14" == oIsuranc.parentProductType) && (oIsuranc.nAmount > oIsuranc.parentNAmount * 10)]]></test>
+		</if>
+		<if id="if" msg="保险金额不得超过其对应主险保险金额的5倍">
+		  <test><![CDATA[("14" != oIsuranc.parentProductType) && (oIsuranc.nAmount > oIsuranc.parentNAmount * 5)]]></test>
+		</if>-->
+		<if id="if" msg="0-9周岁累计重大疾病风险保额不能超过50万元">
+          <test><![CDATA[oIsuranc.getAge<10 && oIsuranc.nAmount*1.2>500000]]></test>
+        </if>
+		<if id="if" msg="10-17周岁累计重大疾病风险保额不能超过100万元">
+          <test><![CDATA[oIsuranc.getAge>=10 && oIsuranc.getAge<=17 && oIsuranc.nAmount*1.2>1000000]]></test>
+        </if>
+      </rule>
+	   <rule id="checkParentPayEndYear">
+   
+		<if id="if" msg="当主险为3年，年龄大于15岁时，A记录，不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear  ==3 && oIsuranc.getAge>15]]></test>
+        </if>
+		<if id="if" msg="当主险为5年，年龄大于13岁时，A记录，不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear ==5 && oIsuranc.getAge>13]]></test>
+        </if>
+	    <if id="if" msg="当主险为10年，年龄大于8岁时，A记录，不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear ==10 && oIsuranc.getAge>8]]></test>
+        </if>
+		<if id="if" msg="主险的交费年期应为3/5/10/1000,否则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear !=3 && oIsuranc.parentNPayEndYear !=5 && oIsuranc.parentNPayEndYear !=10   && oIsuranc.parentNPayEndYear !=1000 ]]></test>
+        </if>
+	  </rule>
+	     <!--重新计算121525投保人豁免保费重大疾病  by lishuang 2015-9-29-->
+	     <rule id="computeAmountByProductCode">
+        <if id="if" msg="计算险种121525的保额不正确">
+          <test><![CDATA[!(computeAmountByProductCode("121525") && computePremByProductCode("121525"))]]></test>
+        </if>
+      </rule>
+      <rule id="computeAmountWithJobByProductCode">
+        <if id="if" msg="计算险种121525的保额不正确">
+          <test><![CDATA[!(computeAmountWithJobByProductCode("121525") && computePremWithJobByProductCode("121525"))]]></test>
+        </if>
+      </rule>
+	</insur>
+	
+	 <insur id="121524" name="民生附加卓悦英才少儿豁免保费重大疾病保险 " kind="add" liability="121524" hasProductSpec="false" >
+		<rule id="checkInsurantAge">
+			<if id="if" msg="投保年龄:28天-17周岁；">
+			<test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 17]]></test>
+			</if>
+		</rule>
+			
+		<rule id="checkParentPayIntv">
+        	<if id="if" msg="主险缴费方式为一次交清时，不得附加本险种">
+         	 	<test><![CDATA[oIsuranc.parentInPayIntv == "0" ]]></test>
+        	</if>
+      	</rule>
+		<rule id="checkParentInsuYears">
+			<if id="if" msg="主险保险期间为一年期（含）以下的，不得投保本险种">
+			  <test><![CDATA[oIsuranc.parentNInsuYears <= 1]]></test>
+			</if>
+		</rule>
+		 <rule id="checkParentPayEndYear">
+	        <if id="if" msg="如果被保人年龄大于15岁，且交费年期为3年，则不能搭配此附加险">
+	          <test><![CDATA[oIsuranc.parentNPayEndYear == 3 && oIsuranc.getAge > 15]]></test>
+	        </if>
+			<if id="if" msg="如果被保人年龄大于13岁，且交费年期为5年，则不能搭配此附加险">
+	          <test><![CDATA[oIsuranc.parentNPayEndYear == 5 && oIsuranc.getAge > 13]]></test>
+	        </if>
+			<if id="if" msg="如果被保人年龄大于12岁，且交费年期为10年，则不能搭配此附加险">
+	          <test><![CDATA[oIsuranc.parentNPayEndYear == 10 && oIsuranc.getAge > 12]]></test>
+	        </if>
+	        <if id="if" msg="主险的交费年期应为3/5/10,否则不能搭配此附加险">
+	          <test><![CDATA[oIsuranc.parentNPayEndYear !=3 && oIsuranc.parentNPayEndYear !=5 && oIsuranc.parentNPayEndYear !=10  ]]></test>
+	        </if>
+      	</rule>
+
+	</insur>
+	
+	<insur id="121525" name="民生附加投保人豁免保费重大疾病保险 " kind="add" liability="121525" hasProductSpec="false"  hasAppntImpart="true">
+		<rule id="checkInsurantAge">
+			<if id="if" msg="投保年龄:18周岁-50周岁，且在交费期满时不超过75周岁">
+			<test><![CDATA[oIsuranc.getAppntAge < 18 || oIsuranc.getAppntAge > 50]]></test>
+			</if>
+		</rule>
+		<rule id="checkParentIsSamePeople">
+			<if id="if" msg="投保人和被保险人为同一人时,不得附加本险种">
+			  <test><![CDATA[oIsuranc.isSamePeople == true]]></test>
+			</if>
+      </rule>
+	  <rule id="checkSpecialJobs">
+        <if id="if" msg="主险投保人职业类别为5类或6类时，不得附加本险种">
+          <test><![CDATA["5" == oIsuranc.appntOccupationType || "6" == oIsuranc.appntOccupationType]]></test>
+        </if>
+      </rule>
+	  <rule id="checkParentPayIntv">
+        <if id="if" msg="主险缴费方式为一次交清时，不得附加本险种">
+          <test><![CDATA[oIsuranc.parentInPayIntv == "0"]]></test>
+        </if>
+      </rule>
+	   <rule id="checkParentInsuYears">
+			<if id="if" msg="主险保险期间为一年期（含）以下的，不得投保本险种">
+			  <test><![CDATA[oIsuranc.parentNInsuYears <= 1]]></test>
+			</if>
+		</rule>
+		<rule id="checkParentPayEndYear">
+        <if id="if" msg="如果投保人年龄大于45岁，且交费年期为30年，则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear==30 && oIsuranc.getAppntAge>45]]></test>
+        </if>
+       
+        <if id="if" msg="主险的交费年期应为3/5/10/15/20/25/30,否则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear !=3 && oIsuranc.parentNPayEndYear !=5 && oIsuranc.parentNPayEndYear !=10 
+						&& oIsuranc.parentNPayEndYear !=15 && oIsuranc.parentNPayEndYear !=20 
+						&& oIsuranc.parentNPayEndYear !=25 && oIsuranc.parentNPayEndYear !=30 
+		  ]]></test>
+        </if>
+      </rule>
+	</insur>
+	
+	<insur id="121307" name="民生附加定期寿险2015" kind="add" hasProductSpec="false"  liability="121307">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-65周岁；">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 65]]></test>
+        </if>
+      </rule>
+	  <rule id="checkMaxAmount">
+        <if id="if" msg="保险金额不得超过其对应年金主险保险金额的10倍">
+          <test><![CDATA[("14" == oIsuranc.parentProductType) && (oIsuranc.nAmount > oIsuranc.parentNAmount * 10)]]></test>
+        </if>
+        <if id="if" msg="保险金额不得超过其对应主险保险金额的5倍">
+          <test><![CDATA[("14" != oIsuranc.parentProductType) && (oIsuranc.nAmount > oIsuranc.parentNAmount * 5)]]></test>
+        </if>
+      
+      </rule>
+	  <rule id="checkParentPayEndYear">
+        <if id="if" msg="本附加险的交费年期和交费方式须与对应主险一致,否则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear !=3 && oIsuranc.parentNPayEndYear !=5 && oIsuranc.parentNPayEndYear !=10 && oIsuranc.parentNPayEndYear !=15 && oIsuranc.parentNPayEndYear !=20 && oIsuranc.parentNPayEndYear !=1000]]></test>
+        </if>
+		<if id="if" msg="当主险为10年，年龄大于60岁时，A记录，不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear ==10 && oIsuranc.getAge>60 && "A" == oIsuranc.parentInsuYearsFlag]]></test>
+        </if>
+		<if id="if" msg="当主险为15年，年龄大于56岁时，A记录，不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear ==15 && oIsuranc.getAge>56 && "A" == oIsuranc.parentInsuYearsFlag]]></test>
+        </if>
+	    <if id="if" msg="当主险为20年，年龄大于51岁时，A记录，不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear ==20 && oIsuranc.getAge>51 && "A" == oIsuranc.parentInsuYearsFlag]]></test>
+        </if>
+	  </rule>
+	  <rule id="checkParentInsuYears">
+		<if id="if" msg="主险保障期间不为20/30/35/40/60/70/80/88/终身时，不得投保本险种">
+          <test><![CDATA[oIsuranc.parentNInsuYears !=105 && oIsuranc.parentNInsuYears !=20 && oIsuranc.parentNInsuYears !=30  && oIsuranc.parentNInsuYears !=35 && oIsuranc.parentNInsuYears !=40 && oIsuranc.parentNInsuYears !=60 && oIsuranc.parentNInsuYears !=70 && oIsuranc.parentNInsuYears !=80 && oIsuranc.parentNInsuYears !=88]]></test>
+        </if>
+      </rule>
+	        <!--添加康裕豁免险  by lishuang 2015-7-30-->
+	  <rule id="computeAmountByProductCode">
+        <if id="if" msg="计算险种121522的保额不正确">
+          <test><![CDATA[!(computeAmountByProductCode("121522") && computePremByProductCode("121522"))]]></test>
+        </if>
+      </rule>
+      <rule id="computeAmountWithJobByProductCode">
+        <if id="if" msg="计算险种121522的保额不正确">
+          <test><![CDATA[!(computeAmountWithJobByProductCode("121522") && computePremWithJobByProductCode("121522"))]]></test>
+        </if>
+      </rule>
+	        <!--添加121524卓悦英才少儿豁免保费重大疾病、121525投保人豁免保费重大疾病  by lishuang 2015-9-29-->
+	  <rule id="computeAmountByProductCode">
+        <if id="if" msg="计算险种121524的保额不正确">
+          <test><![CDATA[!(computeAmountByProductCode("121524") && computePremByProductCode("121524"))]]></test>
+        </if>
+      </rule>
+      <rule id="computeAmountWithJobByProductCode">
+        <if id="if" msg="计算险种121524的保额不正确">
+          <test><![CDATA[!(computeAmountWithJobByProductCode("121524") && computePremWithJobByProductCode("121524"))]]></test>
+        </if>
+      </rule>
+	    <rule id="computeAmountByProductCode">
+        <if id="if" msg="计算险种121525的保额不正确">
+          <test><![CDATA[!(computeAmountByProductCode("121525") && computePremByProductCode("121525"))]]></test>
+        </if>
+      </rule>
+      <rule id="computeAmountWithJobByProductCode">
+        <if id="if" msg="计算险种121525的保额不正确">
+          <test><![CDATA[!(computeAmountWithJobByProductCode("121525") && computePremWithJobByProductCode("121525"))]]></test>
+        </if>
+      </rule>
+    </insur>
+
+  <!-- add liu end  -->
+  
+    <insur id="111201" name="民生如意随行两全保险 " kind="main" hasProductSpec="false" beginDate="2014-10-28">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:18周岁-50周岁；">
+          <test><![CDATA[oIsuranc.getAge < 18 || oIsuranc.getAge > 50]]></test>
+        </if>
+      </rule>
+      <rule id="checkSpecialJobs">
+        <if id="if" msg="本险种投保职业限为1-4类,专职司机及随车人员拒保">
+          <test><![CDATA["5"   == oIsuranc.occupationCode || "6"  == oIsuranc.occupationCode || "-1"  == oIsuranc.occupationCode || "6240102" == oIsuranc.occupationCode || "6240103" == oIsuranc.occupationCode ||
+            "6240104" == oIsuranc.occupationCode || "6240105" == oIsuranc.occupationCode || "6240107" == oIsuranc.occupationCode
+            || "6240108" == oIsuranc.occupationCode || "6240114" == oIsuranc.occupationCode]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPremForOnce">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.prem < 2000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPremForYear">
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.prem < 500]]></test>
+        </if>
+      </rule>
+
+      <rule id="checkMaxAmount">
+        <if id="if" msg="该职业类别的最高保险金额为10万元">
+          <test><![CDATA[("4061301" == oIsuranc.occupationCode||"4061302" == oIsuranc.occupationCode||
+            "4061304" == oIsuranc.occupationCode||"4061305" == oIsuranc.occupationCode||
+            "4061306" == oIsuranc.occupationCode||"4061308" == oIsuranc.occupationCode||
+            "4061309" == oIsuranc.occupationCode||"4061310" == oIsuranc.occupationCode||
+            "4061312" == oIsuranc.occupationCode||"4061313" == oIsuranc.occupationCode||
+            "4061321" == oIsuranc.occupationCode||"4061322" == oIsuranc.occupationCode||
+            "4061324" == oIsuranc.occupationCode||"4061325" == oIsuranc.occupationCode||
+            "4061326" == oIsuranc.occupationCode||"4061327" == oIsuranc.occupationCode||
+            "4061330" == oIsuranc.occupationCode||"4061331" == oIsuranc.occupationCode||
+            "4061333" == oIsuranc.occupationCode||"5010101" == oIsuranc.occupationCode||
+            "8010104" == oIsuranc.occupationCode||"2090114" == oIsuranc.occupationCode||
+            "8010101" == oIsuranc.occupationCode)
+            && oIsuranc.amount> 100000]]></test>
+        </if>
+        <if id="if" msg="一般职业最高保险金额为100万元">
+          <test><![CDATA[oIsuranc.amount> 1000000]]></test>
+        </if>
+        </rule>
+    </insur>
+      <insur id="121607" name="民生附加如意随行意外伤害保险" kind="add" hasProductSpec="false" beginDate="2014-10-28">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:18周岁-50周岁；">
+          <test><![CDATA[oIsuranc.getAge < 18 || oIsuranc.getAge > 50]]></test>
+        </if>
+      </rule>
+    </insur>
+    
+    
+    <!-- add liudan  -->
+      <insur id="124401" name="民生附加富贵赢家年金保险（万能型）" kind="add" hasProductSpec="false" beginDate="2015-01-01" endDate="2015-06-01">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-64周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 64]]></test>
+        </if>
+      </rule>
+  </insur>
+  <!-- end liudan  -->
+  <!-- 2014-7-7 yangjialin start-->
+  <insur id="112102" name="民生如意人生终身寿险（分红型）" kind="main" hasProductSpec="false" beginDate="2014-01-01">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay  < 28 || oIsuranc.getAge  > 60]]></test>
+        </if>
+      </rule>
+		 <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为10000元">
+          <test><![CDATA[oIsuranc.amount  < 10000]]></test>
+        </if>
+        <if id="if" msg="0-2周岁累计重大疾病风险保额不能超过20万元">
+          <test><![CDATA[oIsuranc.getAge <= 2 && oIsuranc.nAmount > 200000.0 ]]></test>
+        </if>
+        <if id="if" msg="3-9周岁累计重大疾病风险保额不能超过30万元">
+          <test><![CDATA[oIsuranc.getAge >= 3 && oIsuranc.getAge <= 9  && oIsuranc.nAmount > 300000.0 ]]></test>
+        </if>
+        <if id="if" msg="10-17周岁累计重大疾病风险保额不能超过50万元">
+          <test><![CDATA[oIsuranc.getAge >= 10 && oIsuranc.getAge <= 17  && oIsuranc.nAmount > 500000.0 ]]></test>
+        </if>
+      </rule>
+    <rule id="checkMinPremForOnce">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.prem < 2000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPremForYear">
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.prem < 500]]></test>
+        </if>
+e      </rule>
+  </insur>
+
+  <insur id="111602" name="民生康顺老年意外伤害保险" kind="main" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄：50-75周岁，续保不得超过80周岁；">
+          <test><![CDATA[oIsuranc.getAge < 50 || oIsuranc.getAge > 75]]></test>
+        </if>
+      </rule>
+      <rule id="checkSpecialJobs">
+        <if id="if" msg="被保险人所从事职业属于5、6类职业者不能投保；">
+          <test><![CDATA["5" == oIsuranc.occupationType || "6" == oIsuranc.occupationType]]></test>
+        </if>
+      </rule>
+     </insur>
+  
+   <insur id="121517" name="民生附加如意人生提前给付重大疾病保险" kind="add" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+  </insur>
+  <!-- 2014-7-7 yangjialin end-->
+
+
+  <!-- 2014-5-27 yangjialin start-->
+  <insur id="112404" name="民生富贵同享年金保险（分红型）" kind="main" hasProductSpec="false" beginDate="2014-01-01" endDate="2018-09-17 11:00:00">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-55周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 55]]></test>
+        </if>
+      </rule>
+    <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为10000元">
+          <test><![CDATA[oIsuranc.amount < 10000]]></test>
+        </if>
+      </rule>
+    <rule id="checkMinPremForOnce">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.prem < 2000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPremForYear">
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0"  && oIsuranc.prem < 500]]></test>
+        </if>
+      </rule>
+  </insur>
+  
+  <insur id="124201" name="民生附加富贵天添两全保险（万能型）" kind="add" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-65周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 65]]></test>
+        </if>
+      </rule>
+      <rule id="checkBasePrem">
+        <if id="if" msg="一次交清保费应为1000元的整数倍">
+          <test><![CDATA[oIsuranc.nPrem  % 1000 != 0 || parseInt(oIsuranc.prem).length !=oIsuranc.prem.length]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于5000元">
+          <test><![CDATA[parseInt(oIsuranc.prem) != 0 && parseInt(oIsuranc.prem) < 5000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxPrem">
+        <if id="if" msg="本附加险的保费须小于主险累计保费">
+          <test><![CDATA[parseInt(oIsuranc.prem) >= sumPremByProductCode("112404")]]></test>
+        </if>
+      </rule>
+      <rule id="checkGetPartMoney">
+        <if id="if" msg="领取结束年度应大于领取起始年度">
+          <test><![CDATA[oIsuranc.nEndYear  < oIsuranc.nBeginYear]]></test>
+        </if>
+        <if id="if" msg="领取结束年度应小于投保结束年度">
+          <test><![CDATA[oIsuranc.nEndYear  > getPolicyPeriodYear(oIsuranc.insuYears,oIsuranc.insuYearsFlag)]]></test>
+        </if>
+        <if id="if" msg="领取结束年度输入不合法">
+          <test><![CDATA[ oIsuranc.endYear  == 0 || (parseInt(oIsuranc.endYear).length !=  oIsuranc.endYear.length)]]></test>
+        </if>
+        <if id="if" msg="领取起始年度输入不合法">
+          <test><![CDATA[ oIsuranc.beginYear == 0 || (parseInt(oIsuranc.beginYear).length != oIsuranc.beginYear.length)]]></test>
+        </if>
+        <if id="if" msg="部分领取金额应为1000元的整数倍">
+          <test><![CDATA[oIsuranc.getPartMoney  % 1000 != 0 || (parseInt(oIsuranc.getPartMoney).length != oIsuranc.getPartMoney.length)]]></test>
+        </if>
+      </rule>
+  </insur>
+  <!-- 2014-5-27 yangjialin end--> 
+
+
+	<!-- 2014-4-28 xiaohuiyang start-->
+  <!--endDate="2014-09-19" 临时停售   add by yangjialin 2014-09-17 -->
+  <insur id="112225" name="民生富贵齐添至尊版两全保险（分红型）" kind="main" hasProductSpec="false" endDate="2014-09-19">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+    <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为10000元">
+          <test><![CDATA[oIsuranc.amount < 10000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPremForYear">
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.prem < 500]]></test>
+        </if>
+      </rule>
+  </insur>
+  <!--endDate="2014-09-19" 临时停售   add by yangjialin 2014-09-17-->
+  <insur id="121518" name="民生附加额外给付至尊版重大疾病保险" kind="add" hasProductSpec="false" endDate="2014-09-19">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay  < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+    <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为10000元">
+          <test><![CDATA[oIsuranc.amount < 10000]]></test>
+        </if>
+    <if id="if" msg="保险金额不超过其对应主险保险金额的3倍">
+          <test><![CDATA[oIsuranc.nAmount > oIsuranc.parentNAmount * 3.0]]></test>
+        </if>
+    <if id="if" msg="0-2周岁累计重大疾病风险保额不能超过20万元">
+      <test><![CDATA[oIsuranc.getAge  <= 2 && oIsuranc.nAmount > 200000.0 ]]></test>
+    </if>
+    <if id="if" msg="3-9周岁累计重大疾病风险保额不能超过30万元">
+      <test><![CDATA[oIsuranc.getAge  >= 3 && oIsuranc.getAge  <= 9  && oIsuranc.nAmount > 300000.0 ]]></test>
+    </if>
+    <if id="if" msg="10-17周岁累计重大疾病风险保额不能超过50万元">
+      <test><![CDATA[oIsuranc.getAge  >= 10 && oIsuranc.getAge  <= 17  && oIsuranc.nAmount  > 500000.0 ]]></test>
+    </if>
+      </rule>
+  </insur>
+  <!-- 2014-4-28 xiaohuiyang end-->
+	  <!--本文档权限仅限余海明修改，其它人可以在本地修改，不允许提交到SVN-->
+	
+    <!--id-险种代码、name-险种名称、kind-险种类型(主险、附加险、险种组合)、beginDate-启售日期（默认不受限）、endDate-停售日期(默认不受限)、
+			channel-销售渠道(默认所有渠道)、organs-可销售机构(默认所有机构)、isSell-是否可销售(默认可销售) 
+			mustProposal-是否必须制作建议书（默认是）showMultInclude-是否显示险种组合下的险种信息，默认否 template- 生成pdf模版 
+			主险属性 liability="exempt" 险种责任(豁免责任) hasBnf-是否有受益人，默认有，hasProductSpec-是否有产品说明书，默认有 -->
+			
+	<insur id="111605" name="民生康顺意外伤害保险2014" kind="main" hasProductSpec="false" beginDate="2014-01-01">
+      <rule id="checkInsurantAge">
+        <!--投保年龄: 3-60周岁 修改为 投保年龄: 28天-60周岁    2014-08-18 modify by yangjialin-->
+        <if id="if" msg="投保年龄:28天-60周岁">
+           <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+	  <rule id="checkMaxAmount">
+        <if id="if" msg="未成年人身故保险金额不得超过10万元">
+          <test><![CDATA[oIsuranc.getAge < 18 && oIsuranc.amount > 100000]]></test>
+        </if>
+      </rule>
+      <!--废止最低保险金额为5万元的限制 modify by yangjialin 2014-10-10 add by yuhongbin 2016-06-03-->
+        <rule id="checkMinAmount">
+        <if id="if" msg="保险金额：最低50000元">
+          <test><![CDATA[oIsuranc.amount < 50000 ]]></test>
+        </if>
+      </rule>
+        
+	</insur>
+	<insur id="121707" name="民生附加住院医疗保险2014" kind="add" hasProductSpec="false"  beginDate="2014-01-01">
+      <rule id="checkInsurantAge">
+        <!--2014-08-18 modify by yangjialin-->
+         <if id="if" msg="投保年龄:28天-60周岁">
+           <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+	   <rule id="checkMaxAmount">
+          <if id="if" msg="被保险人投保年龄0-17周岁时，投保普通费用型医疗保险累计最高保险金额为5万元">
+          <test><![CDATA[oIsuranc.getAge <= 17 && oIsuranc.nAmount > 50000]]></test>
+        </if>
+        <if id="if" msg="被保险人投保年龄18-50周岁时，投保普通费用型医疗保险累计最高保险金额为20万元">
+          <test><![CDATA[oIsuranc.getAge >= 18 && oIsuranc.getAge <= 50 && oIsuranc.nAmount  > 200000]]></test>
+        </if>
+        <if id="if" msg="被保险人投保年龄51-60周岁时，投保普通费用型医疗保险累计最高保险金额为5万元">
+          <test><![CDATA[oIsuranc.getAge > 51  && oIsuranc.getAge <= 60 && oIsuranc.nAmount > 50000]]></test>
+        </if>
+		<if id="if" msg="该职业类别的被保险人投保普通费用型医疗保险累计最高保险金额为5万元">
+          <test><![CDATA[("2090114" == oIsuranc.occupationCode ||"8010101"== oIsuranc.occupationCode ||
+            "8010104" == oIsuranc.occupationCode ||"8010102" == oIsuranc.occupationCode ||
+            "5" ==  oIsuranc.occupationType ||"6" == oIsuranc.occupationType) && oIsuranc.nAmount > 50000]]></test>
+        </if>
+        </rule>
+      </insur>
+
+	<insur id="121803" name="民生附加意外伤害医疗保险2014" kind="add" hasProductSpec="false"  beginDate="2014-01-01">
+      <rule id="checkInsurantAge">
+         <!--2014-08-18 modify by yangjialin-->
+        <if id="if" msg="投保年龄:28天-60周岁，续保不得超过 64 周岁">
+           <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+	  <rule id="checkMinAmount">
+        <if id="if" msg="保险金额：最低2000元，且必须为1000元的整数倍">
+          <test><![CDATA[oIsuranc.nAmount < 2000 || (oIsuranc.nAmount >= 2000 && oIsuranc.nAmount % 1000 != 0)]]></test>
+        </if>
+      </rule>
+	  <rule id="checkBasePrem">
+        <if id="if" msg="保额应为1000元的整数倍">
+          <test><![CDATA[oIsuranc.nAmount % 1000 != 0]]></test>
+        </if>
+      </rule>
+	  <rule id="checkMaxAmount">
+        <if id="if" msg="保额最高10万">
+          <test><![CDATA[oIsuranc.nAmount > 100000]]></test>
+        </if>
+		<if id="if" msg="保险金额不得超过其对应年金主险保险金额">
+		  <test><![CDATA[("14" == oIsuranc.parentProductType) && (oIsuranc.nAmount > oIsuranc.parentNAmount)]]></test>
+		</if>
+		<if id="if" msg="保险金额不得超过其对应主险保险金额的30%">
+		  <test><![CDATA[("14" != oIsuranc.parentProductType) && (oIsuranc.nAmount > oIsuranc.parentNAmount * 0.3)]]></test>
+		</if>
+      </rule>
+	</insur>
+	<insur id="121713" name="民生附加每日住院给付医疗保险2014" kind="add" hasProductSpec="false"  beginDate="2014-01-01">
+      <rule id="checkInsurantAge">
+         <!--2014-08-18 modify by yangjialin-->
+        <if id="if" msg="投保年龄:28天-60周岁，续保不得超过 64 周岁">
+           <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+	</insur>
+  <!--add by yangjialin 2014-08-21-->
+	<insur id="121714" name="民生附加康乐住院医疗保险" kind="add" hasProductSpec="false" liability="121714"   beginDate="2014-01-01">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-60周岁，续保不得超过 64 周岁">
+           <test><![CDATA[oIsuranc.getAgeByDay  < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="最低保险金额为2000元">
+          <test><![CDATA[oIsuranc.nAmount < 2000]]></test>
+        </if>
+      </rule>
+      <rule id="checkBasePrem">
+        <if id="if" msg="保额应为1000元的整数倍">
+          <test><![CDATA[oIsuranc.nAmount % 1000 != 0 ]]></test>
+        </if>
+      </rule>
+	  <rule id="checkParentPayIntv">
+		<if id="if" msg="主险缴费方式为一次交清时，不得附加本险种">
+		<test><![CDATA[oIsuranc.parentInPayIntv == "0"  && oIsuranc.parentProductCode == "111401"]]></test>
+		</if>
+	  </rule>
+	  <rule id="checkParentPayEndYear">
+		<if id="if" msg="主险缴费年期为一次交清时，不得附加本险种">
+		<test><![CDATA[oIsuranc.parentNPayEndYear ==1000   && oIsuranc.parentProductCode == "111401"]]></test>
+		</if>
+	  </rule>
+      <rule id="checkMaxAmount">
+        <!--  -->
+         <if id="if" msg="被保险人投保年龄0-17周岁时，投保普通费用型医疗保险累计最高保险金额为5万元">
+          <test><![CDATA[oIsuranc.getAge <= 17 && oIsuranc.nAmount  > 50000]]></test>
+         </if>
+         <if id="if" msg="被保险人投保年龄18-50周岁时，投保普通费用型医疗保险累计最高保险金额为20万元">
+          <test><![CDATA[oIsuranc.getAge  >=18 && oIsuranc.getAge  <=50 && oIsuranc.nAmount > 200000]]></test>
+        </if>
+        <if id="if" msg="被保险人投保年龄51-60周岁时，投保普通费用型医疗保险累计最高保险金额为5万元">
+          <test><![CDATA[oIsuranc.getAge >=51 && oIsuranc.nAmount > 50000]]></test>
+        </if>
+        <if id="if" msg="该职业类别的被保险人投保普通费用型医疗保险累计最高保险金额为5万元">
+          <test><![CDATA[("2090114" == oIsuranc.occupationCode ||"8010101" == oIsuranc.occupationCode||
+            "8010104" == oIsuranc.occupationCode ||"8010102" == oIsuranc.occupationCode ||
+            "5" == oIsuranc.occupationType ||"6" == oIsuranc.occupationType) && oIsuranc.nAmount > 50000]]></test>
+        </if>
+        <if id="if" msg="本险种的投保金额不得超过主险风险保额的30%">
+          <test><![CDATA[("11" == oIsuranc.parentProductType ||"12" == oIsuranc.parentProductType) && oIsuranc.nAmount > oIsuranc.parentNAmount* 0.3]]></test>
+        </if>
+        <if id="if" msg="本险种的投保金额不得超过年金险主险的风险保额">
+          <test><![CDATA["14" == oIsuranc.parentProductType && oIsuranc.nAmount > oIsuranc.parentNAmount]]></test>
+        </if>
+      </rule>
+  </insur>
+ <!--add by yangjialin 2014-08-21-->
+    <insur id="121715" name="民生附加康乐每日住院给付医疗保险" kind="add" hasProductSpec="false" liability="121715"  beginDate="2014-01-01">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-60周岁，续保不得超过 64 周岁">
+           <test><![CDATA[oIsuranc.getAgeByDay  < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+       <rule id="checkMinAmount">
+        <if id="if" msg="最低保险金额为50元/日">
+          <test><![CDATA[oIsuranc.nAmount < 50]]></test>
+        </if>
+      </rule>
+      <rule id="checkBasePrem">
+        <if id="if" msg="保额应为10元的整数倍">
+          <test><![CDATA[oIsuranc.nAmount % 10 != 0]]></test>
+        </if>
+      </rule>
+	  <rule id="checkParentPayIntv">
+		<if id="if" msg="主险缴费方式为一次交清时，不得附加本险种">
+		<test><![CDATA[oIsuranc.parentInPayIntv == "0"  && oIsuranc.parentProductCode == "111401"]]></test>
+		</if>
+	  </rule>
+	  <rule id="checkParentPayEndYear">
+		<if id="if" msg="主险缴费年期为一次交清时，不得附加本险种">
+		<test><![CDATA[oIsuranc.parentNPayEndYear ==1000  && oIsuranc.parentProductCode == "111401"]]></test>
+		</if>
+	  </rule>
+      <rule id="checkMaxAmount">
+        <if id="if" msg="该职业类别的被保险人投保津贴型医疗保险累计最高保险金额为150元/日">
+          <test><![CDATA[("2090114" == oIsuranc.occupationCode||"8010101" == oIsuranc.occupationCode ||
+            "8010104" == oIsuranc.occupationCode  ||"8010102" == oIsuranc.occupationCode ||
+            "5" == oIsuranc.occupationType ||"6" == oIsuranc.occupationType) && oIsuranc.nAmount > 150]]></test>
+        </if>
+        <if id="if" msg="本险种的投保金额与主险的风险保额不符">
+          <test><![CDATA[("11" == oIsuranc.parentProductType ||"12" == oIsuranc.parentProductType) &&
+           ((oIsuranc.parentNAmount <=50000 && oIsuranc.nAmount > 100)|| 
+           (oIsuranc.parentNAmount >50000 && oIsuranc.parentNAmount <=200000 && oIsuranc.nAmount > 200) ||
+           (oIsuranc.parentNAmount >200000 && oIsuranc.parentNAmount <=500000 && oIsuranc.nAmount > 300) ||
+           (oIsuranc.parentNAmount >500000 && oIsuranc.parentNAmount <=1000000 && oIsuranc.nAmount > 400) || 
+           (oIsuranc.parentNAmount >1000000 && oIsuranc.nAmount  > 500) )]]></test>
+        </if>
+        <if id="if" msg="本险种的投保金额与主险的风险保额不符">
+          <test><![CDATA["14" == oIsuranc.parentProductType  && ((oIsuranc.parentNAmount <=10000 && oIsuranc.nAmount  > 100)||
+            (oIsuranc.parentNAmount >10000 && oIsuranc.parentNAmount <=20000 && oIsuranc.nAmount > 200)||
+            (oIsuranc.parentNAmount >20000 && oIsuranc.parentNAmount<=50000 && oIsuranc.nAmount > 300)||
+            (oIsuranc.parentNAmount >50000 && oIsuranc.parentNAmount<=100000 && oIsuranc.nAmount > 400) ||
+            (oIsuranc.parentNAmount >100000 && oIsuranc.nAmount > 500) )]]></test>
+        </if>
+      </rule>
+  </insur>
+
+	<insur id="111802" name="民生住院费用补偿医疗保险" kind="main" hasProductSpec="false" beginDate="2014-03-03">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+      <!-- add by yangjialin 2014-10-10 -->
+      <rule id="checkMaxAmount">
+         <if id="if" msg="被保险人投保年龄0-17周岁时，投保普通费用型医疗保险累计最高保险金额为5万元">
+          <test><![CDATA[ oIsuranc.getAge <=17 && oIsuranc.nMulti > 12 ]]></test>
+         </if>
+         <if id="if" msg="被保险人投保年龄18-50周岁时，投保普通费用型医疗保险累计最高保险金额为20万元">
+          <test><![CDATA[oIsuranc.getAge>=18 && oIsuranc.getAge<=50 && oIsuranc.nMulti > 50 ]]></test>
+        </if>
+        <if id="if" msg="被保险人投保年龄51-60周岁时，投保普通费用型医疗保险累计最高保险金额为5万元">
+          <test><![CDATA[oIsuranc.getAge>=51 && oIsuranc.nMulti > 12 ]]></test>
+        </if>
+        <if id="if" msg="该职业类别的被保险人投保普通费用型医疗保险累计最高保险金额为5万元">
+          <test><![CDATA[("2090114" == oIsuranc.occupationCode ||"8010101" == oIsuranc.occupationCode||
+            "8010104" == oIsuranc.occupationCode||"8010102" == oIsuranc.occupationCode||
+            "5" == oIsuranc.occupationType ||"6" == oIsuranc.occupationType) && oIsuranc.nMulti > 12 ]]></test>
+        </if>
+      </rule>
+
+
+	</insur>
+	<insur id="112401" name="民生长瑞年金保险（分红型）" kind="main"  endDate="2013-01-01" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-64周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 64]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="最低保险金额为5000元">
+          <test><![CDATA[oIsuranc.nAmount < 5000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.nPrem < 2000]]></test>
+        </if>
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nPrem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+	<insur id="112402" name="民生富贵福泽A款养老年金保险(分红型)" kind="main"  endDate="2013-01-01" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="当被保险人为男性时，投保年龄: 出生满28天-55周岁">
+          <test><![CDATA["0" == oIsuranc.sex && (oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 55)]]></test>
+        </if>
+		<if id="if" msg="当被保险人为女性时，投保年龄: 出生满28天-50周岁">
+          <test><![CDATA["1" == oIsuranc.sex  && (oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 50)]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="最低保险金额为3000元">
+          <test><![CDATA[oIsuranc.nAmount  < 3000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nPrem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+    <!--endDate="2013-01-01"    modify  by yangjialin  linshi  -->
+	<insur id="112403" name="民生富贵福泽B款养老年金保险(分红型)" kind="main"  endDate="2023-01-01" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="当被保险人为男性时，投保年龄: 出生满28天-55周岁">
+          <test><![CDATA["0" == oIsuranc.sex && (oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 55)]]></test>
+        </if>
+		<if id="if" msg="当被保险人为女性时，投保年龄: 出生满28天-50周岁">
+          <test><![CDATA["1" == oIsuranc.sex  && (oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 50)]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="最低保险金额为3000元">
+          <test><![CDATA[oIsuranc.nAmount < 3000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nPrem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+	<insur id="111504" name="民生康泰一生重大疾病保险" kind="main" hasProductSpec="false"  beginDate="2014-03-03">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-65周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 65]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxAmount">
+        <if id="if" msg="未成年人身故保险金额不得超过10万元">
+          <test><![CDATA[oIsuranc.getAge < 18 && (oIsuranc.amount*0.5 - oIsuranc.nPremWithJob) > 100000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.nPrem < 2000]]></test>
+        </if>
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nPrem  < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+  
+	<insur id="111601" name="民生康顺意外伤害保险" kind="main" hasProductSpec="false" endDate="2014-01-01">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 3-60 周岁；">
+          <test><![CDATA[oIsuranc.getAge < 3 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+	  <rule id="checkMaxAmount">
+        <if id="if" msg="未成年人身故保险金额不得超过10万元">
+          <test><![CDATA[oIsuranc.getAge < 18 && oIsuranc.amount > 100000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为5万元">
+          <test><![CDATA[oIsuranc.amount < 50000]]></test>
+        </if>
+      </rule>
+    </insur>
+	<insur id="112219" name="民生幸福360少儿两全保险（分红型）" kind="main" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="被保险人投保年龄: 出生满28天-17周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 17]]></test>
+        </if>
+      </rule>
+	  <rule id="checkMinMulti">
+        <if id="if" msg="一次交清保费时，本险种的最低交费金额为2000元（即6份以上）">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.nMulti  < 6]]></test>
+        </if>
+        <if id="if" msg="年交保费时，本险种的最低交费金额为500元（即2份以上）">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nMulti < 2]]></test>
+        </if>
+      </rule>
+      
+    </insur>
+    <insur id="112206" name="民生金榜题名少儿教育金两全保险(分红型)" kind="main" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="被保险人投保年龄: 出生满28天-17周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 17]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.nPrem < 2000]]></test>
+        </if>
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nPrem < 500]]></test>
+        </if>
+      </rule>
+    </insur>		
+    <insur id="111505" name="民生如意鸿康终身重大疾病保险" kind="main" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 18-55 周岁；">
+          <test><![CDATA[oIsuranc.getAge < 18 || oIsuranc.getAge > 55]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.prem < 2000]]></test>
+        </if>
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.prem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+    <insur id="112216" name="民生如意相伴两全保险B款（分红型）" kind="main" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxAmount">
+        <if id="if" msg="未成年人身故保险金额不得超过10万元">
+          <test><![CDATA[oIsuranc.getAge < 18 && (oIsuranc.nAmount -oIsuranc.nPremWithJob) > 100000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.nPrem < 2000]]></test>
+        </if>
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nPrem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+    <insur id="112213" name="民生如意相伴两全保险（分红型）" kind="main" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxAmount">
+        <if id="if" msg="未成年人身故保险金额不得超过10万元">
+          <test><![CDATA[oIsuranc.getAge < 18 && (oIsuranc.nAmount -oIsuranc.nPremWithJob) > 100000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.nPrem < 2000]]></test>
+        </if>
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nPrem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+    <insur id="112203" name="民生长裕两全保险（分红型）" kind="main" risktype="2" endDate="2014-12-20"  >
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-65周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 65]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="该险种的最低保险金额为1万元">
+          <test><![CDATA[oIsuranc.nAmount < 10000 ]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxAmount">
+        <if id="if" msg="未成年人身故保险金额不得超过10万元">
+          <test><![CDATA[oIsuranc.getAge < 18 && oIsuranc.nAmount > 100000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.nPrem < 2000]]></test>
+        </if>
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nPrem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+   
+    <insur id="111301" name="民生安康定期寿险" kind="main" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄：16-60 周岁">
+          <test><![CDATA[oIsuranc.getAge < 16 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="该险种的最低保险金额为30万元">
+          <test><![CDATA[oIsuranc.amount  < 300000 ]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxAmount">
+	   	<if id="if" msg="未成年人身故保险金额不得超过10万元">
+          <test><![CDATA[oIsuranc.getAge < 18 && oIsuranc.amount -oIsuranc.nPremWithJob > 100000 ]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.nPrem  < 2000]]></test>
+        </if>
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0"  && oIsuranc.nPrem  < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+    <insur id="112220" name="民生富贵金生两全保险（分红型）" kind="main" endDate="2013-04-08" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-64周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 64]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="最低保险金额为1万元">
+          <test><![CDATA[oIsuranc.nAmount < 10000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.nPrem < 2000]]></test>
+        </if>
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nPrem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+    <insur id="112221" name="民生富贵齐添两全保险（分红型）" kind="main" risktype="2" endDate="2015-12-01">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+      <!--需求号：REQ1573，业管新规则，去掉此项保额的限制 2013-07-15 modify by yuhaiming
+      <rule id="checkMaxAmount">
+        <if id="if" msg="被保险人小于18周岁被保险人小于18周岁，本险种的最高保险金额为30万元">
+          <test><![CDATA[${getAge} < 18 && Double.parseDouble(${amount}) > 300000]]></test>
+        </if>
+      </rule>-->
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.prem < 2000]]></test>
+        </if>
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.prem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+	<insur id="112224" name="民生富贵齐添尊享版两全保险（分红型）" kind="main" hasProductSpec="true" endDate="2013-07-10" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+        <if id="if" msg="投保年龄: 选择保至60周岁时，投保年龄最大只能为50周岁">
+          <test><![CDATA[oIsuranc.getAge > 50 && oIsuranc.insuYears == "60" && oIsuranc.insuYearsFlag == "A"]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为1万元">
+          <test><![CDATA[oIsuranc.amount < 10000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxAmount">
+        <if id="if" msg="被保险人小于18周岁，本险种的最高保险金额为30万元">
+          <test><![CDATA[oIsuranc.getAge < 18 && oIsuranc.amount > 300000]]></test>
+        </if>
+      </rule>
+	    <rule id="checkMinPrem">
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.prem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+
+	<insur id="112223" name="民生富贵金鼎两全保险（分红型）" kind="main" hasProductSpec="true" beginDate="2013-08-29" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-64周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 64]]></test>
+        </if>
+      </rule>
+	    <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.prem < 2000]]></test>
+        </if>
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.prem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+	<insur id="121513" name="民生附加额外给付尊享版重大疾病保险" kind="add" hasProductSpec="false" endDate="2013-07-10">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+        <if id="if" msg="投保年龄: 选择保至60周岁时，投保年龄最大只能为50周岁">
+          <test><![CDATA[oIsuranc.getAge > 50 && oIsuranc.insuYears == "60" && oIsuranc.insuYearsFlag == "A"]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为1万元">
+          <test><![CDATA[oIsuranc.amount < 10000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxAmount">
+        <if id="if" msg="保险金额不超过其对应主险保险金额的3倍">
+          <test><![CDATA[oIsuranc.nAmount  > oIsuranc.parentNAmount * 3.0]]></test>
+        </if>
+		<if id="if" msg="0-2周岁累计重大疾病风险保额不能超过20万元">
+          <test><![CDATA[oIsuranc.getAge <= 2 && oIsuranc.nAmount > 200000]]></test>
+        </if>
+		<if id="if" msg="3-9周岁累计重大疾病风险保额不能超过30万元">
+          <test><![CDATA[oIsuranc.getAge >= 3 && oIsuranc.getAge <= 9 && oIsuranc.nAmount > 300000]]></test>
+        </if>
+		<if id="if" msg="10-17周岁累计重大疾病风险保额不能超过50万元">
+          <test><![CDATA[oIsuranc.getAge >= 10 && oIsuranc.getAge <= 17 && oIsuranc.nAmount > 500000]]></test>
+        </if>
+      </rule>
+    </insur>
+	<insur id="121512" name="民生附加康馨额外给付重大疾病保险" kind="add" hasProductSpec="false" liability="MajorDiseases,121521"><!-- 添加,121521 liudan-->
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+        <if id="if" msg="投保年龄: 选择保至60周岁时，投保年龄最大只能为50周岁">
+          <test><![CDATA[oIsuranc.getAge > 50 && oIsuranc.insuYears == "60" && oIsuranc.insuYearsFlag == "A"]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxAmount">
+        <!--
+        <if id="if" msg="保险金额不超过其对应主险保险金额的3倍">
+          <test><![CDATA[${nAmount} > ${parentNAmount} * 3.0]]></test>
+        </if>
+        -->
+		<if id="if" msg="0-10周岁累计重大疾病风险保额不能超过50万元">
+          <test><![CDATA[oIsuranc.getAge <= 10 && oIsuranc.nAmount *1.2 >500000]]></test>
+        </if>
+           <!--去除 保险金额不超过其对应主险保险金额的3倍 约束条件添加以下两条约束条件
+         add by yangjialin 2014-09-01 annotate by yuhongbin 2016-06-03-->
+        <!--<if id="if" msg="保险金额不得超过其对应年金主险保险金额的10倍">
+          <test><![CDATA[("14" == oIsuranc.parentProductType) &&
+           (oIsuranc.nAmount > oIsuranc.parentNAmount * 10)]]></test>
+        </if>
+        <if id="if" msg="保险金额不得超过其对应主险保险金额的5倍">
+          <test><![CDATA[("14" != oIsuranc.parentProductType) &&
+           (oIsuranc.nAmount > oIsuranc.parentNAmount * 5)]]></test>
+        </if>-->
+      </rule>
+	  <rule id="checkParentInsuYears">
+		<if id="if" msg="主险保障期间不为10/15/20/30/40/60/80/88/105终身时，不得投保本险种">
+          <test><![CDATA[oIsuranc.parentNInsuYears !=105 && oIsuranc.parentNInsuYears  !=10 && oIsuranc.parentNInsuYears  !=15 && oIsuranc.parentNInsuYears  !=20 && oIsuranc.parentNInsuYears  !=30  && oIsuranc.parentNInsuYears  !=40 && oIsuranc.parentNInsuYears  !=60 && oIsuranc.parentNInsuYears  !=80 && oIsuranc.parentNInsuYears  !=88]]></test>
+        </if>
+		<if id="if" msg="40年最大48岁，60年最大50岁">
+          <test><![CDATA[oIsuranc.parentNInsuYears  ==40 && oIsuranc.getAge > 48]]></test>
+        </if>
+		<if id="if" msg="40年最大48岁，60年最大50岁">
+          <test><![CDATA[oIsuranc.parentNInsuYears ==60 && oIsuranc.getAge > 50]]></test>
+        </if>
+      </rule>
+	  <rule id="checkParentPayEndYear">
+        <if id="if" msg="本附加险的交费年期和交费方式须与对应主险一致,否则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear  !=3 && oIsuranc.parentNPayEndYear  !=5 && oIsuranc.parentNPayEndYear  !=10 && oIsuranc.parentNPayEndYear  !=15 && oIsuranc.parentNPayEndYear  !=20 && oIsuranc.parentNPayEndYear  !=1000]]></test>
+        </if>
+      </rule>
+    </insur>
+    <insur id="112222" name="民生富贵年丰两全保险（分红型）" kind="main" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-55周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge  > 55]]></test>
+        </if>
+      </rule>
+      
+      <rule id="checkMinPrem">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.nPrem < 2000]]></test>
+        </if>
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nPrem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+    <insur id="121301" name="民生附加豁免保费定期寿险" kind="add" liability="exempt,121525" mustProposal="false" hasProductSpec="false" hasAppntImpart="true">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="本险种的被保险人（即主合同的投保人）最高投保年龄为50周岁">
+          <test><![CDATA[oIsuranc.getAppntAge  > 50]]></test>
+        </if>
+      </rule>
+      <rule id="checkInsurantExpireAge">
+        <if id="if" msg="保险期满时被保险人年龄(即主合同投保人)不能超过75周岁">
+          <test><![CDATA[oIsuranc.expireAppntAge  > 75]]></test>
+        </if>
+      </rule>
+      <rule id="checkParentIsSamePeople">
+        <if id="if" msg="投保人和被保险人为同一人时,不得附加本险种">
+          <test><![CDATA[oIsuranc.isSamePeople == true]]></test>
+        </if>
+      </rule>
+      <rule id="checkParentPayIntv">
+        <if id="if" msg="主险缴费方式为一次交清时，不得附加本险种">
+          <test><![CDATA[oIsuranc.parentInPayIntv == "0"]]></test>
+        </if>
+      </rule>
+	  <rule id="checkSpecialJobs">
+        <if id="if" msg="主险投保人职业类别为5类或6类时，不得附加本险种">
+          <test><![CDATA["5" == oIsuranc.appntOccupationType || "6" == oIsuranc.appntOccupationType]]></test>
+        </if>
+      </rule>
+	  <rule id="check111301">
+        <if id="if" msg="主险为111301，交费年期为交至七十周岁，并且被保人年龄小于20周岁时，不得附加本险种">
+          <test><![CDATA[oIsuranc.parentProductCode == "111301" && oIsuranc.getAge < 20 && oIsuranc.parentNPayEndYear  == 70]]></test>
+        </if>
+		<if id="if" msg="主险为111301，交费年期为交至七十周岁，如果投保人年龄+交费年期>75，则不得附加本险种">
+          <test><![CDATA[oIsuranc.parentProductCode == "111301" && oIsuranc.parentNPayEndYear  == 70 && (oIsuranc.getAppntAge + 70 -oIsuranc.getAge) > 75 ]]></test>
+        </if>
+      </rule>
+	  <rule id="check111505">
+        <if id="if" msg="主险为111505，交费年期为交至六十周岁，并且被保人年龄小于10周岁时，不得附加本险种">
+          <test><![CDATA[oIsuranc.parentProductCode == "111505" && oIsuranc.getAge < 10 && oIsuranc.parentNPayEndYear == 60]]></test>
+        </if>
+		<if id="if" msg="主险为111505，交费年期为交至六十周岁，如果投保人年龄+交费年期>75，则不得附加本险种">
+          <test><![CDATA[oIsuranc.parentProductCode == "111505" && oIsuranc.parentNPayEndYear == 60 && (oIsuranc.getAppntAge + 60 - oIsuranc.getAge)>75 ]]></test>
+        </if>
+		<!--add by liutao-->
+		<if id="if" msg="主险为111506，交费年期为30年，最大投保人年龄应小于等于45周岁">
+          <test><![CDATA[oIsuranc.parentProductCode == "111506" && oIsuranc.parentNPayEndYear == 30 && oIsuranc.getAppntAge > 45 ]]></test>
+        </if>
+      </rule>
+    </insur>
+    <insur id="121305" name="民生附加定期寿险" kind="add" mustProposal="false" hasProductSpec="false" liability="121510,121509">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxAmount">
+        <!--modify by wangll-->
+        <if id="if" msg="未成年人身故保险金额不得超过10万元">
+          <test><![CDATA[oIsuranc.getAge < 18 && (oIsuranc.parentProductCode == "112216" || oIsuranc.parentProductCode == "111301" || oIsuranc.parentProductCode == "112203" || oIsuranc.parentProductCode == "112213") && ((oIsuranc.parentNAmount  - oIsuranc.parentNPremWithJob)+(oIsuranc.nAmount-oIsuranc.nPremWithJob)) > 100000]]></test>
+        </if>
+        <!-- 
+        <if id="if" msg="被保险人＜18周岁，保险金额不超过其对应主险保险金额的1倍">
+          <test><![CDATA[${getAge} < 18 && ${nAmount} > ${parentNAmount}]]></test>
+        </if>
+        -->
+        <if id="if" msg="被保险人＜18周岁，本附加险保险金额减去首期所交保费须≤10万元">
+          <test><![CDATA[oIsuranc.getAge < 18 && (oIsuranc.nAmount -oIsuranc.nPremWithJob) > 100000]]></test>
+        </if>
+        <!--
+        <if id="if" msg="被保险人≥18周岁，保险金额不超过其对应主险保险金额的5倍">
+          <test><![CDATA[${getAge} >= 18 && ${nAmount} > ${parentNAmount} * 5.0]]></test>
+        </if>
+        -->
+        <!--去除 被保险人小于18周岁时，投保金额不超过其对应主险保险金额的1倍
+          被保险人大于等于18周岁时，投保金额不超过其对应主险保险金额的5倍约束条件添加以下两条约束条件
+         add by yangjialin 2014-09-01-->
+        <if id="if" msg="保险金额不得超过其对应年金主险保险金额的10倍">
+          <test><![CDATA[("14" == oIsuranc.parentProductType) &&
+           (oIsuranc.nAmount > oIsuranc.parentNAmount * 10)]]></test>
+        </if>
+        <if id="if" msg="保险金额不得超过其对应主险保险金额的5倍">
+          <test><![CDATA[("14" != oIsuranc.parentProductType) &&
+           (oIsuranc.nAmount > oIsuranc.parentNAmount * 5)]]></test>
+        </if>
+      </rule>
+
+      <rule id="computeAmountByProductCode">
+        <if id="if" msg="计算险种121506的保额不正确1">
+          <test><![CDATA[!(computeAmountByProductCode("121506") && computePremByProductCode("121506") && computeAmountByProductCode("121522") && computePremByProductCode("121522"))]]></test>
+        </if>
+      </rule>
+      <rule id="computeAmountWithJobByProductCode">
+        <if id="if" msg="计算险种121506  121522的保额不正确2">
+          <test><![CDATA[!(computeAmountWithJobByProductCode("121506") && computePremWithJobByProductCode("121506") && computeAmountByProductCode("121522") && computePremByProductCode("121522"))]]></test>
+        </if>
+      </rule>
+	  
+      <rule id="checkParentInsuYears">
+		<if id="if" msg="主险保障期间不为20/30/40/60/80/88/终身时，不得投保本险种">
+          <test><![CDATA[oIsuranc.parentNInsuYears !=105 && oIsuranc.parentNInsuYears !=20 && oIsuranc.parentNInsuYears !=30  && oIsuranc.parentNInsuYears !=40 && oIsuranc.parentNInsuYears !=60 && oIsuranc.parentNInsuYears !=80 && oIsuranc.parentNInsuYears !=88]]></test>
+        </if>
+      </rule>
+	  <rule id="checkParentPayEndYear">
+        <if id="if" msg="本附加险的交费年期和交费方式须与对应主险一致,否则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear !=5 && oIsuranc.parentNPayEndYear !=10 && oIsuranc.parentNPayEndYear !=15 && oIsuranc.parentNPayEndYear !=20 && oIsuranc.parentNPayEndYear !=1000]]></test>
+        </if>
+		<if id="if" msg="当主险为20年，年龄大于50岁时，A记录，不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear ==20 && oIsuranc.getAge>50 && "A" == oIsuranc.parentInsuYearsFlag]]></test>
+        </if>
+		<if id="if" msg="当主险为15年，年龄大于55岁时，A记录，不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear ==15 && oIsuranc.getAge>55 && "A" == oIsuranc.parentInsuYearsFlag]]></test>
+        </if>
+		<if id="if" msg="当主险为15年，年龄大于55岁时，Y记录，不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear ==15 && oIsuranc.getAge>55 && "Y" == oIsuranc.parentInsuYearsFlag]]></test>
+        </if>
+		<if id="if" msg="当主险为20年，年龄大于50岁时，Y记录，不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear ==20 && oIsuranc.getAge>50 && "Y" == oIsuranc.parentInsuYearsFlag]]></test>
+        </if>
+      </rule>
+	  
+	  
+    </insur>
+    <insur id="121505" name="民生附加额外给付重大疾病保险" kind="add" mustProposal="false" hasProductSpec="false" liability="MajorDiseases,121510,121509,121521">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxAmount">
+        <!--
+        <if id="if" msg="保险金额不超过其对应主险保险金额的3倍">
+          <test><![CDATA[${nAmount} > ${parentNAmount} * 3.0]]></test>
+        </if>
+        -->
+        <if id="if" msg="被保人投保年龄小于等于10周岁，保险金额最大50万元">
+          <test><![CDATA[oIsuranc.nAmount > 500000 && oIsuranc.getAge <= 10]]></test>
+        </if>
+        <!--去除 保险金额不超过其对应主险保险金额的3倍 约束条件添加以下两条约束条件
+         add by yangjialin 2014-09-01 annotate by yuhongbin 2016-06-03-->
+        <!--<if id="if" msg="保险金额不得超过其对应年金主险保险金额的10倍">
+          <test><![CDATA[("14" == oIsuranc.parentProductType) &&
+           (oIsuranc.nAmount > oIsuranc.parentNAmount  * 10)]]></test>
+        </if>
+        <if id="if" msg="保险金额不得超过其对应主险保险金额的5倍">
+          <test><![CDATA[("14" != oIsuranc.parentProductType) &&
+           (oIsuranc.nAmount > oIsuranc.parentNAmount  * 5)]]></test>
+        </if>-->
+      </rule>
+      <rule id="checkParentInsuYears">
+        <if id="if" msg="主险保障期间小于20年时，不得投保本险种">
+          <test><![CDATA[oIsuranc.parentNInsuYears < 20]]></test>
+        </if>
+		<if id="if" msg="主险保障期间不为20/30/40/60/80/88/终身时，不得投保本险种">
+          <test><![CDATA[oIsuranc.parentNInsuYears !=105 && oIsuranc.parentNInsuYears !=20 && oIsuranc.parentNInsuYears !=30  && oIsuranc.parentNInsuYears !=40 && oIsuranc.parentNInsuYears !=60 && oIsuranc.parentNInsuYears !=80 && oIsuranc.parentNInsuYears !=88]]></test>
+        </if>
+      </rule>
+	  <rule id="checkParentPayEndYear">
+        <if id="if" msg="本附加险的交费年期和为5/10/15/20/1000,否则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear !=5 && oIsuranc.parentNPayEndYear !=10 && oIsuranc.parentNPayEndYear !=15 && oIsuranc.parentNPayEndYear !=20 && oIsuranc.parentNPayEndYear !=1000]]></test>
+        </if>
+      </rule>
+    </insur>
+    <insur id="121506" name="民生附加豁免保险费重大疾病保险" kind="add" liability="exempt,121510,121509,121522" mustProposal="false" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 出生满28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay  < 28 || oIsuranc.getAge  > 60]]></test>
+        </if>
+      </rule>
+      <rule id="checkParentPayIntv">
+        <if id="if" msg="主险缴费方式为一次交清时，不得附加本险种">
+          <test><![CDATA[oIsuranc.parentInPayIntv  == "0"]]></test>
+        </if>
+      </rule>
+	  <rule id="check111301">
+        <if id="if" msg="当主险为111301，交费年期为“一次交清”或者“交至七十岁”时，不得附加本险种">
+          <test><![CDATA[oIsuranc.parentProductCode == "111301" && oIsuranc.parentNPayEndYear  == 1000 || oIsuranc.parentNPayEndYear  == 70]]></test>
+        </if>
+      </rule>
+	  <rule id="check112206">
+        <if id="if" msg="当主险为112206，交费年期为“一次交清”、“交至18周岁”、“交至15周岁”、“交至12周岁”时，不得附加本险种">
+          <test><![CDATA[oIsuranc.parentProductCode == "112206" && (oIsuranc.parentNPayEndYear == 1000 ||oIsuranc.parentNPayEndYear == 12 || oIsuranc.parentNPayEndYear == 15 || oIsuranc.parentNPayEndYear == 18)]]></test>
+        </if>
+      </rule>
+	  <rule id="check112219">
+        <if id="if" msg="当主险为112219，交费年期为“一次交清”、“交至18周岁”、“交至15周岁”、“交至12周岁”时，不得附加本险种">
+          <test><![CDATA[oIsuranc.parentProductCode == "112219" && (oIsuranc.parentNPayEndYear == 1000 || oIsuranc.parentNPayEndYear == 12 || oIsuranc.parentNPayEndYear == 15 || oIsuranc.parentNPayEndYear == 18)]]></test>
+        </if>
+      </rule>
+	   <rule id="check112222">
+        <if id="if" msg="当主险为112222，交费年期为3年时，不得附加本险种">
+          <test><![CDATA[oIsuranc.parentProductCode == "112222" && oIsuranc.parentNPayEndYear == 3]]></test>
+        </if>
+      </rule>
+	  
+	  <rule id="checkParentPayEndYear">
+        <if id="if" msg="如果被保人年龄大于50岁，且交费年期为20年，则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear == 20 && oIsuranc.getAge > 50]]></test>
+        </if>
+		<if id="if" msg="如果被保人年龄大于55岁，且交费年期为15年，则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear == 15 && oIsuranc.getAge > 55]]></test>
+        </if>
+        <!--add by yangjialin 2014-07-24 -->
+        <if id="if" msg="主险的交费年期应为5/10/15/20/1000,否则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.parentNPayEndYear != 5 && oIsuranc.parentNPayEndYear !=10 && oIsuranc.parentNPayEndYear !=15 && oIsuranc.parentNPayEndYear !=20 && oIsuranc.parentNPayEndYear !=1000]]></test>
+        </if>
+      </rule>
+
+	  
+    </insur>
+    <insur id="121709" name="民生附加康乐意外伤害医疗保险" kind="add" mustProposal="false" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <!--2014-08-18 modify by yangjialin-->
+         <if id="if" msg="投保年龄:28天-60周岁">
+           <test><![CDATA[oIsuranc.getAgeByDay  < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+	  <rule id="checkParentPayIntv">
+        <if id="if" msg="主险缴费方式为一次交清时，不得附加本险种">
+          <test><![CDATA[oIsuranc.parentInPayIntv=="0" && oIsuranc.parentProductCode != "111402"]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为2000元">
+          <test><![CDATA[oIsuranc.nAmount < 2000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxAmount">
+        <if id="if" msg="保险金额不得超过其对应年金主险保险金额">
+		  <test><![CDATA[("14" == oIsuranc.parentProductType) && (oIsuranc.nAmount > oIsuranc.parentNAmount)]]></test>
+		</if>
+		<if id="if" msg="保险金额不得超过其对应主险保险金额的30%">
+		  <test><![CDATA[("14" != oIsuranc.parentProductType) && (oIsuranc.nAmount > oIsuranc.parentNAmount * 0.3)]]></test>
+		</if>
+        <if id="if" msg="本险种最高保险金额为20万元">
+          <test><![CDATA[oIsuranc.nAmount > 200000]]></test>
+        </if>
+      </rule>
+      <rule id="checkBasePrem">
+        <if id="if" msg="保额应为1000元的整数倍">
+          <test><![CDATA[oIsuranc.nAmount % 1000 != 0]]></test>
+        </if>
+      </rule>
+      <rule id="checkSpecialJobs">
+        <if id="if" msg="-1类职业不能投保本险种">
+          <test><![CDATA["-1" == oIsuranc.occupationType]]></test>
+        </if>
+      </rule>
+    </insur>
+	<insur id="121801" name="民生附加意外伤害医疗保险" kind="add" liability="AAA" mustProposal="false" hasProductSpec="false" endDate="2014-01-01">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 3-60周岁">
+          <test><![CDATA[oIsuranc.getAge < 3 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+	  <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为2000元">
+          <test><![CDATA[oIsuranc.nAmount < 2000]]></test>
+        </if>
+      </rule>
+	  <rule id="checkMaxAmount">
+        <if id="if" msg="保险金额不超过其对应主险保险金额的20%">
+          <test><![CDATA[oIsuranc.nAmount > oIsuranc.parentNAmount * 0.2]]></test>
+        </if>
+        <if id="if" msg="本附加险的保险金额须≤10万元">
+          <test><![CDATA[oIsuranc.nAmount > 100000]]></test>
+        </if>
+      </rule>
+	  <rule id="checkBasePrem">
+        <if id="if" msg="保额应为1000元的整数倍">
+          <test><![CDATA[oIsuranc.nAmount % 1000 != 0]]></test>
+        </if>
+      </rule>
+    </insur>
+	<insur id="121704" name="民生附加每日住院给付医疗保险" kind="add" liability="AAA" mustProposal="false" hasProductSpec="false" endDate="2014-01-01">
+	  <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 3-60周岁">
+          <test><![CDATA[oIsuranc.getAge < 3 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+      <!--add by yangjialin 2014-10-10  -->
+      <rule id="checkMaxAmount">
+        <if id="if" msg="该职业类别的被保险人投保津贴型医疗保险累计最高保险金额为150元/日">
+          <test><![CDATA[("2090114" == oIsuranc.occupationCode ||"8010101"  == oIsuranc.occupationCode||
+            "8010104"  == oIsuranc.occupationCode||"8010102"  == oIsuranc.occupationCode||
+            "5" == oIsuranc.occupationCode||"6" == oIsuranc.occupationCode) && oIsuranc.nAmount > 150]]></test>
+        </if>
+        <if id="if" msg="同一被保险人投保津贴型医疗保险累计最高保险金额为500元/日">
+          <test><![CDATA[oIsuranc.nAmount > 500 ]]></test>
+        </if>
+      </rule>
+
+    </insur>
+	<insur id="121705" name="民生附加住院医疗保险" kind="add"  mustProposal="false" hasProductSpec="false"  endDate="2014-01-01">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄: 3-60周岁">
+          <test><![CDATA[oIsuranc.getAge < 3 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+	  <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为5000元">
+          <test><![CDATA[oIsuranc.nAmount < 5000]]></test>
+        </if>
+      </rule>
+	  <rule id="checkMaxAmount">
+		<if id="if" msg="本附加险的保险金额不能超过主险的保险金额">
+          <test><![CDATA[oIsuranc.nAmount > oIsuranc.parentNAmount]]></test>
+        </if>
+        <if id="if" msg="本附加险的保险金额须≤5万元">
+          <test><![CDATA[oIsuranc.nAmount > 50000]]></test>
+        </if>
+      </rule>
+	  <rule id="checkBasePrem">
+        <if id="if" msg="保额应为5000元的整数倍">
+          <test><![CDATA[oIsuranc.nAmount % 5000 != 0]]></test>
+        </if>
+      </rule>
+	  
+    </insur>
+	<insur id="122202" name="民生附加高中教育金两全保险(分红型)" kind="add"  mustProposal="false" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-11周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay  < 28 || oIsuranc.getAge > 11]]></test>
+        </if>
+      </rule>
+	  <rule id="checkParentPayEndYear">
+        <if id="if" msg="本附加险的交费年期和交费方式须与对应主险一致,本附加险的交费期间分为：一次交清、五年交、交至被保险人年满十二周岁、交至被保险人年满十五周岁">
+          <test><![CDATA[oIsuranc.parentNPayEndYear !=5 && oIsuranc.parentNPayEndYear !=12 && oIsuranc.parentNPayEndYear !=15 && oIsuranc.parentNPayEndYear !=1000]]></test>
+        </if>
+		<if id="if" msg="被保人大于8岁时，如果主险不是一次交清，则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.getAge>8 && oIsuranc.parentNPayEndYear !=1000]]></test>
+        </if>
+		<if id="if" msg="被保人大于等于6岁，小于等于8岁时，如果主险是交至12周岁，则不能搭配此附加险">
+          <test><![CDATA[oIsuranc.getAge>=6 && oIsuranc.getAge<=8 && oIsuranc.parentNPayEndYear ==12]]></test>
+        </if>
+      </rule>
+	  
+	  <rule id="computeAmountByProductCode">
+        <if id="if" msg="计算险种121301的保额不正确">
+          <test><![CDATA[!(computeAmountByProductCode("121301") && computePremByProductCode("121301") && computeAmountByProductCode("121506") && computePremByProductCode("121506"))]]></test>
+        </if>
+      </rule>
+      <rule id="computeAmountWithJobByProductCode">
+        <if id="if" msg="计算险种121301的保额不正确">
+          <test><![CDATA[!(computeAmountWithJobByProductCode("121301") && computePremWithJobByProductCode("121301") && computeAmountWithJobByProductCode("121506") && computePremWithJobByProductCode("121506"))]]></test>
+        </if>
+      </rule>
+	  
+    </insur>
+	<insur id="122201" name="民生附加初中教育金两全保险(分红型)" kind="add"  mustProposal="false" risktype="2">
+	  <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-8周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 ||oIsuranc.getAge > 8]]></test>
+        </if>
+      </rule>
+	  <rule id="checkParentPayEndYear">
+		<if id="if" msg="本附加险的交费年期和交费方式须与对应主险一致,本附加险的交费期间分为：一次交清、五年交、交至被保险人年满十二周岁">
+          <test><![CDATA[(oIsuranc.parentNPayEndYear  !=5 && oIsuranc.parentNPayEndYear  !=12 && oIsuranc.parentNPayEndYear  !=1000) || (oIsuranc.getAge>=6 && oIsuranc.parentNPayEndYear !=1000)]]></test>
+        </if>
+      </rule>
+	 
+	 
+	 <rule id="computeAmountByProductCode">
+        <if id="if" msg="计算险种121301的保额不正确">
+          <test><![CDATA[!(computeAmountByProductCode("121301") && computePremByProductCode("121301") && computeAmountByProductCode("121506") && computePremByProductCode("121506"))]]></test>
+        </if>
+      </rule>
+      <rule id="computeAmountWithJobByProductCode">
+        <if id="if" msg="计算险种121301的保额不正确">
+          <test><![CDATA[!(computeAmountWithJobByProductCode("121301") && computePremWithJobByProductCode("121301") && computeAmountWithJobByProductCode("121506") && computePremWithJobByProductCode("121506"))]]></test>
+        </if>
+      </rule>
+
+    </insur>
+	<insur id="121511" name="民生附加幸福宝贝少儿重大疾病保险" kind="add"  mustProposal="false" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-17周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 ||oIsuranc.getAge > 17]]></test>
+        </if>
+      </rule>
+	  <rule id="checkMaxAmount">
+      <!--
+		<if id="if" msg="保险金额不超过其对应主险保险金额的3倍">
+          <test><![CDATA[(${parentProductCode}.equals("112219") || ${parentProductCode}.equals("112206"))&& ${nAmount} > ${parentNAmount} * 3.0]]></test>
+        </if>
+        -->
+		<if id="if" msg="被保险人投保年龄小于等于10周岁时，本附加险的保险金额须小于等于50万元">
+          <test><![CDATA[oIsuranc.getAge<=10 && oIsuranc.nAmount > 500000]]></test>
+        </if>
+        <!--去除 保险金额不超过其对应主险保险金额的3倍 约束条件添加以下两条约束条件
+         add by yangjialin 2014-09-01 annotate by yuhongbin 2016-06-03-->
+        <!--<if id="if" msg="保险金额不得超过其对应年金主险保险金额的10倍">
+          <test><![CDATA[("14" == oIsuranc.parentProductType) &&
+           (oIsuranc.nAmount > oIsuranc.parentNAmount * 10)]]></test>
+        </if>
+        <if id="if" msg="保险金额不得超过其对应主险保险金额的5倍">
+          <test><![CDATA[("14" != oIsuranc.parentProductType) &&
+           (oIsuranc.nAmount  >  oIsuranc.parentNAmount * 5)]]></test>
+        </if>-->
+      </rule>
+	</insur>
+	<insur id="121510" name="民生附加提前给付女性重大疾病保险" kind="add"  mustProposal="false" hasProductSpec="false" liability="MajorDiseases,121510,121521" >
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+	  <rule id="checkInsurantSex">
+        <if id="if" msg="被保人为男性时，不得搭配此附加险">
+          <test><![CDATA["0" == oIsuranc.sex]]></test>
+        </if>
+      </rule>
+	</insur>
+	<insur id="121509" name="民生附加提前给付男性重大疾病保险" kind="add"  mustProposal="false" hasProductSpec="false" liability="MajorDiseases,121509,121521">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-60周岁">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+	  <rule id="checkInsurantSex">
+        <if id="if" msg="被保人为女性时，不得搭配此附加险">
+          <test><![CDATA["1" == oIsuranc.sex]]></test>
+        </if>
+      </rule>
+	</insur>
+	<insur id="111506" name="民生如意金康终身重大疾病保险" kind="main" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-60周岁；">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPremForOnce">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.prem < 2000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPremForYear">
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.prem < 500]]></test>
+        </if>
+      </rule>
+      <rule id="InsurantAgeRiskCheck3">
+        <if id="if" msg="0-10周岁累计重大疾病风险保额不能超过50万元">
+          <test><![CDATA[oIsuranc.getAge <= 10 && oIsuranc.amount > 500000]]></test>
+        </if>
+      </rule>
+    </insur>
+	<insur id="111507" name="民生如意惠民终身重大疾病保险" kind="main" hasProductSpec="false"  endDate="2014-01-01">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-60周岁；">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 ||oIsuranc.getAge > 60]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为10000元">
+          <test><![CDATA[oIsuranc.amount  < 10000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPremForOnce">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.prem  < 2000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPremForYear">
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.prem  < 500]]></test>
+        </if>
+      </rule>
+      <rule id="InsurantAgeRiskCheck1">
+        <if id="if" msg="0-2周岁累计重大疾病风险保额不能超过20万元">
+          <test><![CDATA[oIsuranc.getAge <= 2 && oIsuranc.amount > 200000]]></test>
+        </if>
+      </rule>
+      <rule id="InsurantAgeRiskCheck2">
+        <if id="if" msg="3-9周岁累计重大疾病风险保额不能超过30万元">
+          <test><![CDATA[oIsuranc.getAge >= 3 && oIsuranc.getAge <= 9 && oIsuranc.amount > 300000]]></test>
+        </if>
+      </rule>
+      <rule id="InsurantAgeRiskCheck3">
+        <if id="if" msg="10-17周岁累计重大疾病风险保额不能超过50万元">
+          <test><![CDATA[oIsuranc.getAge >= 10 && oIsuranc.getAge <= 17 && oIsuranc.amount > 500000]]></test>
+        </if>
+      </rule>
+    </insur>
+    <!--民生尊悦人生定期寿险,add by yuhaiming 2013-9-22-->
+    <insur id="111307" name="民生尊悦人生定期寿险" kind="main" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:18周岁-55周岁；">
+          <test><![CDATA[oIsuranc.getAge < 18 || oIsuranc.getAge > 55]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为30万元">
+          <test><![CDATA[oIsuranc.amount < 300000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPremForOnce">
+        <if id="if" msg="一次交清保费不得低于2000元">
+          <test><![CDATA[oIsuranc.payIntv == "0" && oIsuranc.nPrem < 2000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinPremForYear">
+        <if id="if" msg="年交保费不得低于500元">
+          <test><![CDATA[oIsuranc.payIntv != "0" && oIsuranc.nPrem < 500]]></test>
+        </if>
+      </rule>
+    </insur>
+    <!--民生附加尊悦人生提前给付重大疾病保险,add by yuhaiming 2013-9-22-->
+	  <insur id="121516" name="民生附加尊悦人生提前给付重大疾病保险" kind="add" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:18周岁-55周岁；">
+          <test><![CDATA[oIsuranc.getAge < 18 || oIsuranc.getAge > 55]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为10万元">
+          <test><![CDATA[oIsuranc.amount < 100000]]></test>
+        </if>
+      </rule>
+	  	<rule id="checkMaxAmount">
+		    <if id="if" msg="本附加险的保险金额不能超过其对应主险保险金额的50%">
+          <test><![CDATA[oIsuranc.nAmount > oIsuranc.parentNAmount*0.5]]></test>
+        </if>
+      </rule>
+    </insur>
+    <!--民生附加尊悦人生防癌疾病保险,add by yuhaiming 2013-9-22-->
+    <insur id="121515" name="民生附加尊悦人生防癌疾病保险" kind="add" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:18周岁-55周岁；">
+          <test><![CDATA[oIsuranc.getAge < 18 || oIsuranc.getAge > 55]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为5万元">
+          <test><![CDATA[oIsuranc.amount < 50000]]></test>
+        </if>
+      </rule>
+      <rule id="checkMaxAmount">
+        <if id="if" msg="本险种最高保险金额为20万元">
+          <test><![CDATA[oIsuranc.amount > 200000]]></test>
+        </if>
+      </rule>
+    </insur>
+		<!--民生附加尊悦人生两全保险（分红型）,add by yuhaiming 2013-9-22-->
+    <insur id="122203" name="民生附加尊悦人生两全保险（分红型）" kind="add" hasProductSpec="true" risktype="2">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:18周岁-55周岁；">
+          <test><![CDATA[oIsuranc.getAge < 18 || oIsuranc.getAge > 55]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为10万元">
+          <test><![CDATA[oIsuranc.amount < 100000]]></test>
+        </if>
+      </rule>
+    </insur>    
+		<!--民生附加尊悦人生医疗保险,add by yuhaiming 2013-9-22-->
+    <insur id="121712" name="民生附加尊悦人生医疗保险" kind="add" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:28天-60周岁；">
+          <test><![CDATA[oIsuranc.getAgeByDay < 28 || oIsuranc.getAge  > 60]]></test>
+        </if>
+      </rule>
+	  	<rule id="checkMaxAmount">
+		    <if id="if" msg="本险种保险金额不得超过其主险保险金额的30%">
+          <test><![CDATA[oIsuranc.nAmount > oIsuranc.parentNAmount *0.3]]></test>
+        </if>
+      </rule>
+      <rule id="checkParentPayIntv">
+        <if id="if" msg="主险缴费方式为一次交清时，不得附加本险种">
+          <test><![CDATA[oIsuranc.parentInPayIntv == "0"]]></test>
+        </if>
+      </rule>
+    </insur>
+		<!--民生附加尊悦人生意外身故定期寿险,add by yuhaiming 2013-9-22-->
+    <insur id="121306" name="民生附加尊悦人生意外身故定期寿险" kind="add" hasProductSpec="false">
+      <rule id="checkInsurantAge">
+        <if id="if" msg="投保年龄:18周岁-55周岁；">
+          <test><![CDATA[oIsuranc.getAge < 18 || oIsuranc.getAge > 55]]></test>
+        </if>
+      </rule>
+      <rule id="checkMinAmount">
+        <if id="if" msg="本险种最低保险金额为10万元">
+          <test><![CDATA[oIsuranc.amount < 100000]]></test>
+        </if>
+      </rule>
+    </insur>
+  </insurs>
+  <attribute id="mainCheckList" name="主险检查列表">
+    <item id="checkAppntAge" name="检查投保人年龄" />
+    <item id="checkInsurantAge" name="检查被保人年龄" />
+    <item id="checkInsurantSex" name="检查被保人性别" />
+    <item id="checkIsSamePeople" name="检查投保人、被保人是否是同一人" />
+    <item id="checkSpecialJobs" name="检查职业" />
+    <item id="checkInsureSingle" name="检查同一个建议书中不能存在相同险种" />
+    <item id="checkSingleMain" name="检查相同建议书同不能存在多个主险" />
+    <item id="checkLiability" name="检查责任" />
+	
+  </attribute>
+  <attribute id="addCheckList" name="附险检查列表">
+    <item id="checkAppntAge" name="检查投保人年龄" />
+    <item id="checkInsurantAge" name="检查被保人年龄" />
+    <item id="checkInsurantSex" name="检查被保人性别" />
+    <item id="checkIsSamePeople" name="检查投保人、被保人是否是同一人" />
+    <item id="checkParentIsSamePeople" name="主险的投保人与被保人不能相同" />
+    <item id="checkSpecialJobs" name="检查职业" />
+    <item id="checkInsureSingle" name="检查同一个建议书中不能存在相同险种" />
+    <item id="checkParentPayIntv" name="检查主险缴费方式" />
+    <item id="checkParentInsuYears" name="检查主险的保障期间" />
+    <item id="checkLiability" name="检查责任" />
+    <item id="check111301" name="检查主险111301交费年期" />
+    <item id="check111505" name="检查主险111505交费年期" />
+    <item id="check112206" name="检查主险112206交费年期" />
+    <item id="check112219" name="检查主险112219交费年期" />
+    <item id="check112222" name="检查主险112219交费年期" />
+    <item id="checkParentPayEndYear" name="如果主险的交费年期不在此附加险的费率范围内，则不能搭配此附加险" />
+	  <item id="checkLiabilityExempt" name="两个豁免附加险不能同时搭配" />
+	  <item id="checkParentSex" name="检查附加险保额不能超过主险保额" />
+	  <item id="checkBaseAddPrem" name="检查附加险的追加保费" />
+	  <item id="checkMaxAddPrem" name="检查附加险的追加保费" />
+		<!-- xiaohuiyang -->
+	<item id="checkdealTypeGetYear" name="检查附加险的年金起领年龄" back="true" />
+  </attribute>
+  <attribute id="serviceVariableList" name="变量定义">
+    <item id="getAgeByDay" name="获取险种被保人年龄(以天为单位)">insuranceBO.getInsurantBO().getAgeByDay()</item>
+    <item id="getAge" name="获取险种被保人年龄(周岁)">insuranceBO.getInsurantBO().getAge()</item>
+    <item id="getAppntAge" name="获取险种被保人年龄(周岁)">insuranceBO.getProposalBO().getApplicantBO().getAge()</item>
+    <item id="inPayIntv" name="缴费方式是否为某缴费方式">insuranceBO.inPayIntv</item>
+    <item id="hasMain" name="只能添加一个主险">insuranceBO.getProposalBO().hasMain()</item>
+    <!--add by yangjialin 2014-10-16-->
+     <item id="appntIsParents" name="投保人是否为父母">insuranceBO.getProposalBO().appntIsParents()</item>
+
+    <item id="hasSameInsurance" name="同一个险种只能购买一次">insuranceBO.getProposalBO().hasInsurance(insuranceBO.getProduct().getId())</item>
+    <item id="hasLiability" name="检查险种责任">insuranceBO.getProposalBO().hasLiability</item>
+    <item id="hasContainAddProductCode" name="获取附加险Code">insuranceBO.getProposalBO().hasContainAddProductCode</item>
+    <item id="prem" name="获取险种保费">insuranceBO.getInsurance().getPrem()</item>
+    <item id="jobAddFee" name="获取险种保费">insuranceBO.getInsurance().getJobAddFee()</item>
+    <item id="amount" name="获取险种保额">insuranceBO.getInsurance().getAmount()</item>
+    <item id="addNPrem" name="获取追加保费">Integer.parseInt(insuranceBO.getInsurance().getAddPrem())</item>
+    <item id="getYear" name="获取领取年龄">Integer.parseInt(insuranceBO.getInsurance().getDealType().getGetYear())</item>
+	  <item id="getDutyKind" name="获取年金领取方式">insuranceBO.getInsurance().getDealType().getGetDutyKind()</item>
+
+	  <!--add by liutao -->
+	  <item id="getYearKind" name="获取年金类型">insuranceBO.getInsurance().getDealType().getGetYearKind()</item>
+	 <!--红利部分领取 add by yangjialin 2014-09-25-->
+    <item id="getPartMoney" name="获取险种部分领取金额">insuranceBO.getInsurance().getDealType().getGetPartMoney()</item>
+    <item id="beginYear" name="获取险种部分领取开始年度">insuranceBO.getInsurance().getDealType().getBeginYear()</item>
+    <item id="endYear" name="获取险种部分领取结束年度">insuranceBO.getInsurance().getDealType().getEndYear()</item>
+    <item id="nBeginYear" name="获取险种部分领取开始年度(整型)">Integer.parseInt(insuranceBO.getInsurance().getDealType().getBeginYear())</item>
+    <item id="nEndYear" name="获取险种部分领取结束年度(整型)">Integer.parseInt(insuranceBO.getInsurance().getDealType().getEndYear())</item>
+
+
+    <item id="getYears" name="获取领取期间">Integer.parseInt(insuranceBO.getInsurance().getDealType().getGetYears())</item>
+    <item id="premWithJob" name="获取险种保费">insuranceBO.getInsurance().getPremWithJob()</item>
+    <item id="jobAddFeeWithJob" name="获取险种保费">insuranceBO.getInsurance().getJobAddFeeWithJob()</item>
+    <item id="amountWithJob" name="获取险种保额">insuranceBO.getInsurance().getAmountWithJob()</item>
+    <item id="multi" name="获取险种份数或档次">insuranceBO.getInsurance().getMulti()</item>
+    <item id="nAmount" name="获取险种保额（数字型）">Double.parseDouble(insuranceBO.getInsurance().getAmount())</item>
+    <item id="nMulti" name="获取险种份数或档次（数字型）">Integer.parseInt(insuranceBO.getInsurance().getMulti())</item>
+    <item id="nPrem" name="获取险种保费(数字型)">Double.parseDouble(insuranceBO.getInsurance().getPrem())</item>
+    <item id="nJobAddFee" name="获取险种保费"><![CDATA[((insuranceBO.getInsurance().getJobAddFee()== null && insuranceBO.getInsurance().getJobAddFee().equals(""))?0:Double.parseDouble(insuranceBO.getInsurance().getJobAddFee()))]]></item>
+    <item id="nAmountWithJob" name="获取险种保额（数字型）">Double.parseDouble(insuranceBO.getInsurance().getAmountWithJob())</item>
+    <item id="nPremWithJob" name="获取险种保费(数字型)">Double.parseDouble(insuranceBO.getInsurance().getPremWithJob())</item>
+    <item id="nJobAddFeeWithJob" name="获取险种保费"><![CDATA[((insuranceBO.getInsurance().getJobAddFeeWithJob()== null && insuranceBO.getInsurance().getJobAddFeeWithJob().equals(""))?0:Double.parseDouble(insuranceBO.getInsurance().getJobAddFeeWithJob()))]]></item>
+    <item id="sex" name="获取被保人性别">insuranceBO.getInsurantBO().getInsurant().getSex()</item>
+    <item id="payIntv" name="获取险种缴费期间">insuranceBO.getInsurance().getPayIntv()</item>
+    <item id="payEndYear" name="获取险种缴费期间">insuranceBO.getInsurance().getPayEndYear()</item>
+    <item id="nPayEndYear" name="获取险种缴费期间">Integer.parseInt(insuranceBO.getInsurance().getPayEndYear())</item>
+    <item id="insuYears" name="获取险种保障或缴费期间范围">insuranceBO.getInsurance().getInsuYears()</item>
+	  <!--add by lt-->
+    <item id="nInsuYears" name="获取险种保障或缴费期间范围(数字型)">Integer.parseInt(insuranceBO.getInsurance().getInsuYears())</item>
+    <item id="socialInsuFlag" name="获取险种对应被保人是否有社会、医疗保险">insuranceBO.getInsurance().getSocialInsuFlag()</item>
+    <item id="payEndYearFlag" name="获取险种缴费期间">insuranceBO.getInsurance().getPayEndYearFlag()</item>
+    <item id="insuYearsFlag" name="获取险种保障或缴费期间范围">insuranceBO.getInsurance().getInsuYearsFlag()</item>
+
+
+    <item id="sumPremByProductCode" name="获取建议书中某指定险种的保费之和">insuranceBO.getProposalBO().sumPremByProductCode</item>
+    <item id="getPremByProductCode" name="获取建议书中某指定险种的年交保费">insuranceBO.getProposalBO().getPremByProductCode</item>
+    <item id="getJobAddFeeByProductCode" name="获取建议书中某指定险种的职业加费">insuranceBO.getProposalBO().getJobAddFeeByProductCode</item>
+    <item id="sumPremWithJobByProductCode" name="获取建议书中某指定险种的保费之和">insuranceBO.getProposalBO().sumPremWithJobByProductCode</item>
+    <item id="getPremWithJobByProductCode" name="获取建议书中某指定险种的年交保费">insuranceBO.getProposalBO().getPremWithJobByProductCode</item>
+    <item id="getJobAddFeeWithJobByProductCode" name="获取建议书中某指定险种的职业加费">insuranceBO.getProposalBO().getJobAddFeeWithJobByProductCode</item>
+    <item id="computeAmountByProductCode" name="计算建议书中某指定险种的保额">insuranceBO.getProposalBO().computeAmountByProductCode</item>
+    <item id="computePremByProductCode" name="计算建议书中某指定险种的保费">insuranceBO.getProposalBO().computePremByProductCode</item>
+    <item id="computeJobAddFeeByProductCode" name="计算建议书中某指定险种的职业加费">insuranceBO.getProposalBO().computeJobAddFeeByProductCode</item>
+    <item id="computeAmountWithJobByProductCode" name="计算建议书中某指定险种的保额">insuranceBO.getProposalBO().computeAmountWithJobByProductCode</item>
+    <item id="computePremWithJobByProductCode" name="计算建议书中某指定险种的保费">insuranceBO.getProposalBO().computePremWithJobByProductCode</item>
+    <item id="computeJobAddFeeWithJobByProductCode" name="计算建议书中某指定险种的职业加费">insuranceBO.getProposalBO().computeJobAddFeeWithJobByProductCode</item>
+    <item id="parentNAmount" name="获取主险险种保额（数字型）">Double.parseDouble(insuranceBO.getParent().getInsurance().getAmount())</item>
+    <item id="parentNMulti" name="获取主险险种份数或档次（数字型）">Integer.parseInt(insuranceBO.getParent().getInsurance().getMulti())</item>
+    <item id="parentNPrem" name="获取主险险种保费(数字型)">Double.parseDouble(insuranceBO.getParent().getInsurance().getPrem())</item>
+    <item id="parentNJobAddFee" name="获取主险险种保费(数字型)"><![CDATA[((insuranceBO.getParent().getInsurance().getJobAddFee()!= null &&!insuranceBO.getParent().getInsurance().getJobAddFee().equals(""))?Double.parseDouble(insuranceBO.getParent().getInsurance().getJobAddFee()):0)]]></item>
+    <item id="parentAppntAge" name="主险投保人年龄">insuranceBO.getParent().getProposalBO().getApplicantBO().getAge()</item>
+    <item id="parentExpireAppntAge" name="主险投保人保险期满时投保人年龄">insuranceBO.getParent().getExpireAppntAge()</item>
+    <item id="expireAppntAge" name="主险投保人保险期满时投保人年龄">insuranceBO.getExpireAppntAge()</item>
+    <item id="parent" name="主险投保人保险期满时投保人年龄">insuranceBO.getParent()</item>
+    <item id="isSamePeople" name="投保人、被保人是否是同一人">insuranceBO.getParent().isSamePeople()</item>
+    <item id="parentInPayIntv" name="当前险种的缴费方式是否在payIntv中">insuranceBO.getParent().inPayIntv</item>
+    <item id="parentPrem" name="获取主险保费">insuranceBO.getParent().getInsurance().getPrem()</item>
+    <item id="parentJobAddFee" name="获取主险险种保费(数字型)">insuranceBO.getParent().getInsurance().getJobAddFee()</item>
+    <item id="parentAmount" name="获取主险保额">insuranceBO.getParent().getInsurance().getAmount()</item>
+    <item id="parentMulti" name="获取主险份数或档次">insuranceBO.getParent().getInsurance().getMulti()</item>
+    <item id="parentSex" name="获取主险被保人性别">insuranceBO.getParent().getInsurantBO().getInsurant().getSex()</item>
+    <item id="parentPayIntv" name="获取主险缴费方式">insuranceBO.getParent().getInsurance().getPayIntv()</item>
+    <item id="parentNPayIntv" name="获取主险缴费方式(数字)">Integer.parseInt(insuranceBO.getParent().getInsurance().getPayIntv())</item>
+    <item id="parentInsuYears" name="获取险种保障或缴费期间范围">insuranceBO.getParent().getInsurance().getInsuYears()</item>
+    <item id="parentPayEndYear" name="获取主险险种缴费期间">insuranceBO.getParent().getInsurance().getPayEndYear()</item>
+    <item id="parentNInsuYears" name="获取险种保障或缴费期间范围">Integer.parseInt(insuranceBO.getParent().getInsurance().getInsuYears())</item>
+    <item id="parentNPayEndYear" name="获取主险险种缴费期间">Integer.parseInt(insuranceBO.getParent().getInsurance().getPayEndYear())</item>
+    <item id="parentPayEndYearFlag" name="获取主险被保人性别">insuranceBO.getParent().getInsurance().getPayEndYearFlag()</item>
+    <item id="parentInsuYearsFlag" name="获取主险缴费期间">insuranceBO.getParent().getInsurance().getInsuYearsFlag()</item>
+    <item id="getPayEndYearsRangeByInsuYears" name="获取险种保障或缴费期间范围">insuranceBO.getPayEndYearsRangeByInsuYears</item>
+    <item id="getPayEndYearsRangeByParent" name="获取险种保障或缴费期间范围">insuranceBO.getPayEndYearsRangeByParent</item>
+    <item id="getInsuYearsRangeByParent" name="获取险种保障或缴费期间范围">insuranceBO.getInsuYearsRangeByParent</item>
+    <item id="getPeriodRangeIntersection" name="获取两个范围的交集">insuranceBO.getPeriodRangeIntersection</item>
+    <item id="getInsuYearsRangeByAge" name="根据被保人年龄获取可保期间">insuranceBO.getInsuYearsRangeByAge</item>
+    <item id="getPolicyPeriodYear" name="获取险种可以保证多少年">insuranceBO.getPolicyPeriodYear</item>
+    <item id="computeInsuYearsByParentPayEndYear" name="根据主险的缴费期间获取附加险的保障期间">insuranceBO.computeInsuYearsByParentPayEndYear()</item>
+    <item id="computeAndReturnPrem" name="计算并返回保费">insuranceBO.computeAndReturnPrem()</item>
+    <item id="computeAndReturnPremWithJob" name="计算并返回保费">insuranceBO.computeAndReturnPremWithJob()</item>
+    <item id="computeAndReturnAmount" name="获取主险累计保费">insuranceBO.computeAndReturnAmount()</item>
+    <item id="computeAndReturnAmountWithJob" name="获取主险累计保费">insuranceBO.computeAndReturnAmountWithJob()</item>
+
+		<!--add by liutao 修改职业医疗加费时，取最高职业进行计算-->    
+	  <item id="occupationMedRate" name="获取被保人职业医疗险加费比例">insuranceBO.getInsurantBO().getHigherOccupation(insuranceBO.getContext()).getMedRate()</item>
+
+    <!--描述不正确，职业代码改为职业类别 modify by yangjialin 2014-8-21 -->
+	  <item id="occupationType" name="获取被保人职业类别(和兼职比较职业类别高的职业)">insuranceBO.getInsurantBO().getHigherOccupation(insuranceBO.getContext()).getType()</item>
+    <item id="appntOccupationType" name="获取投保人职业类别(和兼职比较职业类别高的职业)">insuranceBO.getProposalBO().getApplicantBO().getHigherOccupation(insuranceBO.getContext()).getType()</item>
+    <!-- add by yangjialin 2014-8-21 -->
+    <item id="occupationCode" name="获取被保人职业代码(和兼职比较职业类别高的职业)">insuranceBO.getInsurantBO().getHigherOccupation(insuranceBO.getContext()).getCode()</item>
+
+    <item id="getInsurantSocialInsuFlag" name="获取该险种的被保人下的其他险种已经设置的社保标记">insuranceBO.getInsurantSocialInsuFlag()</item>
+    <item id="sumInterestWithRate1" name="计算某种利益的累积（带利息的累计），利息算法为第一年*（1+i*利息）、第二年*（1+(i-1)*利息）、第i年*（1+利息）">insuranceBO.sumInterestWithRate1</item>
+    <item id="sumInterestWithRate2" name="计算某种利益的累积（带利息的累计），利息算法为第一年*（1+利息）的i次方、第二年*（1+利息）的i-1次方、第i年*（1+利息)的一次方">insuranceBO.sumInterestWithRate2</item>
+    <item id="sumInterestWithNoRate" name="计算某种利益的累积（不带利息的累计)">insuranceBO.sumInterestNoRate</item>
+	  <!--add by lt  use it like this : ${interestCompoundWithRate}(i,0.025,${nPrem})-->
+    <item id="interestCompoundWithRate" name="计算年复利累积额之和">insuranceBO.interestCompoundWithRate</item>
+    <item id="interestCompoundWithRate3" name="计算年复利累积额之和">insuranceBO.interestCompoundWithRate3</item>
+    <item id="getParentBonusGetMode" name="获取主险红利领取方式">insuranceBO.getParent().getInsurance().getDealType().getBonusGetMode()</item>
+	  <item id="number2str" name="将数字型转换成字符串，防止直接调用.toString方法变成科学计数法">com.minsheng.esales.client.pub.utils.NumberUtils.round2str</item>
+    <!--add by wangll-->
+    <item id="parentNPremWithJob" name="获取主险险种保费(包含职业加费-数字型)">Double.parseDouble(insuranceBO.getParent().getInsurance().getPremWithJob())</item>
+    <item id="parentPremWithJob" name="获取主险险种保费(包含职业加费)">insuranceBO.getParent().getInsurance().getPremWithJob()</item>
+    <item id="parentProductCode" name="获取主险险种代码">insuranceBO.getParent().getProduct().getId()</item>
+    <!-- add by yangjialin 2014-8-21 -->
+    <item id="parentProductType" name="获取主险险种类型">insuranceBO.getParent().getProduct().getType()</item>
+
+    <item id="productCode" name="获取主险险种代码">insuranceBO.getProduct().getId()</item>
+	  <item id="getPolicyPeriodYear111505" name="获取险种111505可以保障多少年">insuranceBO.getPolicyPeriodYear("105","A")</item>
+
+  </attribute>
+  <rules>
+    <rule id="checkSingleMain">
+      <if id="if" msg="只能添加一个主险">
+        <test><![CDATA[oIsuranc.hasMain >1]]></test>
+      </if>
+    </rule>
+    <rule id="checkInsureSingle">
+      <if id="if" msg="同一个险种只能购买一次">
+        <test><![CDATA[oIsuranc.hasSameInsurance  == true]]></test>
+      </if>
+    </rule>
+    <rule id="checkAppntAge">
+      <if id="if" msg="投保人年龄必须大于等于18周岁">
+        <test><![CDATA[oIsuranc.getAppntAge < 18]]></test>
+      </if>
+    </rule>
+    <!--  
+    <rule id="checkLiabilityExempt">
+      <if id="if" msg="只能添加一个豁免责任的险种/只能添加一个重大疾病的险种">
+        <test><![CDATA[isureMap["exempt"] >= 1 || isureMap["MajorDiseases"] >= 1]]></test>  
+      </if>
+    </rule>
+    -->
+     <rule id="checkLiabilityExempt">
+		<if id="if" msg="只能添加一个豁免责任的险种/只能添加一个重大疾病的险种">
+		<test><![CDATA[hasLiability("exempt") > 1 || hasLiability("MajorDiseases") > 1]]></test>
+		</if>
+	</rule>
+
+    <rule id="checkIsParents">
+      <if id="if" msg="被保险人年龄小于十岁,投保人必须是父母">
+        <test><![CDATA[oIsuranc.getAge  > 1 && oIsuranc.appntIsParents > 1]]></test>
+      </if>
+    </rule>
+	<!--'A'为代号，用于区别附加险-->
+    <rule id="checkLiability">
+      	<if id="if" msg="121510与121305,121505,121506不能同时搭配">
+        	<test><![CDATA[(hasContainAddProductCode("121510") || hasContainAddProductCode("121509")) &&  (hasLiability("121510") > 1 || hasLiability("121509") > 1)]]></test>
+      	</if>
+      
+       <!--121521与121505，121512，121510,121509不能同时搭配 by liudan  8.28-->
+		<if id="if" msg="121521与121505，121512，121510,121509不能同时搭配">
+			<test><![CDATA[hasContainAddProductCode("121521") && hasLiability("121521") > 1]]></test>
+		</if>
+		     <!--121522与121506不能同时搭配 by liudan 8.28-->
+		<if id="if" msg="121522与121506不能同时搭配">
+			<test><![CDATA[hasContainAddProductCode("121522") && hasLiability("121522") > 1]]></test>
+		</if>
+		
+		<if id="if" msg="121524与121522,121506不能同时搭配">
+       	 	<test><![CDATA[hasContainAddProductCode("121524")  && hasLiability("121524") > 1]]></test>
+     	</if>
+	 	<if id="if" msg="121525与121301不能同时搭配">
+        	<test><![CDATA[hasContainAddProductCode("121525")  && hasLiability("121525") > 1]]></test>
+     	</if>
+    </rule>
+  </rules>
+</insurList>

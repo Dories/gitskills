@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷34 海运部分
+	 -->
+     <DisclosureItem disclosure_ver="C_8_" disclosure_id="problempieces_34" flag="questionName" text="海运问卷">
+     </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_8_" no_yesno="true" disclosure_id="C_8_1_" flag="common">
+        <Description text="1. 船的名称、船主姓名以及公司的注册地区或国家:"/>
+        <Input input_type="br" />
+        <Description text="船的名称："/>        
+        <Input input_type="text" input_key="C_8_1_shipname" length="10"  />
+        <Input input_type="br" />
+        <Description text="船主姓名：" />
+        <Input input_type="text" input_key="C_8_1_shipmastername" length="10"  />  
+        <Input input_type="br" />
+        <Description text="船公司注册地址：" />
+        <Input input_type="text" input_key="C_8_1_shipregisterlocation" length="10"  />    
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_8_" no_yesno="true" disclosure_id="C_8_2_" flag="common">
+        <Description text="2. 船的吨位、速度和动力:"/>
+        <Input input_type="br" />
+        <Description text="吨位:"/>        
+        <Input input_type="number" input_key="C_8_2_shiptonnage" length="3"  />
+        <Description text="吨 速度:"/>
+        <Input input_type="number" input_key="C_8_2_shipspeed" length="3"  />  
+        <Description text="节 动力:" />
+        <Input input_type="number" input_key="C_8_2_shippow" length="3"  /> 
+        <Description text="马力" />  
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_8_" no_yesno="true" disclosure_id="C_8_3_" flag="common">
+        <Description text="3. 贸易运输或其他特种海运(打捞)的范围:"/>
+        <Input input_type="textarea" input_key="C_8_3_content" lines="4" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_8_" disclosure_id="C_8_4_" no_yesno="true" flag="BlankRemarkTable">
+        <Description text="4. 常在哪一个海区航行？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="C_8_4_content" lines="4"/> 
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_8_" disclosure_id="C_8_5_" no_yesno="true" flag="common">
+        <Description text="5. 停泊港口及来往港口:"/> 
+        <Expendable> 
+            <Input input_type="textarea" input_key="C_8_5_content" lines="4" /> 
+        </Expendable>     
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_8_" no_yesno="true" disclosure_id="C_8_6_" flag="common">
+        <Description text=" 6. 船舶种类："/>
+        <Radio input_type="checkbox" options="游艇" radio_key="C_8_6_a" />
+        <Radio input_type="checkbox" options="驳船" radio_key="C_8_6_b" />
+        <Radio input_type="checkbox" options="汽船" radio_key="C_8_6_c" />
+        <Radio input_type="checkbox" options="客船" radio_key="C_8_6_d" />
+        <Radio input_type="checkbox" options="货船" radio_key="C_8_6_e" />
+        <Radio input_type="checkbox" options="客货船" radio_key="C_8_6_f" />
+        <Radio input_type="checkbox" options="渔船" radio_key="C_8_6_g" />
+        <Radio input_type="checkbox" options="渡轮" radio_key="C_8_6_h" />
+        <Radio input_type="checkbox" options="帆船" radio_key="C_8_6_i" />
+        <Radio input_type="checkbox" options="其他" radio_key="C_8_6_j" />
+        <Input input_type="text" input_key="C_8_6_01" length="10"  />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_8_" no_yesno="false" disclosure_id="C_8_7_" flag="BlankRemarkTable">
+        <Description text="7. 是否停泊在热带港口？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="C_8_7_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_8_" no_yesno="true" disclosure_id="C_8_8_" flag="common">
+        <Description text="8. 您在船上从事的工作和职位："/>
+        <Input input_type="br" />
+        <Description text="工作："/>        
+        <Input input_type="text" input_key="C_8_8_yourjob" length="10"  />
+        <Input input_type="br" />
+        <Description text="职位：" />
+        <Input input_type="text" input_key="C_8_8_jobtitle" length="10"  />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_8_" no_yesno="true" disclosure_id="C_8_9_" flag="common">
+        <Description text="9. 您从事此工作有多久？"/>
+        <Input input_type="number" input_key="C_8_9_yourjobtime" length="2"  />
+        <Description text="年" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_8_" no_yesno="false" disclosure_id="C_8_10_" flag="BlankRemarkTable">
+        <Description text="10. 船是否参加保险？"/>
+        <Expendable> 
+            <Description text="如有，请注明保险公司的名称："/>           
+            <BlankRemarkTable input_key="C_8_10_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_8_" no_yesno="haveNone" disclosure_id="C_8_11_" flag="BlankRemarkTable">
+        <Description text="11.  除上述内容外，您认为还有哪些信息有助于我们处理您的投保申请？"/>
+        <Expendable>          
+            <BlankRemarkTable input_key="C_8_11_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

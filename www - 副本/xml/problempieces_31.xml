@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Disclosure xmlns:android="http://schemas.android.com/apk/res/android" >
+	
+	<!--
+	   问题卷31 跳伞问卷部分
+	 -->
+     <DisclosureItem disclosure_ver="C_3_" disclosure_id="problempieces_31" flag="questionName" text="跳伞问卷">
+     </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_3_" no_yesno="false" disclosure_id="C_3_1_" flag="common">
+        <Description text="1. 您的跳伞活动是否为军人跳伞？"/>
+    </DisclosureItem>
+    
+    <DisclosureItem disclosure_ver="C_3_" no_yesno="false" disclosure_id="C_3_2_" flag="common">
+        <Description text="2. 您是否为跳伞俱乐部会员？" /> 
+        <Expendable>
+            <Description text="如是，请注明俱乐部名称及入会时间" />        
+            <Input input_type="textarea" input_key="C_3_2_01" length="3"  /> 
+        </Expendable>      
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_3_" no_yesno="true" disclosure_id="C_3_3_" flag="common">
+        <Description text="3. 固定开动跳伞："/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_3_" no_yesno="true" disclosure_id="C_3_3_" flag="common">
+        <Description text="(1)您从事固定开动跳伞多少年？"/>
+        <Input input_type="text" input_key="C_3_3_year" length="3"/>
+        <Description text="年"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_3_" no_yesno="true" disclosure_id="C_3_3_" flag="common">
+        <Description text="(2)您已参加此活动多少次？"/>
+        <Input input_type="text" input_key="C_3_3_times" length="3"/>
+        <Description text="次"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_3_" no_yesno="true" disclosure_id="C_3_3_" flag="common">
+        <Description text="(3)一年多少次？"/>
+        <Input input_type="text" input_key="C_3_3_year_times" length="3"/>
+        <Description text="次"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_3_" no_yesno="true" disclosure_id="C_3_3_" flag="common">
+        <Description text="(4)计划将要参加多少次？"/>
+        <Input input_type="text" input_key="C_3_3_plan_times" length="3"/>
+        <Description text="次"/>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_3_" no_yesno="false" disclosure_id="C_3_3_" flag="BlankRemarkTable">
+        <Description text="(5)您是否愿意从事自由跳伞？"/>
+        <Expendable>
+            <BlankRemarkTable input_key="C_3_3_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_3_" disclosure_id="C_3_4_" no_yesno="true" flag="common">
+        <Description text="4. 自由跳伞:"/>
+        <Input input_type="br" />
+        <Description text="(1)您从事自由跳伞多少年？" />
+        <Input input_type="number" input_key="C_3_4_freejump_year" length="3"  />
+        <Description text="年" />
+        <Input input_type="br" />
+        <Description text="(2)您已参加此活动多少次？" />
+        <Input input_type="number" input_key="C_3_4_freejump_times" length="3"  />
+        <Description text="次" />
+        <Input input_type="br" />
+        <Description text="(3)您计划参加多少次？" />
+        <Input input_type="number" input_key="C_3_4_freejump_plan_times" length="3"  />
+        <Description text="次" />
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_3_" disclosure_id="C_3_5_" no_yesno="false" flag="BlankRemarkTable">    
+        <Description text="5. 您是否计划参加跳伞比赛或试图打破纪录？"/>  
+        <Expendable>             
+            <Description text="如是，请详述跳伞的类别："/>
+            <BlankRemarkTable input_key="C_3_5_01" lines="4"/>
+        </Expendable>        
+    </DisclosureItem>
+
+    <DisclosureItem disclosure_ver="C_3_" no_yesno="haveNone" disclosure_id="C_3_6_" flag="BlankRemarkTable">
+        <Description text="6. 除上述内容外，您认为还有哪些信息有助于我们处理您的投保申请？"/>
+        <Expendable>
+            <Description text="如有，请说明："/>
+            <BlankRemarkTable input_key="C_3_6_01" lines="4"/>
+        </Expendable>
+    </DisclosureItem>
+    
+</Disclosure>

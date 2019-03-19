@@ -1,0 +1,42 @@
+<div class="right-content">
+	<div class="middle-menu">
+		<header class="bar bar-header" >
+			<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	       	<h1 class="title">已提交保单</h1>
+	       	<!--<button class="button button-clear button-positive add-button" ng-click="addInsurance();">
+		  		<span class="new_icon"></span>
+		  	</button>
+	   		-->
+	    </header>
+	    <div class="tabs-positive">
+	    	<div class="tabs" style="top:{{tabs}}px">
+	    		<ul>
+	    			<li ng-class="{'actived':isAlready}" ng-click="onClickTab(1)">已承保</li>
+	    			<li ng-class="{'actived':!isAlready}" ng-click="onClickTab(0)">未承保</li>
+	    		</ul>
+	    	</div>	    	  	
+	    	<div id="mainView" style="margin-top:{{mtop}}px;">
+	    		<form>
+				    <div class="search-new">
+						<div>
+							<input type="text" id="autocomplete" ng-model="InsuranceOnlineSubmitCtrlModule.keyWord" placeholder="保单号/客户姓名"/>
+						</div>
+					  <div style="margin-left:3%;position: relative;" >
+						  <input type="text" id="applyDate" placeholder="申请日期" readonly ng-click="selectDateFn()"/>
+						  <a class="my-calendar" ng-click="selectDateFn()"></a>
+					  </div>
+
+				        <!--<div ng-show="!InsuranceOnlineSubmitCtrlModule.keyWord.length">                     -->
+				            <!--<span>下拉搜索</span>-->
+				        <!--</div>-->
+				        <i class="icon ion-search placeholder-icon" ng-click="autocompleteFn()"></i> 
+				    </div>
+				</form> 				
+	            <div ng-include="currentTab"></div>
+	        </div>
+	    </div>
+	</div>
+	<div class="right-data">
+		<ion-nav-view name="submitContent"></ion-nav-view>
+	</div>
+</div>

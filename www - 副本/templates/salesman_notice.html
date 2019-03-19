@@ -1,0 +1,43 @@
+
+<ion-content class="has-header" style="margin-top: {{Mtop}}px;margin-bottom: 60px">
+	<div class="space">
+		<h3 class="alignCenter spacing f-16">民生人寿保险股份有限公司</h3>
+		<h2 class="alignCenter f-28">业务员通知书</h2>
+		<div class="header f-14">
+			<p>尊敬的<b>{{questionList.agentname}}</b>:</p>
+			<p class="index_2">您好！您的客户<b>{{questionList.appntname}}</b>的投保申请（投保单印刷号<b>{{questionList.prtno}}</b>）我们已经及时进行审核，为了便于我们尽快完成核保，请您于<b>{{questionList.replyyear}}</b>年<b>{{questionList.replymon}}</b>月<b>{{questionList.replyday}}</b>日前确认以下事项，如逾期未接到您的回复，本通知书所对应的投保申请将做撤销处理，谢谢您的合作。</p>
+			<div class=" notice-content">
+				<p class="index_2" ng-repeat="questioncont in questionList.questionrow">
+					{{questioncont.questioncol1}}
+				</p>
+			</div>			
+		</div>				
+		<div class="notice-footer f-14 margin_top10">			
+			<p class="index_2">如有疑问或其它不明事项，请与运营管理人员联系。</p>
+			<p class="index_2">祝您生活愉快，身体健康！</p>
+		</div>
+		<div class="bottom-table">
+			<table>
+				<tr><td>业务员姓名：</td><td>{{questionList.agentname}}</td></tr>
+				<tr><td>业务员号：</td><td>{{questionList.agentcode}}</td></tr >
+				<tr><td>营业机构：</td><td>{{questionList.managecom}}</td></tr>
+				<tr><td>契约管理人员工号：</td><td>{{questionList.approveoperator}}</td></tr>
+				<tr><td>打印流水号：</td><td>{{questionList.prtseq}}</td></tr>
+				<tr><td>客户服务专线：</td><td>95596</td></tr>
+			</table>
+		</div>
+		<div class="botter">
+			<p class="alignRight">民生人寿保险股份有限公司</p>
+			<p class="alignRight f-14">{{questionList.sysdate}}</p>
+		</div>
+		<div>
+			<p>问题件回复：</p>
+			<textarea placeholder="输入内容" id="replySales" class="reply"></textarea>
+		</div>	
+	</div>	
+</ion-content>
+<div class="bar bar-footer footer-btn-bar">
+  	<input type="button" class="button button-clear" style="position:absolute;
+  	left: 33%;width: 120px;color:#d13f14;font-size:14px;border: 1px solid #d13f14;height:60px; border-radius: 5px;margin: 0 auto;" ng-click="submit_salesman()"
+  	value="提交" />
+</div>
