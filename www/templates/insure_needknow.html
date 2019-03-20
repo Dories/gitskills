@@ -800,31 +800,25 @@
 								<div class="insure-checkbox margin-top-10">
 									<div class="tip-check item-checkbox">
 										<label class="checkbox">
-											<input id="Pc_payNotice" class="checkbox-style" type="checkbox" ng-model="applyObj.IS_NOTICE">
+											<input id="pay_Con_PC" class="checkbox-style" type="checkbox" ng-model="applyObj.IS_NOTICE">
 										</label>
 										<span>续期缴费时，是否需要缴费提示</span>
 									</div>
 									<div class="tip-check item-checkbox">
 										<label class="checkbox">
-											<input id="Pc_autoPay" class="checkbox-style" type="checkbox" ng-model="applyObj.IS_PAY_FOR" ng-click="autoPAY_FOR(applyObj)" />
+											<input class="checkbox-style" type="checkbox" ng-model="applyObj.IS_PAY_FOR" ng-click="autoPAY_FOR(applyObj)" id="pc_autoPay" />
 										</label>
 										<span>续期保险费超过宽限期仍未交付时，选择保险费自动垫交</span>
 									</div>
 									<div class="tip-check item-checkbox">
 										<label class="checkbox">
-											<input id="Pc_anewInsure" class="checkbox-style" type="checkbox" ng-model="applyObj.IS_ANEW_INSURES" anewInsureValue="-2" ng-click="anewInsure()">
-										</label>
-										<span>保单到期后，是否自动重新投保</span>
-									</div>
-									<div class="tip-check item-checkbox">
-										<label class="checkbox">
-											<input id="Pc_ISINSURE" class="checkbox-style" name="Pc_applyObjName" type="checkbox" ng-model="applyObj.IS_INSURE" ng-click="electronicChange(applyObj)">
+											<input id="pc_ISINSURE" class="checkbox-style" name="Pc_applyObjName" type="checkbox" ng-model="applyObj.IS_INSURE" ng-click="electronicChange(applyObj)">
 										</label>
 										<span>选择电子保单服务</span>
 									</div>
 									<div class="tip-check item-checkbox">
 										<label class="checkbox">
-											<input id="Pc_ElecName" class="checkbox-style" name="Pc_applyObjName" type="checkbox" ng-model="applyObj.IS_INSURE_PAPER" ng-click="electronicChangeTwo(applyObj)">
+											<input id="ElecName_PC" class="checkbox-style" name="Pc_applyObjName" type="checkbox" ng-model="applyObj.IS_INSURE_PAPER" ng-click="electronicChangeTwo(applyObj)">
 										</label>
 										<span>选择电子保单服务+纸质保单</span>
 									</div>
@@ -984,21 +978,15 @@
 						<div class="insure-checkbox">
 							<div class="tip-check item-checkbox">
 								<label class="checkbox">
-									<input id="phone_payNotice" class="checkbox-style" type="checkbox" ng-model="applyObj.IS_NOTICE">
+									<input id="pay_Con" class="checkbox-style" type="checkbox" ng-model="applyObj.IS_NOTICE">
 								</label>
 								<span>续期缴费时，是否需要缴费提示</span>
 							</div>
 							<div class="tip-check item-checkbox">
 								<label class="checkbox">
-									<input id="phone_autoPay" class="checkbox-style" type="checkbox" ng-model="applyObj.IS_PAY_FOR" ng-click="autoPAY_FOR(applyObj)" />
+									<input class="checkbox-style" type="checkbox" ng-model="applyObj.IS_PAY_FOR" ng-click="autoPAY_FOR(applyObj)" id="phone_autoPay"/>
 								</label>
 								<span>续期保险费超过宽限期仍未交付时，是否选择保险费自动垫交</span>
-							</div>
-							<div class="tip-check item-checkbox" ng-if="yyB_show">
-								<label class="checkbox">
-									<input id="phone_anewInsure" class="checkbox-style" type="checkbox" ng-model="applyObj.IS_ANEW_INSURES" anewInsureValue="-2" ng-click="anewInsure()">
-								</label>
-								<span>保单到期后，是否自动重新投保</span>
 							</div>
 							<div class="tip-check item-checkbox">
 								<label class="checkbox">
@@ -1008,7 +996,7 @@
 							</div>
 							<div class="tip-check item-checkbox">
 								<label class="checkbox">
-									<input id="phone_ElecName" class="checkbox-style" name="applyObjName" type="checkbox" ng-model="applyObj.IS_INSURE_PAPER" ng-click="electronicChangeTwo(applyObj)">
+									<input id="ElecName" class="checkbox-style" name="applyObjName" type="checkbox" ng-model="applyObj.IS_INSURE_PAPER" ng-click="electronicChangeTwo(applyObj)">
 								</label>
 								<span>选择电子保单服务+纸质保单</span>
 							</div>						
@@ -1029,17 +1017,14 @@
 				<div class="tab-panel" ng-show="step2.activeTab == 5">
 					<ion-content class="has-top has-border content_padding" overflow-scroll="true">
 					<!-- overflow-scroll="true" -->
-						 <div id="applicant_know" class="impart_div">
-						</div>
-					</ion-content> 
-					<!-- <ion-scroll zooming="true" direction="xy" style="width: 100%; height: 100%">
 						<div id="applicant_know" class="impart_div">
 						</div>
-					</ion-scroll> -->
+
+					</ion-content>
 				</div>
 				<div class="tab-panel" ng-show="step2.activeTab == 6">
 					<ion-content class="has-top has-border content_padding" overflow-scroll="true">
- 						<div id="recognizee_know" class="impart_div" onclick="toublur()">
+ 						<div id="recognizee_know" class="impart_div">
 						</div>
 					</ion-content>
 				</div>

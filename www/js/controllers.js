@@ -3385,11 +3385,6 @@ angular.module('starter.controllers', [])
 			//保存静态页面数据
 			if (activeTab == 4) {
 				//查询主险ID并加载选项卡页内容及数据
-				var IS_ANEW_INSURES = "";				
-				if(mianIsureId=='111805' || mianIsureId=='111702'){
-					//IS_ANEW_INSURE= ($scope.applyObj.IS_ANEW_INSURE == true) ? -1 : -2;
-					IS_ANEW_INSURES= $scope.applyObj.IS_ANEW_INSURES;
-				}				
 				var key = {
 					"databaseName": Variables.dataBaseName,
 					"tableName": "T_APPLY",
@@ -3400,9 +3395,7 @@ angular.module('starter.controllers', [])
 							"IS_PAY_FOR": $scope.applyObj.IS_PAY_FOR,
 							"IS_INSURE": $scope.applyObj.IS_INSURE,
 							"IS_INSURE_PAPER": $scope.applyObj.IS_INSURE_PAPER,
-							"VALID_PHONE": $scope.applyObj.VALID_PHONE,
-							"IS_ANEW_INSURES" : IS_ANEW_INSURES
-
+							"VALID_PHONE": $scope.applyObj.VALID_PHONE
 						}
 					]
 				};
@@ -5311,39 +5304,23 @@ angular.module('starter.controllers', [])
 				
 				$scope.autoPayFlag = "Y";
 				if(pcType == "phone"){
-					var autoPay = document.getElementById("phone_autoPay");
+					var pc_autoPay = document.getElementById("phone_autoPay");
 				}else{
-					var autoPay = document.getElementById("Pc_autoPay");
+					var pc_autoPay = document.getElementById("pc_autoPay");
 				}
 				Pay_myAlertOkFun("续期保险费超过宽限期仍未交付时，是否选择保险费自动垫交，请选择！",function(){					
 					 var values=radioValue("choice_PAY_FOR");
 						if(values=='1'){
-							autoPay.checked = true;
+							pc_autoPay.checked = true;
 							$scope.applyObj.IS_PAY_FOR = true;
 							Pay_closemyAlertOkFun();
 						}
 						if(values=='0'){
-							autoPay.checked = false;
+							pc_autoPay.checked = false;
 							$scope.applyObj.IS_PAY_FOR = false;
 							Pay_closemyAlertOkFun();
 						}					
 				})
-			}
-			//优医保自动重新投保点击方法获取值 add by renxiaomin 2019.1.29
-			$scope.anewInsure = function(){
-				var anewInsure="";
-				if(pcType == "phone"){
-					anewInsure= document.getElementById("phone_anewInsure").getAttribute("anewInsureValue");
-				}else{
-					anewInsure= document.getElementById("Pc_anewInsure").getAttribute("anewInsureValue");
-				}
-				if(anewInsure == "-2"){
-					$scope.applyObj.IS_ANEW_INSURES=false;
-					document.getElementById("Pc_anewInsure").setAttribute("anewInsureValue") = "-1";
-				}else{
-					$scope.applyObj.IS_ANEW_INSURES=true;
-					document.getElementById("Pc_anewInsure").setAttribute("anewInsureValue") = "-2";
-				}
 			}
 			$scope.electronicChange = function(applyObj){
 				if(pcType == "phone"){
@@ -5455,10 +5432,10 @@ angular.module('starter.controllers', [])
 				var agentCode = storage.getItem('agentCode'); 
 				var listValMap = [{"id":"tbxz_agree","msg":"投保须知选择同意后进行操作!"},{"id":"bxtk_agree","msg":"保险条款选择同意后进行操作!"},{"id":"cpsm_agree","msg":"产品说明选择同意后进行操作!"},{"id":"Glbd_agree","msg":"关联保单特别约定选择同意后进行操作!"}];
 				//‘资料出示’验证，暂时屏蔽便于测试
-				//var isPass =  agreeNextValidateFn(listValMap,$ionicPopup); 
-				// if(!isPass){
-				// 	return;
-				// }
+				var isPass =  agreeNextValidateFn(listValMap,$ionicPopup); 
+				if(!isPass){
+					return;
+				}
 				isPass = true;
 				//获取保费  2016.9.26  wuwei
 				applynum = parseFloat(window.localStorage.getItem('applynum'));
@@ -5471,13 +5448,9 @@ angular.module('starter.controllers', [])
 					/* 进入第二步‘信息录入’时，初始化页面相关数据 */
 					//初始化关系列表
 					initRelationList();
-					if(mianIsureId == '111805' || mianIsureId == '111802' || mianIsureId =='111702'){
-						$scope.cardBefit = true; //受益人不显示
-						if(mianIsureId != '111802'){
-							$scope.yyB_show = true; //重新投保显示 
-						}
+					if(mianIsureId == '111805' || mianIsureId == '111802'){
+						$scope.cardBefit = true;
 					}
-
 					//初始化银行列表
 					initData.loadBanks(function(){
 						$scope.bankData=Variables.bankJson;
@@ -5855,7 +5828,6 @@ angular.module('starter.controllers', [])
 							$scope.applyObj.VALID_PHONE = tempData.VALID_PHONE;
 							$scope.totalPremium = totalPremium;
 							$scope.alltotalPremium = alltotalPremium;
-							//alert("从数据库加载已录入的信息")
 						});
 					}); 
 					
@@ -5877,22 +5849,17 @@ angular.module('starter.controllers', [])
 					}					
 				}else if(1 == slideIndex){
 						// 控制主险是111805的一些交费规则
-						if($scope.step2.activeTab == 3){
-							if(mianIsureId=="111805" || mianIsureId == "111702"){
-								$scope.applyObj.IS_NOTICE =true; //缴费提示默认是							
-								$scope.applyObj.IS_ANEW_INSURES = true;//重新投保默认是
-								//alert("slideIndex:"+$scope.applyObj.IS_ANEW_INSURES)
-								$scope.applyObj.IS_PAY_FOR=false;//是否自动垫交默认为否
-								if(pcType=='phone'){
-									document.getElementById('phone_payNotice').disabled = true;//缴费提示不可修改
-									document.getElementById("phone_autoPay").disabled=true;//自动交付不可修改
-								}else{
-									document.getElementById('Pc_payNotice').disabled = true;
-									document.getElementById("Pc_autoPay").disabled=true;
-								}
+						if(mianIsureId=="111805"){
+							$scope.applyObj.IS_NOTICE=true;//缴费提示默认是
+							$scope.applyObj.IS_PAY_FOR=false;//是否自动垫交默认为否
+							if(pcType=='phone'){
+								document.getElementById('pay_Con').disabled = true;//缴费提示不可修改
+								document.getElementById("phone_autoPay").disabled=true;//自动交付不可修改
+							}else{
+								document.getElementById('pay_Con_PC').disabled = true;
+								document.getElementById("pc_autoPay").disabled=true;
 							}
-						}												
-						
+						}
 						var fromUnfinishTbr = {
 							"databaseName": Variables.dataBaseName,
 							"tableName": "T_CUSTOMER",
@@ -6010,9 +5977,9 @@ angular.module('starter.controllers', [])
 					
 					//验证并保存影像录入中证件照片
 					var validateResult = validateCardImage($scope);
-					//  if(!validateResult){
-					//  	return;
-					//  } 
+					 if(!validateResult){
+					 	return;
+					 } 
 					//‘影像录入’验证通过后设置下一个步骤的标题
 					if(pcType == 'phone'){
 						setPageIndexLogoCss("index_four");

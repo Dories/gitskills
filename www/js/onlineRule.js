@@ -1055,10 +1055,7 @@ function tryTap(obj){
  * @Author:Li Jie
  * @Date 2015-02-10
  */
- function pageControlleNotify(currentCheckbox){ //投被保人告知 
-	// if ('ontouchstart' in document.documentElement === true){
-	// 	$("input").blur();				
-	// }
+ function pageControlleNotify(currentCheckbox){ //投被保人告知
 	var currentTd = currentCheckbox.parentElement.parentElement;
 	var currentTr = currentTd.parentElement;
 	var currentDiv = currentTr.getElementsByTagName("div");

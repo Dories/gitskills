@@ -396,7 +396,6 @@ function apply_submit(applyId,opts,flag,http_aply_id,http_proposal_id,applyInfo_
 				"renewBankPhone" : tempData.bankPhoneNum, //续期缴费银行预留手机
 				"renewPayMode" : '0',//续期缴费方式,
 				"renewRemindFlag" : '',//续期缴费提示标记,
-				"renewFlag" : '',//<!-- 自动续保标志 -1-自动续保；-2-不续保；--1-自动重新投保；--2-非自动重新投保 -->
 				"state" : '-1',//状态,
 				"cardno" : cardNums, // 卡单和保单的标识（保单-----空）
 				"relationFlag":relationflag,//开门红关联保单 关联标记
@@ -473,9 +472,6 @@ function apply_submit(applyId,opts,flag,http_aply_id,http_proposal_id,applyInfo_
 				var electronicContFlag = applyInfoJson.IS_INSURE; //电子保单标记
 				var electronicContPhone = applyInfoJson.VALID_PHONE; //电子保单电话
 				var elecprintflag = applyInfoJson.IS_INSURE_PAPER;  //电子+纸质标记
-				var renewFlag = applyInfoJson.IS_ANEW_INSURES; //优医保重新投保
-
-				renewFlag = (renewFlag=="true" || renewFlag==true) ? "-1" : "-2";
 				renewRemindFlag = (renewRemindFlag=="true" || renewRemindFlag==true) ? "1" : "0";
 				autoPayFlag = (autoPayFlag=="true" || autoPayFlag==true) ? "1" : "0";
 				electronicContFlag = (electronicContFlag=="true" || electronicContFlag==true) ? "Y": "Y"; //电子保单标记默认Y
@@ -486,10 +482,9 @@ function apply_submit(applyId,opts,flag,http_aply_id,http_proposal_id,applyInfo_
 				if(isNull(packageCode)){
 					packageCode = "";
 				}
-				//alert('packageCode::'+packageCode)
+				// alert('autoPayFlag::'+autoPayFlag)
 				applyInfo_A.applyDetail.baseInfo.renewRemindFlag = renewRemindFlag;			//续期缴费提示标记
 				applyInfo_A.applyDetail.baseInfo.autoPayFlag = autoPayFlag;				//保险费是否自动垫交标记
-				applyInfo_A.applyDetail.baseInfo.renewFlag = renewFlag;                    //优医保重新投保标记 
 				applyInfo_A.applyDetail.baseInfo.electronicContFlag = electronicContFlag;	//电子保单标记
 				applyInfo_A.applyDetail.baseInfo.electronicContPhone = electronicContPhone;	//电子保单电话
 				applyInfo_A.applyDetail.baseInfo.elecprintflag = elecprintflag;            //电子+纸质标记
